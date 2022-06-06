@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        
+            <meta charset="utf-8">
+            <meta name="robots" content="noindex">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="author" content="Alex Corner" />
+            <meta name="date" content="2022-06-06" />
+        
+
+        <title>Basic Ideas | Engineering Mathematics</title>
+
+        
+    
+    
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../../static/styles.css">
+            <link rel="stylesheet" id="customiseCSS" href="../../static/light.css">
+            
+            
+        
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../static/pygmentize.light.css">
+    <link rel="stylesheet" href="../../static/codemirror-5.26.0/lib/codemirror.css">
+    <link rel="stylesheet" href="../../static/boole.css">
+    <link rel="stylesheet" href="../../static/numbasEmbed.css">
+
+    <link rel="stylesheet" href="../../static/bootstrap-toc.css?v=3">
+    <link rel="stylesheet" href="../../static/print.css">
+
+
+        
+    
+    
+            <script defer src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+            <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            <script defer src="../../static/mathjax_config.js"></script>
+            <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+            <script defer src="../../static/customisation.js"></script>
+            <script defer src="../../static/mp4.js"></script>
+            
+            
+        
+    <script defer src="../../static/jquery.flexibleArea.js"></script>
+    <script defer src="../../static/spin.min.js"></script>
+    <script defer src="../../static/codemirror-5.26.0/lib/codemirror.js"></script>
+    <script defer src="../../static/codemirror-5.26.0/mode/octave/octave.js"></script>
+    <script defer src="../../static/codemirror-5.26.0/mode/python/python.js"></script>
+    <script defer src="../../static/codemirror-5.26.0/mode/r/r.js"></script>
+    <script defer src="../../static/boole.js"></script>
+    <script defer src="../../static/numbasEmbed.js"></script>
+
+    <script defer src="../../static/bootstrap-toc.js"></script>
+
+    </head>
+    <body data-spy="scroll" data-target="#chapterTOC" data-offset="50">
+        
+<div class="collapse" id="navbarToggleCustomise">
+	<div class="bg-secondary text-white p-3">
+		<form onsubmit="return false;" id="navbarCustomise">
+			<div class="form-row">
+				<label>Theme Customisation</label>
+				<div id="themeSelector" class="form-group col-md-12">
+					<button class="btn btn-dark mr-2" value="dark">Dark</button>
+					<button class="btn btn-pastel mr-2" value="pastel">Pastel</button>
+					<button class="btn btn-light mr-4" value="light">Light</button>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-4">
+					<label style="display: block" for="font-scale">Font size (<span id="font-size-display">100%</span>)</label>
+					<input type="range" class="form-control-range col-9 mr-2" id="font-scale" min="50" max="600" value="100">
+					<button id="font-scale-reset" class="btn btn-sm">Reset</button>
+				</div>
+				<div class="form-group col-md-4">
+					<label style="display: block" for="p-space">Spacing (<span id="p-space-display">100%</span>)</label>
+					<input type="range" class="form-control-range col-9 mr-2" id="p-space" min="0" max="600" value="100">
+					<button id="p-space-reset" class="btn btn-sm">Reset</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<nav aria-label="breadcrumb">
+	<ul class="breadcrumb">
+		<li class="breadcrumb-item">
+			<a href="../../index.html">Engineering Mathematics</a>
+		</li>
+		
+		<li class="breadcrumb-item">
+			<a href="../../complex_numbers/index.html">Complex Numbers</a>
+		</li>
+		
+		<li class="breadcrumb-item active">
+			Basic Ideas
+		</li>
+		<li class="ml-auto">
+			<button class="navbar-toggler p0" type="button" data-toggle="collapse" data-target="#navbarToggleCustomise" aria-controls="navbarToggleCustomise" aria-expanded="false" aria-label="Toggle customisations panel">
+				<i class="fa fa-cog" aria-hidden="true" title="Toggle customisations panel"></i> <span class="sr-only">Toggle customisations panel</span>
+			</button>
+		</li>
+	</ul>
+</nav>
+
+
+        <header>
+            
+            
+        </header>
+        <main>
+            
+    <div class="container mt-3">
+        <div class="row">
+            
+            <div id="sidebar" class="col-md-3">
+                <nav class="mb-3" id="chapterTOC" data-toggle="toc">
+                    <ul class="nav navbar-nav">
+                        
+                        
+                        
+                        <li><a id="pdf-link" class="nav-link" href="../../complex_numbers/basic_ideas/basic_ideas.pdf" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" title="Download as PDF"></i>&nbsp;Download as PDF</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+            <div id="content" class="col-md-9"> 
+            
+             <!-- Latex Chapter/Part -->
+<h1 id="a0000000028">Complex Numbers</h1>
+<section class="section">
+<h2 id="a0000000029">1.1 Recap</h2>
+<ul class="itemize" id="a0000000030">
+<li id="a0000000031"> <p>
+<script type="math/tex">i</script> is the <b class="bfseries">imaginary number</b> such that <script type="math/tex">i^2 = -1</script>. 
+</p>
+</li>
+<li id="a0000000032"> <p>
+A <b class="bfseries">complex number</b> is of the form 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">z = a + ib</script></span>
+<p>
+ where <script type="math/tex">a</script>, <script type="math/tex">b \in \mathbb {R}</script>. 
+</p>
+</li>
+<li id="a0000000033"> <p>
+The <b class="bfseries">real part</b> of <script type="math/tex">z</script> is <script type="math/tex">\operatorname {Re}(z) = a</script> and the <b class="bfseries">imaginary</b> part of <script type="math/tex">z</script> is <script type="math/tex">\operatorname {Im}(z) = b</script>. 
+</p>
+</li>
+</ul>
+</section><section class="section">
+<h2 id="a0000000034">1.2 Argand diagrams, modulus, argument</h2>
+<p>
+ The way we have seen complex numbers so far is in their <b class="bfseries">rectangular form</b>. For example, the complex number <script type="math/tex">z = 1 + i\sqrt{3}</script> which has real part <script type="math/tex">\operatorname {Re}(z) = 1</script> and imaginary part <script type="math/tex">\operatorname {Im}(z) = \sqrt{3}</script>. We can think of this as going <script type="math/tex">1</script> unit in the ‘real’ direction and <script type="math/tex">\sqrt{3}</script> units in the ‘imaginary’ direction, like the sides of a rectangle. But another way to represent a complex number is to use a distance and an angle, all relative to the centre point of a pair of axes. 
+</p>
+<p>
+On an <b class="bfseries">Argand diagram</b> we have a pair of axes. The horizontal axis is called the <b class="bfseries">real axis</b> and the vertical axis is called the <b class="bfseries">imaginary axis</b>. We can essentially ‘plot’ a complex number on these axes. For example, the complex number <script type="math/tex">z = 1 + i\sqrt{3}</script> can be thought of as being at the point <script type="math/tex">(1,\sqrt{3})</script> as on the diagram below. Another way of specifying where this point is is to say how far it is from the central point <script type="math/tex">(0,0)</script>, or <script type="math/tex">0 + i0</script>, it is along with how far anti-clockwise it is around from the positive real axis. 
+</p>
+<p>
+When we specify a complex number <script type="math/tex">z</script> by its distance and angle, we call the distance from the centre the <b class="bfseries">modulus</b>, written <script type="math/tex">r = |z|</script>, and the angle is called the <b class="bfseries">principal argument</b>, written <script type="math/tex">\theta = \operatorname {arg}(z)</script>. 
+</p>
+<div class="centered"> <div class="tikzcd" id="a0000000035">
+<img alt="\begin{tikzpicture} 
+    \begin{scope}[thick,font=\scriptsize]
+    % Axes:
+    % Are simply drawn using line with the `-&gt;` option to make them arrows:
+    % The main labels of the axes can be places using `node`s:
+    \draw [-&gt;] (-4,0) -- (4,0) node [above left]  {$\opn{Re}z$};
+    \draw [-&gt;] (0,-4) -- (0,4) node [below right] {$\opn{Im}z$};
+    % Axes labels:
+    % Are drawn using small lines and labeled with `node`s. The placement can be set using options
+    \iffalse% Single
+    % If you only want a single label per axis side:
+    \draw (1,-2pt) -- (1,2pt)   node [above] {$1$};
+    \draw (-1,-2pt) -- (-1,2pt) node [above] {$-1$};
+    \draw (-2pt,1) -- (2pt,1)   node [right] {$i$};
+    \draw (-2pt,-1) -- (2pt,-1) node [right] {$-i$};
+    \else% Multiple
+    % If you want labels at every unit step:
+    \foreach \n in {-3,...,-1,1,2,...,3}{%
+        \draw (\n,-2pt) -- (\n,2pt)   node [above] {$\n$};
+        \draw (-2pt,\n) -- (2pt,\n)   node [right] {$\n$};
+    }
+    \fi
+    \end{scope}
+    \draw [thick] (0,0) -- node [midway, above] {$r$} (1,1.73205) node [above right] {$1 + i\sqrt{3}$};
+    \fill (1,1.73205) circle[radius=2pt];
+    \draw[fill=cyan!30] (0,0) -- (1.5,0) arc [start angle=0, end angle=60, radius=1.5] node [midway, right] {$\theta$} -- (0,0);
+    % The circle is drawn with `(x,y) circle (radius)`
+    % You can draw the outer border and fill the inner area differently.
+    % Here I use gray, semitransparent filling to not cover the axes below the circle
+    % \path [draw=none,fill=gray,semitransparent] (+1,-1) circle (3);
+    % Place the equation into the circle:
+    % \node [below right,darkgray] at (+1,-1) {$|z-1+i| \leq 3$};
+\end{tikzpicture}" src="../../complex_numbers/basic_ideas/images/img-0001.svg"/>
+</div> </div>
+<section class="subsection">
+<h3 id="a0000000036">Example 1</h3>
+<p>
+For our example number <script type="math/tex">z = 1 + i\sqrt{3}</script>, we can work out the modulus and argument. We think of the modulus, <script type="math/tex">r</script>, as the hypotenuse of a right-angled triangle, as below. Then the argument is the angle formed between the modulus and the real axis. 
+</p>
+<div class="centered"> <div class="tikzcd" id="a0000000037">
+<img alt="\begin{tikzpicture} 
+    \draw (0,0) -- node [midway, below] {$1$} (3,0) -- node [midway, right] {$\sqrt{3}$} (3,5.1962);
+    \draw [thick] (0,0) -- node [midway, above] {$r$} (3,5.1962);
+    \draw[fill=cyan!30] (0,0) -- (1.5,0) arc [start angle=0, end angle=60, radius=1.5] node [midway, right] {$\theta$} -- (0,0);
+\end{tikzpicture}" src="../../complex_numbers/basic_ideas/images/img-0002.svg"/>
+</div> </div>
+<p>
+Using Pythagoras’ Theorem, we can find the modulus to be 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">r = |z| = \sqrt{1^2 + \sqrt{3}^2} = 2.</script></span>
+<p>
+ Then using some trigonometry we can find the modulus to be 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">\theta = \operatorname {arg}(z) = \operatorname {arctan}\left(\frac{\sqrt{3}}{1}\right) = \frac{\pi }{3}.</script></span>
+<p>
+You can play around with a complex number on an Argand diagram in the GeoGebra applet below. It will show you the modulus and the argument of the complex number if you drag it around the diagram.
+</p>
+<iframe src="https://www.geogebra.org/calculator/kjphjfrj?embed/ai/false/stb/false/smb/false" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+</section><section class="subsection">
+<h3 id="a0000000038">Example 2</h3>
+<p>
+ In this example we will represent <script type="math/tex">z = -1 - i</script> on an Argand diagram. Then we will find the modulus, <script type="math/tex">r = |z|</script>, and the argument, <script type="math/tex">\theta = \operatorname {arg}(z)</script>. 
+</p>
+<div class="centered"> <div class="tikzcd" id="a0000000039">
+<img alt="\begin{tikzpicture} 
+    \begin{scope}[thick,font=\scriptsize]
+    % Axes:
+    % Are simply drawn using line with the `-&gt;` option to make them arrows:
+    % The main labels of the axes can be places using `node`s:
+    \draw [-&gt;] (-4,0) -- (4,0) node [above left]  {$\opn{Re}z$};
+    \draw [-&gt;] (0,-4) -- (0,4) node [below right] {$\opn{Im}z$};
+    % Axes labels:
+    % Are drawn using small lines and labeled with `node`s. The placement can be set using options
+    \iffalse% Single
+    % If you only want a single label per axis side:
+    \draw (1,-2pt) -- (1,2pt)   node [above] {$1$};
+    \draw (-1,-2pt) -- (-1,2pt) node [above] {$-1$};
+    \draw (-2pt,1) -- (2pt,1)   node [right] {$i$};
+    \draw (-2pt,-1) -- (2pt,-1) node [right] {$-i$};
+    \else% Multiple
+    % If you want labels at every unit step:
+    \foreach \n in {-3,...,-1,1,2,...,3}{%
+        \draw (\n,-2pt) -- (\n,2pt)   node [above] {$\n$};
+        \draw (-2pt,\n) -- (2pt,\n)   node [right] {$\n$};
+    }
+    \fi
+    \end{scope}
+    \draw[fill=cyan!30] (0,0) -- (0.5,0) arc [start angle=0, end angle=225, radius=0.5] node [midway, left] {$\theta$} -- (0,0);
+    \draw [thick] (0,0) -- node [midway, below] {$r$} (-1,-1) node [below left] {$-1 - i$};
+    \fill (-1,-1) circle[radius=2pt];
+    % The circle is drawn with `(x,y) circle (radius)`
+    % You can draw the outer border and fill the inner area differently.
+    % Here I use gray, semitransparent filling to not cover the axes below the circle
+    % \path [draw=none,fill=gray,semitransparent] (+1,-1) circle (3);
+    % Place the equation into the circle:
+    % \node [below right,darkgray] at (+1,-1) {$|z-1+i| \leq 3$};
+\end{tikzpicture}" src="../../complex_numbers/basic_ideas/images/img-0003.svg"/>
+</div> </div>
+<p>
+In this case we find the modulus in much the same way as before, by picturing a triangle. Using Pythagoras’ Theorem again, we find that 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">r = |z| = \sqrt{1^2 + 1^2} = \sqrt{2}.</script></span>
+<div class="centered"> <div class="tikzcd" id="a0000000040">
+<img alt="\begin{tikzpicture} 
+    \draw (0,0) -- node [midway, above] {$1$} (-3,0) -- node [midway, left] {$1$} (-3,-3);
+    \draw [thick] (0,0) -- node [midway, below] {$r$} (-3,-3);
+    \draw[fill=cyan!30] (0,0) -- (-1.5,0) arc [start angle=180, end angle=225, radius=1.5] node [midway, below left] {$\phi$} -- (0,0);
+\end{tikzpicture}" src="../../complex_numbers/basic_ideas/images/img-0004.svg"/>
+</div> </div>
+<p>
+Notice that in the triangle we have used a different greek letter for the angle, <script type="math/tex">\phi </script> rather than <script type="math/tex">\theta </script>, since we can’t use inverse <script type="math/tex">\operatorname {tan}</script> directly as we did before to find the angle. In general, we measure the argument of a complex number between <script type="math/tex">0</script> and <script type="math/tex">2\pi </script>. That is, for any complex number <script type="math/tex">z</script>, we take its principal argument to be <script type="math/tex">\operatorname {arg}(z) \in [0,2\pi )</script>. 
+</p>
+<p>
+In this case we can still find the angle <script type="math/tex">\phi </script> in the triangle. But since we measure the whole argument as going round from the positive real axis, we need to make sure we count the first <script type="math/tex">\pi </script> radians it has already turned through. Using some trigonometry again, we can find that 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">\phi = \operatorname {arctan}\left(\frac{1}{1}\right) = \frac{\pi }{4}.</script></span>
+<p>
+ Adding the angles together, we can then find that 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">\theta = \operatorname {arg}(z) = \pi + \phi = \pi + \frac{\pi }{4} = \frac{5\pi }{4}.</script></span>
+<p>
+Note that some textbooks measure the argument of a complex to be between <script type="math/tex">-\pi </script> and <script type="math/tex">\pi </script>, which is to say that <script type="math/tex">\theta \in [-\pi ,\pi ]</script>. We will take the convention that the argument is always between <script type="math/tex">0</script> and <script type="math/tex">2\pi </script>. 
+</p>
+<p>
+Try some exercises below so that you are happy calculating the modulus and argument of a complex number. 
+</p>
+<p>
+<div class="numbas_container" data-numbas-id="a0000000041" data-numbas-url="https://numbas.mathcentre.ac.uk/question/123470/polar-form-of-complex-number/embed/">
+<div class="feedback_bar">
+<button class="btn btn-danger" data-target="#a0000000041_collapse" data-toggle="collapse">
+            Test Yourself
+        </button>
+<div class="feedback_right">
+<span class="complete">✔</span>
+<span class="incomplete">✔</span>
+</div>
+</div>
+<div class="collapse-content collapse embed" id="a0000000041_collapse">
+<iframe class="numbas_iframe" src="https://numbas.mathcentre.ac.uk/question/123470/polar-form-of-complex-number/embed/"></iframe>
+</div>
+</div>
+</p>
+</section>
+</section><section class="section">
+<h2 id="a0000000042">1.3 Polar form</h2>
+<p>
+ We introduced Argand diagrams in order to show that a complex number can be represented in another way, by how far from the centre it is and what angle it has moved through. Not only does this provide a nice graphical representation of a complex number, but it also gives us a very useful alternative notation that can help make calculations with complex numbers more simple. 
+</p>
+<p>
+The idea of the <b class="bfseries">polar form</b> of a complex number is represented by the triangle below. 
+</p>
+<div class="centered"> <div class="tikzcd" id="a0000000043">
+<img alt="\begin{tikzpicture} 
+    \draw (0,0) -- node [midway, below] {$r\opn{cos}\theta$} (4,0) -- node [midway, right] {$r\opn{sin}\theta$} (4,3);
+    \draw [thick] (0,0) -- node [midway, below] {$r$} (4,3);
+    \draw[fill=cyan!30] (0,0) -- (1.5,0) arc [start angle=0, end angle=36.8699, radius=1.5] node [midway, right] {$\theta$} -- (0,0);
+    \fill (4,3) circle[radius=2pt] node [above right] {$z$};
+\end{tikzpicture}" src="../../complex_numbers/basic_ideas/images/img-0005.svg"/>
+</div> </div>
+<p>
+If we know the modulus, <script type="math/tex">r</script>, and the argument, <script type="math/tex">\theta </script>, of a complex number <script type="math/tex">z = a + ib</script>, then we can use some basic trigonometry to work out that the rectangular coordinates are given by 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">a = r\operatorname {cos}\theta</script></span>
+<p>
+ and 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">b = r\operatorname {sin}\theta .</script></span>
+<p>
+ Using this idea we can then instead write 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">z = r(\operatorname {cos}\theta + i\operatorname {sin}\theta ).</script></span>
+<p>
+ This is the polar form of <script type="math/tex">z</script>. 
+</p>
+<p>
+For example, for <script type="math/tex">z = 1 + i\sqrt{3}</script> we found that <script type="math/tex">r = 2</script> and <script type="math/tex">\theta = \frac{\pi }{3}</script>. Hence we can write 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">z = 1 + i\sqrt{3} = 2\left(\operatorname {cos}\frac{\pi }{3} + i \operatorname {sin}\frac{\pi }{3}\right).</script></span>
+<p>
+ An important thing to note here is not to multiply in the <script type="math/tex">2</script> and evaluate the <script type="math/tex">\operatorname {cos}</script> and <script type="math/tex">\operatorname {sin}</script> parts, otherwise we’ll just end up back with the rectangular coordinates that we started with. 
+</p>
+<p>
+As another example, for <script type="math/tex">z = -1 - i</script>, we found that <script type="math/tex">r = \sqrt{2}</script> and <script type="math/tex">\theta = \frac{5\pi }{4}</script>, so 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">z = -1 - i = \sqrt{2}\left(\operatorname {cos}\frac{5\pi }{4} + i\operatorname {sin}\frac{5\pi }{4}\right).</script></span>
+<section class="subsection">
+<h3 id="a0000000044">1.3.1 Multiplying in polar form</h3>
+<p>
+ One of the advantages of using the polar form of complex numbers is that it makes multiplication much simpler. If we have two complex numbers 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">z_1 = r_1\left(\operatorname {cos}\theta _1 + i\operatorname {sin}\theta _1\right)</script></span>
+<p>
+ and 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">z_2 = r_2\left(\operatorname {cos}\theta _2 + i\operatorname {sin}\theta _2\right),</script></span>
+<p>
+ then their product is simply given by 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">z_1z_2 = r_1r_2\left(\operatorname {cos}(\theta _1 + \theta _2) + i\operatorname {sin}(\theta _1 + \theta _2)\right).</script></span>
+<p>
+ That is, the modulus of <script type="math/tex">z_1z_2</script> is the the product of the modulus of <script type="math/tex">z_1</script> and the modulus of <script type="math/tex">z_2</script>, so 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">|z_1z_2| = r_1r_2,</script></span>
+<p>
+ and the argument of <script type="math/tex">z_1z_2</script> is the sum of the arguments of <script type="math/tex">z_1</script> and <script type="math/tex">z_2</script>, so 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">\operatorname {arg}(z_1z_2) = \operatorname {arg}(z_1) + \operatorname {arg}(z_2).</script></span>
+<p>
+ As long as we have our complex numbers written in polar form, multiplication can be done very quickly. 
+</p>
+</section><section class="subsection">
+<h3 id="a0000000045">Example 3</h3>
+<p>
+ Previously we mentioned that the argument of a complex number must lie in the interval <script type="math/tex">[0,2\pi )</script>. But what happens if we multiply two complex numbers whose arguments sum to a number bigger than <script type="math/tex">2\pi </script>? Let’s find out. 
+</p>
+<p>
+Take <script type="math/tex">z_1 = 1 + i</script> and <script type="math/tex">z_2 = \sqrt{3} - i</script>. In polar form, these can be written as 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">z_1 = \sqrt{2}\left(\operatorname {cos}\frac{\pi }{4} + i\operatorname {sin}\frac{\pi }{4}\right)</script></span>
+<p>
+ and 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">z_2 = 2\left(\operatorname {cos}\frac{11\pi }{6} + i\operatorname {sin}\frac{11\pi }{6}\right).</script></span>
+<p>
+Using our multiplication formula, this would give the argument of <script type="math/tex">z_1z_2</script> to be 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">\operatorname {arg}(z_1z_2) = \operatorname {arg}(z_1) + \operatorname {arg}(z_2) = \frac{\pi }{4} + \frac{11\pi }{6} = \frac{25\pi }{12},</script></span>
+<p>
+ which is greater than <script type="math/tex">2\pi </script>. In this case, since <script type="math/tex">\frac{25\pi }{12} > 2\pi </script>, we reduce the value by <script type="math/tex">2\pi </script> to be in the correct range. So we can instead write 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">\operatorname {arg}(z_1z_2) = \frac{25\pi }{12} - 2\pi = \frac{\pi }{12}.</script></span>
+<p>
+ Similarly, if we ever end up with a negative angle, we can add on multiples of <script type="math/tex">2\pi </script> until we end up back in the correct range of <script type="math/tex">[0,2\pi )</script>. 
+</p>
+<p>
+Altogether, we can then say that 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">z_1z_2 = 2\sqrt{2}\left(\operatorname {cos}\frac{\pi }{12} + i\operatorname {sin}\frac{\pi }{12}\right).</script></span>
+</section><section class="subsection">
+<h3 id="a0000000046">1.3.2 Why does this work?</h3>
+<p>
+ You might wonder why multiplication suddenly works this way if we’re in polar form. It relies on a few trigonometric identities: 
+</p>
+<span><script type="math/tex; mode=display">\begin{align*}  \operatorname {cos}(\alpha + \beta ) & = \operatorname {cos}\alpha \operatorname {cos}\beta - \operatorname {sin}\alpha \operatorname {sin} \beta , \\ \operatorname {sin}(\alpha + \beta ) & = \operatorname {sin}\alpha \operatorname {cos} \beta + \operatorname {cos} \alpha \operatorname {sin} \beta . \end{align*}</script></span>
+<p>
+Let’s start with <script type="math/tex">z_1 = r_1\left(\operatorname {cos} \theta _1 + i\operatorname {sin} \theta _1\right)</script> and <script type="math/tex">z_2 = r_2\left(\operatorname {cos} \theta _2 + i \operatorname {sin} \theta _2\right)</script>. Then we get the following calculation using the formulae above and a few places where <script type="math/tex">i^2 = -1</script>: 
+</p>
+<span><script type="math/tex; mode=display">\begin{align*}  z_1z_2 & = r_1\left(\operatorname {cos} \theta _1 + i\operatorname {sin} \theta _1\right) r_2\left(\operatorname {cos} \theta _2 + i \operatorname {sin} \theta _2\right) \\ & = r_1r_2\left(\operatorname {cos} \theta _1 \operatorname {cos} \theta _2 + i\operatorname {cos} \theta _1 \operatorname {sin} \theta _2 + i \operatorname {sin} \theta _1 \operatorname {cos} \theta _2 - \operatorname {sin} \theta _1 \operatorname {sin} \theta _2\right) \\ & = r_1r_2\left(\left( \operatorname {cos} \theta _1 \operatorname {cos} \theta _2 - \operatorname {sin} \theta _1 \operatorname {sin} \theta _2 \right) + i\left(\operatorname {cos} \theta _1 \operatorname {sin} \theta _2 + \operatorname {sin} \theta _1 \operatorname {cos} \theta _2 \right) \right) \\ & = r_1r_2\left(\operatorname {cos}(\theta _1 + \theta _2) + i\operatorname {sin}(\theta _1 + \theta _2)\right). \end{align*}</script></span>
+</section>
+</section><section class="section">
+<h2 id="a0000000047">1.4 Euler’s formula, exponential form</h2>
+<p>
+ So far we have seen two ways to notate a complex number: rectangular form and polar form. There is a third way which is very closely related to the polar form. <b class="bfseries">Euler’s formula</b> says that 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">re^{i\theta } = r\left(\operatorname {cos}\theta + i\operatorname {sin}\theta \right).</script></span>
+<p>
+ The way of writing the complex number on the left-hand side is known as the <b class="bfseries">exponential form</b>. 
+</p>
+<section class="subsection">
+<h3 id="a0000000048">1.4.1 Why does this work?</h3>
+<p>
+ It can seem slightly suprising to see this identity and you may wonder where it comes from. Here we will again show how this comes about, which makes use of the following Maclaurin series for <script type="math/tex">e</script>, <script type="math/tex">\operatorname {cos}</script>, and <script type="math/tex">\operatorname {sin}</script>: 
+</p>
+<span><script type="math/tex; mode=display">\begin{align*}  e^ x & = 1 + x + \frac{1}{2!}x^2 + \frac{1}{3!}x^3 + \frac{1}{4!}x^4 + \frac{1}{5!}x^5 + \ldots , \\ \operatorname {cos}x & = 1 - \frac{1}{2!}x^2 + \frac{1}{4!}x^4 - \frac{1}{6!}x^6 + \ldots , \\ \operatorname {sin}x & = x - \frac{1}{3!}x^3 + \frac{1}{5!}x^5 - \frac{1}{7!}x^7. \end{align*}</script></span>
+<p>
+ There are some similarities in the three series above, each involving powers of <script type="math/tex">x</script> and fractions where the denominator is a factorial. Our identity involves <script type="math/tex">e^{i\theta }</script> on the left-hand side, so let’s expand that: 
+</p>
+<span><script type="math/tex; mode=display">\begin{align*}  e^{i\theta } & = 1 + (i\theta ) + \frac{1}{2!}(i\theta )^2 + \frac{1}{3!}(i\theta )^3 + \frac{1}{4!}(i\theta )^4 + \frac{1}{5!}(i\theta )^5 + \ldots \\ & = 1 + i\theta - \frac{1}{2!}\theta ^2 - \frac{1}{3!}i\theta ^3 + \frac{1}{4!}\theta ^4 + \frac{1}{5!}i\theta ^5 + \ldots \\ & = \left(1 - \frac{1}{2!}\theta ^2 + \frac{1}{4!}\theta ^4 + \ldots \right) + i\left(\theta - \frac{1}{3!}\theta ^3 + \frac{1}{5!}\theta ^5 - \ldots \right) \\ & = \operatorname {cos}\theta + i\operatorname {sin}\theta . \end{align*}</script></span>
+<p>
+This new exponential form for a complex number makes the multiplication rule for the polar form even more obvious, since now it is simply addition of indices: 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">r_1e^{i\theta _1}r_2e^{i\theta _2} = r_1r_2e^{i(\theta _1 + \theta _2)}.</script></span>
+</section><section class="subsection">
+<h3 id="a0000000049">1.4.2 Special case</h3>
+<p>
+ There is one special case of Euler’s formula that gets a lot of attention. It is often called <b class="bfseries">Euler’s identity</b> and is the special case of taking <script type="math/tex">\theta = \pi </script>: 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">e^{i\pi } = -1.</script></span>
+<p>
+ To see why this works, consider where this number would be on an Argand diagram, given that its modulus is <script type="math/tex">r = 1</script> and argument is <script type="math/tex">\theta = \pi </script>. 
+</p>
+<div class="centered"> <div class="tikzcd" id="a0000000050">
+<img alt="\begin{tikzpicture} 
+    \begin{scope}[thick,font=\scriptsize]
+    % Axes:
+    % Are simply drawn using line with the `-&gt;` option to make them arrows:
+    % The main labels of the axes can be places using `node`s:
+    \draw [-&gt;] (-4,0) -- (4,0) node [above left]  {$\opn{Re}z$};
+    \draw [-&gt;] (0,-4) -- (0,4) node [below right] {$\opn{Im}z$};
+    % Axes labels:
+    % Are drawn using small lines and labeled with `node`s. The placement can be set using options
+    \iffalse% Single
+    % If you only want a single label per axis side:
+    \draw (1,-2pt) -- (1,2pt)   node [above] {$1$};
+    \draw (-1,-2pt) -- (-1,2pt) node [above] {$-1$};
+    \draw (-2pt,1) -- (2pt,1)   node [right] {$i$};
+    \draw (-2pt,-1) -- (2pt,-1) node [right] {$-i$};
+    \else% Multiple
+    % If you want labels at every unit step:
+    \foreach \n in {-3,...,-1,1,2,...,3}{%
+        \draw (\n,-2pt) -- (\n,2pt)   node [above] {$\n$};
+        \draw (-2pt,\n) -- (2pt,\n)   node [right] {$\n$};
+    }
+    \fi
+    \end{scope}
+    \draw[fill=cyan!30] (0,0) -- (0.5,0) arc [start angle=0, end angle=180, radius=0.5] node [midway, above right] {$\pi$} -- (0,0);
+    \draw [thick] (0,0) -- (-1,0) node [below] {$-1 + 0i$};
+    \fill (-1,0) circle[radius=2pt];
+    % The circle is drawn with `(x,y) circle (radius)`
+    % You can draw the outer border and fill the inner area differently.
+    % Here I use gray, semitransparent filling to not cover the axes below the circle
+    % \path [draw=none,fill=gray,semitransparent] (+1,-1) circle (3);
+    % Place the equation into the circle:
+    % \node [below right,darkgray] at (+1,-1) {$|z-1+i| \leq 3$};
+\end{tikzpicture}" src="../../complex_numbers/basic_ideas/images/img-0006.svg"/>
+</div> </div>
+</section>
+</section><section class="section">
+<h2 id="a0000000051">1.5 Application: Phasors</h2>
+<p>
+ Complex numbers find applications in a number of engineering disciplines, especially when sinusoidal waveforms appear. We’ll take a brief look at such an application in electrical engineering. 
+</p>
+<p>
+In electrical engineering, we often see voltages in a.c. circuits expressed as sinusoids such as 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">v(t) = V\operatorname {cos}\left(\omega t + \phi \right),</script></span>
+<p>
+ where <script type="math/tex">V</script> is the maximum voltage, <script type="math/tex">\omega </script> is the angular frequency, and <script type="math/tex">\phi </script> is the phase. Another way to represent these sinusoids is using complex numbers. We know that the polar form of a complex number with modulus <script type="math/tex">r</script> and argument <script type="math/tex">\theta </script> is given by 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">z = r\left(\operatorname {cos} \theta + i\operatorname {sin} \theta \right),</script></span>
+<p>
+ which is similar to <script type="math/tex">v(t)</script> above. If we took <script type="math/tex">r = V</script> and <script type="math/tex">\theta = \omega t + \phi </script>, then this would give 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">z= V\left(\operatorname {cos}(\omega t + \phi ) + i\operatorname {sin}(\omega t + \phi )\right) = Ve^{\omega t + \phi } = Ve^{\omega t}e^\phi .</script></span>
+<p>
+ Notice then that the real part of <script type="math/tex">z</script> is the same as the voltage <script type="math/tex">v(t)</script>. 
+</p>
+<p>
+The <b class="bfseries">phasor</b> form of the voltage <script type="math/tex">v(t)</script> is determined by the maximum voltage, <script type="math/tex">V</script>, and the phase, <script type="math/tex">\phi </script>. For example, if 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">v_1(t) = 2\operatorname {cos}\left(\omega t + \frac{\pi }{6}\right)</script></span>
+<p>
+ then the maximum voltage is <script type="math/tex">V_1 = 2</script> and the phase is <script type="math/tex">\phi _1 = \frac{\pi }{6}</script>. The phasor form of <script type="math/tex">v_1(t)</script> is then written 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">V_1 = 2 \angle \frac{\pi }{6}.</script></span>
+<p>
+ Since we already know the angular frequency we don’t represent it in the phasor form. From this form we can translate it to rectangular form: 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">2\left(\operatorname {cos}\frac{\pi }{6} + i\operatorname {sin}\frac{\pi }{6}\right) = \sqrt{3} + i.</script></span>
+<p>
+Using phasors in this way to represent voltages or currents is useful as it allows multiple voltages/currents to be added by translating phasors to rectangular form, adding them, and then translating them back into phasors. 
+</p>
+<section class="subsection">
+<h3 id="a0000000052">Example 4</h3>
+<p>
+ Suppose we have two voltages 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">v_1(t) = 2\operatorname {cos}\left(\omega t + \frac{\pi }{6}\right)</script></span>
+<p>
+ and 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">v_2(t) = 3\operatorname {sin}\left(\omega t - \frac{\pi }{4}\right).</script></span>
+<p>
+ Now suppose that we want to find their sum and represent it as a single sinusoid: 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">v_1(t) + v_2(t) = A\operatorname {cos}\left(\omega t + \phi \right).</script></span>
+<p>
+ We could use a lot of trigonometric identities to slowly figure this out, but here we’ll use phasors to simplify the process. 
+</p>
+<p>
+First, notice that the second voltage is in terms of <script type="math/tex">\operatorname {sin}</script>, rather than <script type="math/tex">\operatorname {cos}</script>. We can write this in terms of <script type="math/tex">\operatorname {cos}</script> instead since <script type="math/tex">\operatorname {sin}(x) = \operatorname {cos}\left(x-\frac{\pi }{2}\right)</script>. So 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">v_2(t) = 3\operatorname {cos}\left(\omega _ t - \frac{\pi }{4} - \frac{\pi }{2}\right) = 3\operatorname {cos}\left(\omega t + \frac{\pi }{4}\right).</script></span>
+<p>
+ We have already seen above that we can write <script type="math/tex">v_1(t)</script> as a phasor and corresponding rectangular form: 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">V_1 = 2 \angle \frac{\pi }{6} = \sqrt{3} + i.</script></span>
+<p>
+ Similarly, the phasor for the voltage <script type="math/tex">v_2(t)</script> is given along with its rectangular form as 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">V_2 = 3 \angle \frac{\pi }{4} = 3\frac{\sqrt{2}}{2} + i\left(3\frac{\sqrt{2}}{2}\right).</script></span>
+<p>
+Now let’s add them together: 
+</p>
+<span><script type="math/tex; mode=display">\begin{align*}  V_1 + V_2 & = \left(2 \angle \frac{\pi }{6}\right) + \left(3 \angle \frac{\pi }{4}\right) \\ & = \sqrt{3} + i + 3\frac{\sqrt{2}}{2} + i\left(3\frac{\sqrt{2}}{2}\right) \\ & = 3.85 + i3.12 \\ & = 4.96 \angle 0.68. \end{align*}</script></span>
+<p>
+ Since we now have a single phasor, we can then write the sum of voltages as 
+</p>
+<span class="dmath"><script type="math/tex; mode=display">v_1(t) + v_2(t) = 4.96\operatorname {cos}\left(\omega t + 0.68\right).</script></span>
+</section>
+</section>
+
+            </div>
+        </div>
+    </div>
+
+        </main>
+		
+		<footer class="text-muted">
+	<hr>
+	<div class="container">
+		<div class="float-right">
+			<ul style="list-style: none">
+			<li><a href="#">Back to top</a></li>
+			
+			
+			<li><a href="../../complex_numbers/basic_ideas/basic_ideas.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i>&nbsp;Download as PDF</a></li>
+			
+			</ul>
+		</div>
+		<p>Generated using <a target="_blank" href="https://github.com/chirun-ncl/chirun">Chirun</a>, written by the E-Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
+		<p>This page last generated: 2022-06-06</p>
+	</div>
+</footer>
+		
+    </body>
+</html>
