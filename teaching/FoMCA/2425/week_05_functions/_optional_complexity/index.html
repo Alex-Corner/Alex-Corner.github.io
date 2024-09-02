@@ -1,0 +1,1022 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        
+            <meta charset="utf-8">
+            <meta name="robots" content="noindex">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="author" content="Alex Corner" />
+            <meta name="date" content="2024-09-02" />
+        
+
+        <title>(Optional) Complexity | 55-407817: Fundamentals of Mathematics and Computer Architectures</title>
+
+        
+    
+    
+            <link rel="stylesheet" href="../../static/styles.css?build_time=1725273417.818684">
+            
+            
+        
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../static/pygmentize.css?build_time=1725273417.818684">
+
+    <link rel="stylesheet" href="../../static/print.css?build_time=1725273417.818684">
+
+
+        
+    
+			<script>
+				var chirun_static_url = new URL('../../static?build_time=1725273417.818684', location.href);
+			</script>
+
+            
+                <script defer src="../../static/mathjax_config.js?build_time=1725273417.818684"></script>
+                <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+            
+
+            <script type="module" src="../../static/localisation.js?build_time=1725273417.818684"></script>
+
+            <script defer src="../../static/customisation.js?build_time=1725273417.818684"></script>
+
+            
+
+            
+        
+    <script defer src="../../static/code.js?build_time=1725273417.818684" type="module"></script>
+    <script defer src="../../static/embed_numbas.js?build_time=1725273417.818684" type="module"></script>
+    <script defer src="../../static/embed_qrcode.js?build_time=1725273417.818684" type="module"></script>
+
+
+        <template id="runnable-code-template">
+            <link rel="stylesheet" href="../../static/code.css?build_time=1725273417.818684">
+            <div class="runnable-code-wrapper">
+                <section class="fullscreenable code">
+                    <div id="code"></div>
+                    <button class="fullscreen icon-button" title="Fullscreen code"><svg class="icon" aria-label="Fullscreen code" viewBox="0 0 180 180">
+    <use href="#fullscreen"/>
+</svg></button>
+                </section>
+                <section class="fullscreenable output">
+                    <div id="output" aria-live="polite">
+                        <pre class="stdout"></pre>
+                        <pre class="result"></pre>
+                        <div class="images"></div>
+                    </div>
+                    <button class="fullscreen icon-button" title="Fullscreen output"><svg class="icon" aria-label="Fullscreen output" viewBox="0 0 180 180">
+    <use href="#fullscreen"/>
+</svg></button>
+                </section>
+                <div class="buttons">
+                    <button type="button" class="run-code">Run code</button>
+                </div>
+                <svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="icon-defs"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <g id="cog">
+            <path 
+                style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z"
+            />
+        </g>
+        <g id="pdf">
+            <path
+                style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z"
+            />
+        </g>
+        <g id="slides">
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,21.25 30,137.5"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 90,21.25 60,158.75"
+            />
+            <rect
+                style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="119.79137"
+                height="82.273766"
+                x="30.104315"
+                y="36.476234"
+                ry="4.7737675"
+                rx="4.7737675"
+            />
+            <rect
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="140"
+                height="5.2262344"
+                x="20"
+                y="31.25"
+                ry="1.6724058"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,66.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,76.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,86.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,56.25 h 50"
+            />
+            <path
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z"
+            />
+        </g>
+
+        <g id="notebook">
+            <path
+                style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="58.699139"
+               cy="59.503937"
+               r="3.8077738"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="113.59385"
+               cy="52.885151"
+               r="4.9348516"
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z"
+           
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z"
+              
+            />
+            <ellipse
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="63.813011"
+               cy="125.96338"
+               rx="6.4332962"
+               ry="6.4347191"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="M 34,46.266514 V 62.316215"
+            
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="M 34,77.849849 V 93.89955"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 34,109.43318 v 16.0497"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0"
+            />
+        </g>
+
+        <g id="fullscreen">
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+               d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="M 150.95833,68.801471 V 28.958332 h -39.84314"
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="m 28.958332,111.11519 v 39.84314 h 39.843139"
+            />
+        </g>
+    </defs>
+</svg>
+            </div>
+        </template>
+
+        <template id="embed-numbas-template">
+            <link rel="stylesheet" href="../../static/embed_numbas.css?build_time=1725273417.818684">
+            <details id="wrapper" data-completion-status="incomplete">
+                <summary>
+                    <h1 id="title">Test Yourself</h1>
+                    <div id="completion-status" data-completion-status="unknown">
+                        <span class="complete">Complete</span>
+                        <span class="incomplete">Incomplete</span>
+                    </div>
+                    <label id="score-feedback">
+                        Score:
+                        <progress min="0"></progress>
+                    </label>
+                </summary>
+                <iframe class="embed" title="Numbas"></iframe>
+            </details>
+        </template>
+
+    </head>
+    <body class="" >
+        
+
+        <a class="skip-to-content-link" href="#main-content">Skip to content</a>
+        
+            <form id="display-options">
+    <div class="buttons">
+        <button type="button" id="reset-display-options">Reset to defaults</button>
+
+        <a href="https://chirun.org.uk/accessibility-statement/material">Accessibility statement</a>
+
+        <button type="button" aria-controls="display-options" aria-expanded="false">
+            Close
+        </button>
+    </div>
+
+    <div class="inputs">
+        <div class="input-group">
+            <label for="display-options-font-scale">
+                Text size
+            </label>
+            <input type="range" min="50" max="600" step="5" value="100" id="display-options-font-scale">
+            <output for="display-options-font-scale">100%</output>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-spacing-factor">
+                Spacing
+            </label>
+            <input type="range" min="0" max="1200" step="5" value="100" id="display-options-spacing-factor">
+            <output for="display-options-spacing-factor">100%</output>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-font-family">
+                Text font
+            </label>
+            <select id="display-options-font-family">
+                <option value="var(--sans-serif-font)" selected>Sans-serif</option>
+                <option value="var(--serif-font)">Serif</option>
+                <option value="Atkinson Hyperlegible">Atkinson Hyperlegible</option>
+                <option value="Comic Sans MS">Comic Sans</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-colour-scheme">
+                Colour scheme
+            </label>
+            <select id="display-options-colour-scheme">
+                <option value="auto" selected>Automatic (default)</option>
+                <option value="light">Black text on white</option>
+                <option value="dark">White text on black</option>
+                <option value="custom">Custom</option>
+            </select>
+        </div>
+
+        <section id="custom-colour-scheme-options" class="inputs">
+            <div class="input-group">
+                <label for="display-options-text-colour">
+                    Text colour
+                </label>
+                <input type="color" value="#000000" id="display-options-text-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-link-colour">
+                    Link colour
+                </label>
+                <input type="color" value="#0000ee" id="display-options-link-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour">
+                    Background colour
+                </label>
+                <input type="color" value="#ffffff" id="display-options-bg-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-off">
+                    Muted background colour
+                </label>
+                <input type="color" value="#eeeeee" id="display-options-bg-colour-off">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-1">
+                    Accent colour 1
+                </label>
+                <input type="color" value="#4caf50" id="display-options-bg-colour-accent-1">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-2">
+                    Accent colour 2
+                </label>
+                <input type="color" value="#f6f6ff" id="display-options-bg-colour-accent-2">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-3">
+                    Accent colour 3
+                </label>
+                <input type="color" value="#eeffd3" id="display-options-bg-colour-accent-3">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-4">
+                    Accent colour 4
+                </label>
+                <input type="color" value="#ffeeee" id="display-options-bg-colour-accent-4">
+            </div>
+        </section>
+
+        <section id="filter-colour-scheme-options" class="inputs">
+            <div class="input-group">
+                <label for="display-options-filter-sepia">
+                    Sepia filter
+                </label>
+                <input type="range" min="0" max="100" step="1" value="0" id="display-options-filter-sepia">
+                <output for="display-options-filter-sepia">0%</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-filter-hue-rotate">
+                    Rotate hues
+                </label>
+                <input type="range" min="0" max="1" step="0.01" value="0" id="display-options-filter-hue-rotate">
+                <output for="display-options-filter-hue-rotate">0 turns</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-invert-images">
+                    Invert images in dark mode
+                </label>
+                <input type="checkbox" id="display-options-invert-images">
+            </div>
+
+        </section>
+    </div>
+</form>
+        
+
+        <header>
+            
+<button class="icon-button" type="button" aria-controls="display-options" aria-expanded="false" title="Display options">
+    <svg class="icon" aria-label="Display options" viewBox="0 0 180 180">
+    <use href="#cog"/>
+</svg>
+</button>
+            
+    
+    <nav aria-label="breadcrumb">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../../index.html">55-407817: Fundamentals of Mathematics and Computer Architectures</a>
+            </li>
+            
+            <li class="breadcrumb-item">
+                <a href="../index.html">Week 05 - Functions</a>
+            </li>
+            
+            <li class="breadcrumb-item active">
+                (Optional) Complexity
+            </li>
+        </ul>
+
+        
+        <p class="pager" id="item-pager">
+            
+            <a rel="prev" href="../exercises_8/index.html">Previous: Exercises 1</a>
+            
+            
+            <a rel="next" href="../_optional_exercises_/index.html">Next: (Optional) Exercises 2</a>
+            
+        </p>
+        
+    </nav>
+    
+
+            
+            
+        </header>
+
+        <main id="main-content">
+            
+    <nav id="sidebar">
+        
+        <ul class="alternative-formats">
+            
+            <li><a rel="alternate" type="application/pdf" href="_optional_complexity.pdf"download><svg class="icon" aria-label="PDF" viewBox="0 0 180 180">
+    <use href="#pdf"/>
+</svg> Download as PDF</a></li>
+            
+        </ul>
+        
+
+        <h1>Table of Contents</h1>
+        <a class="jump-to-item-content" href="#item-content">Jump to content</a>
+        
+            <ol class="table-of-contents">
+                
+                    
+    <li>
+        <a href="#a0000000002">Complexity</a>
+        
+        <ol>
+            
+            
+    <li>
+        <a href="#a0000000003">A Hierarchy Of Standard Functions</a>
+        
+        <ol>
+            
+            
+    <li>
+        <a href="#a0000000009">Asymptotic (“big \(O\)”) notation</a>
+        
+    </li>
+
+    <li>
+        <a href="#a0000000016">Introduction to computational complexity</a>
+        
+    </li>
+
+    <li>
+        <a href="#a0000000033">The \(P\)/\(NP\) problem</a>
+        
+    </li>
+
+            
+        </ol>
+        
+    </li>
+
+            
+        </ol>
+        
+    </li>
+
+                
+            </ol>
+        
+
+    </nav>
+
+    <article class="item-content" id="item-content">
+         <!-- Latex Chapter/Part -->
+<h1 id="a0000000002">Complexity</h1>
+<section class="section">
+<h2 id="a0000000003">A Hierarchy Of Standard Functions</h2>
+<p>
+ We need to be aware of the sizes of some standard functions of a variable \(x\), measured by their growth as \(x\) increases. (By ‘growth’ we mean growth in absolute value, i.e., getting further from zero.) 
+</p>
+<p>
+Formally, <b class="bfseries">polynomial</b> function is a functions whose output is a linear combination of powers of its input. In plainer terms, this means it is the sum of powers of \(x\), such as \(x^2\), or \(2\), or \(-2.5x\), or \(6x^7\), etc. The <b class="bfseries">degree</b> of a polynomial is the highest power of \(x\) which occurs in a non-zero term, and the term which contains it is called the <b class="bfseries">leading term</b>. For example, \(3x + 1\) is a polynomial of degree 1 (a linear function), \(5x^2 + 5x - 3\) is a polynomial of degree 2 (a quadratic function), \(4x^3 -2x^2 + 5x + 2\) is a polynomial of degree 3 (a cubic function), and \(5\) is a polynomial of degree 0 (a constant function). The higher the degree, the faster the polynomial grows as \(x\) grows. 
+</p>
+<p>
+The power of \(x\) in each term of a polynomial must be an integer. However, in computational complexity theory, where we’re interested in how the time taken by an algorithm increases as the size of the input increases, we can also consider fractional powers such as \(x^\frac {1}{2}\) (the square root \(\sqrt{x}\)), and \(x^\frac {3}{2}\) (which is \(x\sqrt{x}\)). 
+</p>
+<p>
+An <b class="bfseries">exponential</b> function of \(x\) is some constant raised to the power of \(x\), such as \(2^x\). Any exponential function will eventually overtake any polynomial function in size as \(x\) increases. 
+</p>
+<p>
+The <b class="bfseries">logarithm</b> of a number \(x\) with <b class="bfseries">base</b> \(b\) is the power to which \(b\) needs to be raised to give \(x\), and is written \(\log _b x\). In other words, 
+</p>
+<span class="dmath">\[  y = \log _b x \Leftrightarrow b^y = x.  \]</span>
+<p>
+ For example, \(\log _2 32 = 5\), since \(2^5 = 32\). Since indices obey the rule \(b^xb^y = b^{x+y}\), logarithms obey the rule \(\log _b (uv) = \log _b u + \log _b v\). This leads to another useful rule: \(\log _b (u^x) = x\log _b u\). Sometimes, when the base of the logarithm is obvious from the context (or we don’t care what it is), we don’t bother to write it, and just write \(\log u\). 
+</p>
+<p>
+The most commonly used bases for logarithms are 2, 10, and a special number \(e\), approximately \(2.718\). (The number \(e\) has the property that the gradient of the curve \(y = e^x\) at the point \((x, e^x)\) is \(e^x\), the same value as the function itself.) Logarithms to the base \(e\) are called <b class="bfseries">natural</b> logarithms, and arise in mathematical work and statistics. We often write \(\ln x\) for \(\log _e x\). Logarithms to the base 2 are called <b class="bfseries">binary</b> logarithms, and arise more commonly in computer science. Logarithms to the base 10 were used to do approximate multiplications before calculations were widely available. 
+</p>
+<p>
+Scientific calculators usually allow logarithms to base \(e\) or 10 to be calculated directly. Logarithms to other based can be found by the rule 
+</p>
+<span class="dmath">\[  \log _b a = \frac{\log _e a}{\log _e b}.  \]</span>
+<p>
+Logarithmic functions are inverses of exponential functions, since \(\log _b (b^x) = x\) and \(b^{\log _b x} = x\). Just as exponential functions grow very quickly, logarithms grow very slowly. For example, \(\log _2 1000000 {\lt} 20\). Any logarithmic function will be smaller than any polynomial function when the parameter \(x\) is big enough. 
+</p>
+<p>
+A summary of the order of growth of functions of the types we’ve discussed is: 
+</p>
+<ul class="itemize" id="a0000000004">
+<li id="a0000000005">
+<p>
+Constant functions such as \(1\) or \(5\) are the smallest (they don’t grow as \(x\) increases). 
+</p>
+</li>
+<li id="a0000000006">
+<p>
+Logarithmic functions such as \(\log _2 x\) increase without bound, but slowly. 
+</p>
+</li>
+<li id="a0000000007">
+<p>
+Roots and polynomial functions such as \(x^{0.5}\), \(x\), \(x^2\), and \(x^3\) increase faster than logarithmic functions. The higher the power of \(x\), the higher the growth. 
+</p>
+</li>
+<li id="a0000000008">
+<p>
+Exponential functions such as \(2^x\) and \(e^x\) grow extremely quickly. Any exponential function is much bigger than any polynomial function for large enough \(x\). Factorial functions (\(x! = x \times (x-1) \times (x-2) \times \ldots \times 3 \times 2 \times 1\), defined for \(x \in \mathbb {N}\)) are even bigger than \(e^x\), though not as big as functions like \(2^{x^2}\). 
+</p>
+</li>
+</ul>
+<p>
+ Below we list some functions in increasing rate of growth. 
+</p>
+<p>
+#   # <span class="vspace smallskip"></span> constant  1 <span class="vspace smallskip"></span> logarithmic  \(\log \log x\)  \(\log x\) <span class="vspace smallskip"></span> polynomial  \(x^{0.1}\)  \(x^{0.5}\)  \(x\)  \(x \log x\) <span class="vspace smallskip"></span>  \(x^{1.1}\)  \(x^{2}\)  \(x^{3}\)  \(x^{1000}\) <span class="vspace smallskip"></span> exponential  \(1.01^{x}\)  \(2^{x}\)  \(e^{x}\)  \(1000^{x}\) <span class="vspace smallskip"></span>  \(x!\)  \(x^x\)  \(2^{(x^2)}\)  
+</p>
+<p>
+Other simple functions can easily be fitted into the list. 
+</p>
+<p>
+To give an example of why the distinction between polynomial and exponential functions is important, here is a table of some values of some functions. 
+</p>
+<p>
+\(\begin{array}{|c|c|c|c|c|c|} \hline x &amp; x^2 &amp;  100x^2 &amp;  100x^3 &amp;  2^x &amp;  3^x \\ \hline 10&amp;  100&amp; 1.0\times 10^{4}&amp; 1.0\times 10^{5}&amp; 1.0\times 10^{ 3}&amp; 5.9\times 10^{ 4}\\ \hline 20&amp;  400&amp; 4.0\times 10^{4}&amp; 8.0\times 10^{5}&amp; 1.0\times 10^{ 6}&amp; 3.5\times 10^{ 9}\\ \hline 30&amp;  900&amp; 9.0\times 10^{4}&amp; 2.7\times 10^{6}&amp; 1.1\times 10^{ 9}&amp; 2.1\times 10^{14}\\ \hline 40&amp; 1600&amp; 1.6\times 10^{5}&amp; 6.4\times 10^{6}&amp; 1.1\times 10^{12}&amp; 1.2\times 10^{19}\\ \hline 50&amp; 2500&amp; 2.5\times 10^{5}&amp; 1.3\times 10^{7}&amp; 1.1\times 10^{15}&amp; 7.2\times 10^{23}\\ \hline 60&amp; 3600&amp; 3.6\times 10^{5}&amp; 2.2\times 10^{7}&amp; 1.2\times 10^{18}&amp; 4.2\times 10^{28}\\ \end{array}\) 
+</p>
+<p>
+If these functions represent, for example, times in microseconds (millionths of a second, \(\mu \)s) for an algorithm to execute with input size \(x\), then the times are: 
+</p>
+<p>
+\(\begin{array}{|c|c|c|c|c|c|} \hline x &amp; x^2 &amp;  100x^2 &amp;  100x^3 &amp;  2^x &amp;  3^x \\ \hline 10&amp; {\lt}1~ {\rm sec.}&amp; {\lt}1~ {\rm sec.}&amp; {\lt}1~ {\rm sec.}&amp; {\lt}1~ {\rm sec.}&amp; {\lt}1~ {\rm sec.}\\ \hline 20&amp; {\lt}1~ {\rm sec.}&amp; {\lt}1~ {\rm sec.}&amp; {\lt}1~ {\rm sec.}&amp; 1~ {\rm sec.}&amp; 58~ {\rm min.}\\ \hline 30&amp; {\lt}1~ {\rm sec.}&amp; {\lt}1~ {\rm sec.}&amp; 2.7~ {\rm sec.}&amp; 18~ {\rm min.}&amp; 6.5~ {\rm years}\\ \hline 40&amp; {\lt}1~ {\rm sec.}&amp; {\lt}1~ {\rm sec.}&amp; 6.4~ {\rm sec.}&amp; 13~ {\rm days}&amp; 3.9\times 10^{5}~ {\rm years}\\ \hline 50&amp; {\lt}1~ {\rm sec.}&amp; {\lt}1~ {\rm sec.}&amp; 13~ {\rm sec.}&amp; 36~ {\rm years}&amp; 2.3\times 10^{10}~ {\rm years}\\ \hline 60&amp; {\lt}1~ {\rm sec.}&amp; {\lt}1~ {\rm sec.}&amp; 22~ {\rm sec.}&amp; 37000~ {\rm years}&amp; 1.3\times 10^{15}~ {\rm years}\\ \end{array}\) 
+</p>
+<p>
+This illustrates that algorithms with exponential running time can deal only with input data which is very small. 
+</p>
+<section class="subsection">
+<h3 id="a0000000009">Asymptotic (“big \(O\)”) notation</h3>
+<p>
+ Suppose that we’ve analysed some algorithms and found that the number of times some crucial statements were executed, with input size \(n\), were bounded by \(2(n-2)\) for one algorithm, \(\frac{3}{\sqrt{5}}\left[\left(\frac{1+\sqrt{5}}{2}\right)^n - \left(\frac{1-\sqrt{5}}{2}\right)^n\right] - 3\) for another algorithm, and \(\frac{1}{2} n^2 - \frac{1}{2} n\) for a third algorithm. 
+</p>
+<p>
+When \(n\) is big enough, these times are approximately \(2n\), \(1.34(1.6)^n\), and \(\frac{1}{2} n^2\) respectively. So the times are approximately bounded by functions proportional to \(n\), \((1.6)^n\), and \(n^2\). 
+</p>
+<p>
+Some notation is needed to give a precise definition of statements like “the time is bounded by something approximately proportional to \(n^{2}\) ”. 
+</p>
+<p>
+Suppose that we have calculated that some algorithm we have written, when programmed for our computer, takes \(67n^3 + 40n^2 + 6n + 3\log _{2}n + 33\) microseconds to run when the input size is \(n\). Is all this information important? 
+</p>
+<p>
+The largest term is \(67n^3\). The terms \(40n^2\) and \(6n\) are polynomials of lower degree, \(3\log _{2}n\) is logarithmic and \(33\) is constant. So all are much smaller than \(67n^3\) for large \(n\). So the running time is approximately \(67n^3\) \(\mu \)s for large \(n\). 
+</p>
+<p>
+We say that \(67n^3 + 40n^2 + 6n + 3\log _{2}n + 33\) is of order \(67n^3\), and can write 
+</p>
+<span class="dmath">\[  67n^3 + 40n^2 + 6n + 3\log _{2}n + 33 \hbox{ is } O(67n^3).  \]</span>
+<p>
+How important is the number 67? If we run the program on a faster computer where each instruction takes half as long as before, the time would be approximately \(33.5n^3\) \(\mu \)s.We want to evaluate the <i class="sl">algorithm</i> rather than the computer, so the significant fact is that the running time is approximately some multiple of \(n^3\). So 
+</p>
+<span class="dmath">\[  67n^3 + 40n^2 + 6n + 3\log _{2}n + 33 \hbox{ is } O(n^3).  \]</span>
+<p>
+Now we give a precise definition. Suppose that \(f\) and \(g\) are two real functions of a real variable \(n\), and their values are positive for large enough \(n\). (The restriction to positive values could be removed by taking absolute values in the definition; but we are mainly interested in functions representing running times of algorithms, which of course are always positive). 
+</p>
+<p>
+We say that 
+</p>
+<span class="dmath">\[  f(n) \mbox{ is } O(g(n)) \mbox{ as } n \to \infty  \]</span>
+<p>
+ if \(f(n)\) is less than a constant times \(g(n) \) whenever \(n\) is big enough; more precisely, there exist constants \(c\) and \(n_{0}\) such that 
+</p>
+<span class="dmath">\[  f(n) {\lt} cg(n) \mbox{ for all } n {\gt} n_{0}.  \]</span>
+<p>
+ In words, we could say that \(f(n)\) is <span class="underbar">asymptotically dominated</span> by \(g(n)\). Informally, \(f(n)\) is \(O(g(n))\) if \(f(n)\) doesn’t grow at a faster rate than \(g(n)\) as \(n \to \infty \) (though \(f(n)\) may grow more slowly than \(g(n))\). In predicate notation: 
+</p>
+<span class="dmath">\[  \exists c, n_0 \bullet \forall n {\gt} n_0 \bullet f(n) {\lt} cg(n).  \]</span>
+<p>
+The notation “\(f(n)\) is \(O(g(n))\)” is normally used when \(g\) is a “simple” function such as \(\log n\), \(n^{2}\), \(e^{n}\), etc. By “\(f(n)\) is \(O(1)\)” we mean that \(f(n)\) is bounded by a constant. 
+</p>
+<p>
+Some examples are: 
+</p>
+<ol class="enumerate" id="a0000000010">
+<li id="a0000000011" value="1">
+<p>
+\(3x^2 - 2x + 4\) is \(O(n^2)\) since \(3x^2 - 2x + 4 {\lt} 3x^2\) whenever \(n {\gt} 2\). 
+</p>
+</li>
+<li id="a0000000012" value="2">
+<p>
+\(67n^3 + 40n^2 + 6n + 3\log _{2}n + 33\) is \(O(n^3)\) since the function on the left is \({\lt} 70n^3\) for all \(n{\gt}13.561\). 
+</p>
+</li>
+<li id="a0000000013" value="3">
+<p>
+\(100n + 2\) is \(O(n)\) since \( 100n + 2 {\lt} 101 n\) for all \(n {\gt} 1000\). 
+</p>
+</li>
+<li id="a0000000014" value="4">
+<p>
+\(f(n)\) is \(O(n^{k})\) whenever \(f(n)\) is a polynomial of degree \(k\). 
+</p>
+</li>
+<li id="a0000000015" value="5">
+<p>
+if \(f(n)\) is an exponential function, such as \(2^n\), then there is <span class="underbar">no</span> number \(k\) such that \(f(n)\) is \(O(n^{k})\). 
+</p>
+</li>
+</ol>
+<p>
+Suppose that we have some convenient way of specifying the size of the objects on which some algorithm operators as a number. For example, a pair of \(n \times n\) matrices to be multiplied could have \(n\) as a measure of their size. 
+</p>
+<p>
+The bounds given above are not necessarily the best possible. This doesn’t matter, as all we’re interested in is the behaviour of the functions as \(n \to \infty \). 
+</p>
+<p>
+Suppose that we have some convenient way of specifying the size of the objects on which some algorithm operates as a number. For example, a pair of \(n \times n\) matrices to be multiplied could have \(n\) as a measure of their size. When the algorithm is implemented, if the longest time taken for input size \(n\) is a function which is \(O(g(n))\) for some (simple) function \(g\), we say that the algorithm has complexity \(O(g(n))\). 
+</p>
+<p>
+As we have mentioned, one reason for using the “\(O\)” notation in computational complexity is that it can show in simple terms how the running time grows with input size. Another reason is that it allows us to do simpler calculations in finding the running time. As long as we find an upper bound for the number of times the core parts of the algorithm are used, we can find its complexity in terms of “\(O\)”. Detailed consideration of every instruction in an implementation would be very tedious. 
+</p>
+<p>
+Strictly speaking, to say that an algorithm has complexity \(O(g(n))\) includes the possibility that it is \(O(h(n))\) for some function \(h\) which is essentially smaller than \(g\). Usually, however, when it is stated that an algorithm is \(O(g(n))\) for some simple function \(g\) of \(n\), the writer implies that this is the “smallest” simple function for which this is true, or, in other words, that the estimate given of the complexity is the best possible. If an algorithm has a worst case running time \(6n^2\), for example, for input size \(n\), then its complexity is \(O(n^2)\). 
+</p>
+<p>
+But \(O\) gives just an upper bound, so it is also \(O(n^3)\), \(O(n^{100})\) and \(O(2^n)\), etc. It would be more precise to use the “Big Theta” notation, and say that \(6n^2\) is \(\Theta (n^2)\). This means that it is \(O(n^2)\) and we can’t give a better bound. 
+</p>
+<p>
+The definition is that \(f(n)\) is \(\Theta (g(n))\) if there exist constants \(c_1\), \(c_2\) and \(n_{0}\) such that 
+</p>
+<span class="dmath">\[  c_1 g(n) {\lt} f(n) {\lt} c_2 g(n) \mbox{ for all } n {\gt} n_{0}.  \]</span>
+<p>
+Another way to say this is that 
+</p>
+<span class="dmath">\[  f(n) \mbox{ is } \Theta (g(n)) \mbox{ if} f(n) \mbox{ is } O(g(n)) \mbox{ and } g(n) \mbox{ is } O(f(n)).  \]</span>
+<p>
+A good <a href="https://www.bigocheatsheet.com/">cheat sheet</a> is available if you ever get confused about Big \(O\) notation. 
+</p>
+</section><section class="subsection">
+<h3 id="a0000000016">Introduction to computational complexity</h3>
+<p>
+<b class="bfseries">Computational complexity</b>, or computational efficiency, is the study of the amount of computational resources needed to carry out computations. The complexity of a problem or algorithm is usually measured by the time it takes or the amount of memory needed. We shall concentrate on time, and think in terms of a machine carrying out the algorithm. 
+</p>
+<p>
+An early indication of the importance of this is the following quote: 
+</p>
+<blockquote class="quote"> As soon as the Analytical Engine exists, it will necessarily guide the future course of the science. Whenever any result is sought by its aid, the question will then arise—By what course of calculation can these results be arrived at by the machine in the shortest time? <i class="sl">Charles Babbage, 1864</i> </blockquote>
+<p>
+Some of the computations we might like to carry out are: 
+</p>
+<ul class="itemize" id="a0000000017">
+<li id="a0000000018">
+<p>
+Given a list of numbers or other data, produce a list of the same data in increasing order. (Sorting). 
+</p>
+</li>
+<li id="a0000000019">
+<p>
+Given a database of employee information, output a set of pay slips. 
+</p>
+</li>
+<li id="a0000000020">
+<p>
+Given a program and some input, decide whether it will halt on that input. (The Halting Problem). 
+</p>
+</li>
+<li id="a0000000021">
+<p>
+Given a number, decide whether it is prime. 
+</p>
+</li>
+<li id="a0000000022">
+<p>
+Factorise a number. 
+</p>
+</li>
+<li id="a0000000023">
+<p>
+Multiply two matrices. 
+</p>
+</li>
+<li id="a0000000024">
+<p>
+Given a set of cities and a table of distances between them, find the shortest route which visits all cities and finishes at its starting point. (The Travelling Salesperson Problem). 
+</p>
+</li>
+<li id="a0000000025">
+<p>
+Given a telephone directory and a name, decide whether that name is in the directory. 
+</p>
+</li>
+<li id="a0000000026">
+<p>
+Given a telephone directory and a telephone number, decide whether that number is in the directory. 
+</p>
+</li>
+<li id="a0000000027">
+<p>
+Given a boolean expression, decide whether it is a tautology (i.e., true for all possible assignments of truth values to the variables). 
+</p>
+</li>
+</ul>
+<p>
+Computational problems are functions; they take some input and produce some output. If the possible outputs are just True and False (or Yes and No) the problem is called a <b class="bfseries">decision problem</b>. 
+</p>
+<p>
+Some questions we can ask and tasks we can set about a problem are: 
+</p>
+<ol class="enumerate" id="a0000000028">
+<li id="a0000000029" value="1">
+<p>
+Is the function computable, or the decision problem decidable? 
+</p>
+</li>
+<li id="a0000000030" value="2">
+<p>
+If yes, specify an algorithm. 
+</p>
+</li>
+<li id="a0000000031" value="3">
+<p>
+Is our algorithm efficient? 
+</p>
+</li>
+<li id="a0000000032" value="4">
+<p>
+Is there a more efficient algorithm? 
+</p>
+</li>
+</ol>
+<p>
+If the answer to question 1 is “no”, then we can go no further. 
+</p>
+<p>
+Finding an algorithm (task 2) may be easy or hard; in the cases above it is easy (except of course for the Halting Problem, when it is impossible). 
+</p>
+<p>
+Computational complexity theory is concerned with questions 3 and 4. We will discuss how efficiency is measured. The “obvious” algorithms for some of the problems above are very inefficient. 
+</p>
+<p>
+If we know we have an inefficient algorithm, question 4 is of great interest. In some cases, e.g., sorting numbers, an answer can be given without too much difficulty. In other cases (e.g., the Travelling Salesperson Problem), deciding whether a better algorithm is possible is one of the major unsolved problems of computer science. 
+</p>
+<p>
+We are interested particularly in how the computational effort grows with the size of the data. For example, searching for a name in a list of ten names is fast; but when searching for a name in a list of a million names it is worth looking for an efficient algorithm. 
+</p>
+<p>
+Of particular interest is the distinction between “easy” problems, which can be solved in a time proportional to a polynomial function of the size \(n\) of the input, and “hard” problems, many of which require exponential time — at least \(c^{(n^{k})}\) for some constants \(c~ {\gt}~ 1\) and \(k~ {\gt}~ 0\). 
+</p>
+<p>
+For many problems no polynomial algorithms are known (e.g., the Travelling Salesperson Problem), but it has not been proved that they do not exist. 
+</p>
+<p>
+For theoretical work, the size of the input to an algorithm is measured by the number of bits needed to specify it, and the time taken is measured by the number of instructions executed by a fixed (theoretical) computer such as a Turing Machine. For practical calculations involving complexity, it is often convenient to use some more natural measure. For example, in searching a list of \(n\) names it is natural to use \(n\) as a measure of size. The time taken is often measured by the number of times significant operations are carriedout, for example, multiplications and additions, or comparisons between data items. This kind of simplification does not affect the distinction between polynomial andexponential algorithms. 
+</p>
+<p>
+The time taken by an algorithm, or the number of operations, will usually depend on the particular input data as well as its size. In analysing an algorithm, we can find the average complexity, or the complexity in the worst case (i.e., the maximum time). It is usually more complicated to find the average complexity than the worst case complexity. The worst case complexity is also useful in giving a guarantee that a program will not take more than a specified time to run. 
+</p>
+</section><section class="subsection">
+<h3 id="a0000000033">The \(P\)/\(NP\) problem</h3>
+<p>
+In this section we are concerned with the distinction between problems which can be solved in a time which is no more than some polynomial function of the input size and those which cannot. The latter are said to be <b class="bfseries">intractable</b>. 
+</p>
+<p>
+The class \(P\) of decision problems consists of those which can be solved by an algorithm running in polynomial time – ‘easy’ problems. 
+</p>
+<p>
+Reading is usually easier than writing, whether one is concerned with a novel or a mathematical proof. Similarly, verifying that the answer to a decision problem is <i class="it">yes</i> when someone has solved it is often easier that solving the problem. Here is an example. 
+</p>
+<p>
+To decide whether the number 34905581 is composite (i.e., can be written as a product of smaller numbers) takes some effort; on the other hand, a possible proof that it is composite is the equation 
+</p>
+<span class="dmath">\[  34905581 = 4567 \times 7643,  \]</span>
+<p>
+ and it is easy to check that this is correct. 
+</p>
+<p>
+One way to look at this is to say that a non-deterministic algorithm could factorise 34905581 by simultaneously trying all integers up to \(\sqrt{34905581}\) to see whether they divide 34905581 (or,equivalently, guessing the right one). Alternatively, the factors 4567 and 7643 (or just one of them) constitute a <span class="underbar">certificate</span> which proves that the number is composite. 
+</p>
+<p>
+The class \(NP\) is defined as consisting of problems that can be solved in polynomial time by a non-deterministic algorithm. An alternative definition, probably easier to understand, is that the class \(NP\) consists of problems for which there exist certificates which can be verified by an algorithm running in polynomial time – problems for which it is ‘easy’ to check a claimed answer. To understand the concept it is useful to bear both ideas in mind. 
+</p>
+<p>
+Many interesting and important problems belong to the class \(NP\), but are not known to belong to class \(P\). One example is the Travelling Salesperson Problem. (It can be made into a decision problem by asking whether there is a tour of length less than some specified number.) 
+</p>
+<p>
+A remarkable feature of the class \(NP\) is that it contains many problems, known as <b class="bfseries">\(NP\)-complete</b> problems, which are the hardest problems in \(NP\), in the sense that they have the following property: if a polynomial algorithm exists for any one \(NP\)-complete problem, then polynomial algorithms exist for all problems in \(NP\). 
+</p>
+<p>
+It is believed that no easy (i.e., polynomial) algorithms exist for any of them, and so \(NP\) is a strictly bigger class of problems than \(P\), but no-one has been able to prove this. 
+</p>
+<p>
+Whether or not \(P = NP\) is one of the major unanswered questions of computer science. 
+</p>
+</section>
+</section>
+<script id="plastex-labels" type="application/json">{}</script>
+    </article>
+
+        </main>
+
+		
+		<footer>
+	<hr>
+
+    <nav id="footer-nav">
+        <a href="#">Back to top</a>
+    </nav>
+
+    <div id="footer-text">
+        <p>Generated using <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.2.1, written by the Digital Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
+        <p>This page last generated: 2024-09-02</p>
+        
+        
+        
+    </div>
+</footer>
+		
+
+        
+
+        <svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="icon-defs"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <g id="cog">
+            <path 
+                style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z"
+            />
+        </g>
+        <g id="pdf">
+            <path
+                style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z"
+            />
+        </g>
+        <g id="slides">
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,21.25 30,137.5"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 90,21.25 60,158.75"
+            />
+            <rect
+                style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="119.79137"
+                height="82.273766"
+                x="30.104315"
+                y="36.476234"
+                ry="4.7737675"
+                rx="4.7737675"
+            />
+            <rect
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="140"
+                height="5.2262344"
+                x="20"
+                y="31.25"
+                ry="1.6724058"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,66.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,76.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,86.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,56.25 h 50"
+            />
+            <path
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z"
+            />
+        </g>
+
+        <g id="notebook">
+            <path
+                style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="58.699139"
+               cy="59.503937"
+               r="3.8077738"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="113.59385"
+               cy="52.885151"
+               r="4.9348516"
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z"
+           
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z"
+              
+            />
+            <ellipse
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="63.813011"
+               cy="125.96338"
+               rx="6.4332962"
+               ry="6.4347191"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="M 34,46.266514 V 62.316215"
+            
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="M 34,77.849849 V 93.89955"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 34,109.43318 v 16.0497"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0"
+            />
+        </g>
+
+        <g id="fullscreen">
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+               d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="M 150.95833,68.801471 V 28.958332 h -39.84314"
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="m 28.958332,111.11519 v 39.84314 h 39.843139"
+            />
+        </g>
+    </defs>
+</svg>
+    </body>
+</html>

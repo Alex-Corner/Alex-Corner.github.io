@@ -1,0 +1,1127 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        
+            <meta charset="utf-8">
+            <meta name="robots" content="noindex">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="author" content="Alex Corner" />
+            <meta name="date" content="2024-09-02" />
+        
+
+        <title>Operations on Sets | 55-407817: Fundamentals of Mathematics and Computer Architectures</title>
+
+        
+    
+    
+            <link rel="stylesheet" href="../../static/styles.css?build_time=1725273417.818684">
+            
+            
+        
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../static/pygmentize.css?build_time=1725273417.818684">
+
+    <link rel="stylesheet" href="../../static/print.css?build_time=1725273417.818684">
+
+
+        
+    
+			<script>
+				var chirun_static_url = new URL('../../static?build_time=1725273417.818684', location.href);
+			</script>
+
+            
+                <script defer src="../../static/mathjax_config.js?build_time=1725273417.818684"></script>
+                <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+            
+
+            <script type="module" src="../../static/localisation.js?build_time=1725273417.818684"></script>
+
+            <script defer src="../../static/customisation.js?build_time=1725273417.818684"></script>
+
+            
+
+            
+        
+    <script defer src="../../static/code.js?build_time=1725273417.818684" type="module"></script>
+    <script defer src="../../static/embed_numbas.js?build_time=1725273417.818684" type="module"></script>
+    <script defer src="../../static/embed_qrcode.js?build_time=1725273417.818684" type="module"></script>
+
+
+        <template id="runnable-code-template">
+            <link rel="stylesheet" href="../../static/code.css?build_time=1725273417.818684">
+            <div class="runnable-code-wrapper">
+                <section class="fullscreenable code">
+                    <div id="code"></div>
+                    <button class="fullscreen icon-button" title="Fullscreen code"><svg class="icon" aria-label="Fullscreen code" viewBox="0 0 180 180">
+    <use href="#fullscreen"/>
+</svg></button>
+                </section>
+                <section class="fullscreenable output">
+                    <div id="output" aria-live="polite">
+                        <pre class="stdout"></pre>
+                        <pre class="result"></pre>
+                        <div class="images"></div>
+                    </div>
+                    <button class="fullscreen icon-button" title="Fullscreen output"><svg class="icon" aria-label="Fullscreen output" viewBox="0 0 180 180">
+    <use href="#fullscreen"/>
+</svg></button>
+                </section>
+                <div class="buttons">
+                    <button type="button" class="run-code">Run code</button>
+                </div>
+                <svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="icon-defs"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <g id="cog">
+            <path 
+                style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z"
+            />
+        </g>
+        <g id="pdf">
+            <path
+                style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z"
+            />
+        </g>
+        <g id="slides">
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,21.25 30,137.5"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 90,21.25 60,158.75"
+            />
+            <rect
+                style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="119.79137"
+                height="82.273766"
+                x="30.104315"
+                y="36.476234"
+                ry="4.7737675"
+                rx="4.7737675"
+            />
+            <rect
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="140"
+                height="5.2262344"
+                x="20"
+                y="31.25"
+                ry="1.6724058"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,66.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,76.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,86.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,56.25 h 50"
+            />
+            <path
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z"
+            />
+        </g>
+
+        <g id="notebook">
+            <path
+                style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="58.699139"
+               cy="59.503937"
+               r="3.8077738"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="113.59385"
+               cy="52.885151"
+               r="4.9348516"
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z"
+           
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z"
+              
+            />
+            <ellipse
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="63.813011"
+               cy="125.96338"
+               rx="6.4332962"
+               ry="6.4347191"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="M 34,46.266514 V 62.316215"
+            
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="M 34,77.849849 V 93.89955"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 34,109.43318 v 16.0497"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0"
+            />
+        </g>
+
+        <g id="fullscreen">
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+               d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="M 150.95833,68.801471 V 28.958332 h -39.84314"
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="m 28.958332,111.11519 v 39.84314 h 39.843139"
+            />
+        </g>
+    </defs>
+</svg>
+            </div>
+        </template>
+
+        <template id="embed-numbas-template">
+            <link rel="stylesheet" href="../../static/embed_numbas.css?build_time=1725273417.818684">
+            <details id="wrapper" data-completion-status="incomplete">
+                <summary>
+                    <h1 id="title">Test Yourself</h1>
+                    <div id="completion-status" data-completion-status="unknown">
+                        <span class="complete">Complete</span>
+                        <span class="incomplete">Incomplete</span>
+                    </div>
+                    <label id="score-feedback">
+                        Score:
+                        <progress min="0"></progress>
+                    </label>
+                </summary>
+                <iframe class="embed" title="Numbas"></iframe>
+            </details>
+        </template>
+
+    </head>
+    <body class="" >
+        
+
+        <a class="skip-to-content-link" href="#main-content">Skip to content</a>
+        
+            <form id="display-options">
+    <div class="buttons">
+        <button type="button" id="reset-display-options">Reset to defaults</button>
+
+        <a href="https://chirun.org.uk/accessibility-statement/material">Accessibility statement</a>
+
+        <button type="button" aria-controls="display-options" aria-expanded="false">
+            Close
+        </button>
+    </div>
+
+    <div class="inputs">
+        <div class="input-group">
+            <label for="display-options-font-scale">
+                Text size
+            </label>
+            <input type="range" min="50" max="600" step="5" value="100" id="display-options-font-scale">
+            <output for="display-options-font-scale">100%</output>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-spacing-factor">
+                Spacing
+            </label>
+            <input type="range" min="0" max="1200" step="5" value="100" id="display-options-spacing-factor">
+            <output for="display-options-spacing-factor">100%</output>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-font-family">
+                Text font
+            </label>
+            <select id="display-options-font-family">
+                <option value="var(--sans-serif-font)" selected>Sans-serif</option>
+                <option value="var(--serif-font)">Serif</option>
+                <option value="Atkinson Hyperlegible">Atkinson Hyperlegible</option>
+                <option value="Comic Sans MS">Comic Sans</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-colour-scheme">
+                Colour scheme
+            </label>
+            <select id="display-options-colour-scheme">
+                <option value="auto" selected>Automatic (default)</option>
+                <option value="light">Black text on white</option>
+                <option value="dark">White text on black</option>
+                <option value="custom">Custom</option>
+            </select>
+        </div>
+
+        <section id="custom-colour-scheme-options" class="inputs">
+            <div class="input-group">
+                <label for="display-options-text-colour">
+                    Text colour
+                </label>
+                <input type="color" value="#000000" id="display-options-text-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-link-colour">
+                    Link colour
+                </label>
+                <input type="color" value="#0000ee" id="display-options-link-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour">
+                    Background colour
+                </label>
+                <input type="color" value="#ffffff" id="display-options-bg-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-off">
+                    Muted background colour
+                </label>
+                <input type="color" value="#eeeeee" id="display-options-bg-colour-off">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-1">
+                    Accent colour 1
+                </label>
+                <input type="color" value="#4caf50" id="display-options-bg-colour-accent-1">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-2">
+                    Accent colour 2
+                </label>
+                <input type="color" value="#f6f6ff" id="display-options-bg-colour-accent-2">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-3">
+                    Accent colour 3
+                </label>
+                <input type="color" value="#eeffd3" id="display-options-bg-colour-accent-3">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-4">
+                    Accent colour 4
+                </label>
+                <input type="color" value="#ffeeee" id="display-options-bg-colour-accent-4">
+            </div>
+        </section>
+
+        <section id="filter-colour-scheme-options" class="inputs">
+            <div class="input-group">
+                <label for="display-options-filter-sepia">
+                    Sepia filter
+                </label>
+                <input type="range" min="0" max="100" step="1" value="0" id="display-options-filter-sepia">
+                <output for="display-options-filter-sepia">0%</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-filter-hue-rotate">
+                    Rotate hues
+                </label>
+                <input type="range" min="0" max="1" step="0.01" value="0" id="display-options-filter-hue-rotate">
+                <output for="display-options-filter-hue-rotate">0 turns</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-invert-images">
+                    Invert images in dark mode
+                </label>
+                <input type="checkbox" id="display-options-invert-images">
+            </div>
+
+        </section>
+    </div>
+</form>
+        
+
+        <header>
+            
+<button class="icon-button" type="button" aria-controls="display-options" aria-expanded="false" title="Display options">
+    <svg class="icon" aria-label="Display options" viewBox="0 0 180 180">
+    <use href="#cog"/>
+</svg>
+</button>
+            
+    
+    <nav aria-label="breadcrumb">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../../index.html">55-407817: Fundamentals of Mathematics and Computer Architectures</a>
+            </li>
+            
+            <li class="breadcrumb-item">
+                <a href="../index.html">Week 01 - Sets</a>
+            </li>
+            
+            <li class="breadcrumb-item active">
+                Operations on Sets
+            </li>
+        </ul>
+
+        
+        <p class="pager" id="item-pager">
+            
+            <a rel="prev" href="../exercises_1/index.html">Previous: Exercises 1</a>
+            
+            
+            <a rel="next" href="../exercises_2/index.html">Next: Exercises 2</a>
+            
+        </p>
+        
+    </nav>
+    
+
+            
+            
+        </header>
+
+        <main id="main-content">
+            
+    <nav id="sidebar">
+        
+        <ul class="alternative-formats">
+            
+            <li><a rel="alternate" type="application/pdf" href="operations_on_sets.pdf"download><svg class="icon" aria-label="PDF" viewBox="0 0 180 180">
+    <use href="#pdf"/>
+</svg> Download as PDF</a></li>
+            
+        </ul>
+        
+
+        <h1>Table of Contents</h1>
+        <a class="jump-to-item-content" href="#item-content">Jump to content</a>
+        
+            <ol class="table-of-contents">
+                
+                    
+    <li>
+        <a href="#a0000000002">Operations on Sets</a>
+        
+        <ol>
+            
+            
+    <li>
+        <a href="#sec:sets:operations:venn">Venn Diagrams</a>
+        
+    </li>
+
+    <li>
+        <a href="#sec:sets:operations:operations">Operations on Sets</a>
+        
+        <ol>
+            
+            
+    <li>
+        <a href="#a0000000005">Intersection</a>
+        
+    </li>
+
+    <li>
+        <a href="#a0000000007">Union</a>
+        
+    </li>
+
+    <li>
+        <a href="#sec:sets:operations:difference">Set Difference</a>
+        
+    </li>
+
+    <li>
+        <a href="#sec:sets:operations:complement">Complement</a>
+        
+    </li>
+
+    <li>
+        <a href="#a0000000011">Symmetric Difference</a>
+        
+    </li>
+
+            
+        </ol>
+        
+    </li>
+
+    <li>
+        <a href="#sec:sets:operations:cartesian">Cartesian Product</a>
+        
+    </li>
+
+    <li>
+        <a href="#sec:sets:operations:powerset">Power Set</a>
+        
+    </li>
+
+    <li>
+        <a href="#sec:sets:operations:cardinality">Cardinality</a>
+        
+    </li>
+
+    <li>
+        <a href="#a0000000015">Sets and Boolean</a>
+        
+    </li>
+
+    <li>
+        <a href="#a0000000016">Concept Checks</a>
+        
+    </li>
+
+            
+        </ol>
+        
+    </li>
+
+                
+            </ol>
+        
+
+    </nav>
+
+    <article class="item-content" id="item-content">
+         <!-- Latex Chapter/Part -->
+<h1 id="a0000000002">Operations on Sets</h1>
+<section class="section">
+<h2 id="sec:sets:operations:venn">Venn Diagrams</h2>
+<p>
+ Once we have defined some sets, we can use them to create more, by forming intersections, unions, and differences. We will define these in the next section, and illustrate the definitions with diagrams known as <b class="bfseries">Venn diagrams</b>. In these diagrams, sets are shown as roughly circular areas, with the area inside the curve representing elements in the set. Elements may be written in the appropriate parts of the diagram if necessary. The universal set is usuallly drawn as a rectangle, which must contain all of the other sets. Venn diagrams must be drawn so that there are sections for elements in and out of each set in all combinations. This is hard for more than \(3\) sets; the diagrams below are suitable for \(2\) and \(3\) sets. 
+</p>
+<div class="centered"> <div class="tikzcd" id="a0000000003">
+<img alt="\begin{tikzpicture} [framed, background rectangle/.style={draw=black,fill=white}, inner frame sep=5ex,
+    dot/.style = {circle, inner sep=0pt, minimum size=1mm, fill,
+                  node contents={}}
+                            ]
+    \def\firstcircle{(-0.9,0) coordinate (a) circle (1.5cm)}
+    \def\secondcircle{(0.9,0) coordinate (b)  circle (1.5cm)}
+        % \begin{scope}
+        %     \clip \secondcircle;
+        %     \fill[cyan] \firstcircle;
+        % \end{scope}
+    \draw[overlay] node [] at (-2,1.7) {$U$};
+    \draw \firstcircle;
+    \draw node[above left, label distance=3ex] at (a) {$A$};
+    % \draw \firstcircle  node[dot,label=$n_{ij}$];
+    \draw \secondcircle;
+    \draw node[above right, label distance=3ex] at (b) {$B$};
+    % \node (c) [above] at (current bounding box.north -| a) {$t_i$};
+    % \node at (c -| b) {$t_j$};
+    \alttext{A venn diagram of two sets. A rectangular area labelled U surrounds two overlapping circles, one of which is labelled A and the other is labelled B.}
+\end{tikzpicture}" src="images/img-0001.svg"/>
+</div> </div>
+<div class="centered"> <div class="tikzcd" id="a0000000004">
+<img alt="\begin{tikzpicture} [framed, background rectangle/.style={draw=black,fill=white}, inner frame sep=5ex,
+    dot/.style = {circle, inner sep=0pt, minimum size=1mm, fill,
+                  node contents={}}
+                            ]
+    \def\firstcircle{(-0.9,0) coordinate (a) circle (1.5cm)}
+    \def\secondcircle{(0.9,0) coordinate (b)  circle (1.5cm)}
+    \def\thirdcircle{(0,{-2.7/sqrt(3)}) coordinate (c) circle (1.5cm)}
+        % \begin{scope}
+        %     \clip \secondcircle;
+        %     \fill[cyan] \firstcircle;
+        % \end{scope}
+    \draw[overlay] node [] at (-2,1.7) {$U$};
+    \draw \firstcircle;
+    \draw node[above left, label distance=3ex] at (a) {$A$};
+    % \draw \firstcircle  node[dot,label=$n_{ij}$];
+    \draw \secondcircle;
+    \draw node[above right, label distance=3ex] at (b) {$B$};
+    %
+    \draw \thirdcircle;
+    \draw node[below, label distance=3ex] at (c) {$C$};
+    % \node (c) [above] at (current bounding box.north -| a) {$t_i$};
+    % \node at (c -| b) {$t_j$};
+    \alttext{A venn diagram of three sets. A rectangular area labelled U surrounds three overlapping circles, the one of the left labelled A, the one on the right labelled B, and the one below labelled C. All pairs overlap slightly, including a region in the centre in which they all overlap.}
+\end{tikzpicture}" src="images/img-0002.svg"/>
+</div> </div>
+</section><section class="section">
+<h2 id="sec:sets:operations:operations">Operations on Sets</h2>
+<section class="subsection">
+<h3 id="a0000000005">Intersection</h3>
+<p>
+ If \(A\) and \(B\) are two sets then their <b class="bfseries">intersection</b> \(A \cap B\), pronounced “\(A\) intersect \(B\)”, is the set of all elements common to \(A\) and \(B\). It is defined by 
+</p>
+<span class="dmath">\[  A \cap B = \{ x~ |~ x \in A~ \wedge ~ x \in B\} .  \]</span>
+<p>
+ The intersection is shaded in the Venn diagram below. 
+</p>
+<div class="centered"> <div class="tikzcd" id="a0000000006">
+<img alt="\begin{tikzpicture} [framed, background rectangle/.style={draw=black,fill=white}, inner frame sep=5ex,
+    dot/.style = {circle, inner sep=0pt, minimum size=1mm, fill,
+                  node contents={}}
+                            ]
+    \def\firstcircle{(-0.9,0) coordinate (a) circle (1.5cm)}
+    \def\secondcircle{(0.9,0) coordinate (b)  circle (1.5cm)}
+        \begin{scope}
+            \clip \secondcircle;
+            \fill[cyan!30] \firstcircle;
+        \end{scope}
+    \draw[overlay] node [] at (-2,1.7) {$U$};
+    \draw \firstcircle;
+    \draw node[above left, label distance=3ex] at (a) {$A$};
+    % \draw \firstcircle  node[dot,label=$n_{ij}$];
+    \draw \secondcircle;
+    \draw node[above right, label distance=3ex] at (b) {$B$};
+    % \node (c) [above] at (current bounding box.north -| a) {$t_i$};
+    % \node at (c -| b) {$t_j$};
+    \alttext{A Venn diagram of two sets representing the intersection of two sets A and B. The overlapping region of A and B is shaded blue.}
+\end{tikzpicture}" src="images/img-0003.svg"/>
+</div> </div>
+<p>
+Some examples are shown below. 
+</p>
+<span><script type="math/tex; mode=display">\begin{align*}  \{ 1,3,5,7,9\}  \cap \{ 3,6,9\}  & = \{ 3,9\} \\ \{ 1,2,3,4\}  \cap \{ 5,6,7,8\}  & = \varnothing \\ \{ a,b,c\}  \cap \{ b,c\}  & = \{ b,c\}  \end{align*}</script></span>
+<p>
+ Two sets \(A\) and \(B\) are said to be <b class="bfseries">disjoint</b> if they have no elements in common. This is the same as saying that their interesection is the empty set, or \(A \cap B = \varnothing \). Several sets are said to be <b class="bfseries">mutually disjoint</b> if every pair of them are disjoint. For example, the sets \(A = \{ 1,2\} \), \(B = \{ 3,4\} \), and \(C = \{ 5,6\} \) are mutually disjoint because 
+</p>
+<span class="dmath">\[  A \cap B = A \cap C = B \cap C = \varnothing .  \]</span>
+</section><section class="subsection">
+<h3 id="a0000000007">Union</h3>
+<p>
+ For two sets \(A\) and \(B\), their <b class="bfseries">union</b> \(A \cup B\), pronounced “\(A\) union \(B\)”, is the set of all elements which are in \(A\) or in \(B\) (or in both). It is defined by 
+</p>
+<span class="dmath">\[  A \cup B = \{ x~ |~ x \in A~ \vee ~ x \in B\} .  \]</span>
+<p>
+The union is shaded in the Venn diagram below. 
+</p>
+<div class="centered"> <div class="tikzcd" id="a0000000008">
+<img alt="\begin{tikzpicture} [framed, background rectangle/.style={draw=black,fill=white}, inner frame sep=5ex,
+    dot/.style = {circle, inner sep=0pt, minimum size=1mm, fill,
+                  node contents={}}
+                            ]
+    \def\firstcircle{(-0.9,0) coordinate (a) circle (1.5cm)}
+    \def\secondcircle{(0.9,0) coordinate (b)  circle (1.5cm)}
+        % \begin{scope}
+        %     \clip \secondcircle;
+        %     % \fill[cyan,opacity=0.5] \firstcircle;
+        % \end{scope}
+    \draw[overlay] node [] at (-2,1.7) {$U$};
+    \draw[fill=cyan!30] \firstcircle;
+    \draw node[above left, label distance=3ex] at (a) {$A$};
+    % \draw \firstcircle  node[dot,label=$n_{ij}$];
+    \draw[fill=cyan!30] \secondcircle;
+    \draw node[above right, label distance=3ex] at (b) {$B$};
+    \draw \firstcircle;
+    % \node (c) [above] at (current bounding box.north -| a) {$t_i$};
+    % \node at (c -| b) {$t_j$};
+    \alttext{A Venn diagram of two sets representing the intersection of two sets A and B. The overlapping region of A and B is shaded blue.}
+\end{tikzpicture}" src="images/img-0004.svg"/>
+</div> </div>
+<p>
+Some examples are shown below. 
+</p>
+<span><script type="math/tex; mode=display">\begin{align*}  \{ 1,3,5,7,9\}  \cup \{ 3,6,9\}  & = \{ 1,3,5,6,7,9\} \\ \{ 1,2,3,4\}  \cup \{ 5,6,7,8\}  & = \{ 1,2,3,4,5,6,7,8\} \\ \{ a,b,c\}  \cup \{ b,c\}  & = \{ a,b,c\}  \end{align*}</script></span>
+</section><section class="subsection">
+<h3 id="sec:sets:operations:difference">Set Difference</h3>
+<p>
+ If \(A\) and \(B\) are two sets then the <b class="bfseries">relative complement</b> of \(A\) in \(B\), written \(A~ \backslash ~ B\) and often pronounced “\(A\) set difference \(B\)”, is the set of all elements which are in \(A\) but are not in \(B\). It is defined by 
+</p>
+<span class="dmath">\[  A~ \backslash ~ B = \{ x~ |~ x \in A~ \wedge ~ x \notin B\} .  \]</span>
+<p>
+ The relative complement of \(A\) in \(B\) is shaded in the Venn diagram below. 
+</p>
+<div class="centered"> <div class="tikzcd" id="a0000000009">
+<img alt="\begin{tikzpicture} [framed, background rectangle/.style={draw=black,fill=white}, inner frame sep=5ex,
+    dot/.style = {circle, inner sep=0pt, minimum size=1mm, fill,
+                  node contents={}}
+                            ]
+    \def\firstcircle{(-0.9,0) coordinate (a) circle (1.5cm)}
+    \def\secondcircle{(0.9,0) coordinate (b)  circle (1.5cm)}
+        % \begin{scope}
+        %     \clip \secondcircle;
+        %     \fill[cyan!30] \firstcircle;
+        % \end{scope}
+    \draw[overlay] node [] at (-2,1.7) {$U$};
+    \draw[fill=cyan!30] \firstcircle;
+    \draw node[above left, label distance=3ex] at (a) {$A$};
+    % \draw \firstcircle  node[dot,label=$n_{ij}$];
+    \draw[fill=white] \secondcircle;
+    \draw node[above right, label distance=3ex] at (b) {$B$};
+    \draw \firstcircle;
+    % \draw \firstcircle;
+    % \node (c) [above] at (current bounding box.north -| a) {$t_i$};
+    % \node at (c -| b) {$t_j$};
+    \alttext{A Venn diagram of two sets representing the intersection of two sets A and B. The overlapping region of A and B is shaded blue.}
+\end{tikzpicture}" src="images/img-0005.svg"/>
+</div> </div>
+<p>
+Some examples are shown below. 
+</p>
+<span><script type="math/tex; mode=display">\begin{align*}  \{ 1,3,5,7,9\}  ~ \backslash ~ \{ 3,6,9\}  & = \{ 1,5,7\} \\ \{ 1,2,3,4\}  ~ \backslash ~ \{ 5,6,7,8\}  & = \{ 1,2,3,4\} \\ \{ a,b,c\}  ~ \backslash ~ \{ b,c\}  & = \{ a\}  \end{align*}</script></span>
+<p>
+ For any set \(A\), the relative complement of \(A\) in \(A\) is the empty set. I.e., \(A ~ \backslash ~ A = \varnothing \). 
+</p>
+<p>
+Some texts will write the relative complement of \(A\) in \(B\) as \(A - B\) and call it “\(A\) set minus \(B\)”. For every pair of sets \(A\) and \(B\), the union \(A \cup B\) can be written as the union of three mutually disjoint sets: 
+</p>
+<span class="dmath">\[  A \cup B = (A ~ \backslash ~ B) \cup (A \cap B) \cup (B ~ \backslash ~ A).  \]</span>
+<p>
+ This is easy to see when looking at a Venn diagram. 
+</p>
+</section><section class="subsection">
+<h3 id="sec:sets:operations:complement">Complement</h3>
+<p>
+ If \(U\) is the universal set we have in mind for some application, and \(A \subseteq U\), then the <b class="bfseries">complement</b> of \(A\), written \(A^c\), is the set of everything not in \(A\) (but in the universal set). It can be defined as 
+</p>
+<span class="dmath">\[  A^c = U~ \backslash ~ A.  \]</span>
+<p>
+ Note that \(A ~ \backslash ~ B = A \cap B^c\). 
+</p>
+<p>
+The complement of \(A\) is shaded in the Venn diagram below. 
+</p>
+<div class="centered"> <div class="tikzcd" id="a0000000010">
+<img alt="\begin{tikzpicture} [framed, background rectangle/.style={draw=black,fill=cyan!30}, inner frame sep=5ex,
+    dot/.style = {circle, inner sep=0pt, minimum size=1mm, fill,
+                  node contents={}}
+                            ]
+    \def\firstcircle{(-0.9,0) coordinate (a) circle (1.5cm)}
+    \def\secondcircle{(0.9,0) coordinate (b)  circle (1.5cm)}
+        % \begin{scope}
+        %     \clip \secondcircle;
+        %     \fill[cyan!30] \firstcircle;
+        % \end{scope}
+    \draw[overlay] node [] at (-2,1.7) {$U$};
+    % \draw[fill=cyan!30] \firstcircle;
+    \draw node[above left, label distance=3ex] at (a) {$A$};
+    % \draw \firstcircle  node[dot,label=$n_{ij}$];
+    \draw[fill=white] \secondcircle;
+    \draw node[above right, label distance=3ex] at (b) {$B$};
+    \draw \firstcircle;
+    % \node (c) [above] at (current bounding box.north -| a) {$t_i$};
+    % \node at (c -| b) {$t_j$};
+    \alttext{A Venn diagram of two sets representing the intersection of two sets A and B. The overlapping region of A and B is shaded blue.}
+\end{tikzpicture}" src="images/img-0006.svg"/>
+</div> </div>
+<p>
+An example using \(U = \mathbb {Z}\) and \(E = \{ x \in \mathbb {Z}~ |~ x \mbox{ is even}\} \) is that \(E^c = \{ x \in \mathbb {Z}~ |~ x \mbox{ is odd}\} \). 
+</p>
+<p>
+Some texts will use the notation \(A'\) for the complement of \(A\). 
+</p>
+<p>
+<div class="youtube-aspect-ratio"><iframe allowfullscreen="" class="youtube" frameborder="0" src="https://www.youtube.com/embed/rhIroGv9Dqw?ecver=1"></iframe></div>
+</p>
+</section><section class="subsection">
+<h3 id="a0000000011">Symmetric Difference</h3>
+<p>
+ Just as we could combine connectives in logic together, we can do the same with operations on sets. One example that comes up often enough to get its own name is the <b class="bfseries">symmetric difference</b>. Given two sets, \(A\) and \(B\), the symmetric difference of \(A\) and \(B\) is defined by 
+</p>
+<span class="dmath">\[  A~ \Delta ~ B = (A \cup B) \setminus (A \cap B).  \]</span>
+<p>
+ Essentially, we want the elements which are either in \(A\), are in \(B\), but not those elements which are in <em>both</em>. 
+</p>
+<div class="centered"> <div class="tikzcd" id="a0000000012">
+<img alt="\begin{tikzpicture} [framed, background rectangle/.style={draw=black,fill=white}, inner frame sep=5ex,
+    dot/.style = {circle, inner sep=0pt, minimum size=1mm, fill,
+                  node contents={}}
+                            ]
+    \def\firstcircle{(-0.9,0) coordinate (a) circle (1.5cm)}
+    \def\secondcircle{(0.9,0) coordinate (b)  circle (1.5cm)}
+        % \begin{scope}
+        %     \clip \secondcircle;
+        %     \fill[white] \firstcircle;
+        % \end{scope}
+    \draw[overlay] node [] at (-2,1.7) {$U$};
+    \draw[fill=cyan!30] \firstcircle;
+    \draw node[above left, label distance=3ex] at (a) {$A$};
+    % \draw \firstcircle  node[dot,label=$n_{ij}$];
+    \draw[fill=cyan!30] \secondcircle;
+    \draw node[above right, label distance=3ex] at (b) {$B$};
+        \begin{scope}
+            \clip \secondcircle;
+            \fill[white] \firstcircle;
+        \end{scope}
+    \draw \firstcircle;
+    \draw \secondcircle;
+    % \node (c) [above] at (current bounding box.north -| a) {$t_i$};
+    % \node at (c -| b) {$t_j$};
+    \alttext{A Venn diagram of two sets representing the intersection of two sets A and B. The sets A and B are shaded blue, except for where they overlap each other..}
+\end{tikzpicture}" src="images/img-0007.svg"/>
+</div> </div>
+</section>
+</section><section class="section">
+<h2 id="sec:sets:operations:cartesian">Cartesian Product</h2>
+<p>
+ A very important way of forming new sets from old is by the <b class="bfseries">Cartesian product</b>. If \(A\) and \(B\) are two sets, then a typical element of the Cartesian product, \(A \times B\), of \(A\) and \(B\) is the <i class="itshape">ordered pair</i> \((a,b)\), where \(a \in A\) and \(b \in B\). Formally defined, we have 
+</p>
+<span class="dmath">\[  A \times B = \{ z~ |~  z = (x,y) \mbox{ for some } x \in A \mbox{ and } y \in B\} .  \]</span>
+<p>
+ Often we would shorten this definition to 
+</p>
+<span class="dmath">\[  A \times B = \{ (x,y)~ |~ x \in A~ \wedge ~ y \in B\} .  \]</span>
+<p>
+ For example, if \(A = \{ 1,3,5\} \) and \(B = \{ a,b\} \), then 
+</p>
+<span class="dmath">\[  A \times B = \{ (1,a), (1,b), (3,a), (3,b), (5,a), (5,b)\} .  \]</span>
+<p>
+ We can picture this using a table. 
+</p>
+<div class="centered"> <div class="table" id="a0000000013">
+<table class="tabular">
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ \(a\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ \(b\) 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+\(1\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ \((1,a)\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ \((1,b)\) 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+\(3\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ \((3,a)\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ \((3,b)\) 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+\(5\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ \((5,a)\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ \((5,b)\) 
+</p>
+</td>
+</tr>
+</table>
+</div> </div>
+<p>
+ It is important to note that \((1,a) \neq (a,1)\), since this is the set of <i class="itshape">ordered</i> pairs. 
+</p>
+<p>
+A more visual example is to think of a grid drawn on a pair of \(x\) and \(y\) axes, like you might have when plotting points for a graph. All of these points are elements of the set \(\mathbb {Z} \times \mathbb {Z}\). For example, \((1,2), (-37,2), (-100,-100) \in \mathbb {Z} \times \mathbb {Z}\). 
+</p>
+<p>
+We can form the Cartesian product of more than two sets at once, though there is some subtely involved. Suppose that we have three sets \(A_1\), \(A_2\), and \(A_3\). Then we can consider the following three sets. 
+</p>
+<span><script type="math/tex; mode=display">\begin{align*} & (A_1 \times A_2) \times A_3\\ & A_1 \times A_2 \times A_3\\ & A_1 \times (A_2 \times A_3) \end{align*}</script></span>
+<p>
+ The first set has elements which look like \(((a_1,a_2),a_3)\), the second set has elements which look like \((a_1,a_2,a_3)\), and the last set has elements which look like \((a_1,(a_2,a_3))\). They can be regarded as the ‘’same’ set in a particular way. When working with such sets by hand we don’t have to worry too much about which way we write the elements, as it’s obvious that we can just move or remove the brackets involved. More care has to be taken if using such ordered <b class="bfseries">tuples</b> in a programming language. A program might accept an input of type \(((a,b),c)\) but then not know how to handle an input of type \((a,(b,c))\). 
+</p>
+</section><section class="section">
+<h2 id="sec:sets:operations:powerset">Power Set</h2>
+<p>
+ There is no reason why sets should not have other sets as members. This situtation arises in the following definition. If \(A\) is any set, then the <b class="bfseries">power set</b> \(\mathbb {P}(A)\) is the set of subsets of \(A\). So 
+</p>
+<span class="dmath">\[  \mathbb {P}(A) = \{ X~ |~ X \subseteq A\} .  \]</span>
+<p>
+ For example, if \(A = \{ 1\} \), then 
+</p>
+<span class="dmath">\[  \mathbb {P}(A) = \{ \varnothing ,\{ 1\} \} .  \]</span>
+<p>
+ If \(B = \{ a,b\} \), then 
+</p>
+<span class="dmath">\[  \mathbb {P}(B) = \{ \varnothing ,\{ a\} ,\{ b\} ,\{ a,b\} \} .  \]</span>
+<p>
+ If \(C = \{ x,y,z\} \), then 
+</p>
+<span class="dmath">\[  \mathbb {P}(C) = \{ \varnothing , \{ x\} , \{ y\} ,\{ z\} ,\{ x,y\} ,\{ x,z\} ,\{ y,z\} ,\{ x,y,z\} \} .  \]</span>
+<p>
+ Some texts use the notation \(P(A)\) or \(2^A\) to denote the power set of \(A\). 
+</p>
+</section><section class="section">
+<h2 id="sec:sets:operations:cardinality">Cardinality</h2>
+<p>
+ An important property of a set is its <b class="bfseries">cardinality</b>. This is the number of elements in the set. It can be defined for all sets, but we shall only be concerned with finite sets, where the cardinality is a natural number. If \(A\) is a finite set we write \(|~ A~ |\) for the number of elements in \(A\). 
+</p>
+<p>
+Some examples are shown below (be careful with the last one). 
+</p>
+<span><script type="math/tex; mode=display">\begin{align*}  |~ \{ 1,2,3\} ~ | & = 3\\ |~ \{ a,b,c\} ~ | & = 3\\ |~ \{ 1,5,1\} ~ | & = 2\\ \end{align*}</script></span>
+<p>
+ Some properties of cardinality are listed below. 
+</p>
+<span><script type="math/tex; mode=display">\begin{align*} & |~ \varnothing ~ | = 0\\ & |~ A \cap B~ | \leq |~ A~ |\\ & |~ A \cap B~ | \leq |~ B~ |\\ & |~ A \cup B~ | \geq |~ A~ |\\ & |~ A \cup B~ | \geq |~ B~ |\\ & \mbox{If } A \cup B = \varnothing \mbox{, then } |~ A \cup B~ | = |~ A~ | + |~ B~ |\\ & |~ A~ | = |~ A \cap B~ | + |~ A~ \backslash ~ B~ |\\ & |~ A \cup B~ | = |~ A~ | + |~ B~ | - |~ A \cap B~ |\\ & |~ A \times B~ | = |~ A~ | |~ B~ |\\ & |~ \mathbb {P}(A)~ | = 2^{|~ A~ |} \end{align*}</script></span>
+<p>
+ One of the most useful formulas in the above list is this one: 
+</p>
+<span class="dmath">\[  |~ A \cup B~ | = |~ A~ | + |~ B~ | - |~ A \cap B~ |.  \]</span>
+<p>
+ This is known as the <b class="bfseries">Inclusion-Exclusion</b> principle and allows us to count the number of elements in the union of two sets \(A\) and \(B\). We find this by counting the size of the sets \(A\) and \(B\) individually, but since they can overlap this would cause us to count the elements in their intersection, \(A \cap B\), twice. Try applying this formula in the following exercises. 
+</p>
+<p>
+<div class="youtube-aspect-ratio"><iframe allowfullscreen="" class="youtube" frameborder="0" src="https://www.youtube.com/embed/lH7Gzj7lrNI?ecver=1"></iframe></div>
+</p>
+<p>
+<embed-numbas id="a0000000014" url="https://numbas.mathcentre.ac.uk/question/128614/counting-intersections/embed"></embed-numbas>
+</p>
+<p>
+Given two sets \(A\) and \(B\), we can denote the <b class="bfseries">set of functions</b> from \(A\) to \(B\) by \(\operatorname {Fun}(A,B)\). Then we can think about the cardinality of this set: 
+</p>
+<span class="dmath">\[  |~ \operatorname {Fun}(A,B)~ | = |~ B~ |^{|~ A~ |}.  \]</span>
+</section><section class="section">
+<h2 id="a0000000015">Sets and Boolean</h2>
+<p>
+<div class="youtube-aspect-ratio"><iframe allowfullscreen="" class="youtube" frameborder="0" src="https://www.youtube.com/embed/SfMMThPhaZk?ecver=1"></iframe></div> Another example, not mentioned in the video, is that of the symmetric difference: \(A \Delta B\). This corresponds to the <span class="ttfamily">XOR</span> operation (exclusive OR). 
+</p>
+</section><section class="section">
+<h2 id="a0000000016">Concept Checks</h2>
+<p>
+<embed-numbas id="a0000000017" url="https://numbas.mathcentre.ac.uk/question/74768/set-operations/embed/"></embed-numbas>
+</p>
+</section>
+<script id="plastex-labels" type="application/json">{"sec:sets:operations:venn": {"ref": "None", "url": "#sec:sets:operations:venn"}, "sec:sets:operations:operations": {"ref": "None", "url": "#sec:sets:operations:operations"}, "sec:sets:operations:difference": {"ref": "None", "url": "#sec:sets:operations:difference"}, "sec:sets:operations:complement": {"ref": "None", "url": "#sec:sets:operations:complement"}, "sec:sets:operations:cartesian": {"ref": "None", "url": "#sec:sets:operations:cartesian"}, "sec:sets:operations:powerset": {"ref": "None", "url": "#sec:sets:operations:powerset"}, "sec:sets:operations:cardinality": {"ref": "None", "url": "#sec:sets:operations:cardinality"}}</script>
+    </article>
+
+        </main>
+
+		
+		<footer>
+	<hr>
+
+    <nav id="footer-nav">
+        <a href="#">Back to top</a>
+    </nav>
+
+    <div id="footer-text">
+        <p>Generated using <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.2.1, written by the Digital Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
+        <p>This page last generated: 2024-09-02</p>
+        
+        
+        
+    </div>
+</footer>
+		
+
+        
+
+        <svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="icon-defs"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <g id="cog">
+            <path 
+                style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z"
+            />
+        </g>
+        <g id="pdf">
+            <path
+                style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z"
+            />
+        </g>
+        <g id="slides">
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,21.25 30,137.5"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 90,21.25 60,158.75"
+            />
+            <rect
+                style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="119.79137"
+                height="82.273766"
+                x="30.104315"
+                y="36.476234"
+                ry="4.7737675"
+                rx="4.7737675"
+            />
+            <rect
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="140"
+                height="5.2262344"
+                x="20"
+                y="31.25"
+                ry="1.6724058"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,66.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,76.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,86.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,56.25 h 50"
+            />
+            <path
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z"
+            />
+        </g>
+
+        <g id="notebook">
+            <path
+                style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="58.699139"
+               cy="59.503937"
+               r="3.8077738"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="113.59385"
+               cy="52.885151"
+               r="4.9348516"
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z"
+           
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z"
+              
+            />
+            <ellipse
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="63.813011"
+               cy="125.96338"
+               rx="6.4332962"
+               ry="6.4347191"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="M 34,46.266514 V 62.316215"
+            
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="M 34,77.849849 V 93.89955"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 34,109.43318 v 16.0497"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0"
+            />
+        </g>
+
+        <g id="fullscreen">
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+               d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="M 150.95833,68.801471 V 28.958332 h -39.84314"
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="m 28.958332,111.11519 v 39.84314 h 39.843139"
+            />
+        </g>
+    </defs>
+</svg>
+    </body>
+</html>

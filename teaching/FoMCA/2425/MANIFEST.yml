@@ -1,0 +1,623 @@
+author: Alex Corner
+base_dir: fomca_maths
+build_pdf: true
+build_zip: false
+code: 55-407817
+format_version: 2
+institution: Sheffield Hallam University
+license: null
+locale: en
+mathjax_url: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+num_pdf_runs: 1
+root_url: /{base}/{code}/
+structure:
+- build_pdf: false
+  content: []
+  formats:
+  - filetype: html
+    format: default
+    url: index.html
+  is_hidden: false
+  slug: introduction
+  source: intro.tex
+  title: Introduction
+  type: introduction
+  url: index.html
+- build_pdf: false
+  content:
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: 55_407817/using_this_site/index.html
+    - filetype: pdf
+      format: default
+      url: 55_407817/using_this_site/using_this_site.pdf
+    is_hidden: false
+    pdf_url: 55_407817/using_this_site/using_this_site.pdf
+    slug: using_this_site
+    source: intro/material.tex
+    title: Using This Site
+    type: chapter
+    url: 55_407817/using_this_site/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: 55_407817/maths_support/index.html
+    - filetype: pdf
+      format: default
+      url: 55_407817/maths_support/maths_support.pdf
+    is_hidden: false
+    pdf_url: 55_407817/maths_support/maths_support.pdf
+    slug: maths_support
+    source: intro/maths_support.tex
+    title: Maths Support
+    type: chapter
+    url: 55_407817/maths_support/index.html
+  formats:
+  - filetype: html
+    format: default
+    url: 55_407817/index.html
+  is_hidden: false
+  slug: '55_407817'
+  source: .
+  title: 55-407817
+  type: part
+  url: 55_407817/index.html
+- build_pdf: false
+  content:
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_01_sets/basic_ideas/index.html
+    - filetype: pdf
+      format: default
+      url: week_01_sets/basic_ideas/basic_ideas.pdf
+    is_hidden: false
+    pdf_url: week_01_sets/basic_ideas/basic_ideas.pdf
+    slug: basic_ideas
+    source: sets/sets/sets-notes_1.tex
+    title: Basic Ideas
+    type: chapter
+    url: week_01_sets/basic_ideas/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_01_sets/exercises_1/index.html
+    - filetype: pdf
+      format: default
+      url: week_01_sets/exercises_1/exercises_1.pdf
+    is_hidden: false
+    pdf_url: week_01_sets/exercises_1/exercises_1.pdf
+    slug: exercises_1
+    source: sets/sets/sets-exercises_1.tex
+    title: Exercises 1
+    type: chapter
+    url: week_01_sets/exercises_1/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_01_sets/operations_on_sets/index.html
+    - filetype: pdf
+      format: default
+      url: week_01_sets/operations_on_sets/operations_on_sets.pdf
+    is_hidden: false
+    pdf_url: week_01_sets/operations_on_sets/operations_on_sets.pdf
+    slug: operations_on_sets
+    source: sets/sets/sets-notes_2.tex
+    title: Operations on Sets
+    type: chapter
+    url: week_01_sets/operations_on_sets/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_01_sets/exercises_2/index.html
+    - filetype: pdf
+      format: default
+      url: week_01_sets/exercises_2/exercises_2.pdf
+    is_hidden: false
+    pdf_url: week_01_sets/exercises_2/exercises_2.pdf
+    slug: exercises_2
+    source: sets/sets/sets-exercises_2.tex
+    title: Exercises 2
+    type: chapter
+    url: week_01_sets/exercises_2/index.html
+  formats:
+  - filetype: html
+    format: default
+    url: week_01_sets/index.html
+  is_hidden: false
+  slug: week_01_sets
+  source: .
+  title: Week 01 - Sets
+  type: part
+  url: week_01_sets/index.html
+- build_pdf: false
+  content:
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_03_logic/propositional_logic_/index.html
+    - filetype: pdf
+      format: default
+      url: week_03_logic/propositional_logic_/propositional_logic_.pdf
+    is_hidden: false
+    pdf_url: week_03_logic/propositional_logic_/propositional_logic_.pdf
+    slug: propositional_logic_
+    source: logic/prop/propositional-notes.tex
+    title: Propositional Logic 1
+    type: chapter
+    url: week_03_logic/propositional_logic_/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_03_logic/exercises_3/index.html
+    - filetype: pdf
+      format: default
+      url: week_03_logic/exercises_3/exercises_3.pdf
+    is_hidden: false
+    pdf_url: week_03_logic/exercises_3/exercises_3.pdf
+    slug: exercises_3
+    source: logic/prop/propositional-exercises.tex
+    title: Exercises 1
+    type: chapter
+    url: week_03_logic/exercises_3/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_03_logic/propositional_logi_1/index.html
+    - filetype: pdf
+      format: default
+      url: week_03_logic/propositional_logi_1/propositional_logi_1.pdf
+    is_hidden: false
+    pdf_url: week_03_logic/propositional_logi_1/propositional_logi_1.pdf
+    slug: propositional_logi_1
+    source: logic/prop/propositional_2-notes.tex
+    title: Propositional Logic 2
+    type: chapter
+    url: week_03_logic/propositional_logi_1/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_03_logic/exercises_4/index.html
+    - filetype: pdf
+      format: default
+      url: week_03_logic/exercises_4/exercises_4.pdf
+    is_hidden: false
+    pdf_url: week_03_logic/exercises_4/exercises_4.pdf
+    slug: exercises_4
+    source: logic/prop/propositional-exercises_2.tex
+    title: Exercises 2
+    type: chapter
+    url: week_03_logic/exercises_4/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_03_logic/exercises_5/index.html
+    - filetype: pdf
+      format: default
+      url: week_03_logic/exercises_5/exercises_5.pdf
+    is_hidden: false
+    pdf_url: week_03_logic/exercises_5/exercises_5.pdf
+    slug: exercises_5
+    source: logic/prop/propositional-exercises_3.tex
+    title: Exercises 3
+    type: chapter
+    url: week_03_logic/exercises_5/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_03_logic/predicate_logic/index.html
+    - filetype: pdf
+      format: default
+      url: week_03_logic/predicate_logic/predicate_logic.pdf
+    is_hidden: false
+    pdf_url: week_03_logic/predicate_logic/predicate_logic.pdf
+    slug: predicate_logic
+    source: logic/pred/predicate-notes.tex
+    title: Predicate Logic
+    type: chapter
+    url: week_03_logic/predicate_logic/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_03_logic/exercises_6/index.html
+    - filetype: pdf
+      format: default
+      url: week_03_logic/exercises_6/exercises_6.pdf
+    is_hidden: false
+    pdf_url: week_03_logic/exercises_6/exercises_6.pdf
+    slug: exercises_6
+    source: logic/pred/predicate-exercises.tex
+    title: Exercises 4
+    type: chapter
+    url: week_03_logic/exercises_6/index.html
+  formats:
+  - filetype: html
+    format: default
+    url: week_03_logic/index.html
+  is_hidden: false
+  slug: week_03_logic
+  source: .
+  title: Week 03 - Logic
+  type: part
+  url: week_03_logic/index.html
+- build_pdf: false
+  content:
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_05_modular_arit/modular_arithmetic/index.html
+    - filetype: pdf
+      format: default
+      url: week_05_modular_arit/modular_arithmetic/modular_arithmetic.pdf
+    is_hidden: false
+    pdf_url: week_05_modular_arit/modular_arithmetic/modular_arithmetic.pdf
+    slug: modular_arithmetic
+    source: modular/modular_1/modular_1-notes.tex
+    title: Modular Arithmetic
+    type: chapter
+    url: week_05_modular_arit/modular_arithmetic/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_05_modular_arit/examples/index.html
+    - filetype: pdf
+      format: default
+      url: week_05_modular_arit/examples/examples.pdf
+    is_hidden: false
+    pdf_url: week_05_modular_arit/examples/examples.pdf
+    slug: examples
+    source: modular/modular_1/modular-examples.tex
+    title: Examples
+    type: chapter
+    url: week_05_modular_arit/examples/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_05_modular_arit/exercises_7/index.html
+    - filetype: pdf
+      format: default
+      url: week_05_modular_arit/exercises_7/exercises_7.pdf
+    is_hidden: false
+    pdf_url: week_05_modular_arit/exercises_7/exercises_7.pdf
+    slug: exercises_7
+    source: modular/modular_1/modular-exercises.tex
+    title: Exercises 1
+    type: chapter
+    url: week_05_modular_arit/exercises_7/index.html
+  formats:
+  - filetype: html
+    format: default
+    url: week_05_modular_arit/index.html
+  is_hidden: false
+  slug: week_05_modular_arit
+  source: .
+  title: Week 05 - Modular Arithmetic
+  type: part
+  url: week_05_modular_arit/index.html
+- build_pdf: false
+  content:
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_05_functions/functions_1/index.html
+    - filetype: pdf
+      format: default
+      url: week_05_functions/functions_1/functions_1.pdf
+    is_hidden: false
+    pdf_url: week_05_functions/functions_1/functions_1.pdf
+    slug: functions_1
+    source: sets/functions/functions-notes_1.tex
+    title: Functions 1
+    type: chapter
+    url: week_05_functions/functions_1/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_05_functions/functions_2/index.html
+    - filetype: pdf
+      format: default
+      url: week_05_functions/functions_2/functions_2.pdf
+    is_hidden: false
+    pdf_url: week_05_functions/functions_2/functions_2.pdf
+    slug: functions_2
+    source: sets/functions/functions-notes_2.tex
+    title: Functions 2
+    type: chapter
+    url: week_05_functions/functions_2/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_05_functions/exercises_8/index.html
+    - filetype: pdf
+      format: default
+      url: week_05_functions/exercises_8/exercises_8.pdf
+    is_hidden: false
+    pdf_url: week_05_functions/exercises_8/exercises_8.pdf
+    slug: exercises_8
+    source: sets/functions/functions-exercises.tex
+    title: Exercises 1
+    type: chapter
+    url: week_05_functions/exercises_8/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_05_functions/_optional_complexity/index.html
+    - filetype: pdf
+      format: default
+      url: week_05_functions/_optional_complexity/_optional_complexity.pdf
+    is_hidden: false
+    pdf_url: week_05_functions/_optional_complexity/_optional_complexity.pdf
+    slug: _optional_complexity
+    source: sets/functions/complexity-notes.tex
+    title: (Optional) Complexity
+    type: chapter
+    url: week_05_functions/_optional_complexity/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_05_functions/_optional_exercises_/index.html
+    - filetype: pdf
+      format: default
+      url: week_05_functions/_optional_exercises_/_optional_exercises_.pdf
+    is_hidden: false
+    pdf_url: week_05_functions/_optional_exercises_/_optional_exercises_.pdf
+    slug: _optional_exercises_
+    source: sets/functions/complexity-exercises.tex
+    title: (Optional) Exercises 2
+    type: chapter
+    url: week_05_functions/_optional_exercises_/index.html
+  formats:
+  - filetype: html
+    format: default
+    url: week_05_functions/index.html
+  is_hidden: false
+  slug: week_05_functions
+  source: .
+  title: Week 05 - Functions
+  type: part
+  url: week_05_functions/index.html
+- build_pdf: false
+  content:
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_07_matrices/basic_definitions/index.html
+    - filetype: pdf
+      format: default
+      url: week_07_matrices/basic_definitions/basic_definitions.pdf
+    is_hidden: false
+    pdf_url: week_07_matrices/basic_definitions/basic_definitions.pdf
+    slug: basic_definitions
+    source: matrices/matrix_basics-notes.tex
+    title: Basic Definitions
+    type: chapter
+    url: week_07_matrices/basic_definitions/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_07_matrices/matrix_operations/index.html
+    - filetype: pdf
+      format: default
+      url: week_07_matrices/matrix_operations/matrix_operations.pdf
+    is_hidden: false
+    pdf_url: week_07_matrices/matrix_operations/matrix_operations.pdf
+    slug: matrix_operations
+    source: matrices/matrix_operations-notes.tex
+    title: Matrix Operations
+    type: chapter
+    url: week_07_matrices/matrix_operations/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_07_matrices/exercises_9/index.html
+    - filetype: pdf
+      format: default
+      url: week_07_matrices/exercises_9/exercises_9.pdf
+    is_hidden: false
+    pdf_url: week_07_matrices/exercises_9/exercises_9.pdf
+    slug: exercises_9
+    source: matrices/matrix-exercises_1.tex
+    title: Exercises 1
+    type: chapter
+    url: week_07_matrices/exercises_9/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_07_matrices/matrix_equations/index.html
+    - filetype: pdf
+      format: default
+      url: week_07_matrices/matrix_equations/matrix_equations.pdf
+    is_hidden: false
+    pdf_url: week_07_matrices/matrix_equations/matrix_equations.pdf
+    slug: matrix_equations
+    source: matrices/matrix_equations-notes.tex
+    title: Matrix Equations
+    type: chapter
+    url: week_07_matrices/matrix_equations/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_07_matrices/exercise_10/index.html
+    - filetype: pdf
+      format: default
+      url: week_07_matrices/exercise_10/exercise_10.pdf
+    is_hidden: false
+    pdf_url: week_07_matrices/exercise_10/exercise_10.pdf
+    slug: exercise_10
+    source: matrices/matrix-exercises_2.tex
+    title: Exercises 2
+    type: chapter
+    url: week_07_matrices/exercise_10/index.html
+  formats:
+  - filetype: html
+    format: default
+    url: week_07_matrices/index.html
+  is_hidden: false
+  slug: week_07_matrices
+  source: .
+  title: Week 07 - Matrices
+  type: part
+  url: week_07_matrices/index.html
+- build_pdf: false
+  content:
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_09_graph_theory/basic_definitio_1/index.html
+    - filetype: pdf
+      format: default
+      url: week_09_graph_theory/basic_definitio_1/basic_definitio_1.pdf
+    is_hidden: false
+    pdf_url: week_09_graph_theory/basic_definitio_1/basic_definitio_1.pdf
+    slug: basic_definitio_1
+    source: graphs/basics/graphs_basics-notes.tex
+    title: Basic Definitions
+    type: chapter
+    url: week_09_graph_theory/basic_definitio_1/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_09_graph_theory/eulerian_graphs/index.html
+    - filetype: pdf
+      format: default
+      url: week_09_graph_theory/eulerian_graphs/eulerian_graphs.pdf
+    is_hidden: false
+    pdf_url: week_09_graph_theory/eulerian_graphs/eulerian_graphs.pdf
+    slug: eulerian_graphs
+    source: graphs/eulerian/graphs_eulerian-notes.tex
+    title: Eulerian Graphs
+    type: chapter
+    url: week_09_graph_theory/eulerian_graphs/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_09_graph_theory/hamiltonian_graphs/index.html
+    - filetype: pdf
+      format: default
+      url: week_09_graph_theory/hamiltonian_graphs/hamiltonian_graphs.pdf
+    is_hidden: false
+    pdf_url: week_09_graph_theory/hamiltonian_graphs/hamiltonian_graphs.pdf
+    slug: hamiltonian_graphs
+    source: graphs/hamiltonian/graphs_hamiltonian-notes.tex
+    title: Hamiltonian Graphs
+    type: chapter
+    url: week_09_graph_theory/hamiltonian_graphs/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_09_graph_theory/exercises/index.html
+    - filetype: pdf
+      format: default
+      url: week_09_graph_theory/exercises/exercises.pdf
+    is_hidden: false
+    pdf_url: week_09_graph_theory/exercises/exercises.pdf
+    slug: exercises
+    source: graphs/graphs-exercises.tex
+    title: Exercises
+    type: chapter
+    url: week_09_graph_theory/exercises/index.html
+  formats:
+  - filetype: html
+    format: default
+    url: week_09_graph_theory/index.html
+  is_hidden: false
+  slug: week_09_graph_theory
+  source: .
+  title: Week 09 - Graph Theory
+  type: part
+  url: week_09_graph_theory/index.html
+- build_pdf: false
+  content:
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_09_digraphs_and/directed_graphs/index.html
+    - filetype: pdf
+      format: default
+      url: week_09_digraphs_and/directed_graphs/directed_graphs.pdf
+    is_hidden: false
+    pdf_url: week_09_digraphs_and/directed_graphs/directed_graphs.pdf
+    slug: directed_graphs
+    source: digraphs/digraphs_basics-notes.tex
+    title: Directed Graphs
+    type: chapter
+    url: week_09_digraphs_and/directed_graphs/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_09_digraphs_and/adjacency_and_reacha/index.html
+    - filetype: pdf
+      format: default
+      url: week_09_digraphs_and/adjacency_and_reacha/adjacency_and_reacha.pdf
+    is_hidden: false
+    pdf_url: week_09_digraphs_and/adjacency_and_reacha/adjacency_and_reacha.pdf
+    slug: adjacency_and_reacha
+    source: digraphs/adjacency-notes.tex
+    title: Adjacency and Reachability
+    type: chapter
+    url: week_09_digraphs_and/adjacency_and_reacha/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: week_09_digraphs_and/exercise_11/index.html
+    - filetype: pdf
+      format: default
+      url: week_09_digraphs_and/exercise_11/exercise_11.pdf
+    is_hidden: false
+    pdf_url: week_09_digraphs_and/exercise_11/exercise_11.pdf
+    slug: exercise_11
+    source: digraphs/adjacency-exercises.tex
+    title: Exercises 1
+    type: chapter
+    url: week_09_digraphs_and/exercise_11/index.html
+  formats:
+  - filetype: html
+    format: default
+    url: week_09_digraphs_and/index.html
+  is_hidden: false
+  slug: week_09_digraphs_and
+  source: .
+  title: Week 09 - Digraphs and Adjacency
+  type: part
+  url: week_09_digraphs_and/index.html
+themes:
+- path: .
+  source: default
+  title: Default
+title: '55-407817: Fundamentals of Mathematics and Computer Architectures'
+year: 2024/25
+zipfile: None
