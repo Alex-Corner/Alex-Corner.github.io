@@ -7,7 +7,7 @@
             <meta name="robots" content="noindex">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta name="author" content="Alex Corner" />
-            <meta name="date" content="2024-09-24" />
+            <meta name="date" content="2024-09-27" />
         
 
         <title>Operations on Sets | 55-407817: Fundamentals of Mathematics and Computer Architectures</title>
@@ -15,41 +15,41 @@
         
     
     
-            <link rel="stylesheet" href="../../static/styles.css?build_time=1727166625.868657">
+            <link rel="stylesheet" href="../../static/styles.css?build_time=1727450426.532645">
             
             
         
-    <link rel="stylesheet" id="customiseCodeCSS" href="../../static/pygmentize.css?build_time=1727166625.868657">
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../static/pygmentize.css?build_time=1727450426.532645">
 
-    <link rel="stylesheet" href="../../static/print.css?build_time=1727166625.868657">
+    <link rel="stylesheet" href="../../static/print.css?build_time=1727450426.532645">
 
 
         
     
 			<script>
-				var chirun_static_url = new URL('../../static?build_time=1727166625.868657', location.href);
+				var chirun_static_url = new URL('../../static?build_time=1727450426.532645', location.href);
 			</script>
 
             
-                <script defer src="../../static/mathjax_config.js?build_time=1727166625.868657"></script>
+                <script defer src="../../static/mathjax_config.js?build_time=1727450426.532645"></script>
                 <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             
 
-            <script type="module" src="../../static/localisation.js?build_time=1727166625.868657"></script>
+            <script type="module" src="../../static/localisation.js?build_time=1727450426.532645"></script>
 
-            <script defer src="../../static/customisation.js?build_time=1727166625.868657"></script>
+            <script defer src="../../static/customisation.js?build_time=1727450426.532645"></script>
 
             
 
             
         
-    <script defer src="../../static/code.js?build_time=1727166625.868657" type="module"></script>
-    <script defer src="../../static/embed_numbas.js?build_time=1727166625.868657" type="module"></script>
-    <script defer src="../../static/embed_qrcode.js?build_time=1727166625.868657" type="module"></script>
+    <script defer src="../../static/code.js?build_time=1727450426.532645" type="module"></script>
+    <script defer src="../../static/embed_numbas.js?build_time=1727450426.532645" type="module"></script>
+    <script defer src="../../static/embed_qrcode.js?build_time=1727450426.532645" type="module"></script>
 
 
         <template id="runnable-code-template">
-            <link rel="stylesheet" href="../../static/code.css?build_time=1727166625.868657">
+            <link rel="stylesheet" href="../../static/code.css?build_time=1727450426.532645">
             <div class="runnable-code-wrapper">
                 <section class="fullscreenable code">
                     <div id="code"></div>
@@ -230,7 +230,7 @@
         </template>
 
         <template id="embed-numbas-template">
-            <link rel="stylesheet" href="../../static/embed_numbas.css?build_time=1727166625.868657">
+            <link rel="stylesheet" href="../../static/embed_numbas.css?build_time=1727450426.532645">
             <details id="wrapper" data-completion-status="incomplete">
                 <summary>
                     <h1 id="title">Test Yourself</h1>
@@ -671,7 +671,7 @@ Some examples are shown below.
 </section><section class="subsection">
 <h3 id="sec:sets:operations:difference">Set Difference</h3>
 <p>
- If \(A\) and \(B\) are two sets then the <b class="bfseries">relative complement</b> of \(A\) in \(B\), written \(A~ \backslash ~ B\) and often pronounced “\(A\) set difference \(B\)”, is the set of all elements which are in \(A\) but are not in \(B\). It is defined by 
+ If \(A\) and \(B\) are two sets then the <b class="bfseries">relative complement</b> of \(A\) in \(B\), written \(A~ \backslash ~ B\) and often pronounced “\(A\) set difference \(B\)” or “\(A\) without \(B\)”, is the set of all elements which are in \(A\) but are not in \(B\). It is defined by 
 </p>
 <span class="dmath">\[  A~ \backslash ~ B = \{ x~ |~ x \in A~ \wedge ~ x \notin B\} .  \]</span>
 <p>
@@ -725,7 +725,7 @@ Some texts will write the relative complement of \(A\) in \(B\) as \(A - B\) and
  Note that \(A ~ \backslash ~ B = A \cap B^c\). 
 </p>
 <p>
-The complement of \(A\) is shaded in the Venn diagram below. 
+The complement of \(B\) is shaded in the Venn diagram below. 
 </p>
 <div class="centered"> <div class="tikzcd" id="a0000000010">
 <img alt="\begin{tikzpicture} [framed, background rectangle/.style={draw=black,fill=cyan!30}, inner frame sep=5ex,
@@ -747,7 +747,7 @@ The complement of \(A\) is shaded in the Venn diagram below.
     \draw \firstcircle;
     % \node (c) [above] at (current bounding box.north -| a) {$t_i$};
     % \node at (c -| b) {$t_j$};
-    \alttext{A Venn diagram of two sets representing the intersection of two sets A and B. The overlapping region of A and B is shaded blue.}
+    \alttext{A Venn diagram of two sets representing the complement of the set B. The area outside of both A and B is shaded, as is the area which is solely in A, but not the intersection of A and B.}
 \end{tikzpicture}" src="images/img-0006.svg"/>
 </div> </div>
 <p>
@@ -957,7 +957,7 @@ Given two sets \(A\) and \(B\), we can denote the <b class="bfseries">set of fun
 
     <div id="footer-text">
         <p>Generated using <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.2.1, written by the Digital Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
-        <p>This page last generated: 2024-09-24</p>
+        <p>This page last generated: 2024-09-27</p>
         
         
         
