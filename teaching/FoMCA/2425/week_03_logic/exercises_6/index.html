@@ -7,7 +7,7 @@
             <meta name="robots" content="noindex">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta name="author" content="Alex Corner" />
-            <meta name="date" content="2024-09-27" />
+            <meta name="date" content="2024-10-11" />
         
 
         <title>Exercises 4 | 55-407817: Fundamentals of Mathematics and Computer Architectures</title>
@@ -15,41 +15,41 @@
         
     
     
-            <link rel="stylesheet" href="../../static/styles.css?build_time=1727450426.532645">
+            <link rel="stylesheet" href="../../static/styles.css?build_time=1728650632.394118">
             
             
         
-    <link rel="stylesheet" id="customiseCodeCSS" href="../../static/pygmentize.css?build_time=1727450426.532645">
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../static/pygmentize.css?build_time=1728650632.394118">
 
-    <link rel="stylesheet" href="../../static/print.css?build_time=1727450426.532645">
+    <link rel="stylesheet" href="../../static/print.css?build_time=1728650632.394118">
 
 
         
     
 			<script>
-				var chirun_static_url = new URL('../../static?build_time=1727450426.532645', location.href);
+				var chirun_static_url = new URL('../../static?build_time=1728650632.394118', location.href);
 			</script>
 
             
-                <script defer src="../../static/mathjax_config.js?build_time=1727450426.532645"></script>
+                <script defer src="../../static/mathjax_config.js?build_time=1728650632.394118"></script>
                 <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             
 
-            <script type="module" src="../../static/localisation.js?build_time=1727450426.532645"></script>
+            <script type="module" src="../../static/localisation.js?build_time=1728650632.394118"></script>
 
-            <script defer src="../../static/customisation.js?build_time=1727450426.532645"></script>
+            <script defer src="../../static/customisation.js?build_time=1728650632.394118"></script>
 
             
 
             
         
-    <script defer src="../../static/code.js?build_time=1727450426.532645" type="module"></script>
-    <script defer src="../../static/embed_numbas.js?build_time=1727450426.532645" type="module"></script>
-    <script defer src="../../static/embed_qrcode.js?build_time=1727450426.532645" type="module"></script>
+    <script defer src="../../static/code.js?build_time=1728650632.394118" type="module"></script>
+    <script defer src="../../static/embed_numbas.js?build_time=1728650632.394118" type="module"></script>
+    <script defer src="../../static/embed_qrcode.js?build_time=1728650632.394118" type="module"></script>
 
 
         <template id="runnable-code-template">
-            <link rel="stylesheet" href="../../static/code.css?build_time=1727450426.532645">
+            <link rel="stylesheet" href="../../static/code.css?build_time=1728650632.394118">
             <div class="runnable-code-wrapper">
                 <section class="fullscreenable code">
                     <div id="code"></div>
@@ -230,7 +230,7 @@
         </template>
 
         <template id="embed-numbas-template">
-            <link rel="stylesheet" href="../../static/embed_numbas.css?build_time=1727450426.532645">
+            <link rel="stylesheet" href="../../static/embed_numbas.css?build_time=1728650632.394118">
             <details id="wrapper" data-completion-status="incomplete">
                 <summary>
                     <h1 id="title">Test Yourself</h1>
@@ -579,7 +579,7 @@ Form the negation of each of the statements in the question above; write these b
 </li>
 <li id="a0000000023" value="3">
 <p>
-Let \(L\) be an ordered list containing 100 entries, with \(L(m)\) denoting the entry in the \(m\)th position. Suppose that indexing starts at \(1\), so \(L(1)\) is the first entry in the list and \(L(100)\) is the last entry in the list. Write the following in predicate logic notation. You may assume all variables used in the statements will be integers, but be careful to define appropriate ranges. (E.g., \(m \leq 99\) or \(n \geq 2\).) In each case, decide if each statement is true or false. 
+Let \(L\) be an ordered list containing 100 entries, with \(L(m)\) denoting the value of the entry in the \(m\)th position. Suppose that indexing starts at \(1\), so \(L(1)\) is the first entry in the list and \(L(100)\) is the last entry in the list. The entry in the \(m\)th position is given by the rule \(L(m) = 2m + 1\). Write the following in predicate logic notation. You may assume all variables used in the statements will be integers, but be careful to define appropriate ranges. (E.g., \(m \leq 99\) or \(n \geq 2\).) In each case, decide if each statement is true or false. 
 </p>
 <ol class="enumerate" id="a0000000024">
 <li id="a0000000025" value="1">
@@ -773,22 +773,22 @@ There is a computer which has no printer networked to it : \(\exists ~ y~ \bulle
 <ol class="enumerate" id="a0000000066">
 <li id="a0000000067" value="1">
 <p>
-\(\forall m \bullet L(m) {\gt} 0\) (or \(\neg ~ (\exists m \bullet L(m) \leq 0)\)) 
+\(\forall m \bullet L(m) {\gt} 0\) (or \(\neg ~ (\exists m \bullet L(m) \leq 0)\)): True - all values of \(m\) are greater than or equal to \(1\), so \(L(m) = 2m + 1 \geq 2(1) + 1 = 3\). 
 </p>
 </li>
 <li id="a0000000068" value="2">
 <p>
-\(\exists m \bullet \exists n \bullet L(m) = n^2\) 
+\(\forall m \bullet \exists n \bullet L(m) = n^2\): False - \(L(1) = 3\), which is not a square number. 
 </p>
 </li>
 <li id="a0000000069" value="3">
 <p>
-Suppose that \(m \leq 99\): \(\forall m \bullet L(m) {\lt} L(m+1)\). 
+Suppose that \(m \leq 99\): \(\forall m \bullet L(m) {\lt} L(m+1)\). True - \(L(m) = 2m + 1 {\lt} 2m + 3 = 2(m + 1) + 1 = L(m+1)\). 
 </p>
 </li>
 <li id="a0000000070" value="4">
 <p>
-\(\exists m \bullet \exists n \bullet L(m) = 2L(n)\) 
+\(\exists m \bullet \exists n \bullet L(m) = 2L(n)\): False - If such values of \(m\) and \(n\) did exist, then we would have \(L(m) = 2m + 1 = 2(2n+1) = L(n)\), i.e., \(2m + 1 = 4n + 2\), meaning that \(2m - 4n = 2 - 1 = 1\), by rearranging. So \(2(m - 2n) = 1\), which cannot happen for an values of \(m\) and \(n\), since the left hand side is an even number (divisible by 2), but the right hand side is an odd number. 
 </p>
 </li>
 </ol>
@@ -815,7 +815,7 @@ Suppose that \(m \leq 99\): \(\forall m \bullet L(m) {\lt} L(m+1)\).
 
     <div id="footer-text">
         <p>Generated using <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.2.1, written by the Digital Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
-        <p>This page last generated: 2024-09-27</p>
+        <p>This page last generated: 2024-10-11</p>
         
         
         
