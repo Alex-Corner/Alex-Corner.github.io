@@ -358,36 +358,6 @@ structure:
     title: Exercises 1
     type: chapter
     url: week_05_functions/exercises_8/index.html
-  - build_pdf: true
-    formats:
-    - filetype: html
-      format: default
-      url: week_05_functions/_optional_complexity/index.html
-    - filetype: pdf
-      format: default
-      url: week_05_functions/_optional_complexity/_optional_complexity.pdf
-    is_hidden: false
-    pdf_url: week_05_functions/_optional_complexity/_optional_complexity.pdf
-    slug: _optional_complexity
-    source: sets/functions/complexity-notes.tex
-    title: (Optional) Complexity
-    type: chapter
-    url: week_05_functions/_optional_complexity/index.html
-  - build_pdf: true
-    formats:
-    - filetype: html
-      format: default
-      url: week_05_functions/_optional_exercises_/index.html
-    - filetype: pdf
-      format: default
-      url: week_05_functions/_optional_exercises_/_optional_exercises_.pdf
-    is_hidden: false
-    pdf_url: week_05_functions/_optional_exercises_/_optional_exercises_.pdf
-    slug: _optional_exercises_
-    source: sets/functions/complexity-exercises.tex
-    title: (Optional) Exercises 2
-    type: chapter
-    url: week_05_functions/_optional_exercises_/index.html
   formats:
   - filetype: html
     format: default
