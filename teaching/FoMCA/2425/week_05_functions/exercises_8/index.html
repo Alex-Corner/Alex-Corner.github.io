@@ -7,7 +7,7 @@
             <meta name="robots" content="noindex">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta name="author" content="Alex Corner" />
-            <meta name="date" content="2024-10-21" />
+            <meta name="date" content="2024-10-23" />
         
 
         <title>Exercises 1 | 55-407817: Fundamentals of Mathematics and Computer Architectures</title>
@@ -15,41 +15,41 @@
         
     
     
-            <link rel="stylesheet" href="../../static/styles.css?build_time=1729529187.420941">
+            <link rel="stylesheet" href="../../static/styles.css?build_time=1729686823.856269">
             
             
         
-    <link rel="stylesheet" id="customiseCodeCSS" href="../../static/pygmentize.css?build_time=1729529187.420941">
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../static/pygmentize.css?build_time=1729686823.856269">
 
-    <link rel="stylesheet" href="../../static/print.css?build_time=1729529187.420941">
+    <link rel="stylesheet" href="../../static/print.css?build_time=1729686823.856269">
 
 
         
     
 			<script>
-				var chirun_static_url = new URL('../../static?build_time=1729529187.420941', location.href);
+				var chirun_static_url = new URL('../../static?build_time=1729686823.856269', location.href);
 			</script>
 
             
-                <script defer src="../../static/mathjax_config.js?build_time=1729529187.420941"></script>
+                <script defer src="../../static/mathjax_config.js?build_time=1729686823.856269"></script>
                 <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             
 
-            <script type="module" src="../../static/localisation.js?build_time=1729529187.420941"></script>
+            <script type="module" src="../../static/localisation.js?build_time=1729686823.856269"></script>
 
-            <script defer src="../../static/customisation.js?build_time=1729529187.420941"></script>
+            <script defer src="../../static/customisation.js?build_time=1729686823.856269"></script>
 
             
 
             
         
-    <script defer src="../../static/code.js?build_time=1729529187.420941" type="module"></script>
-    <script defer src="../../static/embed_numbas.js?build_time=1729529187.420941" type="module"></script>
-    <script defer src="../../static/embed_qrcode.js?build_time=1729529187.420941" type="module"></script>
+    <script defer src="../../static/code.js?build_time=1729686823.856269" type="module"></script>
+    <script defer src="../../static/embed_numbas.js?build_time=1729686823.856269" type="module"></script>
+    <script defer src="../../static/embed_qrcode.js?build_time=1729686823.856269" type="module"></script>
 
 
         <template id="runnable-code-template">
-            <link rel="stylesheet" href="../../static/code.css?build_time=1729529187.420941">
+            <link rel="stylesheet" href="../../static/code.css?build_time=1729686823.856269">
             <div class="runnable-code-wrapper">
                 <section class="fullscreenable code">
                     <div id="code"></div>
@@ -230,7 +230,7 @@
         </template>
 
         <template id="embed-numbas-template">
-            <link rel="stylesheet" href="../../static/embed_numbas.css?build_time=1729529187.420941">
+            <link rel="stylesheet" href="../../static/embed_numbas.css?build_time=1729686823.856269">
             <details id="wrapper" data-completion-status="incomplete">
                 <summary>
                     <h1 id="title">Test Yourself</h1>
@@ -464,7 +464,7 @@
     </li>
 
     <li>
-        <a href="#a0000000034">Solutions</a>
+        <a href="#a0000000051">Solutions</a>
         
     </li>
 
@@ -612,71 +612,151 @@ Can you define a function \(r \colon \{ x,y,z\}  \rightarrow \{ a,b,c\} \) such 
 </li>
 </ol>
 </li>
-</ol>
-</section><section class="section">
-<h2 id="a0000000034">Solutions</h2>
+<li id="a0000000034" value="4">
+<p>
+(Challenge) In the following questions we will investigate a link between sets of functions \(f \colon X \rightarrow \{ 0,1\} \) and subsets of a set \(X\). Let \(X\) be a set. Then the <b class="bfseries">power set of \(X\)</b> is defined as the set whose elements are the subsets \(A \subseteq X\). I.e, 
+</p>
+<span class="dmath">\[  \mathbb {P}(X) = \{ A~ |~ A \subseteq X\} .  \]</span>
+<p>
+ For examples and further explanation, see the notes on <a href="https://alex-corner.github.io/teaching/FoMCA/2425/week_01_sets/operations_on_sets/index.html#sec:sets:operations:powerset">power set</a>. 
+</p>
 <ol class="enumerate" id="a0000000035">
 <li id="a0000000036" value="1">
 <p>
-<span class="vspace smallskip"></span>
+For each of the following sets, count how many different subsets they have. I.e., for each set \(B\) below, count the number of elements in the set \(\mathbb {P}(B)\). 
 </p>
 <ol class="enumerate" id="a0000000037">
 <li id="a0000000038" value="1">
 <p>
-\(f(0) = 3\), \(f(3) = 6\), \(f(7) = 10\) <span class="vspace smallskip"></span>
+\(X = \emptyset \), 
 </p>
 </li>
 <li id="a0000000039" value="2">
 <p>
-\(g(0) = 0\), \(g(-1) = 1\), \(g(2) = 2\) <span class="vspace smallskip"></span>
+\(Y = \{  0 \} \), 
 </p>
 </li>
 <li id="a0000000040" value="3">
+<p>
+\(Z = \{  0, 1 \} \), 
+</p>
+</li>
+<li id="a0000000041" value="4">
+<p>
+\(W = \{  0, 1, 2 \} \). 
+</p>
+</li>
+</ol>
+</li>
+<li id="a0000000042" value="2">
+<p>
+For each of the following sets, count how many different functions there are into the set \(\{  0, 1 \} \). I.e., for each set \(B\) below, count the number of elements in the set \(\operatorname {Fun}(B, \{  0, 1 \} \). 
+</p>
+<ol class="enumerate" id="a0000000043">
+<li id="a0000000044" value="1">
+<p>
+\(X = \emptyset \), 
+</p>
+</li>
+<li id="a0000000045" value="2">
+<p>
+\(Y = \{  0 \} \), 
+</p>
+</li>
+<li id="a0000000046" value="3">
+<p>
+\(Z = \{  0, 1 \} \), 
+</p>
+</li>
+<li id="a0000000047" value="4">
+<p>
+\(W = \{  0, 1, 2 \} \). 
+</p>
+</li>
+</ol>
+</li>
+<li id="a0000000048" value="3">
+<p>
+Do you notice anything about the numbers in the parts above? I.e., is there any link between the number of subset of a set \(B\) and the number of functions \(B \rightarrow \{  0, 1 \} \)? 
+</p>
+</li>
+<li id="a0000000049" value="4">
+<p>
+Given a subset \(A \subset B\), can you use this to define a function \(f_A \colon B \rightarrow \{  0, 1\} \)? I.e., can you define a function \(\varphi \colon \mathbb {P}(B) \rightarrow \operatorname {Fun}(B,\{ 0,1\} )\)? 
+</p>
+</li>
+<li id="a0000000050" value="5">
+<p>
+Given a function \(f \colon B \rightarrow \{  0, 1\} \), can you use this to define a subset \(A_f \subseteq B\)? I.e., can you define a function \(\psi \colon \operatorname {Fun}(B,\{ 0,1\}  \rightarrow \mathbb {P}(B)\)? 
+</p>
+</li>
+</ol>
+</li>
+</ol>
+</section><section class="section">
+<h2 id="a0000000051">Solutions</h2>
+<ol class="enumerate" id="a0000000052">
+<li id="a0000000053" value="1">
+<p>
+<span class="vspace smallskip"></span>
+</p>
+<ol class="enumerate" id="a0000000054">
+<li id="a0000000055" value="1">
+<p>
+\(f(0) = 3\), \(f(3) = 6\), \(f(7) = 10\) <span class="vspace smallskip"></span>
+</p>
+</li>
+<li id="a0000000056" value="2">
+<p>
+\(g(0) = 0\), \(g(-1) = 1\), \(g(2) = 2\) <span class="vspace smallskip"></span>
+</p>
+</li>
+<li id="a0000000057" value="3">
 <p>
 \(h(1) = 1, h(\pi ) = 1, h(-e^{-\pi }) = 1\) 
 </p>
 </li>
 </ol>
 </li>
-<li id="a0000000041" value="2">
-<ol class="enumerate" id="a0000000042">
-<li id="a0000000043" value="1">
+<li id="a0000000058" value="2">
+<ol class="enumerate" id="a0000000059">
+<li id="a0000000060" value="1">
 <p>
 One possible codomain is \(X = \mathbb {N}\). <span class="vspace smallskip"></span>
 </p>
 </li>
-<li id="a0000000044" value="2">
+<li id="a0000000061" value="2">
 <p>
 One possible codomain is \(X = \{ 2,4\} \). Another is \(X = \mathbb {N}\). <span class="vspace smallskip"></span>
 </p>
 </li>
-<li id="a0000000045" value="3">
+<li id="a0000000062" value="3">
 <p>
 One possible codomain is \(X = \mathbb {Z}\). <span class="vspace smallskip"></span>
 </p>
 </li>
-<li id="a0000000046" value="4">
+<li id="a0000000063" value="4">
 <p>
 One possible codomain is \(\mathbb {Z}\). <span class="vspace smallskip"></span>
 </p>
 </li>
 </ol>
 </li>
-<li id="a0000000047" value="3">
-<ol class="enumerate" id="a0000000048">
-<li id="a0000000049" value="1">
-<ol class="enumerate" id="a0000000050">
-<li id="a0000000051" value="1">
+<li id="a0000000064" value="3">
+<ol class="enumerate" id="a0000000065">
+<li id="a0000000066" value="1">
+<ol class="enumerate" id="a0000000067">
+<li id="a0000000068" value="1">
 <p>
 \((g \circ f)(m) = g(f(m)) = g(m^2) = (m^2)^3 = m^6\) 
 </p>
 </li>
-<li id="a0000000052" value="2">
+<li id="a0000000069" value="2">
 <p>
 \((g \circ f)(m) = (g \circ f)(3) = 3^6 = 729\) 
 </p>
 </li>
-<li id="a0000000053" value="3">
+<li id="a0000000070" value="3">
 <p>
 The other composite is given by 
 </p>
@@ -687,48 +767,132 @@ The other composite is given by
 </li>
 </ol>
 </li>
-<li id="a0000000054" value="2">
-<ol class="enumerate" id="a0000000055">
-<li id="a0000000056" value="1">
+<li id="a0000000071" value="2">
+<ol class="enumerate" id="a0000000072">
+<li id="a0000000073" value="1">
 <p>
 \((\beta \circ \alpha )(m) = \beta (\alpha (m)) = \beta (\frac{m}{2}) = \operatorname {abs}(\frac{m}{2})\). There’s nothing much more we can do to simplify that. 
 </p>
 </li>
-<li id="a0000000057" value="2">
+<li id="a0000000074" value="2">
 <p>
 If \(m = -\pi \), then \(\alpha (m) = \alpha (-\pi ) = \frac{-\pi }{2}\). Since \(-\pi \approx -3.14159\), then \(\frac{-\pi }{2} \approx -1.57\). (In general, don’t truncate numbers like \(\pi \) until you have to - so just keep using the symbol \(\pi \) until you actually need a numerical value out of it.) So \(\beta (\alpha (-\pi )) \approx \operatorname {abs}(-1.57) \approx 1.57\). 
 </p>
 </li>
-<li id="a0000000058" value="3">
+<li id="a0000000075" value="3">
 <p>
 If \(m = -\pi \), then \(\beta (m) = \operatorname {abs}(-\pi ) = \pi \). So \(\alpha (\beta (-\pi )) \approx (1.57)\). 
 </p>
 </li>
-<li id="a0000000059" value="4">
+<li id="a0000000076" value="4">
 <p>
 We can just think about this first without putting in any values. One of the functions, \(\alpha \), halves the value we put into it. The other function, \(\beta \), takes the absolute value of the number. It doesn’t matter what order we do this in, so we always have \(\beta \circ \alpha = \alpha \circ \beta \). 
 </p>
 </li>
 </ol>
 </li>
-<li id="a0000000060" value="3">
-<ol class="enumerate" id="a0000000061">
-<li id="a0000000062" value="1">
+<li id="a0000000077" value="3">
+<ol class="enumerate" id="a0000000078">
+<li id="a0000000079" value="1">
 <p>
 \((q \circ p)(a) = x\), \((q \circ p)(b) = y\), \((q \circ p)(c) = z\) 
 </p>
 </li>
-<li id="a0000000063" value="2">
+<li id="a0000000080" value="2">
 <p>
 Since the sets \(\{ a, b, c\} \) and \(\{ x, y, z\} \) are not equal, we cannot define the other composite \(p \circ q\) since the domains and codomains don’t match up in the correct way. 
 </p>
 </li>
-<li id="a0000000064" value="3">
+<li id="a0000000081" value="3">
 <p>
 Define \(r \colon \{ x,y,z\}  \rightarrow \{ a,b,c\} \) by \(r(x) = b\), \(r(y) = b\), and \(r(z) = a\). 
 </p>
 </li>
 </ol>
+</li>
+</ol>
+</li>
+<li id="a0000000082" value="4">
+<p>
+(Challenge) In the following questions we will investigate a link between sets of functions \(f \colon X \rightarrow \{ 0,1\} \) and subsets of a set \(X\). Let \(X\) be a set. Then the <b class="bfseries">power set of \(X\)</b> is defined as the set whose elements are the subsets \(A \subseteq X\). I.e, 
+</p>
+<span class="dmath">\[  \mathbb {P}(X) = \{ A~ |~ A \subseteq X\} .  \]</span>
+<p>
+ For examples and further explanation, see the notes on <a href="https://alex-corner.github.io/teaching/FoMCA/2425/week_01_sets/operations_on_sets/index.html#sec:sets:operations:powerset">power set</a>. 
+</p>
+<ol class="enumerate" id="a0000000083">
+<li id="a0000000084" value="1">
+<p>
+For each of the following sets, count how many different subsets they have. I.e., for each set \(B\) below, count the number of elements in the set \(\mathbb {P}(B)\). 
+</p>
+<ol class="enumerate" id="a0000000085">
+<li id="a0000000086" value="1">
+<p>
+\(\mathbb {P}(X) = \{ \emptyset \} \), so \(|\mathbb {P}(X)| = 1\); 
+</p>
+</li>
+<li id="a0000000087" value="2">
+<p>
+\(\mathbb {P}(Y) = \{ \emptyset , \{ 0\} \} \), so \(|\mathbb {P}(Y)| = 2\); 
+</p>
+</li>
+<li id="a0000000088" value="3">
+<p>
+\(\mathbb {P}(Z) = \{ \emptyset ,\{ 0\} ,\{ 1\} ,\{ 0,1\} \} \), so \(|\mathbb {P}(Z)| = 4\); 
+</p>
+</li>
+<li id="a0000000089" value="4">
+<p>
+\(\mathbb {P}(W) = \{ \emptyset , \{ 0\} ,\{ 1\} ,\{ 2\} ,\{ 0,1\} ,\{ 0,2\} ,\{ 1,2\} ,\{ 0,1,2\} \} \), so \(|\mathbb {P}(W)| = 8\). 
+</p>
+</li>
+</ol>
+</li>
+<li id="a0000000090" value="2">
+<p>
+For each of the following sets, count how many different functions there are into the set \(\{  0, 1 \} \). I.e., for each set \(B\) below, count the number of elements in the set \(\operatorname {Fun}(B, \{  0, 1 \} \). 
+</p>
+<ol class="enumerate" id="a0000000091">
+<li id="a0000000092" value="1">
+<p>
+\(X = \emptyset \): there is one function \(\emptyset \rightarrow \{ 0,1\} \) - this can be tricky to see since the domain is empty; 
+</p>
+</li>
+<li id="a0000000093" value="2">
+<p>
+\(Y = \{  0 \} \): there are two possible functions here - send \(0\) to \(0\), or send \(0\) to \(1\); 
+</p>
+</li>
+<li id="a0000000094" value="3">
+<p>
+\(Z = \{  0, 1 \} \): there are four possible functions here - send both elements to \(0\), send both elements to \(1\), send both elements to themselves, or swap the values; 
+</p>
+</li>
+<li id="a0000000095" value="4">
+<p>
+\(W = \{  0, 1, 2 \} \): this time there are eight possible functions, which you may want to try and write down. 
+</p>
+</li>
+</ol>
+</li>
+<li id="a0000000096" value="3">
+<p>
+Do you notice anything about the numbers in the parts above? Given a set \(B\), the number of subsets of \(B\) is the same as the number of functions \(B \rightarrow \{ 0,1\} \). I.e., for any set \(B\) we seem to be seeing that \(\left|\mathbb {P}(B)\right| = \left|\operatorname {Fun}(B,\{ 0,1\} )\right|\). 
+</p>
+</li>
+<li id="a0000000097" value="4">
+<p>
+Can you define a function \(\varphi \colon \mathbb {P}(B) \rightarrow \operatorname {Fun}(B,\{ 0,1\} )\)? Let \(A\) be a subset of \(B\). We need to define a function \(\varphi (A) \colon B \rightarrow \{ 0,1\} \). One way of doing this is to define \(\varphi (A)(b) = 0\) if \(b \notin A\) and \(\varphi (A)(b) = 1\) if \(b \in A\). So what we are doing is sending an element \(b \in B\) to \(1\) (True) if the element is also in the subset \(A\), otherwise we send it to \(0\) (False). 
+</p>
+</li>
+<li id="a0000000098" value="5">
+<p>
+Can you define a function \(\psi \colon \operatorname {Fun}(B,\{ 0,1\}  \rightarrow \mathbb {P}(B)\)? Let \(f \colon B \rightarrow \{ 0,1\} \) be a function. We need to define a subset \(\psi (f) = A_f \subseteq B\). We can define this by 
+</p>
+<span class="dmath">\[  A_f = \{ b \in B~ |~ f(b) = 1\} .  \]</span>
+<p>
+ This is similar to how we defined the function in the previous part. 
+</p>
 </li>
 </ol>
 </li>
@@ -749,7 +913,7 @@ Define \(r \colon \{ x,y,z\}  \rightarrow \{ a,b,c\} \) by \(r(x) = b\), \(r(y) 
 
     <div id="footer-text">
         <p>Generated using <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.2.1, written by the Digital Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
-        <p>This page last generated: 2024-10-21</p>
+        <p>This page last generated: 2024-10-23</p>
         
         
         
