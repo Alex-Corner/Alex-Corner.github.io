@@ -7,7 +7,7 @@
             <meta name="robots" content="noindex">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta name="author" content="Alex Corner" />
-            <meta name="date" content="2024-10-23" />
+            <meta name="date" content="2024-11-05" />
         
 
         <title>Exercises 2 | 55-407817: Fundamentals of Mathematics and Computer Architectures</title>
@@ -15,41 +15,41 @@
         
     
     
-            <link rel="stylesheet" href="../../static/styles.css?build_time=1729691958.258016">
+            <link rel="stylesheet" href="../../static/styles.css?build_time=1730820201.2951">
             
             
         
-    <link rel="stylesheet" id="customiseCodeCSS" href="../../static/pygmentize.css?build_time=1729691958.258016">
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../static/pygmentize.css?build_time=1730820201.2951">
 
-    <link rel="stylesheet" href="../../static/print.css?build_time=1729691958.258016">
+    <link rel="stylesheet" href="../../static/print.css?build_time=1730820201.2951">
 
 
         
     
 			<script>
-				var chirun_static_url = new URL('../../static?build_time=1729691958.258016', location.href);
+				var chirun_static_url = new URL('../../static?build_time=1730820201.2951', location.href);
 			</script>
 
             
-                <script defer src="../../static/mathjax_config.js?build_time=1729691958.258016"></script>
+                <script defer src="../../static/mathjax_config.js?build_time=1730820201.2951"></script>
                 <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             
 
-            <script type="module" src="../../static/localisation.js?build_time=1729691958.258016"></script>
+            <script type="module" src="../../static/localisation.js?build_time=1730820201.2951"></script>
 
-            <script defer src="../../static/customisation.js?build_time=1729691958.258016"></script>
+            <script defer src="../../static/customisation.js?build_time=1730820201.2951"></script>
 
             
 
             
         
-    <script defer src="../../static/code.js?build_time=1729691958.258016" type="module"></script>
-    <script defer src="../../static/embed_numbas.js?build_time=1729691958.258016" type="module"></script>
-    <script defer src="../../static/embed_qrcode.js?build_time=1729691958.258016" type="module"></script>
+    <script defer src="../../static/code.js?build_time=1730820201.2951" type="module"></script>
+    <script defer src="../../static/embed_numbas.js?build_time=1730820201.2951" type="module"></script>
+    <script defer src="../../static/embed_qrcode.js?build_time=1730820201.2951" type="module"></script>
 
 
         <template id="runnable-code-template">
-            <link rel="stylesheet" href="../../static/code.css?build_time=1729691958.258016">
+            <link rel="stylesheet" href="../../static/code.css?build_time=1730820201.2951">
             <div class="runnable-code-wrapper">
                 <section class="fullscreenable code">
                     <div id="code"></div>
@@ -230,7 +230,7 @@
         </template>
 
         <template id="embed-numbas-template">
-            <link rel="stylesheet" href="../../static/embed_numbas.css?build_time=1729691958.258016">
+            <link rel="stylesheet" href="../../static/embed_numbas.css?build_time=1730820201.2951">
             <details id="wrapper" data-completion-status="incomplete">
                 <summary>
                     <h1 id="title">Test Yourself</h1>
@@ -464,7 +464,7 @@
     </li>
 
     <li>
-        <a href="#a0000000027">Solutions</a>
+        <a href="#a0000000031">Solutions</a>
         
     </li>
 
@@ -644,16 +644,75 @@ and hence check that the formula for the inverse of a matrix, given below, is co
 If \(A\) and \(B\) are invertible matrices of the same size, simplify \(\left(B^{-1}A^{-1}\right)\left(AB\right)\). Hence show that \(\left(AB\right)^{-1} = B^{-1}A^{-1}\). 
 </p>
 </li>
-</ol>
-</section><section class="section">
-<h2 id="a0000000027">Solutions</h2>
+<li id="a0000000027" value="7">
+<p>
+(Challenge) Let 
+</p>
+<span class="dmath">\[  A = \begin{bmatrix}  3 
+
+&amp;  2 
+
+&amp;  1 
+
+\\ 1 
+
+&amp;  2 
+
+&amp;  3 
+
+\\ 3 
+
+&amp;  1 
+
+&amp;  2 
+
+\end{bmatrix}.  \]</span>
+<p>
+ The inverse of \(A\) is given by 
+</p>
+<span class="dmath">\[  A^{-1} = \frac{1}{12} \begin{bmatrix}  1 
+
+&amp;  -3 
+
+&amp;  4 
+
+\\ 7 
+
+&amp;  3 
+
+&amp;  -8 
+
+\\ -5 
+
+&amp;  3 
+
+&amp;  4 
+
+\end{bmatrix}.  \]</span>
 <ol class="enumerate" id="a0000000028">
 <li id="a0000000029" value="1">
-<ol class="enumerate" id="a0000000030">
-<li id="a0000000031" value="1">
+<p>
+Show that \(A^{-1}A = I\). 
+</p>
+</li>
+<li id="a0000000030" value="2">
+<p>
+Using \(A^{-1}\), show that the solution to the simultaneous equations given below is \(x = -3\), \(y=9\), and \(z=3\). 
+</p>
+<span><script type="math/tex; mode=display">\begin{align*}  3x + 2y + z & = 12 \\ x + 2y + 3z & = 24 \\ 3x + y + 2z & = 6 \end{align*}</script></span>
+</li>
+</ol>
+</li>
+</ol>
+</section><section class="section">
+<h2 id="a0000000031">Solutions</h2>
+<ol class="enumerate" id="a0000000032">
+<li id="a0000000033" value="1">
+<ol class="enumerate" id="a0000000034">
+<li id="a0000000035" value="1">
 <span class="dmath">\[  \operatorname {det}(A) = (-3 \times 3) - (5 \times 4) = -9 - 20 = -29.  \]</span>
 </li>
-<li id="a0000000032" value="2">
+<li id="a0000000036" value="2">
 <span class="dmath">\[  A^{-1} = \frac{1}{-29}\begin{pmatrix}  3 
 
 &amp;  -5 
@@ -664,7 +723,7 @@ If \(A\) and \(B\) are invertible matrices of the same size, simplify \(\left(B^
 
 \\ \end{pmatrix}  \]</span>
 </li>
-<li id="a0000000033" value="3">
+<li id="a0000000037" value="3">
 <span class="dmath">\[  A^{-1}\begin{pmatrix}  58 
 
 \\ -29 
@@ -687,7 +746,7 @@ If \(A\) and \(B\) are invertible matrices of the same size, simplify \(\left(B^
 
 \\ \end{pmatrix}  \]</span>
 </li>
-<li id="a0000000034" value="4">
+<li id="a0000000038" value="4">
 <span class="dmath">\[  A^{-1}\begin{pmatrix}  -2 
 
 \\ 1 
@@ -712,12 +771,12 @@ If \(A\) and \(B\) are invertible matrices of the same size, simplify \(\left(B^
 </li>
 </ol>
 </li>
-<li id="a0000000035" value="2">
-<ol class="enumerate" id="a0000000036">
-<li id="a0000000037" value="1">
+<li id="a0000000039" value="2">
+<ol class="enumerate" id="a0000000040">
+<li id="a0000000041" value="1">
 <span class="dmath">\[  \operatorname {det}(B) = (7 \times 5) - (-3 \times 3) = 35 - (-9) = 44.  \]</span>
 </li>
-<li id="a0000000038" value="2">
+<li id="a0000000042" value="2">
 <span class="dmath">\[  B^{-1} = \frac{1}{44}\begin{pmatrix}  5 
 
 &amp;  3 
@@ -728,7 +787,7 @@ If \(A\) and \(B\) are invertible matrices of the same size, simplify \(\left(B^
 
 \\ \end{pmatrix}  \]</span>
 </li>
-<li id="a0000000039" value="3">
+<li id="a0000000043" value="3">
 <span class="dmath">\[  B^{-1}\begin{pmatrix}  5 
 
 \\ 7 
@@ -751,7 +810,7 @@ If \(A\) and \(B\) are invertible matrices of the same size, simplify \(\left(B^
 
 \\ \end{pmatrix}  \]</span>
 </li>
-<li id="a0000000040" value="4">
+<li id="a0000000044" value="4">
 <span class="dmath">\[  B^{-1}\begin{pmatrix}  44 
 
 \\ -44 
@@ -776,9 +835,9 @@ If \(A\) and \(B\) are invertible matrices of the same size, simplify \(\left(B^
 </li>
 </ol>
 </li>
-<li id="a0000000041" value="3">
-<ol class="enumerate" id="a0000000042">
-<li id="a0000000043" value="1">
+<li id="a0000000045" value="3">
+<ol class="enumerate" id="a0000000046">
+<li id="a0000000047" value="1">
 <p>
 We can formulate the simultaneous equations as a single matrix equation: 
 </p>
@@ -800,7 +859,7 @@ We can formulate the simultaneous equations as a single matrix equation:
 
 \\ \end{pmatrix}.  \]</span>
 </li>
-<li id="a0000000044" value="2">
+<li id="a0000000048" value="2">
 <p>
 The determinant of the coefficient matrix is 
 </p>
@@ -856,9 +915,9 @@ The determinant of the coefficient matrix is
 </li>
 </ol>
 </li>
-<li id="a0000000045" value="4">
-<ol class="enumerate" id="a0000000046">
-<li id="a0000000047" value="1">
+<li id="a0000000049" value="4">
+<ol class="enumerate" id="a0000000050">
+<li id="a0000000051" value="1">
 <p>
 We can formulate the simultaneous equations as a single matrix equation: 
 </p>
@@ -880,7 +939,7 @@ We can formulate the simultaneous equations as a single matrix equation:
 
 \\ \end{pmatrix}.  \]</span>
 </li>
-<li id="a0000000048" value="2">
+<li id="a0000000052" value="2">
 <p>
 The determinant of the coefficient matrix is 
 </p>
@@ -899,7 +958,7 @@ The determinant of the coefficient matrix is
 </li>
 </ol>
 </li>
-<li id="a0000000049" value="5">
+<li id="a0000000053" value="5">
 <span><script type="math/tex; mode=display">\begin{align*} \begin{pmatrix}  a 
 
 &  b 
@@ -957,12 +1016,361 @@ The determinant of the coefficient matrix is
  almost works but we still need to divide out by a factor of \((ad-bc)\). 
 </p>
 </li>
-<li id="a0000000050" value="6">
+<li id="a0000000054" value="6">
 <span><script type="math/tex; mode=display">\begin{align*}  (B^{-1}A^{-1})(AB) & = B^{-1}(A^{-1}A)B \\ & = B^{-1}IB \\ & = B^{-1}B \\ & = I \end{align*}</script></span>
 <p>
  Similarly, \(AB(B^{-1}A^{-1}) = I\). The inverse of a matrix \(C\) is a matrix \(C^{-1}\) such that \(CC^{-1} = I = C^{-1}C\). Since \(B^{-1}A^{-1}\) does this job for \(AB\), then we have found that 
 </p>
 <span class="dmath">\[  (AB)^{-1} = B^{-1}A^{-1}.  \]</span>
+</li>
+<li id="a0000000055" value="7">
+<ol class="enumerate" id="a0000000056">
+<li id="a0000000057" value="1">
+<p>
+Let 
+</p>
+<span class="dmath">\[  A = \begin{bmatrix}  3 
+
+&amp;  2 
+
+&amp;  1 
+
+\\ 1 
+
+&amp;  2 
+
+&amp;  3 
+
+\\ 3 
+
+&amp;  1 
+
+&amp;  2 
+
+\end{bmatrix}  \]</span>
+<p>
+ and 
+</p>
+<span class="dmath">\[  A^{-1} = \frac{1}{12} \begin{bmatrix}  1 
+
+&amp;  -3 
+
+&amp;  4 
+
+\\ 7 
+
+&amp;  3 
+
+&amp;  -8 
+
+\\ -5 
+
+&amp;  3 
+
+&amp;  4 
+
+\end{bmatrix}.  \]</span>
+<p>
+We will calculate \( A \cdot A^{-1} \) and check if we obtain the identity matrix \( I = \begin{bmatrix}  1 
+
+&amp;  0 
+
+&amp;  0 
+
+\\ 0 
+
+&amp;  1 
+
+&amp;  0 
+
+\\ 0 
+
+&amp;  0 
+
+&amp;  1 
+
+\end{bmatrix} \). 
+</p>
+<p>
+<b class="bfseries">Step 1: Write Out the Multiplication</b> The product \( A \cdot A^{-1} \) is calculated as: 
+</p>
+<span class="dmath">\[  A \cdot A^{-1} = \begin{bmatrix}  3 
+
+&amp;  2 
+
+&amp;  1 
+
+\\ 1 
+
+&amp;  2 
+
+&amp;  3 
+
+\\ 3 
+
+&amp;  1 
+
+&amp;  2 
+
+\end{bmatrix} \cdot \frac{1}{12} \begin{bmatrix}  1 
+
+&amp;  -3 
+
+&amp;  4 
+
+\\ 7 
+
+&amp;  3 
+
+&amp;  -8 
+
+\\ -5 
+
+&amp;  3 
+
+&amp;  4 
+
+\end{bmatrix}.  \]</span>
+<p>
+This can be rewritten as: 
+</p>
+<span class="dmath">\[  A \cdot A^{-1} = \frac{1}{12} \begin{bmatrix}  3 
+
+&amp;  2 
+
+&amp;  1 
+
+\\ 1 
+
+&amp;  2 
+
+&amp;  3 
+
+\\ 3 
+
+&amp;  1 
+
+&amp;  2 
+
+\end{bmatrix} \begin{bmatrix}  1 
+
+&amp;  -3 
+
+&amp;  4 
+
+\\ 7 
+
+&amp;  3 
+
+&amp;  -8 
+
+\\ -5 
+
+&amp;  3 
+
+&amp;  4 
+
+\end{bmatrix}.  \]</span>
+<p>
+<b class="bfseries">Step 2: Perform Matrix Multiplication</b> To find each element in the resulting matrix, we multiply the corresponding row from \( A \) by the corresponding column from \( A^{-1} \) and sum the products. 
+</p>
+<p>
+<b class="bfseries">First Row</b>
+</p>
+<span class="dmath">\[  \begin{aligned}  (1,1) &amp;  : 3 \cdot 1 + 2 \cdot 7 + 1 \cdot (-5) = 3 + 14 - 5 = 12, \\ (1,2) &amp;  : 3 \cdot (-3) + 2 \cdot 3 + 1 \cdot 3 = -9 + 6 + 3 = 0, \\ (1,3) &amp;  : 3 \cdot 4 + 2 \cdot (-8) + 1 \cdot 4 = 12 - 16 + 4 = 0. \end{aligned}  \]</span>
+<p>
+<b class="bfseries">Second Row</b>
+</p>
+<span class="dmath">\[  \begin{aligned}  (2,1) &amp;  : 1 \cdot 1 + 2 \cdot 7 + 3 \cdot (-5) = 1 + 14 - 15 = 0, \\ (2,2) &amp;  : 1 \cdot (-3) + 2 \cdot 3 + 3 \cdot 3 = -3 + 6 + 9 = 12, \\ (2,3) &amp;  : 1 \cdot 4 + 2 \cdot (-8) + 3 \cdot 4 = 4 - 16 + 12 = 0. \end{aligned}  \]</span>
+<p>
+<b class="bfseries">Third Row</b>
+</p>
+<span class="dmath">\[  \begin{aligned}  (3,1) &amp;  : 3 \cdot 1 + 1 \cdot 7 + 2 \cdot (-5) = 3 + 7 - 10 = 0, \\ (3,2) &amp;  : 3 \cdot (-3) + 1 \cdot 3 + 2 \cdot 3 = -9 + 3 + 6 = 0, \\ (3,3) &amp;  : 3 \cdot 4 + 1 \cdot (-8) + 2 \cdot 4 = 12 - 8 + 8 = 12. \end{aligned}  \]</span>
+<p>
+<b class="bfseries">Step 3: Write Out the Result</b> Putting it all together, we get: 
+</p>
+<span class="dmath">\[  A \cdot A^{-1} = \frac{1}{12} \begin{bmatrix}  12 
+
+&amp;  0 
+
+&amp;  0 
+
+\\ 0 
+
+&amp;  12 
+
+&amp;  0 
+
+\\ 0 
+
+&amp;  0 
+
+&amp;  12 
+
+\end{bmatrix} = \begin{bmatrix}  1 
+
+&amp;  0 
+
+&amp;  0 
+
+\\ 0 
+
+&amp;  1 
+
+&amp;  0 
+
+\\ 0 
+
+&amp;  0 
+
+&amp;  1 
+
+\end{bmatrix}.  \]</span>
+<p>
+<b class="bfseries">Conclusion</b> Thus, we have verified that 
+</p>
+<span class="dmath">\[  A \cdot A^{-1} = I,  \]</span>
+<p>
+ which confirms that \( A^{-1} \) is indeed the inverse of \( A \). 
+</p>
+</li>
+<li id="a0000000058" value="2">
+<p>
+To solve the following system using matrix \( A \) and show that \( x = -3 \), \( y = 9 \), and \( z = 3 \), we can represent the system as a matrix equation and use the inverse of \( A \) to find the solution. 
+</p>
+<p>
+Given the system: 
+</p>
+<span><script type="math/tex; mode=display">\begin{align*}  3x + 2y + z & = 12, \\ x + 2y + 3z & = 24, \\ 3x + y + 2z & = 6, \end{align*}</script></span>
+<p>
+ we can write this in matrix form as: 
+</p>
+<span class="dmath">\[  A \begin{bmatrix}  x 
+
+\\ y 
+
+\\ z 
+
+\end{bmatrix} = \begin{bmatrix}  12 
+
+\\ 24 
+
+\\ 6 
+
+\end{bmatrix},  \]</span>
+<p>
+ where 
+</p>
+<span class="dmath">\[  A = \begin{bmatrix}  3 
+
+&amp;  2 
+
+&amp;  1 
+
+\\ 1 
+
+&amp;  2 
+
+&amp;  3 
+
+\\ 3 
+
+&amp;  1 
+
+&amp;  2 
+
+\end{bmatrix}.  \]</span>
+<p>
+To solve for \( \begin{bmatrix}  x 
+
+\\ y 
+
+\\ z 
+
+\end{bmatrix} \), we can use the inverse matrix \( A^{-1} \): 
+</p>
+<span class="dmath">\[  \begin{bmatrix}  x 
+
+\\ y 
+
+\\ z 
+
+\end{bmatrix} = A^{-1} \begin{bmatrix}  12 
+
+\\ 24 
+
+\\ 6 
+
+\end{bmatrix}.  \]</span>
+<p>
+We know that 
+</p>
+<span class="dmath">\[  A^{-1} = \frac{1}{12} \begin{bmatrix}  1 
+
+&amp;  -3 
+
+&amp;  4 
+
+\\ 7 
+
+&amp;  3 
+
+&amp;  -8 
+
+\\ -5 
+
+&amp;  3 
+
+&amp;  4 
+
+\end{bmatrix}.  \]</span>
+<p>
+<b class="bfseries">Step 1: Multiply \( A^{-1} \) by the constant matrix</b> Let 
+</p>
+<span class="dmath">\[  \begin{bmatrix}  x 
+
+\\ y 
+
+\\ z 
+
+\end{bmatrix} = \frac{1}{12} \begin{bmatrix}  1 
+
+&amp;  -3 
+
+&amp;  4 
+
+\\ 7 
+
+&amp;  3 
+
+&amp;  -8 
+
+\\ -5 
+
+&amp;  3 
+
+&amp;  4 
+
+\end{bmatrix} \begin{bmatrix}  12 
+
+\\ 24 
+
+\\ 6 
+
+\end{bmatrix}.  \]</span>
+<p>
+Now we perform the matrix multiplication: 
+</p>
+<span class="dmath">\[  \begin{aligned}  x &amp; = \frac{1}{12} (1 \cdot 12 + (-3) \cdot 24 + 4 \cdot 6) = \frac{1}{12} (12 - 72 + 24) = \frac{1}{12} \cdot (-36) = -3, \\ y &amp; = \frac{1}{12} (7 \cdot 12 + 3 \cdot 24 + (-8) \cdot 6) = \frac{1}{12} (84 + 72 - 48) = \frac{1}{12} \cdot 108 = 9, \\ z &amp; = \frac{1}{12} ((-5) \cdot 12 + 3 \cdot 24 + 4 \cdot 6) = \frac{1}{12} (-60 + 72 + 24) = \frac{1}{12} \cdot 36 = 3. \end{aligned}  \]</span>
+<p>
+<b class="bfseries">Conclusion</b> Thus, the solution to the system is 
+</p>
+<span class="dmath">\[  x = -3, \quad y = 9, \quad z = 3.  \]</span>
+<p>
+This confirms that the values \( x = -3 \), \( y = 9 \), and \( z = 3 \) satisfy the system of equations. 
+</p>
+</li>
+</ol>
 </li>
 </ol>
 </section>
@@ -981,7 +1389,7 @@ The determinant of the coefficient matrix is
 
     <div id="footer-text">
         <p>Generated using <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.2.1, written by the Digital Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
-        <p>This page last generated: 2024-10-23</p>
+        <p>This page last generated: 2024-11-05</p>
         
         
         
