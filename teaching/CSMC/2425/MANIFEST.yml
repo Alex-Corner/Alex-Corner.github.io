@@ -1,0 +1,641 @@
+author: Alex Corner
+base_dir: fomca_maths
+build_pdf: true
+build_zip: false
+code: 55-408808
+format_version: 2
+institution: Sheffield Hallam University
+license: null
+locale: en
+mathjax_url: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+num_pdf_runs: 1
+root_url: /{base}/{code}/
+structure:
+- build_pdf: false
+  content: []
+  formats:
+  - filetype: html
+    format: default
+    url: index.html
+  is_hidden: false
+  slug: introduction
+  source: intro.tex
+  title: Introduction
+  type: introduction
+  url: index.html
+- build_pdf: false
+  content:
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: 55_408808/using_this_site/index.html
+    - filetype: pdf
+      format: default
+      url: 55_408808/using_this_site/using_this_site.pdf
+    is_hidden: false
+    pdf_url: 55_408808/using_this_site/using_this_site.pdf
+    slug: using_this_site
+    source: intro/material.tex
+    title: Using This Site
+    type: chapter
+    url: 55_408808/using_this_site/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: 55_408808/teaching_schedule/index.html
+    - filetype: pdf
+      format: default
+      url: 55_408808/teaching_schedule/teaching_schedule.pdf
+    is_hidden: false
+    pdf_url: 55_408808/teaching_schedule/teaching_schedule.pdf
+    slug: teaching_schedule
+    source: intro/schedule.tex
+    title: Teaching Schedule
+    type: chapter
+    url: 55_408808/teaching_schedule/index.html
+  - build_pdf: true
+    formats:
+    - filetype: html
+      format: default
+      url: 55_408808/maths_support/index.html
+    - filetype: pdf
+      format: default
+      url: 55_408808/maths_support/maths_support.pdf
+    is_hidden: false
+    pdf_url: 55_408808/maths_support/maths_support.pdf
+    slug: maths_support
+    source: intro/maths_support.tex
+    title: Maths Support
+    type: chapter
+    url: 55_408808/maths_support/index.html
+  formats:
+  - filetype: html
+    format: default
+    url: 55_408808/index.html
+  is_hidden: false
+  slug: '55_408808'
+  source: .
+  title: 55-408808
+  type: part
+  url: 55_408808/index.html
+- build_pdf: false
+  content:
+  - build_pdf: false
+    content:
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: mathematics/revision_arithmetic/arithmetic/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/revision_arithmetic/arithmetic/arithmetic.pdf
+      is_hidden: false
+      pdf_url: mathematics/revision_arithmetic/arithmetic/arithmetic.pdf
+      slug: arithmetic
+      source: revision/arithmetic-notes.tex
+      title: Arithmetic
+      type: chapter
+      url: mathematics/revision_arithmetic/arithmetic/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: mathematics/revision_arithmetic/exercises_1/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/revision_arithmetic/exercises_1/exercises_1.pdf
+      is_hidden: false
+      pdf_url: mathematics/revision_arithmetic/exercises_1/exercises_1.pdf
+      slug: exercises_1
+      source: revision/arithmetic-exercises.tex
+      title: Exercises 1
+      type: chapter
+      url: mathematics/revision_arithmetic/exercises_1/index.html
+    formats:
+    - filetype: html
+      format: default
+      url: mathematics/revision_arithmetic/index.html
+    is_hidden: false
+    slug: revision_arithmetic
+    source: .
+    title: Revision - Arithmetic
+    type: part
+    url: mathematics/revision_arithmetic/index.html
+  - build_pdf: false
+    content:
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: mathematics/revision_number_base/binary_and_hex/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/revision_number_base/binary_and_hex/binary_and_hex.pdf
+      is_hidden: false
+      pdf_url: mathematics/revision_number_base/binary_and_hex/binary_and_hex.pdf
+      slug: binary_and_hex
+      source: revision/binary-notes.tex
+      title: Binary and Hex
+      type: chapter
+      url: mathematics/revision_number_base/binary_and_hex/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: mathematics/revision_number_base/exercises_2/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/revision_number_base/exercises_2/exercises_2.pdf
+      is_hidden: false
+      pdf_url: mathematics/revision_number_base/exercises_2/exercises_2.pdf
+      slug: exercises_2
+      source: revision/binary-exercises.tex
+      title: Exercises 1
+      type: chapter
+      url: mathematics/revision_number_base/exercises_2/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: mathematics/revision_number_base/exercises_3/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/revision_number_base/exercises_3/exercises_3.pdf
+      is_hidden: false
+      pdf_url: mathematics/revision_number_base/exercises_3/exercises_3.pdf
+      slug: exercises_3
+      source: revision/binary-exercises-2.tex
+      title: Exercises 2
+      type: chapter
+      url: mathematics/revision_number_base/exercises_3/index.html
+    formats:
+    - filetype: html
+      format: default
+      url: mathematics/revision_number_base/index.html
+    is_hidden: false
+    slug: revision_number_base
+    source: .
+    title: Revision - Number Bases
+    type: part
+    url: mathematics/revision_number_base/index.html
+  - build_pdf: false
+    content:
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: mathematics/revision_algebra_gra/algebra/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/revision_algebra_gra/algebra/algebra.pdf
+      is_hidden: false
+      pdf_url: mathematics/revision_algebra_gra/algebra/algebra.pdf
+      slug: algebra
+      source: revision/algebra-notes.tex
+      title: Algebra
+      type: chapter
+      url: mathematics/revision_algebra_gra/algebra/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: mathematics/revision_algebra_gra/exercises_4/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/revision_algebra_gra/exercises_4/exercises_4.pdf
+      is_hidden: false
+      pdf_url: mathematics/revision_algebra_gra/exercises_4/exercises_4.pdf
+      slug: exercises_4
+      source: revision/algebra-exercises.tex
+      title: Exercises 1
+      type: chapter
+      url: mathematics/revision_algebra_gra/exercises_4/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: mathematics/revision_algebra_gra/straight_lines/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/revision_algebra_gra/straight_lines/straight_lines.pdf
+      is_hidden: false
+      pdf_url: mathematics/revision_algebra_gra/straight_lines/straight_lines.pdf
+      slug: straight_lines
+      source: revision/lines-notes.tex
+      title: Straight Lines
+      type: chapter
+      url: mathematics/revision_algebra_gra/straight_lines/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: mathematics/revision_algebra_gra/quadratics/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/revision_algebra_gra/quadratics/quadratics.pdf
+      is_hidden: false
+      pdf_url: mathematics/revision_algebra_gra/quadratics/quadratics.pdf
+      slug: quadratics
+      source: revision/quadratics-notes.tex
+      title: Quadratics
+      type: chapter
+      url: mathematics/revision_algebra_gra/quadratics/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: mathematics/revision_algebra_gra/exercises_5/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/revision_algebra_gra/exercises_5/exercises_5.pdf
+      is_hidden: false
+      pdf_url: mathematics/revision_algebra_gra/exercises_5/exercises_5.pdf
+      slug: exercises_5
+      source: revision/polynomials-exercises.tex
+      title: Exercises 2
+      type: chapter
+      url: mathematics/revision_algebra_gra/exercises_5/index.html
+    formats:
+    - filetype: html
+      format: default
+      url: mathematics/revision_algebra_gra/index.html
+    is_hidden: false
+    slug: revision_algebra_gra
+    source: .
+    title: Revision - Algebra, Graphs, and Equations
+    type: part
+    url: mathematics/revision_algebra_gra/index.html
+  - build_pdf: false
+    content:
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: mathematics/revision_logic/propositional_logic_/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/revision_logic/propositional_logic_/propositional_logic_.pdf
+      is_hidden: false
+      pdf_url: mathematics/revision_logic/propositional_logic_/propositional_logic_.pdf
+      slug: propositional_logic_
+      source: revision/propositional-notes.tex
+      title: Propositional Logic 1
+      type: chapter
+      url: mathematics/revision_logic/propositional_logic_/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: mathematics/revision_logic/exercises_6/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/revision_logic/exercises_6/exercises_6.pdf
+      is_hidden: false
+      pdf_url: mathematics/revision_logic/exercises_6/exercises_6.pdf
+      slug: exercises_6
+      source: revision/propositional-exercises.tex
+      title: Exercises 1
+      type: chapter
+      url: mathematics/revision_logic/exercises_6/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: mathematics/revision_logic/propositional_logi_1/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/revision_logic/propositional_logi_1/propositional_logi_1.pdf
+      is_hidden: false
+      pdf_url: mathematics/revision_logic/propositional_logi_1/propositional_logi_1.pdf
+      slug: propositional_logi_1
+      source: revision/propositional_2-notes.tex
+      title: Propositional Logic 2
+      type: chapter
+      url: mathematics/revision_logic/propositional_logi_1/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: mathematics/revision_logic/exercises_7/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/revision_logic/exercises_7/exercises_7.pdf
+      is_hidden: false
+      pdf_url: mathematics/revision_logic/exercises_7/exercises_7.pdf
+      slug: exercises_7
+      source: revision/propositional-exercises_2.tex
+      title: Exercises 2
+      type: chapter
+      url: mathematics/revision_logic/exercises_7/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: mathematics/revision_logic/exercises_8/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/revision_logic/exercises_8/exercises_8.pdf
+      is_hidden: false
+      pdf_url: mathematics/revision_logic/exercises_8/exercises_8.pdf
+      slug: exercises_8
+      source: revision/propositional-exercises_3.tex
+      title: Exercises 3
+      type: chapter
+      url: mathematics/revision_logic/exercises_8/index.html
+    formats:
+    - filetype: html
+      format: default
+      url: mathematics/revision_logic/index.html
+    is_hidden: false
+    slug: revision_logic
+    source: .
+    title: Revision - Logic
+    type: part
+    url: mathematics/revision_logic/index.html
+  - build_pdf: false
+    content:
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: mathematics/week_01_sets/basic_ideas/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/week_01_sets/basic_ideas/basic_ideas.pdf
+      is_hidden: false
+      pdf_url: mathematics/week_01_sets/basic_ideas/basic_ideas.pdf
+      slug: basic_ideas
+      source: week_01-sets-probability/sets-notes_1.tex
+      title: Basic Ideas
+      type: chapter
+      url: mathematics/week_01_sets/basic_ideas/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: mathematics/week_01_sets/exercises_9/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/week_01_sets/exercises_9/exercises_9.pdf
+      is_hidden: false
+      pdf_url: mathematics/week_01_sets/exercises_9/exercises_9.pdf
+      slug: exercises_9
+      source: week_01-sets-probability/sets-exercises_1.tex
+      title: Exercises 1
+      type: chapter
+      url: mathematics/week_01_sets/exercises_9/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: mathematics/week_01_sets/operations_on_sets/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/week_01_sets/operations_on_sets/operations_on_sets.pdf
+      is_hidden: false
+      pdf_url: mathematics/week_01_sets/operations_on_sets/operations_on_sets.pdf
+      slug: operations_on_sets
+      source: week_01-sets-probability/sets-notes_2.tex
+      title: Operations on Sets
+      type: chapter
+      url: mathematics/week_01_sets/operations_on_sets/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: mathematics/week_01_sets/exercise_10/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/week_01_sets/exercise_10/exercise_10.pdf
+      is_hidden: false
+      pdf_url: mathematics/week_01_sets/exercise_10/exercise_10.pdf
+      slug: exercise_10
+      source: week_01-sets-probability/sets-exercises_2.tex
+      title: Exercises 2
+      type: chapter
+      url: mathematics/week_01_sets/exercise_10/index.html
+    formats:
+    - filetype: html
+      format: default
+      url: mathematics/week_01_sets/index.html
+    is_hidden: false
+    slug: week_01_sets
+    source: .
+    title: Week 01 - Sets
+    type: part
+    url: mathematics/week_01_sets/index.html
+  - build_pdf: false
+    content:
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: mathematics/week_01_probability/probability/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/week_01_probability/probability/probability.pdf
+      is_hidden: false
+      pdf_url: mathematics/week_01_probability/probability/probability.pdf
+      slug: probability
+      source: week_01-sets-probability/prob-notes.tex
+      title: Probability
+      type: chapter
+      url: mathematics/week_01_probability/probability/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: mathematics/week_01_probability/exercise_11/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/week_01_probability/exercise_11/exercise_11.pdf
+      is_hidden: false
+      pdf_url: mathematics/week_01_probability/exercise_11/exercise_11.pdf
+      slug: exercise_11
+      source: week_01-sets-probability/prob-exercises.tex
+      title: Exercises 1
+      type: chapter
+      url: mathematics/week_01_probability/exercise_11/index.html
+    formats:
+    - filetype: html
+      format: default
+      url: mathematics/week_01_probability/index.html
+    is_hidden: false
+    slug: week_01_probability
+    source: .
+    title: Week 01 - Probability
+    type: part
+    url: mathematics/week_01_probability/index.html
+  - build_pdf: false
+    content:
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: mathematics/week_02_modular_arit/modular_arithmetic/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/week_02_modular_arit/modular_arithmetic/modular_arithmetic.pdf
+      is_hidden: false
+      pdf_url: mathematics/week_02_modular_arit/modular_arithmetic/modular_arithmetic.pdf
+      slug: modular_arithmetic
+      source: week_02-modular-codes/modular_1-notes.tex
+      title: Modular Arithmetic
+      type: chapter
+      url: mathematics/week_02_modular_arit/modular_arithmetic/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: mathematics/week_02_modular_arit/exercise_12/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/week_02_modular_arit/exercise_12/exercise_12.pdf
+      is_hidden: false
+      pdf_url: mathematics/week_02_modular_arit/exercise_12/exercise_12.pdf
+      slug: exercise_12
+      source: week_02-modular-codes/modular-exercises.tex
+      title: Exercises 1
+      type: chapter
+      url: mathematics/week_02_modular_arit/exercise_12/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: mathematics/week_02_modular_arit/isbns/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/week_02_modular_arit/isbns/isbns.pdf
+      is_hidden: false
+      pdf_url: mathematics/week_02_modular_arit/isbns/isbns.pdf
+      slug: isbns
+      source: week_02-modular-codes/modular-examples.tex
+      title: ISBNs
+      type: chapter
+      url: mathematics/week_02_modular_arit/isbns/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: mathematics/week_02_modular_arit/exercise_13/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/week_02_modular_arit/exercise_13/exercise_13.pdf
+      is_hidden: false
+      pdf_url: mathematics/week_02_modular_arit/exercise_13/exercise_13.pdf
+      slug: exercise_13
+      source: week_02-modular-codes/codes-exercises.tex
+      title: Exercises 2
+      type: chapter
+      url: mathematics/week_02_modular_arit/exercise_13/index.html
+    formats:
+    - filetype: html
+      format: default
+      url: mathematics/week_02_modular_arit/index.html
+    is_hidden: false
+    slug: week_02_modular_arit
+    source: .
+    title: Week 02 - Modular Arithmetic
+    type: part
+    url: mathematics/week_02_modular_arit/index.html
+  formats:
+  - filetype: html
+    format: default
+    url: mathematics/index.html
+  is_hidden: false
+  slug: mathematics
+  source: .
+  title: Mathematics
+  type: part
+  url: mathematics/index.html
+- build_pdf: false
+  content:
+  - build_pdf: false
+    content:
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: cryptography/week_03_04_classical/shift_and_substituti/index.html
+      - filetype: pdf
+        format: default
+        url: cryptography/week_03_04_classical/shift_and_substituti/shift_and_substituti.pdf
+      is_hidden: false
+      pdf_url: cryptography/week_03_04_classical/shift_and_substituti/shift_and_substituti.pdf
+      slug: shift_and_substituti
+      source: week_03-classical_ciphers_I/classical_I-notes.tex
+      title: Shift and Substitution
+      type: chapter
+      url: cryptography/week_03_04_classical/shift_and_substituti/index.html
+    formats:
+    - filetype: html
+      format: default
+      url: cryptography/week_03_04_classical/index.html
+    is_hidden: false
+    slug: week_03_04_classical
+    source: .
+    title: Week 03-04 - Classical Ciphers
+    type: part
+    url: cryptography/week_03_04_classical/index.html
+  - build_pdf: false
+    content:
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: cryptography/week_07_08_public_ke/euclidean_algorithm/index.html
+      - filetype: pdf
+        format: default
+        url: cryptography/week_07_08_public_ke/euclidean_algorithm/euclidean_algorithm.pdf
+      is_hidden: false
+      pdf_url: cryptography/week_07_08_public_ke/euclidean_algorithm/euclidean_algorithm.pdf
+      slug: euclidean_algorithm
+      source: week_07-euclidean_algorithm/euclidean-notes.tex
+      title: Euclidean Algorithm
+      type: chapter
+      url: cryptography/week_07_08_public_ke/euclidean_algorithm/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: cryptography/week_07_08_public_ke/rsa_notes/index.html
+      - filetype: pdf
+        format: default
+        url: cryptography/week_07_08_public_ke/rsa_notes/rsa_notes.pdf
+      is_hidden: false
+      pdf_url: cryptography/week_07_08_public_ke/rsa_notes/rsa_notes.pdf
+      slug: rsa_notes
+      source: week_08-RSA/RSA-notes.tex
+      title: RSA Notes
+      type: chapter
+      url: cryptography/week_07_08_public_ke/rsa_notes/index.html
+    formats:
+    - filetype: html
+      format: default
+      url: cryptography/week_07_08_public_ke/index.html
+    is_hidden: false
+    slug: week_07_08_public_ke
+    source: .
+    title: Week 07-08 - Public Keys and RSA
+    type: part
+    url: cryptography/week_07_08_public_ke/index.html
+  formats:
+  - filetype: html
+    format: default
+    url: cryptography/index.html
+  is_hidden: false
+  slug: cryptography
+  source: .
+  title: Cryptography
+  type: part
+  url: cryptography/index.html
+themes:
+- path: .
+  source: default
+  title: Default
+title: '55-408808: Introduction to Cyber Security, Maths and Cryptography'
+year: 2024/25
+zipfile: None
