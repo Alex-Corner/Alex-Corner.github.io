@@ -1,0 +1,1370 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        
+            <meta charset="utf-8">
+            <meta name="robots" content="noindex">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="author" content="Alex Corner" />
+            <meta name="date" content="2025-01-21" />
+        
+
+        <title>Probability | 55-408808: Introduction to Cyber Security, Maths and Cryptography</title>
+
+        
+    
+    
+            <link rel="stylesheet" href="../../../static/styles.css?build_time=1737446597.397589">
+            
+            
+        
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1737446597.397589">
+
+    <link rel="stylesheet" href="../../../static/print.css?build_time=1737446597.397589">
+
+
+        
+    
+			<script>
+				var chirun_static_url = new URL('../../../static?build_time=1737446597.397589', location.href);
+			</script>
+
+            
+                <script defer src="../../../static/mathjax_config.js?build_time=1737446597.397589"></script>
+                <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+            
+
+            <script type="module" src="../../../static/localisation.js?build_time=1737446597.397589"></script>
+
+            <script defer src="../../../static/customisation.js?build_time=1737446597.397589"></script>
+
+            
+
+            
+        
+    <script defer src="../../../static/code.js?build_time=1737446597.397589" type="module"></script>
+    <script defer src="../../../static/embed_numbas.js?build_time=1737446597.397589" type="module"></script>
+    <script defer src="../../../static/embed_qrcode.js?build_time=1737446597.397589" type="module"></script>
+
+
+        <template id="runnable-code-template">
+            <link rel="stylesheet" href="../../../static/code.css?build_time=1737446597.397589">
+            <div class="runnable-code-wrapper">
+                <section class="fullscreenable code">
+                    <div id="code"></div>
+                    <button class="fullscreen icon-button" title="Fullscreen code"><svg class="icon" aria-label="Fullscreen code" viewBox="0 0 180 180">
+    <use href="#fullscreen"/>
+</svg></button>
+                </section>
+                <section class="fullscreenable output">
+                    <div id="output" aria-live="polite">
+                        <pre class="stdout"></pre>
+                        <pre class="result"></pre>
+                        <div class="images"></div>
+                    </div>
+                    <button class="fullscreen icon-button" title="Fullscreen output"><svg class="icon" aria-label="Fullscreen output" viewBox="0 0 180 180">
+    <use href="#fullscreen"/>
+</svg></button>
+                </section>
+                <div class="buttons">
+                    <button type="button" class="run-code">Run code</button>
+                </div>
+                <svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="icon-defs"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <g id="cog">
+            <path 
+                style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z"
+            />
+        </g>
+        <g id="pdf">
+            <path
+                style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z"
+            />
+        </g>
+        <g id="slides">
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,21.25 30,137.5"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 90,21.25 60,158.75"
+            />
+            <rect
+                style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="119.79137"
+                height="82.273766"
+                x="30.104315"
+                y="36.476234"
+                ry="4.7737675"
+                rx="4.7737675"
+            />
+            <rect
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="140"
+                height="5.2262344"
+                x="20"
+                y="31.25"
+                ry="1.6724058"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,66.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,76.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,86.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,56.25 h 50"
+            />
+            <path
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z"
+            />
+        </g>
+
+        <g id="notebook">
+            <path
+                style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="58.699139"
+               cy="59.503937"
+               r="3.8077738"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="113.59385"
+               cy="52.885151"
+               r="4.9348516"
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z"
+           
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z"
+              
+            />
+            <ellipse
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="63.813011"
+               cy="125.96338"
+               rx="6.4332962"
+               ry="6.4347191"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="M 34,46.266514 V 62.316215"
+            
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="M 34,77.849849 V 93.89955"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 34,109.43318 v 16.0497"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0"
+            />
+        </g>
+
+        <g id="fullscreen">
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+               d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="M 150.95833,68.801471 V 28.958332 h -39.84314"
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="m 28.958332,111.11519 v 39.84314 h 39.843139"
+            />
+        </g>
+    </defs>
+</svg>
+            </div>
+        </template>
+
+        <template id="embed-numbas-template">
+            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1737446597.397589">
+            <details id="wrapper" data-completion-status="incomplete">
+                <summary>
+                    <h1 id="title">Test Yourself</h1>
+                    <div id="completion-status" data-completion-status="unknown">
+                        <span class="complete">Complete</span>
+                        <span class="incomplete">Incomplete</span>
+                    </div>
+                    <label id="score-feedback">
+                        Score:
+                        <progress min="0"></progress>
+                    </label>
+                </summary>
+                <iframe class="embed" title="Numbas"></iframe>
+            </details>
+        </template>
+
+    </head>
+    <body class="" >
+        
+
+        <a class="skip-to-content-link" href="#main-content">Skip to content</a>
+        
+            <form id="display-options">
+    <div class="buttons">
+        <button type="button" id="reset-display-options">Reset to defaults</button>
+
+        <a href="https://chirun.org.uk/accessibility-statement/material">Accessibility statement</a>
+
+        <button type="button" aria-controls="display-options" aria-expanded="false">
+            Close
+        </button>
+    </div>
+
+    <div class="inputs">
+        <div class="input-group">
+            <label for="display-options-font-scale">
+                Text size
+            </label>
+            <input type="range" min="50" max="600" step="5" value="100" id="display-options-font-scale">
+            <output for="display-options-font-scale">100%</output>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-spacing-factor">
+                Spacing
+            </label>
+            <input type="range" min="0" max="1200" step="5" value="100" id="display-options-spacing-factor">
+            <output for="display-options-spacing-factor">100%</output>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-font-family">
+                Text font
+            </label>
+            <select id="display-options-font-family">
+                <option value="var(--sans-serif-font)" selected>Sans-serif</option>
+                <option value="var(--serif-font)">Serif</option>
+                <option value="Atkinson Hyperlegible">Atkinson Hyperlegible</option>
+                <option value="Comic Sans MS">Comic Sans</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-colour-scheme">
+                Colour scheme
+            </label>
+            <select id="display-options-colour-scheme">
+                <option value="auto" selected>Automatic (default)</option>
+                <option value="light">Black text on white</option>
+                <option value="dark">White text on black</option>
+                <option value="custom">Custom</option>
+            </select>
+        </div>
+
+        <section id="custom-colour-scheme-options" class="inputs">
+            <div class="input-group">
+                <label for="display-options-text-colour">
+                    Text colour
+                </label>
+                <input type="color" value="#000000" id="display-options-text-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-link-colour">
+                    Link colour
+                </label>
+                <input type="color" value="#0000ee" id="display-options-link-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour">
+                    Background colour
+                </label>
+                <input type="color" value="#ffffff" id="display-options-bg-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-off">
+                    Muted background colour
+                </label>
+                <input type="color" value="#eeeeee" id="display-options-bg-colour-off">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-1">
+                    Accent colour 1
+                </label>
+                <input type="color" value="#4caf50" id="display-options-bg-colour-accent-1">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-2">
+                    Accent colour 2
+                </label>
+                <input type="color" value="#f6f6ff" id="display-options-bg-colour-accent-2">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-3">
+                    Accent colour 3
+                </label>
+                <input type="color" value="#eeffd3" id="display-options-bg-colour-accent-3">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-4">
+                    Accent colour 4
+                </label>
+                <input type="color" value="#ffeeee" id="display-options-bg-colour-accent-4">
+            </div>
+        </section>
+
+        <section id="filter-colour-scheme-options" class="inputs">
+            <div class="input-group">
+                <label for="display-options-filter-sepia">
+                    Sepia filter
+                </label>
+                <input type="range" min="0" max="100" step="1" value="0" id="display-options-filter-sepia">
+                <output for="display-options-filter-sepia">0%</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-filter-hue-rotate">
+                    Rotate hues
+                </label>
+                <input type="range" min="0" max="1" step="0.01" value="0" id="display-options-filter-hue-rotate">
+                <output for="display-options-filter-hue-rotate">0 turns</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-invert-images">
+                    Invert images in dark mode
+                </label>
+                <input type="checkbox" id="display-options-invert-images">
+            </div>
+
+        </section>
+    </div>
+</form>
+        
+
+        <header>
+            
+<button class="icon-button" type="button" aria-controls="display-options" aria-expanded="false" title="Display options">
+    <svg class="icon" aria-label="Display options" viewBox="0 0 180 180">
+    <use href="#cog"/>
+</svg>
+</button>
+            
+    
+    <nav aria-label="breadcrumb">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../../../index.html">55-408808: Introduction to Cyber Security, Maths and Cryptography</a>
+            </li>
+            
+            <li class="breadcrumb-item">
+                <a href="../index.html">Week 02 - Probability and Statistics</a>
+            </li>
+            
+            <li class="breadcrumb-item active">
+                Probability
+            </li>
+        </ul>
+
+        
+        <p class="pager" id="item-pager">
+            
+            <a rel="prev" href="../exercise_11/index.html">Previous: Exercises 1</a>
+            
+            
+            <a rel="next" href="../exercise_12/index.html">Next: Exercises 1</a>
+            
+        </p>
+        
+    </nav>
+    
+
+            
+            
+        </header>
+
+        <main id="main-content">
+            
+    <nav id="sidebar">
+        
+        <ul class="alternative-formats">
+            
+            <li><a rel="alternate" type="application/pdf" href="probability.pdf"download><svg class="icon" aria-label="PDF" viewBox="0 0 180 180">
+    <use href="#pdf"/>
+</svg> Download as PDF</a></li>
+            
+        </ul>
+        
+
+        <h1>Table of Contents</h1>
+        <a class="jump-to-item-content" href="#item-content">Jump to content</a>
+        
+            <ol class="table-of-contents">
+                
+                    
+    <li>
+        <a href="#a0000000002">Probability</a>
+        
+        <ol>
+            
+            
+    <li>
+        <a href="#a0000000013">Laws of Multiplication and Addition for Independent Events</a>
+        
+    </li>
+
+    <li>
+        <a href="#a0000000017">Conditional Probability</a>
+        
+    </li>
+
+            
+        </ol>
+        
+    </li>
+
+                
+            </ol>
+        
+
+    </nav>
+
+    <article class="item-content" id="item-content">
+         <!-- Latex Chapter/Part -->
+<h1 id="a0000000002">Probability</h1>
+<p>
+Probability can loosely be described as the proportion of times, out of a given number of attempts, that a particular event is <b class="bfseries">expected</b> to happen. This does not mean that the particular event will definitely happen that number of times. 
+</p>
+<p>
+We will adopt a simple definition which should become clearer as we go through the material. First of all, we will introduce some simple terminology. 
+</p>
+<ul class="itemize" id="a0000000003">
+<li id="a0000000004">
+<p>
+An <b class="bfseries">experiment</b> is the specification of an activity which will allow the observation of something of interest, e.g., flipping a coin once or requesting six students simultaneously to log in to the network. 
+</p>
+</li>
+<li id="a0000000005">
+<p>
+A <b class="bfseries">trial</b> is one practical implementation of the experiment. 
+</p>
+</li>
+<li id="a0000000006">
+<p>
+An <b class="bfseries">outcome</b> is the result of one particular trial. 
+</p>
+</li>
+<li id="a0000000007">
+<p>
+An <b class="bfseries">event</b> is the outcome or set of outcomes (subset of all possible outcomes) in which one is interested. 
+</p>
+</li>
+</ul>
+<p>
+ An event is usually defined by a <b class="bfseries">statement</b> which, in a particular trial, will either be true or false. <b class="bfseries">Success</b> in a trial means that the desired outcome is achieved, i.e., the corresponding <b class="bfseries">statement</b> is true. E.g., getting a head (because that was what was wanted) when flipping a coin. <b class="bfseries">Failure</b>, of course, is the opposite of success. 
+</p>
+<p>
+Now we can give a simple interpretation of probability: 
+</p>
+<ul class="itemize" id="a0000000008">
+<li id="a0000000009">
+<p>
+The average proportion of successes over many trials approaches the probability (value) as the number of trials increases. 
+</p>
+</li>
+</ul>
+<p>
+ This interpretation is very important. It might not be easy to understand now but an appreciation of it should be developed. 
+</p>
+<p>
+For example, when the experiment is the tossing of a fair 2-sided coin several times, we would <b class="bfseries">expect</b> half of the outcomes to be a head uppermost and half of the outcomes to be a tail uppermost even though this is not the only possibility. 
+</p>
+<p>
+Hence, when a coin is tossed once, the probability that a head will show is \(\frac{1}{2}\). In addition, the corresponding probability that a tail will show is also \(\frac{1}{2}\). There are no other possible outcomes here and the two outcomes cannot occur simultaneously. Therefore, these 2 probabilities add up to 1. The more times we flip the coin the more likely we will get half of the results to be head uppermost. 
+</p>
+<p>
+If our experiment were to flip the coin 8 times then we would expect 4 heads. If we carry out many trials of this experiment then the average number of heads per trial will be close to 4 and is likely to get closer to 4 as we increase the number of similar trials. 
+</p>
+<p>
+As a second example, the relative frequencies calculated from the frequencies in the table for the grouped data in the table below may be interpreted as probabilities. In particular, this table gives the probability that one of the 100 people selected at random is in the 15 to 19 (not yet 20) years old group. This probability is \(\frac{6}{100}\) , i.e., 0.06. 
+</p>
+<div class="centered"> <div class="table" id="a0000000010">
+<table class="tabular">
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries"><table class="tabular">
+<tr><td colspan="" rowspan="" style="None"><p>
+Age
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="None"><p>
+Range
+</p>
+</td>
+</tr>
+</table></b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries"><table class="tabular">
+<tr><td colspan="" rowspan="" style="None"><p>
+Number
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="None"><p>
+in Group
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="None"><p>
+(Frequency)
+</p>
+</td>
+</tr>
+</table></b>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+\(0 \leq x {\lt} 5\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 1 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+\(5 \leq x {\lt} 10\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"><p>
+ 4 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+\(10 \leq x {\lt} 15\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"><p>
+ 12 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+\(15 \leq x {\lt} 20\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"><p>
+ 6 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+\(20 \leq x {\lt} 25\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"><p>
+ 5 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+\(25 \leq x {\lt} 30\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"><p>
+ 5 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+\(30 \leq x {\lt} 35\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"><p>
+ 7 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+\(35 \leq x {\lt} 40\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"><p>
+ 5 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+\(40 \leq x {\lt} 45\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"><p>
+ 6 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+\(45 \leq x {\lt} 50\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"><p>
+ 9 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+\(50 \leq x {\lt} 55\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"><p>
+ 8 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+\(55 \leq x {\lt} 60\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"><p>
+ 6 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+\(60 \leq x {\lt} 65\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"><p>
+ 8 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+\(65 \leq x {\lt} 70\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"><p>
+ 5 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+\(70 \leq x {\lt} 75\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"><p>
+ 7 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+\(75 \leq x {\lt} 80\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"><p>
+ 3 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+\(80 \leq x {\lt} 85\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"><p>
+ 3 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<b class="bfseries">Total:</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 100 
+</p>
+</td>
+</tr>
+</table>
+</div> </div>
+<p>
+This relative frequency approach leads to a very simple definition of probability. Let \(A\) represent a statement which will be either True or False. If we carry out several trials then in some trials \(A\) will be true and in the other trials \(A\) will be false. Let there be \(N\) such trials and let \(S\) of these result in \(A\) being true, i.e., a success. Then, on any such single trial, the <b class="bfseries">probability that \(A\) is true (or probability of success) is calculated as</b>: 
+</p>
+<span class="dmath">\[  P(A) = \frac{S}{N}.  \]</span>
+<p>
+ Obviously \(0 \leq S \leq N\) and so \(0 \leq P(A) \leq 1\). 
+</p>
+<p>
+Also we have the complement, or negation, of \(A\) and the corresponding probability: 
+</p>
+<span class="dmath">\[  P(\neg ~ A) = \frac{N - S}{N} = 1 - \frac{S}{N}.  \]</span>
+<p>
+ Total probability is always 1, so we have \(P(A) + P(\neg ~ A) = 1\). 
+</p>
+<p>
+We can use this simple definition whenever we can list all possible outcomes and count those in which our chosen statement is true. 
+</p>
+<p>
+<b class="bfseries">Example 1</b> Two dice (normal six-sided cubic) are rolled and the sum of spots on the 2 upper faces is calculated. The possibilities range from 2 to 12 and are tabulated below. Our chosen statement could be that this sum is exactly 7 and the relevant outcomes (i.e., make the statement true) are highlighted. We can count the number of relevant outcomes and then calculate the corresponding probability. 
+</p>
+<div class="centered"> <div class="table" id="a0000000011">
+<table class="tabular">
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+ (1, 1) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (1, 2) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (1, 3) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (1, 4) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (1, 5) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">(1, 6)</b>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+(2, 1) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (2, 2) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (2, 3) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (2, 4) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">(2, 5)</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (2, 6) 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+(3, 1) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (3, 2) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (3, 3) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">(3, 4)</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (3, 5) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (3, 6) 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+(4, 1) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (4, 2) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">(4, 3)</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (4, 4) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (4, 5) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (4, 6) 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+(5, 1) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">(5, 2)</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (5, 3) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (5, 4) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (5, 5) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (5, 6) 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<b class="bfseries">(6, 1)</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ (6, 2) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ (6, 3) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ (6, 4) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ (6, 5) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ (6, 6) 
+</p>
+</td>
+</tr>
+</table>
+</div> </div>
+<p>
+ There are 36 possible outcomes (all equally likely) of which 6 make our statement true. Let our statement be \(A_1 = \mbox{`The sum is 7'}\). Then the probability of success is \(P(A_1)\), which is 
+</p>
+<span class="dmath">\[  P(A_1) = \frac{6}{36} = \frac{1}{6}.  \]</span>
+<p>
+ Similarly, the negation of the statement \(A_1\) is \(\neg ~ A_1 = \mbox{`The sum is not 7'}\). The probability of this is then 
+</p>
+<span class="dmath">\[  P(\neg ~ A_1) = 1 - \frac{1}{6} = \frac{5}{6}.  \]</span>
+<p>
+<b class="bfseries">Example 2</b> Following on from Example 1, we can have a statement such as \(A_2 = \mbox{`The sum is less than 6'}\). There are 4 relevant outcomes in Row 1 of the table, 3 outcomes in Row 2, 2 in Row 3, 1 in Row 4, and no more. Hence, there are 10 outcomes in which \(A_2\) is true, and so 
+</p>
+<span class="dmath">\[  P(A_2) = \frac{10}{36} = \frac{5}{18}.  \]</span>
+<p>
+<b class="bfseries">Example 3</b> When dealing with a compound statement, such as \(A_1\) or \(A_2\), we can define it in terms of simple statements. Let us use algebraic quantities \(x\) and \(y\) to indicate the numbers showing on the two dice. Obviously \(1 \leq x \leq 6\) and \(1 \leq y \leq 6\). Compound statement \(A_1\) can be given in terms of simple statements as 
+</p>
+<span><script type="math/tex; mode=display">\begin{align*}  A_1 = & [x + y = 7] \\ = & [(x = 1) \wedge (y = 6)] \vee [(x = 2) \wedge (y = 5)] \vee [(x = 3) \wedge (y = 4)] \\ & [(x = 4) \wedge (y = 3)] \vee [(x = 5) \wedge (y = 2)] \vee [(x = 6) \wedge (y = 1)]. \end{align*}</script></span>
+<p>
+ We have twelve simple statements, such as \((x = 1)\), or \((y = 1)\), and these are connected in pairs to form compound statements such as \([(x = 1) \wedge (y = 6)]\) and then we have six of these compound statements connected to form statement \(A_1\). 
+</p>
+<p>
+Define the following statements. 
+</p>
+<div class="table" id="a0000000012">
+<table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+ \(B_1 = (x = 1) \wedge (y = 6)\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(B_2 = (x = 2) \wedge (y = 5)\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(B_3 = (x = 3) \wedge (y = 4)\) 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+\(B_4 = (x = 4) \wedge (y = 3)\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(B_5 = (x = 5) \wedge (y = 2)\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(B_6 = (x = 6) \wedge (y = 1)\) 
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p>
+ Then \(A_1 = B_1 \vee B_2 \vee B_3 \vee B_4 \vee B_5 \vee B_6\). The events \(B_1\) up to \(B_6\) are <b class="bfseries">mutually exclusive</b>. That is, if any one occurs, then the others cannot occur. 
+</p>
+<p>
+Also, in \(B_1\) itself, the truth value of \((x = 1)\) is <b class="bfseries">independent</b> of the truth value of \((y = 6)\) and vice-versa. That is because the two <em>events</em> are <b class="bfseries">independent</b>. 
+</p>
+<p>
+If we concentrate just on the possible values of \(x\) then we can see that \(P(x = 1) = \frac{1}{6}\) and similarly if we concentrate just on the values of \(y\) then we can see that \(P(y = 6) = \frac{1}{6}\). If we consider the combination \(B_1 = (x = 1) \wedge (y = 6)\), then the table of the previous example gives 
+</p>
+<span class="dmath">\[  P(B_1) = \frac{1}{36}.  \]</span>
+<p>
+ We can interpret these probabilities in the following way (for a large number of rolls of two dice). Statement \((x = 1)\) will be true \(\frac{1}{6}\) of the time and \((y = 6)\) will be true \(\frac{1}{6}\) of those times when \((x = 1)\) is true. Hence \((x=1)\) and \((y=6)\) are simultaneously true \(\frac{1}{36}\) of the time. This can be summarised as 
+</p>
+<span class="dmath">\[  P((x = 1) \wedge (y = 6)) = P(x = 1) \times P(y = 6) = \frac{1}{6} \times \frac{1}{6} = \frac{1}{36}.  \]</span>
+<p>
+ This is the <b class="bfseries">multiplication law of probability for independent events</b>. 
+</p>
+<p>
+Two events are independent if the outcome in one event does not affect the outcome in the other event (and vice-versa). In this case, to determine the probability that both events occur simultaneously, we simply multiply together the probabilities that each occurs, as in the case of \(B_1\) above. 
+</p>
+<p>
+Returning to the details of Example 3, we can now see that, in addition to \(P(B_1) = \frac{1}{36}\), we have 
+</p>
+<span class="dmath">\[  P(B_2) = \frac{1}{36}, P(B_3) = \frac{1}{36}, P(B_4) =\frac{1}{36}, P(B_5) = \frac{1}{36}, P(B_6) = \frac{1}{36}.  \]</span>
+<p>
+ Events \(B_1\) to \(B_6\) lead to the diagonal entries identified in bold in the table of Example 1. In calculating \(P(A_1)\) from the table in Example 1, we noted that there were 6 relevant outcomes of the total 36, giving the probability of \(\frac{6}{36}\). It is no coincidence that this value is equal to the sum of \(P(B_1)\), \(P(B_2)\), \(P(B_3)\), \(P(B_4)\), \(P(B_5)\), and \(P(B_6)\). As noted before, the 6 events \(B_1\) to \(B_6\) are mutually exclusive. Hence, in order to determine that (at least) one of them occurs, we simply add up the 6 separate probabilities: 
+</p>
+<span class="dmath">\[  P(B_1 \vee B_2 \vee B_3 \vee B_4 \vee B_5 \vee B_6) = P(B_1) + P(B_2) + P(B_3) + P(B_4) + P(B_5) + P(B_6) = 6 \times \frac{1}{36} = \frac{6}{36}.  \]</span>
+<p>
+ This is the <b class="bfseries">addition law of probability for mutually exclusive events</b>. 
+</p>
+<section class="section">
+<h2 id="a0000000013">Laws of Multiplication and Addition for Independent Events</h2>
+<p>
+ Consider a single trial consisting of two events/statements \(A\) and \(B\). We are interested in the compound events/statements \(A \wedge B\) and \(A \vee B\). This can be depicted in the following <b class="bfseries">Venn diagram</b>. 
+</p>
+<p>
+The central region, common to both \(A\) and \(B\), is where \(A\) and \(B\) are both true simultaneously. The two circular regions represent \(P(A)\) and \(P(B)\), respectively. 
+</p>
+<div class="centered"> <figure>
+<div class="centered"><img alt="\includegraphics[width=0.5\textwidth ]{images/venn_two_blank.png}" src="images/img-0001.png" style="width:234.8775pt"/> </div>
+</figure> </div>
+<p>
+Let us consider these two events to occur in the sequence ‘\(A\) followed by \(B\)’. In the first event, suppose that \(A\) is true. This covers the left-most circular region. Now, in some of those occasions when \(A\) is true, the second event, \(B\), will also be true and these occurrences would be in the central area. This central area represents the probability \(P(A \wedge B)\), i.e., the probability that ‘\(A\) and \(B\) are both true’. 
+</p>
+<p>
+When the two events, \(A\) and \(B\), are <b class="bfseries">independent</b>, then 
+</p>
+<span class="dmath">\[  P(A \wedge B) = P(A) \times P(B).  \]</span>
+<p>
+ This is what we used in the earlier examples when the vents were independent. The three shaded regions combined represent \(P(A \vee B)\). So it can be seen that \(P(A)\) and \(P(B)\) both include \(P(A \wedge B)\). Hence 
+</p>
+<span class="dmath">\[  P(A \vee B) = P(A) + P(B) - P(A \wedge B).  \]</span>
+<p>
+ This is the <b class="bfseries">law of addition for probability</b>. In cases where \(A\) and \(B\) are mutually exclusive, we have \(P(A \wedge B) = 0\), because \(A\) and \(B\) cannot be true simultaneously, and then this law reduces to 
+</p>
+<span class="dmath">\[  P(A \wedge B) = P(A) + P(B).  \]</span>
+<p>
+ This is what we have already used for mutually exclusive events. 
+</p>
+<p>
+<b class="bfseries">Example 4</b> A normal pack of 52 playing cards has 26 red cards and 26 black cards. One card is drawn from the full pack at random then replaced in the pack. Then a second card is drawn from the pack. Calculate the probability that both cards are red. Let \(A = \mbox{`The first card is red'}\) and \(B = \mbox{`The second card is red'}\). Here the two events are <b class="bfseries">independent</b> and the probabilities are each \(\frac{26}{52} = \frac{1}{2}\). Hence 
+</p>
+<span class="dmath">\[  P(A \wedge B) = P(A) \times P(B) = \frac{1}{2} \times \frac{1}{2} = \frac{1}{4}.  \]</span>
+<p>
+<b class="bfseries">Example 5</b> Consider the experiment of Example 4 (selection <b class="bfseries">with</b> replacement). Here we wish to calculate the probability that at least one of the cards selected is red. This involves statement \(P(A \vee B) = P(A) + P(B) - P(A \wedge B)\). Hence 
+</p>
+<span class="dmath">\[  P(A \vee B) = \frac{1}{2} + \frac{1}{2} - \frac{1}{4} = \frac{3}{4}.  \]</span>
+<p>
+<b class="bfseries">Example 6</b> A short network link consists of two sections, \(A\) and \(B\), in parallel as shown below. 
+</p>
+<div class="centered"> <figure>
+<div class="centered"><img alt="\includegraphics[width=0.5\textwidth ]{images/link1.png}" src="images/img-0002.png" style="width:234.8775pt"/> </div>
+</figure> </div>
+<p>
+The link functions if either \(a\) or \(b\) both function. The two sections are independent in that the functionality of one does not affect the functionality of the other. The probability that \(a\) continues to function during a particular time period is \(0.9\). The corresponding probability for \(b\) is \(0.8\). Consider the following statements: 
+</p>
+<ul class="itemize" id="a0000000014">
+<li id="a0000000015">
+<p>
+\(A = \) ‘\(a\) continues to function during a particular time period.’ 
+</p>
+</li>
+<li id="a0000000016">
+<p>
+\(B = \) ‘\(b\) continues to function during a particular time period.’ 
+</p>
+</li>
+</ul>
+<p>
+ Since \(a\) and \(b\) are in parallel, the link works if \(a\) OR \(b\) works, i.e., \(A \vee B\). 
+</p>
+<p>
+The probability that the link continues to function during a particular time period is \(P(A \vee B)\): 
+</p>
+<span class="dmath">\[  P(A \vee B) = P(A) + P(B) - P(A \wedge B).  \]</span>
+<p>
+ Since \(A\) and \(B\) are independent: \(P(A \wedge B) = P(A) \times P(B) = 0.9 \times 0.8 = 0.72\). So 
+</p>
+<span class="dmath">\[  P(A \vee B) = 0.9 + 0.8 - 0.72 = 0.98.  \]</span>
+<p>
+ This means that there is a \(98\% \) probability that the link will function. 
+</p>
+</section><section class="section">
+<h2 id="a0000000017">Conditional Probability</h2>
+<p>
+ When the two simple events are not independent, then the process is not quite as simple. Consider a single trial consisting of two events/statements \(A\) and \(B\). We are interested in the compound event/statement \(A \wedge B\) which can be depicted as in the following Venn diagram. As stated before, the two circular regions represent \(P(A)\) and \(P(B)\), respectively. 
+</p>
+<div class="centered"> <figure>
+<div class="centered"><img alt="\includegraphics[width=0.5\textwidth ]{images/venn_two_blank.png}" src="images/img-0001.png" style="width:234.8775pt"/> </div>
+</figure> </div>
+<p>
+ The value of the <b class="bfseries">conditional probability</b> \(P(A|B)\) (i.e., the probability that \(B\) will be true given that \(A\) is already true) can be determined by means of our earlier simple definition of probability. 
+</p>
+<p>
+Let there be \(N\) outcomes altogether, i.e., number of member of the relevant universal set. Statement \(A\) will be true on \(NP(A)\) occasions. Of these, \(B\) will be true on \(NP(A \wedge B)\) occasions. Hence the probability that \(B\) will be true, given that \(A\) is already true, is 
+</p>
+<span class="dmath">\[  P(B|A) = \frac{NP(A \wedge B)}{NP(A)} = \frac{P(A \wedge B)}{P(A)}.  \]</span>
+<p>
+ This can now be recast as 
+</p>
+<span class="dmath">\[  P(A \wedge B) = P(A) \times P(B|A).  \]</span>
+<p>
+ This is the <b class="bfseries">law of multiplication</b> for probabilities of dependent events. 
+</p>
+<p>
+When the two events, \(A\) and \(B\), are independent, then \(P(B|A) = P(B)\) and the law reduces to 
+</p>
+<span class="dmath">\[  P(A \wedge B) = P(A) \times P(B).  \]</span>
+<p>
+ This is what we used in earlier examples when the events were independent. 
+</p>
+<p>
+If we considered \(B\) to be the first event and \(A\) to be the second event, then we would get 
+</p>
+<span class="dmath">\[  P(B \wedge A) = P(B) \times P(A|B)  \]</span>
+<p>
+ which is the same as before but with \(A\) and \(B\) interchanged. 
+</p>
+<p>
+<b class="bfseries">Example 6</b> A normal pack of 52 playing cards has 26 red cards and 26 black cards. One card is drawn from the full pack at random and kept. A second card is drawn from the remainder of the pack. 
+</p>
+<ol class="enumerate" id="a0000000018">
+<li id="a0000000019" value="1">
+<p>
+Calculate the probability that both cards are red. 
+</p>
+</li>
+<li id="a0000000020" value="2">
+<p>
+Calculate the probability that at least one of the cards is red. 
+</p>
+</li>
+</ol>
+<p>
+ Let \(A = \mbox{`The first card is red'}\) and \(B = \mbox{`The second card is red'}\). 
+</p>
+<p>
+In the first event, there are 26 outcomes, out of 52, which make \(A\) true. Hence \(P(A) = \frac{26}{52} = \frac{1}{2}\). In the second event, given that \(A\) is true, there are 25 outcomes, out of 51, which make \(B\) true. Hence \(P(B|A) = \frac{25}{51}\). Consequently, 
+</p>
+<span class="dmath">\[  P(A \wedge B) = P(B|A) \times P(A) = \frac{25}{51} \times \frac{1}{2} = \frac{25}{102}.  \]</span>
+<p>
+ Hence the probability that both cards are red is \(\frac{25}{102}\). 
+</p>
+<p>
+Of course, there are other outcomes. Statement \(A\) could be false, as could \(B\). All of the outcomes, with respect to our statements \(A\) and \(B\) can be shown, along with the corresponding probabilities, in a probability tree, as follows. 
+</p>
+<div class="centered"> <figure>
+<div class="centered"><img alt="\includegraphics[width=0.5\textwidth ]{images/tree.png}" src="images/img-0003.png" style="width:234.8775pt"/> </div>
+</figure> </div>
+<p>
+The probabilities associated with each of the simple events, \(A\) and \(B\), are obtained by considering the number of ways of obtaining ‘success’ out of the total number of possibilities. 
+</p>
+<p>
+We did this earlier in Example 5. As a second illustration of this idea, suppose that \(A\) is false. There are 51 cards left (independent of the outcome of \(A\)) of which 26 yield a red card and so probability that \(B\) is true given that \(A\) is already false, or simply \(P(B|\neg ~ A) = \frac{26}{51}\). 
+</p>
+<p>
+Such a probability tree is very useful but is practicable only when there is just a small number of branches emanating from each node. In a case with many possible events, we might tabulate the possibilities as we did with the dice example in Example 1. 
+</p>
+<p>
+For the second calculating (that at least one of the cards is red) we can rearrange our formula for probabilities: 
+</p>
+<span class="dmath">\[  P(A \vee B) = P(A) + P(B) - P(A \wedge B).  \]</span>
+<p>
+ In this case we are now calculating whether the first card is red, the second card is red, or both cards are red, i.e., at least one of the cards is red. So 
+</p>
+<span class="dmath">\[  P(A \vee B) = \frac{26}{52} + (\frac{25}{102} + \frac{26}{102}) - \frac{25}{102} = \frac{77}{102}.  \]</span>
+<p>
+<b class="bfseries">Example 6</b> The following Venn diagram represents the occurrence of two events \(A\) and \(B\). The outer rectangle is the universal set and the two circular regions represent \(A\) and \(B\) as shown. The values in the diagram indicate the number of outcomes (total 100) in each case. 
+</p>
+<div class="centered"> <figure>
+<div class="centered"><img alt="\includegraphics[width=0.5\textwidth ]{images/venn_numbers.png}" src="images/img-0004.png" style="width:234.8775pt"/> </div>
+</figure> </div>
+<p>
+ We want to determine \(P(A)\) and \(P(B)\): 
+</p>
+<ul class="itemize" id="a0000000021">
+<li id="a0000000022">
+<p>
+\(P(A) = \frac{45 + 25}{100} = \frac{70}{100} = 0.7\), 
+</p>
+</li>
+<li id="a0000000023">
+<p>
+\(P(B) = \frac{25 + 20}{100} = \frac{45}{100} = 0.45\). 
+</p>
+</li>
+</ul>
+<p>
+ Now suppose that we want to determine \(P(B|A)\) and \(P(A|B)\). The probability \(P(B|A)\) means that \(B\) occurs given that \(A\) has already occurred. The number of outcomes where \(A\) has occurred is \(45 + 25 = 70\). Out of these 70 outcomes, \(B\) occurs in 25 cases and \(B\) does not occur in 45 cases. So \(P(B|A) = \frac{25}{70} = 0.357\) (3 d.p.). Alternatively, we can use the formula 
+</p>
+<span class="dmath">\[  P(B|A) = \frac{P(A \wedge B)}{P(A)}.  \]</span>
+<p>
+ From the diagram, \(P(A \wedge B) = \frac{25}{100} = 0.25\), so \(P(B|A) = \frac{0.25}{0.7} = 0.357\) (3 d.p.). Similarly, \(P(A|B) = \frac{25}{45} = 0.556\) (3 d.p.). 
+</p>
+<p>
+Clearly \(P(B)\) and \(P(B|A)\) are different, just as \(P(A)\) and \(P(A|B)\) are different. This means that \(A\) And \(B\) are <b class="bfseries">not independent</b>. 
+</p>
+</section>
+<script id="plastex-labels" type="application/json">{}</script>
+    </article>
+
+        </main>
+
+		
+		<footer>
+	<hr>
+
+    <nav id="footer-nav">
+        <a href="#">Back to top</a>
+    </nav>
+
+    <div id="footer-text">
+        <p>Generated using <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.2.1, written by the Digital Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
+        <p>This page last generated: 2025-01-21</p>
+        
+        
+        
+    </div>
+</footer>
+		
+
+        
+
+        <svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="icon-defs"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <g id="cog">
+            <path 
+                style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z"
+            />
+        </g>
+        <g id="pdf">
+            <path
+                style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z"
+            />
+        </g>
+        <g id="slides">
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,21.25 30,137.5"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 90,21.25 60,158.75"
+            />
+            <rect
+                style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="119.79137"
+                height="82.273766"
+                x="30.104315"
+                y="36.476234"
+                ry="4.7737675"
+                rx="4.7737675"
+            />
+            <rect
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="140"
+                height="5.2262344"
+                x="20"
+                y="31.25"
+                ry="1.6724058"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,66.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,76.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,86.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,56.25 h 50"
+            />
+            <path
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z"
+            />
+        </g>
+
+        <g id="notebook">
+            <path
+                style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="58.699139"
+               cy="59.503937"
+               r="3.8077738"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="113.59385"
+               cy="52.885151"
+               r="4.9348516"
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z"
+           
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z"
+              
+            />
+            <ellipse
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="63.813011"
+               cy="125.96338"
+               rx="6.4332962"
+               ry="6.4347191"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="M 34,46.266514 V 62.316215"
+            
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="M 34,77.849849 V 93.89955"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 34,109.43318 v 16.0497"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0"
+            />
+        </g>
+
+        <g id="fullscreen">
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+               d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="M 150.95833,68.801471 V 28.958332 h -39.84314"
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="m 28.958332,111.11519 v 39.84314 h 39.843139"
+            />
+        </g>
+    </defs>
+</svg>
+    </body>
+</html>

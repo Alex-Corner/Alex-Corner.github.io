@@ -1,0 +1,2495 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        
+            <meta charset="utf-8">
+            <meta name="robots" content="noindex">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="author" content="Alex Corner" />
+            <meta name="date" content="2025-01-21" />
+        
+
+        <title>Shift and Substitution | 55-408808: Introduction to Cyber Security, Maths and Cryptography</title>
+
+        
+    
+    
+            <link rel="stylesheet" href="../../../static/styles.css?build_time=1737446597.397589">
+            
+            
+        
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1737446597.397589">
+
+    <link rel="stylesheet" href="../../../static/print.css?build_time=1737446597.397589">
+
+
+        
+    
+			<script>
+				var chirun_static_url = new URL('../../../static?build_time=1737446597.397589', location.href);
+			</script>
+
+            
+                <script defer src="../../../static/mathjax_config.js?build_time=1737446597.397589"></script>
+                <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+            
+
+            <script type="module" src="../../../static/localisation.js?build_time=1737446597.397589"></script>
+
+            <script defer src="../../../static/customisation.js?build_time=1737446597.397589"></script>
+
+            
+
+            
+        
+    <script defer src="../../../static/code.js?build_time=1737446597.397589" type="module"></script>
+    <script defer src="../../../static/embed_numbas.js?build_time=1737446597.397589" type="module"></script>
+    <script defer src="../../../static/embed_qrcode.js?build_time=1737446597.397589" type="module"></script>
+
+
+        <template id="runnable-code-template">
+            <link rel="stylesheet" href="../../../static/code.css?build_time=1737446597.397589">
+            <div class="runnable-code-wrapper">
+                <section class="fullscreenable code">
+                    <div id="code"></div>
+                    <button class="fullscreen icon-button" title="Fullscreen code"><svg class="icon" aria-label="Fullscreen code" viewBox="0 0 180 180">
+    <use href="#fullscreen"/>
+</svg></button>
+                </section>
+                <section class="fullscreenable output">
+                    <div id="output" aria-live="polite">
+                        <pre class="stdout"></pre>
+                        <pre class="result"></pre>
+                        <div class="images"></div>
+                    </div>
+                    <button class="fullscreen icon-button" title="Fullscreen output"><svg class="icon" aria-label="Fullscreen output" viewBox="0 0 180 180">
+    <use href="#fullscreen"/>
+</svg></button>
+                </section>
+                <div class="buttons">
+                    <button type="button" class="run-code">Run code</button>
+                </div>
+                <svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="icon-defs"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <g id="cog">
+            <path 
+                style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z"
+            />
+        </g>
+        <g id="pdf">
+            <path
+                style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z"
+            />
+        </g>
+        <g id="slides">
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,21.25 30,137.5"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 90,21.25 60,158.75"
+            />
+            <rect
+                style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="119.79137"
+                height="82.273766"
+                x="30.104315"
+                y="36.476234"
+                ry="4.7737675"
+                rx="4.7737675"
+            />
+            <rect
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="140"
+                height="5.2262344"
+                x="20"
+                y="31.25"
+                ry="1.6724058"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,66.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,76.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,86.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,56.25 h 50"
+            />
+            <path
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z"
+            />
+        </g>
+
+        <g id="notebook">
+            <path
+                style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="58.699139"
+               cy="59.503937"
+               r="3.8077738"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="113.59385"
+               cy="52.885151"
+               r="4.9348516"
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z"
+           
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z"
+              
+            />
+            <ellipse
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="63.813011"
+               cy="125.96338"
+               rx="6.4332962"
+               ry="6.4347191"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="M 34,46.266514 V 62.316215"
+            
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="M 34,77.849849 V 93.89955"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 34,109.43318 v 16.0497"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0"
+            />
+        </g>
+
+        <g id="fullscreen">
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+               d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="M 150.95833,68.801471 V 28.958332 h -39.84314"
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="m 28.958332,111.11519 v 39.84314 h 39.843139"
+            />
+        </g>
+    </defs>
+</svg>
+            </div>
+        </template>
+
+        <template id="embed-numbas-template">
+            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1737446597.397589">
+            <details id="wrapper" data-completion-status="incomplete">
+                <summary>
+                    <h1 id="title">Test Yourself</h1>
+                    <div id="completion-status" data-completion-status="unknown">
+                        <span class="complete">Complete</span>
+                        <span class="incomplete">Incomplete</span>
+                    </div>
+                    <label id="score-feedback">
+                        Score:
+                        <progress min="0"></progress>
+                    </label>
+                </summary>
+                <iframe class="embed" title="Numbas"></iframe>
+            </details>
+        </template>
+
+    </head>
+    <body class="" >
+        
+
+        <a class="skip-to-content-link" href="#main-content">Skip to content</a>
+        
+            <form id="display-options">
+    <div class="buttons">
+        <button type="button" id="reset-display-options">Reset to defaults</button>
+
+        <a href="https://chirun.org.uk/accessibility-statement/material">Accessibility statement</a>
+
+        <button type="button" aria-controls="display-options" aria-expanded="false">
+            Close
+        </button>
+    </div>
+
+    <div class="inputs">
+        <div class="input-group">
+            <label for="display-options-font-scale">
+                Text size
+            </label>
+            <input type="range" min="50" max="600" step="5" value="100" id="display-options-font-scale">
+            <output for="display-options-font-scale">100%</output>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-spacing-factor">
+                Spacing
+            </label>
+            <input type="range" min="0" max="1200" step="5" value="100" id="display-options-spacing-factor">
+            <output for="display-options-spacing-factor">100%</output>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-font-family">
+                Text font
+            </label>
+            <select id="display-options-font-family">
+                <option value="var(--sans-serif-font)" selected>Sans-serif</option>
+                <option value="var(--serif-font)">Serif</option>
+                <option value="Atkinson Hyperlegible">Atkinson Hyperlegible</option>
+                <option value="Comic Sans MS">Comic Sans</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-colour-scheme">
+                Colour scheme
+            </label>
+            <select id="display-options-colour-scheme">
+                <option value="auto" selected>Automatic (default)</option>
+                <option value="light">Black text on white</option>
+                <option value="dark">White text on black</option>
+                <option value="custom">Custom</option>
+            </select>
+        </div>
+
+        <section id="custom-colour-scheme-options" class="inputs">
+            <div class="input-group">
+                <label for="display-options-text-colour">
+                    Text colour
+                </label>
+                <input type="color" value="#000000" id="display-options-text-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-link-colour">
+                    Link colour
+                </label>
+                <input type="color" value="#0000ee" id="display-options-link-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour">
+                    Background colour
+                </label>
+                <input type="color" value="#ffffff" id="display-options-bg-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-off">
+                    Muted background colour
+                </label>
+                <input type="color" value="#eeeeee" id="display-options-bg-colour-off">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-1">
+                    Accent colour 1
+                </label>
+                <input type="color" value="#4caf50" id="display-options-bg-colour-accent-1">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-2">
+                    Accent colour 2
+                </label>
+                <input type="color" value="#f6f6ff" id="display-options-bg-colour-accent-2">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-3">
+                    Accent colour 3
+                </label>
+                <input type="color" value="#eeffd3" id="display-options-bg-colour-accent-3">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-4">
+                    Accent colour 4
+                </label>
+                <input type="color" value="#ffeeee" id="display-options-bg-colour-accent-4">
+            </div>
+        </section>
+
+        <section id="filter-colour-scheme-options" class="inputs">
+            <div class="input-group">
+                <label for="display-options-filter-sepia">
+                    Sepia filter
+                </label>
+                <input type="range" min="0" max="100" step="1" value="0" id="display-options-filter-sepia">
+                <output for="display-options-filter-sepia">0%</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-filter-hue-rotate">
+                    Rotate hues
+                </label>
+                <input type="range" min="0" max="1" step="0.01" value="0" id="display-options-filter-hue-rotate">
+                <output for="display-options-filter-hue-rotate">0 turns</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-invert-images">
+                    Invert images in dark mode
+                </label>
+                <input type="checkbox" id="display-options-invert-images">
+            </div>
+
+        </section>
+    </div>
+</form>
+        
+
+        <header>
+            
+<button class="icon-button" type="button" aria-controls="display-options" aria-expanded="false" title="Display options">
+    <svg class="icon" aria-label="Display options" viewBox="0 0 180 180">
+    <use href="#cog"/>
+</svg>
+</button>
+            
+    
+    <nav aria-label="breadcrumb">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../../../index.html">55-408808: Introduction to Cyber Security, Maths and Cryptography</a>
+            </li>
+            
+            <li class="breadcrumb-item">
+                <a href="../index.html">Week 04-05 - Classical Ciphers</a>
+            </li>
+            
+            <li class="breadcrumb-item active">
+                Shift and Substitution
+            </li>
+        </ul>
+
+        
+        <p class="pager" id="item-pager">
+            
+            <a rel="prev" href="../index.html">Previous: Week 04-05 - Classical Ciphers</a>
+            
+            
+            <a rel="next" href="../../week_08_09_public_ke/index.html">Next: Week 08-09 - Public Keys and RSA</a>
+            
+        </p>
+        
+    </nav>
+    
+
+            
+            
+        </header>
+
+        <main id="main-content">
+            
+    <nav id="sidebar">
+        
+        <ul class="alternative-formats">
+            
+            <li><a rel="alternate" type="application/pdf" href="shift_and_substituti.pdf"download><svg class="icon" aria-label="PDF" viewBox="0 0 180 180">
+    <use href="#pdf"/>
+</svg> Download as PDF</a></li>
+            
+        </ul>
+        
+
+        <h1>Table of Contents</h1>
+        <a class="jump-to-item-content" href="#item-content">Jump to content</a>
+        
+            <ol class="table-of-contents">
+                
+                    
+    <li>
+        <a href="#a0000000002">Cryptography Basics</a>
+        
+        <ol>
+            
+            
+    <li>
+        <a href="#sec:RSA:cryptography:basics">Cryptography</a>
+        
+    </li>
+
+    <li>
+        <a href="#a0000000003">Transposition Ciphers</a>
+        
+    </li>
+
+    <li>
+        <a href="#a0000000004">Rail Fence Ciphers</a>
+        
+    </li>
+
+    <li>
+        <a href="#a0000000007">Substitution Ciphers</a>
+        
+    </li>
+
+    <li>
+        <a href="#sec:RSA:cryptography:basics">Caesar Cipher</a>
+        
+    </li>
+
+    <li>
+        <a href="#a0000000009">Frequency Analysis</a>
+        
+    </li>
+
+    <li>
+        <a href="#sec:affine">Affine Encryption</a>
+        
+    </li>
+
+    <li>
+        <a href="#sec:RSA:cryptography:basics">Vigenère Cipher</a>
+        
+    </li>
+
+    <li>
+        <a href="#a0000000013">Frequency Analysis and Vigenère</a>
+        
+        <ol>
+            
+            
+    <li>
+        <a href="#a0000000014">Kasiski Attacks</a>
+        
+    </li>
+
+            
+        </ol>
+        
+    </li>
+
+            
+        </ol>
+        
+    </li>
+
+                
+            </ol>
+        
+
+    </nav>
+
+    <article class="item-content" id="item-content">
+         <!-- Latex Chapter/Part -->
+<h1 id="a0000000002">Cryptography Basics</h1>
+<section class="section">
+<h2 id="sec:RSA:cryptography:basics">Cryptography</h2>
+<p>
+ The idea of an <b class="bfseries">encryption system</b>, or <b class="bfseries">cipher</b>, is to code a message which is to be passed through a public channel so that anyone reading the encrypted message cannot recover the original message without some extra information which is not publicly available. Such secret information is called a <b class="bfseries">key</b>. We require an ecryption function \(E\), a decryption function \(D\), and a key \(K\). Often the encryption scheme/cipher involves an algorithm to make use of these elements. 
+</p>
+<p>
+A message \(m\) (the <b class="bfseries">plaintext</b>) is transformed into its <b class="bfseries">ciphertext</b> \(c = E(m,K)\), and decryption recovers the original message, so \(m = D(c,K)\). By convention, we tend to write plaintext messages in lower case and ciphertext in upper case, though this is not always the case. 
+</p>
+<p>
+We will look at some basic classical ciphers which make use of modular arithmetic or permutations, motivating the principles behind cryptography. We will later move on to more modern systems of encryption which involve more advanced mathematical ideas and techniques. 
+</p>
+</section><section class="section">
+<h2 id="a0000000003">Transposition Ciphers</h2>
+<p>
+The key in a <b class="bfseries">transposition cipher</b> is simply a permutation where the ciphertext is just an anagram of the plaintext. That is, the letters in the plaintext message are swapped around according to some rule in order to generate the ciphertext. For example, a very simple transposition cipher is to just write everything backwards. So the plaintext ’<span class="ttfamily">mathematics</span>’ would becomes ’<span class="ttfamily">SCITAMEHTAM</span>’. This might be fairly secure against small children, but it probably wouldn’t take anybody else that long to spot what is going on. 
+</p>
+<p>
+With longer text and a complex enough permutation, this may prove difficult to unscramble, but it is also an unwieldy form of communication. 
+</p>
+</section><section class="section">
+<h2 id="a0000000004">Rail Fence Ciphers</h2>
+<p>
+<b class="bfseries">Rail ciphers</b>, also called zigzag ciphers, are a type of transposition cipher which are very much like a riffle shuffle that one can do with a pack of playing cards. In a riffle shuffle the deck of cards is cut into two halves, the Top and the Bottom. Then the top card of the Top remains the top card of the shuffled deck, but the second card of the shuffled deck is the top card of the Bottom. The cards are then alternately added to the new deck, one from the Top, then the Bottom, then the Top again, etc. 
+</p>
+<p>
+The reason that the cipher is called a rail cipher is essentially because we can write the original plaintext out on two ‘rails’. 
+</p>
+<div class="centered"> <div class="table" id="a0000000005">
+<table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+ m 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"><p>
+ t 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"><p>
+ e 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"><p>
+ a 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"><p>
+ i 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"><p>
+ a 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center; border-right:1px solid black"> </td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ a 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ h 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ m 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ t 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ c 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ l 
+</p>
+</td>
+</tr>
+</table>
+</div> </div>
+<p>
+ We then generate the ciphertext by reading the top rail first, followed by the second rail. For the plaintext ‘<span class="ttfamily">mathematical</span>’, this would generate the ciphertext ‘<span class="ttfamily">MAATTIHCEAML</span>’. 
+</p>
+<p>
+We can also increase the number of rails in the cipher. For example, with three rails, the word ‘<p>
+<span class="ttfamily">mathematical</span>’ becomes ‘<span class="ttfamily">MEIHAHMTCLTAA</span>’. 
+</p>
+<div class="centered"> <div class="table" id="a0000000006">
+<table class="tabular">
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+ m 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ e 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ i 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ a 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ h 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ m 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ t 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ c 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ l 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ t 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ a 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ a 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+</tr>
+</table>
+</div> </div>
+<p>
+ Rail ciphers are quite similar to another type of transposition cipher, called a <a href="https://en.wikipedia.org/wiki/Scytale">Scytale cipher</a>. 
+</p>
+</p>
+</section><section class="section">
+<h2 id="a0000000007">Substitution Ciphers</h2>
+<p>
+ Whereas a transposition cipher keeps the same letters as the original messages, a <b class="bfseries">substitution cipher</b> replaces each letter in the original message. Many substitution ciphers are <b class="bfseries">monoalphabetic</b> ciphers, meaning that each letter in the plaintext corresponds to a letter in the ciphertext. Examples of these below are the Caesar cipher and the affine cipher. Other substitution ciphers, such as the Vigenère cipher, are <b class="bfseries">polyalphabetic</b> ciphers, meaning that each plaintext letter may be encrypted as multiple different letters in the ciphertext. 
+</p>
+</section><section class="section">
+<h2 id="sec:RSA:cryptography:basics">Caesar Cipher</h2>
+<p>
+ A simple (and insecure) example of an encryption system simply permutes the letters of a message in English. The key is a permutation, often denoted \(\pi \) (not the number). If, for example, \(\pi \) is the permutation that shifts each letter in the alphabet along by one (e.g., \(a \mapsto B\), \(b \mapsto C\), \(\ldots \), \(z \mapsto A\)), then 
+</p>
+<span class="dmath">\[  E(\mbox{`the cat sat on the mat'},\pi ) = \mbox{`UIF DBU TBU PO UIF NBU'}  \]</span>
+<p>
+ and decryption consists simply by applying the permutation in the opposite direction (shifting back one letter). 
+</p>
+<p>
+A cipher of this type, where each letter is moved on a fixed number of places in the alphabet, is called a <b class="bfseries">Caesar cipher</b>. Julius Caesar is reputed to have used this method, moving letters three places. We can make the description of this cipher slightly more mathematical using modular arithmetic. 
+</p>
+<p>
+There is a one-to-one correspondence between the sets 
+</p>
+<span class="dmath">\[  \{ a, b, c, \ldots , x, y, z\}   \]</span>
+<p>
+ and 
+</p>
+<span class="dmath">\[  \{ 0,1,2,3,\ldots ,24,25,25\} ,  \]</span>
+<p>
+ where \(a\) corresponds to \(0\), \(b\) corresponds to \(1\), and so on up to \(z\) corresponding to \(25\). We can use the table below for reference. 
+</p>
+<div class="table" id="a0000000008">
+<table class="tabular">
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<span class="ttfamily">a</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">b</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">c</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">d</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">e</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">f</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">g</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">h</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">i</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">j</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">k</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">l</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">m</span>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+\(0\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ \(1\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ \(2\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ \(3\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ \(4\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ \(5\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ \(6\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ \(7\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ \(8\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ \(9\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ \(10\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ \(11\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ \(12\) 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<span class="ttfamily">n</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">o</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">p</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">q</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">r</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">s</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">t</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">u</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">v</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">w</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">x</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">y</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">z</span>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+\(13\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ \(14\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ \(15\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ \(16\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ \(17\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ \(18\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ \(19\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ \(20\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ \(21\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ \(22\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ \(23\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ \(24\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ \(25\) 
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p>
+The Caesar cipher then relies on a shift number \(k\), which acts as the key. This shift \(k\) is an element of the set \(\{ 0,1,2,3,4,\ldots ,25\} \). If \(\alpha \) represents the corresponding number from the table above of a single letter in our message, then the encryption function is given by 
+</p>
+<span class="dmath">\[  E(\alpha ,k) = \alpha + k ~ \operatorname {mod}~  26.  \]</span>
+<p>
+ The use of \(\operatorname {mod}~  26\) is what allows the shift to ‘wrap around’ when it gets to <span class="ttfamily">Z</span>. The first example above had a shift value of \(k = 1\), while Julius Caesar’s version of the cipher had a shift value of \(k = 3\). Obviously, a trivial shift value of \(k = 0\) won’t be very effective! 
+</p>
+<p>
+The decryption key works in much the same way. 
+</p>
+<span class="dmath">\[  D(\alpha ,k) = \alpha - k ~ \operatorname {mod}~  26.  \]</span>
+<p>
+The problem with this sort of cipher is that it is very insecure. If somebody intercepts a large amount of ciphertext encrypted by such a cipher and suspects that this cipher was indeed used, then it doesn’t take long to write a program or even <a href="https://docs.google.com/spreadsheets/d/17u0OcZRqZcIyqksCF2Q7ulVqRjFWb_rMO30tk3KIKow/edit?usp=sharing">create a spreadsheet</a> in order to check and display all possible shifts to reveal the original message. 
+</p>
+<p>
+It can even be decrypted quickly by hand by making use of frequency analysis (see the exercises). Currently <span class="ttfamily">e</span> is the most frequent letter in the English language. Finding the most frequent letter in the ciphertext may then let you guess that this corresponds to <span class="ttfamily">e</span> in the plaintext and so easily discover the shift value. 
+</p>
+</section><section class="section">
+<h2 id="a0000000009">Frequency Analysis</h2>
+<p>
+ Simple substitution ciphers can be fairly easy to break using the method of <b class="bfseries">frequency analysis</b>. The letters in the alphabet can be ranked by how often they appear in written texts. For example, in English, the most common letter is <span class="ttfamily">E</span>, followed usually by <span class="ttfamily">A</span> or <span class="ttfamily">T</span>. The frequencies are not static since more texts are always being written and the use of language changes over time and between disciplines. 
+</p>
+<p>
+However, we can still use this principle of letter frequency to analyse messages which we suspect have been encrypted using a substitution cipher. For example, if the most common letter of the message we have intercepted is <span class="ttfamily">Q</span>, then it is likely that this corresponds to an <span class="ttfamily">E</span> in the original message. Similarly for the second most common letter, and so on. The frequencies will not always match up exactly, since the intercepted message may not be very long. For this reason, this method usually works more reliably on longer texts. Another weakness is in the groupings of letters - double letters will still be double letters, and common digraphs (double letter combinations) such as <span class="ttfamily">CH</span>, <span class="ttfamily">TH</span>, and <span class="ttfamily">SH</span> will start to become apparent. 
+</p>
+<p>
+If the encipher is not too savvy, they might even leave punctuation in the text, including spaces. This has the effect of allowing the codebreaker to identify single letter words, such as A or I, and common two-letter words such as <span class="ttfamily">IN</span>, <span class="ttfamily">AS</span>, <span class="ttfamily">OR</span>, and <span class="ttfamily">ON</span>. 
+</p>
+<div class="centered"> <img alt="\includegraphics[width=\textwidth ]{images/dancing_men.pdf}" src="images/img-0001.svg" style="width:469.755pt"/> </div>
+<p>
+Some substitution ciphers substitute different symbols for the original letters, in order to further disguise the content of the message. Sometimes even whole words were replaced by single symbols. Two famous examples of this are the messages sent between Mary Queen of Scots and her approval of the <a href="https://en.wikipedia.org/wiki/Babington_Plot">assassination plot</a> of her cousin, Queen Elizabeth I - further examples of messages sent by Mary have been discovered <a href="https://www.bbc.co.uk/news/uk-scotland-64568222">much more recently</a>. A fictional example is found in Sir Arthur Conan Doyle’s Sherlock Holmes story ‘<a href="https://en.wikipedia.org/wiki/The_Adventure_of_the_Dancing_Men">The Adventure of the Dancing Men</a>’, as seen above. 
+</p>
+<div class="centered"> <img alt="\includegraphics[width=\textwidth ]{images/letter_freq_alph.pdf}" src="images/img-0002.svg" style="width:469.755pt"/> <img alt="\includegraphics[width=\textwidth ]{images/letter_freq_desc.pdf}" src="images/img-0003.svg" style="width:469.755pt"/> </div>
+</section><section class="section">
+<h2 id="sec:affine">Affine Encryption</h2>
+<p>
+ The Caesar cipher is in fact a special case of an <b class="bfseries">Affine cipher</b>. An Affine cipher works modulo \(n\), where \(n\) is the number of characters in the plaintext alphabet. Then another number, \(a\), is chosen so that \(a\) and \(n\) have highest common factor of \(1\). I.e., \(\operatorname {gcd}(a,n) = 1\). A final number, \(0 \leq b {\lt} n\) is also chosen. Then a letter \(m_i\) of the plaintext message is encrypted using the encryption function 
+</p>
+<span class="dmath">\[  E(m_i) = (am_i + b) ~ \operatorname {mod}~  n.  \]</span>
+<p>
+ Decryption is achieved using the decryption function 
+</p>
+<span class="dmath">\[  D(c_i) = a^{-1}(c_i - b) ~ \operatorname {mod}~  n.  \]</span>
+<p>
+ As an example, we will consider our alphabet to be the letters <span class="ttfamily">a</span> up to <span class="ttfamily">z</span>, considered as the numbers \(0\) up to \(25\). Choosing key values of \(a = 5\) and \(b = 12\), the table below shows how letters would be encrypted using the encryption function 
+</p>
+<span class="dmath">\[  E(m_i) = (5m_i + 12) ~ \operatorname {mod}~  n.  \]</span>
+<div class="table" id="a0000000010">
+<table class="tabular">
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+ 0 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 1 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 2 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 3 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 4 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 5 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 6 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 7 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 8 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 9 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 10 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 11 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 12 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 13 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 14 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 15 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 16 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 17 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 18 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 19 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 20 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 21 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 22 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 23 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 24 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 25 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+a 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ b 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ c 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ d 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ e 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ f 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ g 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ h 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ i 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ j 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ k 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ l 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ m 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ n 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ o 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ p 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ q 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ r 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ s 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ t 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ u 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ v 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ w 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ x 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ y 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ z 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+12 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 17 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 22 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 1 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 6 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 11 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 16 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 21 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 0 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 5 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 10 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 15 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 20 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 25 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 4 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 9 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 14 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 19 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 24 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 3 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 8 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 13 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 18 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 23 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 2 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 7 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+M 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ R 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ W 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ B 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ G 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ L 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ Q 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ V 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ A 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ F 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ K 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ P 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ U 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ Z 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ E 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ J 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ O 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ T 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ Y 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ D 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ I 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ N 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ S 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ C 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ H 
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p>
+For example, the plaintext ‘<span class="ttfamily">claudeelwoodshannon</span>’ would be encrypted to the ciphertext ‘<span class="ttfamily">WPMIBGGPSEEBYVMZZEZ</span>’. 
+</p>
+</section><section class="section">
+<h2 id="sec:RSA:cryptography:basics">Vigenère Cipher</h2>
+<p>
+ Another cipher based on shifts using modular arithmetic is the <b class="bfseries">Vigenère cipher</b>, a form of which was originally conceived by <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Alberti/">Leon Battista Alberti</a> in 1467 and which remained unbroken for over three centuries. Due to its notoriety as an incredibly difficult cipher to break, it gained the moniker of <i class="itshape">le chiffrage indéchiffrable</i>: the indecipherable cipher. 
+</p>
+<p>
+When implemented by hand, this relies on the large table below, or a cipher disk. 
+</p>
+<div class="centered"> <img alt="\includegraphics[width=\textwidth ]{images/vig_square.png}" src="images/img-0001.png" style="width:469.755pt"/> </div>
+<p>
+ A <b class="bfseries">keyword</b> is used in this cipher. For example, suppose that our message is <span class="ttfamily">maths is great </span>and our keyword is <span class="ttfamily">euler</span>. Then we line up our message and the keyword as below to generate the ciphertext. For example, we look up the <span class="ttfamily">m</span> row and the <span class="ttfamily">e</span> column to get <span class="ttfamily">Q</span>. Similarly, we then look up the <span class="ttfamily">a</span> row and the <span class="ttfamily">u</span> column to get <span class="ttfamily">U</span>. And so on. 
+</p>
+<div class="centered"> <div class="table" id="a0000000011">
+<table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:left"><p>
+<b class="bfseries">Letter position,</b> \(i\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+ 1 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+ 2 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+ 3 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+ 4 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+ 5 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+ 6 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+ 7 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+ 8 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+ 9 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+ 10 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+ 11 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+ 12 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:left"><p>
+<b class="bfseries">Plaintext,</b> \(m_i\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">m</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">a</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">t</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">h</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">s</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">i</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">s</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">g</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">r</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">e</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">a</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">t</span>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:left"><p>
+<b class="bfseries">Key,</b> \(k_i\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">e</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">u</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">l</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">e</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">r</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">e</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">u</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">l</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">e</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">r</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">e</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">u</span>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:left"><p>
+<b class="bfseries">Ciphertext,</b> \(c_i\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">Q</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">U</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">E</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">L</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">J</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">M</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">M</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">R</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">V</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">V</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">E</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">N</span>
+</p>
+</td>
+</tr>
+</table>
+</div> </div>
+<p>
+ The encryption method seems a bit more complicated but can be described using modular arithmetic again. Essentially a different Caesar shift is being applied to each letter of the message, depending on what letter of they keyword it matches up with. So, encryption is achieved by performing the addition 
+</p>
+<span class="dmath">\[  c_i = m_i + k_i ~ \operatorname {mod}~  26,  \]</span>
+<p>
+ where \(m_i\) is the \(i\)th letter of the message and \(k_i\) is the \(i\)th letter of the keyword repeated over and over again. For example, with our message above: \(m_7 = 18\) (\(s\)), \(k_7 = 20\) (\(u\)), and so 
+</p>
+<span class="dmath">\[  c_7 = m_7 + k_7 = 18 + 20 = 38 = 12 ~ \operatorname {mod}~  26.  \]</span>
+<p>
+ So \(c_7 = 12\) which corresponds to \(M\), as above. 
+</p>
+<p>
+Decryption works in a similar fashion, so 
+</p>
+<span class="dmath">\[  m_i = c_i - k_i ~ \operatorname {mod}~  26.  \]</span>
+<p>
+ Essentially we use the key again to work backwards. 
+</p>
+<div class="centered"> <div class="table" id="a0000000012">
+<table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:left"><p>
+<b class="bfseries">Letter position,</b> \(i\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+ 1 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+ 2 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+ 3 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+ 4 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+ 5 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+ 6 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+ 7 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+ 8 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+ 9 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+ 10 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+ 11 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+ 12 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:left"><p>
+<b class="bfseries">Ciphertext,</b> \(c_i\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">Q</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">U</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">E</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">L</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">J</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">M</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">M</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">R</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">V</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">V</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">E</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">N</span>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:left"><p>
+<b class="bfseries">Key,</b> \(k_i\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">e</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">u</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">l</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">e</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">r</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">e</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">u</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">l</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">e</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">r</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">e</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">u</span>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:left"><p>
+<b class="bfseries">Plaintext,</b> \(m_i\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">m</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">a</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">t</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">h</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">s</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">i</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">s</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">g</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">r</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">e</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">a</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><p>
+<span class="ttfamily">t</span>
+</p>
+</td>
+</tr>
+</table>
+</div> </div>
+</section><section class="section">
+<h2 id="a0000000013">Frequency Analysis and Vigenère</h2>
+<p>
+ The Vigenère cipher is much more resistant to techniques such as frequency analysis. However, it is <a href="https://www.tandfonline.com/doi/abs/10.1080/01611190802336097">not impossible</a> as demonstrated by Friedrich Kasiski and possibly even earlier by <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Babbage/">Charles Babbage</a>. 
+</p>
+<p>
+Kasiski’s and Babbage’s attacks on the Vigenère cipher relied on having a long enough ciphertext. If the keyword length was known, then the long message would allow frequency analysis to be applied in groupings. For example, the keyword above is ‘<span class="ttfamily">euler</span>’ and has five letters, so every fifth letter is encrypted with the same key. Frequency analysis would be applied to the letters which appeared first, sixth, eleventh, and so on. Similarly we would look at the grouping for the second, seventh, twelfth, etc. And so on for the third, fourth, and fifth groupings. 
+</p>
+<section class="subsection">
+<h3 id="a0000000014">Kasiski Attacks</h3>
+<p>
+ The main form of attack on a Vigenère cipher is known as a ‘Kasiski attack’. This is a combination of looking at patterns in the ciphertext to determine a key length, and then applying frequency analysis on groupings of letters, as described above. 
+</p>
+<p>
+Kasiski’s idea was to use repeated patterns in the ciphertext, along with the length of the gap between them, to determine the key length. For example, the ciphertext passage below has some highlighted patterns which are repeated, such as <span style="color:#FBCEB1"><span class="ttfamily">HYQ</span></span>, <span style="color:#FF0000"><span class="ttfamily">XAIA</span></span>, and <span style="color:#808000"><span class="ttfamily">FLX</span></span>. 
+</p>
+<div class="centered"> <span class="ttfamily">ZSHRSNAYEHVRHIUIZZQZXHWEFLXPOJFCXEFJ<br/>AJMLSEURXXSVZXAGSEFYKCHYMXMLWJISKPRN<br/>MWUIWESATXQYQHDISEXCTRRTXSLIZPNCBRHV<br/>XPBKSEOILKFVMXXVHYMRFEBJMRWCSKMWFSFK<br/>MPTWVZESPRHYMXTWAVZFNWWVPXAIAJQPOIGR<br/>NSNX<span style="color:#FBCEB1">HYQ</span>MKZOIUSNWQFZGXVBJFLXCKVDILGFL<br/>FMGMGVPEGHGKGHBIRGQVAEDJMPFSGKMWGEFI<br/>AAECOJMQTRKZFLTQWTDSLGCGQQBKVKEGKYHZ<br/>ZMLI<span style="color:#FBCEB1">HYQ</span>XKEBJUIGXQIQEMYFVEXAEHJIEKQOE<br/>PQNPHZBPRMBRPVHTCWIEMIFNUXAMBWURBXST<br/>AQIPOTQRVCAVZAXRHKAEGHTIASOIFKTMLKZF<br/>NITFCLFXAIWIXMMXZVMJYEWIEWXVSEQMGXVV<br/>UVTWGLDEGGSFRXAIWIQQIMFVAZXVARFXXVWK<br/>UWISGJUFEIHYMXMLSZZJNWCIUENRRVD<span style="color:#FF0000">XAIA</span>Z<br/>OVHWQFBIWSHYQWTQSEASGIURHITXVFGKAXHF<br/>FLXSZUQVPSFCPWHJGGMGXEGJAYKGSJAJAYAR<br/>ZHTRUVDSKXVFGKAXCWFLXQCEXCMSRZEQBWGK<br/>TIBHSRAJEMTVGTHRHYQQTWWDBSLWWSXIHVWD<br/>BVHFOSXIBXWJOYKMCLEXHVSTMPEWCDQSYXVV<br/>YIGXOCTEUMHJAJMLCJQHXTOIFIWHOPEEMQCJ<br/>FXXVFVEXKMOCYIGJOEOMXHHYQVXQWXTXUICK<br/>TIKQSEGTHRARDWIIFYMTLMBWQVBSFKA<span style="color:#FF0000">XAIA</span>J<br/>QPOIGRZHKIOUKXHASCOSFIODUWLMCEMVRIBK<br/>QVIVWJQCXXOTDSLWHYQKNPTFRWIEQVYMGHGK<br/>TEMEFVFSHYFDURWWOJAYKWOIQXHXVFEIHJHY<br/>QFXEGKEXAEHGQVBWVZZXXPZVOXLZOJFEGHQF<br/>APTRRLZWRQDR<span style="color:#808000">FLX</span>XWTDIZEFUQHMLWJQEKXVN<br/>UXAIBMUSNWSPQWTRRJXSPPMRZHLYFVXCWVSN<br/><span style="color:#808000">FLX</span>MFGXEGWOXMMGWHLE </span> </div>
+<p>
+The sequence <span class="ttfamily">XAIA</span> is repeated in the ciphertext and the two sequences are 288 letters apart. This length is called the <b class="bfseries">interval</b>. If we break this interval into its prime factors we can start to determine possible key lengths: 
+</p>
+<span class="dmath">\[  288 = 2 \times 2 \times 2 \times 2 \times 2 \times 3 \times 3.  \]</span>
+<p>
+ The key length could be 2, 3, 4, 6, 8, 9, 12, 18, 24, 32, 36, 48, 72, 96, 133, or 288, since these are all of the possible numbers we can make by selecting some of the factors of this interval. This narrows things down, but that’s still a lot of options, so we repeat the process. 
+</p>
+<p>
+The sequence <span class="ttfamily">FLX</span> is repeated in the ciphertext and the two sequences are 60 letters apart. We break this interval into its prime factors: 
+</p>
+<span class="dmath">\[  60 = 2 \times 2 \times 3 \times 5.  \]</span>
+<p>
+ So the key length could be 2, 3, 4, 5, 6, 10, 12, 15, 30, or 60, and some of these options match what we had before. 
+</p>
+<p>
+Repeating this again for the sequence <span class="ttfamily">HYQ</span> we find that the interval is 108. We break this interval into its prime factors: 
+</p>
+<span class="dmath">\[  108 = 2 \times 2 \times 3 \times 3 \times 3.  \]</span>
+<p>
+ This gives possible key lengths of 2, 3, 4, 6, 9, 12, 18, 27, 36, 54, or 108. Again, some of these options again match what we had before. 
+</p>
+<p>
+Carrying on in this way, we can create a table of sequences, intervals, and possible key lengths. 
+</p>
+<div class="table" id="a0000000015">
+<div class="centered"><table class="tabular">
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">sequence</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">interval</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">2</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">3</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">4</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">5</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">6</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">7</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">8</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">9</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">10</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">11</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">12</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">13</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">14</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">15</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">16</b>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<span class="ttfamily">XAIA</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 288 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<span class="ttfamily">FLX</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 60 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<span class="ttfamily">HYQ</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 108 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<span class="ttfamily">XVF</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 54 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<span class="ttfamily">YMX</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 96 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<span class="ttfamily">KAX</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 54 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<span class="ttfamily">FXXV</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 258 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ X 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ X 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+</tr>
+</table> </div>
+</div>
+<p>
+It is possible that some repeated sequences are just due to coincidence, but with longer sequences, this becomes less likely. If we analyse the factors in the table, the obvious candidates for key lengths are 2, 3, 4, and 6. Since key lengths of 2, 3 or 4 are quite short, we can rule them out for now. (We may have to come back to them.) The key length is likely to be 6 and as we found out in the lecture, the actual keyword was <span class="ttfamily">meteor</span>. 
+</p>
+</section>
+</section>
+<script id="plastex-labels" type="application/json">{"sec:RSA:cryptography:basics": {"ref": "None", "url": "#sec:RSA:cryptography:basics"}, "sec:affine": {"ref": "None", "url": "#sec:affine"}}</script>
+    </article>
+
+        </main>
+
+		
+		<footer>
+	<hr>
+
+    <nav id="footer-nav">
+        <a href="#">Back to top</a>
+    </nav>
+
+    <div id="footer-text">
+        <p>Generated using <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.2.1, written by the Digital Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
+        <p>This page last generated: 2025-01-21</p>
+        
+        
+        
+    </div>
+</footer>
+		
+
+        
+
+        <svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="icon-defs"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <g id="cog">
+            <path 
+                style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z"
+            />
+        </g>
+        <g id="pdf">
+            <path
+                style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z"
+            />
+        </g>
+        <g id="slides">
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,21.25 30,137.5"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 90,21.25 60,158.75"
+            />
+            <rect
+                style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="119.79137"
+                height="82.273766"
+                x="30.104315"
+                y="36.476234"
+                ry="4.7737675"
+                rx="4.7737675"
+            />
+            <rect
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="140"
+                height="5.2262344"
+                x="20"
+                y="31.25"
+                ry="1.6724058"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,66.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,76.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,86.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,56.25 h 50"
+            />
+            <path
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z"
+            />
+        </g>
+
+        <g id="notebook">
+            <path
+                style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="58.699139"
+               cy="59.503937"
+               r="3.8077738"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="113.59385"
+               cy="52.885151"
+               r="4.9348516"
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z"
+           
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z"
+              
+            />
+            <ellipse
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="63.813011"
+               cy="125.96338"
+               rx="6.4332962"
+               ry="6.4347191"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="M 34,46.266514 V 62.316215"
+            
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="M 34,77.849849 V 93.89955"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 34,109.43318 v 16.0497"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0"
+            />
+        </g>
+
+        <g id="fullscreen">
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+               d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="M 150.95833,68.801471 V 28.958332 h -39.84314"
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="m 28.958332,111.11519 v 39.84314 h 39.843139"
+            />
+        </g>
+    </defs>
+</svg>
+    </body>
+</html>
