@@ -7,7 +7,7 @@
             <meta name="robots" content="noindex">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta name="author" content="Alex Corner" />
-            <meta name="date" content="2025-01-21" />
+            <meta name="date" content="2025-01-28" />
         
 
         <title>Probability | 55-408808: Introduction to Cyber Security, Maths and Cryptography</title>
@@ -15,41 +15,41 @@
         
     
     
-            <link rel="stylesheet" href="../../../static/styles.css?build_time=1737454188.728858">
+            <link rel="stylesheet" href="../../../static/styles.css?build_time=1738068114.454813">
             
             
         
-    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1737454188.728858">
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1738068114.454813">
 
-    <link rel="stylesheet" href="../../../static/print.css?build_time=1737454188.728858">
+    <link rel="stylesheet" href="../../../static/print.css?build_time=1738068114.454813">
 
 
         
     
 			<script>
-				var chirun_static_url = new URL('../../../static?build_time=1737454188.728858', location.href);
+				var chirun_static_url = new URL('../../../static?build_time=1738068114.454813', location.href);
 			</script>
 
             
-                <script defer src="../../../static/mathjax_config.js?build_time=1737454188.728858"></script>
+                <script defer src="../../../static/mathjax_config.js?build_time=1738068114.454813"></script>
                 <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             
 
-            <script type="module" src="../../../static/localisation.js?build_time=1737454188.728858"></script>
+            <script type="module" src="../../../static/localisation.js?build_time=1738068114.454813"></script>
 
-            <script defer src="../../../static/customisation.js?build_time=1737454188.728858"></script>
+            <script defer src="../../../static/customisation.js?build_time=1738068114.454813"></script>
 
             
 
             
         
-    <script defer src="../../../static/code.js?build_time=1737454188.728858" type="module"></script>
-    <script defer src="../../../static/embed_numbas.js?build_time=1737454188.728858" type="module"></script>
-    <script defer src="../../../static/embed_qrcode.js?build_time=1737454188.728858" type="module"></script>
+    <script defer src="../../../static/code.js?build_time=1738068114.454813" type="module"></script>
+    <script defer src="../../../static/embed_numbas.js?build_time=1738068114.454813" type="module"></script>
+    <script defer src="../../../static/embed_qrcode.js?build_time=1738068114.454813" type="module"></script>
 
 
         <template id="runnable-code-template">
-            <link rel="stylesheet" href="../../../static/code.css?build_time=1737454188.728858">
+            <link rel="stylesheet" href="../../../static/code.css?build_time=1738068114.454813">
             <div class="runnable-code-wrapper">
                 <section class="fullscreenable code">
                     <div id="code"></div>
@@ -230,7 +230,7 @@
         </template>
 
         <template id="embed-numbas-template">
-            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1737454188.728858">
+            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1738068114.454813">
             <details id="wrapper" data-completion-status="incomplete">
                 <summary>
                     <h1 id="title">Test Yourself</h1>
@@ -422,7 +422,7 @@
             <a rel="prev" href="../exercise_11/index.html">Previous: Exercises 1</a>
             
             
-            <a rel="next" href="../exercise_12/index.html">Next: Exercises 1</a>
+            <a rel="next" href="../exercise_12/index.html">Next: Exercises 2</a>
             
         </p>
         
@@ -449,29 +449,83 @@
         <h1>Table of Contents</h1>
         <a class="jump-to-item-content" href="#item-content">Jump to content</a>
         
-            <ol class="table-of-contents">
+            <ol class="table-of-contents" role="tree">
                 
                     
-    <li>
-        <a href="#a0000000002">Probability</a>
-        
-        <ol>
-            
-            
-    <li>
-        <a href="#a0000000013">Laws of Multiplication and Addition for Independent Events</a>
-        
-    </li>
+<li role="none" data-toc-level="1" class="toc-header  has-children">
+    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000002" href="#a0000000002">
+        <span class="toc-marker"></span>
+        Probability
+    </a>
 
-    <li>
-        <a href="#a0000000017">Conditional Probability</a>
+    
+        <ol role="group" id="toc-subtree-a0000000002">
+            
+            
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000003" href="#a0000000003">
         
-    </li>
+        Logic and Sets Notation
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000004" href="#a0000000004">
+        
+        Probability
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header  has-children">
+    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000015" href="#a0000000015">
+        <span class="toc-marker"></span>
+        Laws of Multiplication and Addition for Independent Events
+    </a>
+
+    
+        <ol role="group" id="toc-subtree-a0000000015">
+            
+            
+<li role="none" data-toc-level="3" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000016" href="#a0000000016">
+        
+        Law of Multiplication: AND, \(\cdot \), \(\wedge \)
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="3" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000017" href="#a0000000017">
+        
+        Law of Addition: OR, \(+\), \(\vee \)
+    </a>
+
+    
+</li>
 
             
         </ol>
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000021" href="#a0000000021">
         
-    </li>
+        Conditional Probability
+    </a>
+
+    
+</li>
+
+            
+        </ol>
+    
+</li>
 
                 
             </ol>
@@ -482,29 +536,48 @@
     <article class="item-content" id="item-content">
          <!-- Latex Chapter/Part -->
 <h1 id="a0000000002">Probability</h1>
+<section class="section">
+<h2 id="a0000000003">Logic and Sets Notation</h2>
 <p>
-Probability can loosely be described as the proportion of times, out of a given number of attempts, that a particular event is <b class="bfseries">expected</b> to happen. This does not mean that the particular event will definitely happen that number of times. 
+ In the first semester you used a lot of logical notation, such as: 
+</p>
+<span><script type="math/tex; mode=display">\begin{align*}  a \cdot b & \leftrightarrow a \mbox{ AND } b, \\ a + b & \leftrightarrow a \mbox{ OR } b, \\ \overline{a} & \leftrightarrow \mbox{NOT } a. \end{align*}</script></span>
+<p>
+ We have seen analogues of these in set theory: 
+</p>
+<span><script type="math/tex; mode=display">\begin{align*}  A \cup B & \leftrightarrow A \mbox{ INTERSECT } B, \\ A \cup B & \leftrightarrow A \mbox{ UNION } B, \\ A^c & \leftrightarrow A \mbox{ COMPLEMENT}. \end{align*}</script></span>
+<p>
+ When talking about sets, we also used an alternative logic notation, which can be useful when our logical statements have numerical values in them, to avoid mixing up the AND/OR notation \(\cdot \)/\(+\) with the usual arithmetic multiplication and addition notation: 
+</p>
+<span><script type="math/tex; mode=display">\begin{align*}  a \wedge b & \leftrightarrow a \mbox{ AND } b, \\ a \vee b & \leftrightarrow a \mbox{ OR } b, \\ \neg ~ a & \leftrightarrow \mbox{NOT } a. \end{align*}</script></span>
+<p>
+ We will make use of this latter notation in this section, along with the set theory notation. 
+</p>
+</section><section class="section">
+<h2 id="a0000000004">Probability</h2>
+<p>
+ Probability can loosely be described as the proportion of times, out of a given number of attempts, that a particular event is <b class="bfseries">expected</b> to happen. This does not mean that the particular event will definitely happen that number of times. 
 </p>
 <p>
 We will adopt a simple definition which should become clearer as we go through the material. First of all, we will introduce some simple terminology. 
 </p>
-<ul class="itemize" id="a0000000003">
-<li id="a0000000004">
+<ul class="itemize" id="a0000000005">
+<li id="a0000000006">
 <p>
 An <b class="bfseries">experiment</b> is the specification of an activity which will allow the observation of something of interest, e.g., flipping a coin once or requesting six students simultaneously to log in to the network. 
 </p>
 </li>
-<li id="a0000000005">
+<li id="a0000000007">
 <p>
 A <b class="bfseries">trial</b> is one practical implementation of the experiment. 
 </p>
 </li>
-<li id="a0000000006">
+<li id="a0000000008">
 <p>
 An <b class="bfseries">outcome</b> is the result of one particular trial. 
 </p>
 </li>
-<li id="a0000000007">
+<li id="a0000000009">
 <p>
 An <b class="bfseries">event</b> is the outcome or set of outcomes (subset of all possible outcomes) in which one is interested. 
 </p>
@@ -516,8 +589,8 @@ An <b class="bfseries">event</b> is the outcome or set of outcomes (subset of al
 <p>
 Now we can give a simple interpretation of probability: 
 </p>
-<ul class="itemize" id="a0000000008">
-<li id="a0000000009">
+<ul class="itemize" id="a0000000010">
+<li id="a0000000011">
 <p>
 The average proportion of successes over many trials approaches the probability (value) as the number of trials increases. 
 </p>
@@ -538,7 +611,7 @@ If our experiment were to flip the coin 8 times then we would expect 4 heads. If
 <p>
 As a second example, the relative frequencies calculated from the frequencies in the table for the grouped data in the table below may be interpreted as probabilities. In particular, this table gives the probability that one of the 100 people selected at random is in the 15 to 19 (not yet 20) years old group. This probability is \(\frac{6}{100}\) , i.e., 0.06. 
 </p>
-<div class="centered"> <div class="table" id="a0000000010">
+<div class="centered"> <div class="table" id="a0000000012">
 <table class="tabular">
 <tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
 <b class="bfseries"><table class="tabular">
@@ -760,7 +833,7 @@ We can use this simple definition whenever we can list all possible outcomes and
 <p>
 <b class="bfseries">Example 1</b> Two dice (normal six-sided cubic) are rolled and the sum of spots on the 2 upper faces is calculated. The possibilities range from 2 to 12 and are tabulated below. Our chosen statement could be that this sum is exactly 7 and the relevant outcomes (i.e., make the statement true) are highlighted. We can count the number of relevant outcomes and then calculate the corresponding probability. 
 </p>
-<div class="centered"> <div class="table" id="a0000000011">
+<div class="centered"> <div class="table" id="a0000000013">
 <table class="tabular">
 <tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
  (1, 1) 
@@ -936,7 +1009,7 @@ We can use this simple definition whenever we can list all possible outcomes and
 <p>
 Define the following statements. 
 </p>
-<div class="table" id="a0000000012">
+<div class="table" id="a0000000014">
 <table class="tabular">
 <tr><td colspan="" rowspan="" style="text-align:center"><p>
  \(B_1 = (x = 1) \wedge (y = 6)\) 
@@ -997,8 +1070,8 @@ Returning to the details of Example 3, we can now see that, in addition to \(P(B
 <p>
  This is the <b class="bfseries">addition law of probability for mutually exclusive events</b>. 
 </p>
-<section class="section">
-<h2 id="a0000000013">Laws of Multiplication and Addition for Independent Events</h2>
+</section><section class="section">
+<h2 id="a0000000015">Laws of Multiplication and Addition for Independent Events</h2>
 <p>
  Consider a single trial consisting of two events/statements \(A\) and \(B\). We are interested in the compound events/statements \(A \wedge B\) and \(A \vee B\). This can be depicted in the following <b class="bfseries">Venn diagram</b>. 
 </p>
@@ -1011,18 +1084,25 @@ The central region, common to both \(A\) and \(B\), is where \(A\) and \(B\) are
 <p>
 Let us consider these two events to occur in the sequence ‘\(A\) followed by \(B\)’. In the first event, suppose that \(A\) is true. This covers the left-most circular region. Now, in some of those occasions when \(A\) is true, the second event, \(B\), will also be true and these occurrences would be in the central area. This central area represents the probability \(P(A \wedge B)\), i.e., the probability that ‘\(A\) and \(B\) are both true’. 
 </p>
+<section class="subsection">
+<h3 id="a0000000016">Law of Multiplication: AND, \(\cdot \), \(\wedge \)</h3>
 <p>
-When the two events, \(A\) and \(B\), are <b class="bfseries">independent</b>, then 
+ When the two events, \(A\) and \(B\), are <b class="bfseries">independent</b>, then 
 </p>
 <span class="dmath">\[  P(A \wedge B) = P(A) \times P(B).  \]</span>
 <p>
- This is what we used in the earlier examples when the vents were independent. The three shaded regions combined represent \(P(A \vee B)\). So it can be seen that \(P(A)\) and \(P(B)\) both include \(P(A \wedge B)\). Hence 
+ This is what we used in the earlier examples when the vents were independent. 
+</p>
+</section><section class="subsection">
+<h3 id="a0000000017">Law of Addition: OR, \(+\), \(\vee \)</h3>
+<p>
+ The three shaded regions combined represent \(P(A \vee B)\). So it can be seen that \(P(A)\) and \(P(B)\) both include \(P(A \wedge B)\). Hence 
 </p>
 <span class="dmath">\[  P(A \vee B) = P(A) + P(B) - P(A \wedge B).  \]</span>
 <p>
  This is the <b class="bfseries">law of addition for probability</b>. In cases where \(A\) and \(B\) are mutually exclusive, we have \(P(A \wedge B) = 0\), because \(A\) and \(B\) cannot be true simultaneously, and then this law reduces to 
 </p>
-<span class="dmath">\[  P(A \wedge B) = P(A) + P(B).  \]</span>
+<span class="dmath">\[  P(A \vee B) = P(A) + P(B).  \]</span>
 <p>
  This is what we have already used for mutually exclusive events. 
 </p>
@@ -1043,13 +1123,13 @@ When the two events, \(A\) and \(B\), are <b class="bfseries">independent</b>, t
 <p>
 The link functions if either \(a\) or \(b\) both function. The two sections are independent in that the functionality of one does not affect the functionality of the other. The probability that \(a\) continues to function during a particular time period is \(0.9\). The corresponding probability for \(b\) is \(0.8\). Consider the following statements: 
 </p>
-<ul class="itemize" id="a0000000014">
-<li id="a0000000015">
+<ul class="itemize" id="a0000000018">
+<li id="a0000000019">
 <p>
 \(A = \) ‘\(a\) continues to function during a particular time period.’ 
 </p>
 </li>
-<li id="a0000000016">
+<li id="a0000000020">
 <p>
 \(B = \) ‘\(b\) continues to function during a particular time period.’ 
 </p>
@@ -1069,8 +1149,9 @@ The probability that the link continues to function during a particular time per
 <p>
  This means that there is a \(98\% \) probability that the link will function. 
 </p>
+</section>
 </section><section class="section">
-<h2 id="a0000000017">Conditional Probability</h2>
+<h2 id="a0000000021">Conditional Probability</h2>
 <p>
  When the two simple events are not independent, then the process is not quite as simple. Consider a single trial consisting of two events/statements \(A\) and \(B\). We are interested in the compound event/statement \(A \wedge B\) which can be depicted as in the following Venn diagram. As stated before, the two circular regions represent \(P(A)\) and \(P(B)\), respectively. 
 </p>
@@ -1108,13 +1189,13 @@ If we considered \(B\) to be the first event and \(A\) to be the second event, t
 <p>
 <b class="bfseries">Example 6</b> A normal pack of 52 playing cards has 26 red cards and 26 black cards. One card is drawn from the full pack at random and kept. A second card is drawn from the remainder of the pack. 
 </p>
-<ol class="enumerate" id="a0000000018">
-<li id="a0000000019" value="1">
+<ol class="enumerate" id="a0000000022">
+<li id="a0000000023" value="1">
 <p>
 Calculate the probability that both cards are red. 
 </p>
 </li>
-<li id="a0000000020" value="2">
+<li id="a0000000024" value="2">
 <p>
 Calculate the probability that at least one of the cards is red. 
 </p>
@@ -1162,13 +1243,13 @@ For the second calculating (that at least one of the cards is red) we can rearra
 <p>
  We want to determine \(P(A)\) and \(P(B)\): 
 </p>
-<ul class="itemize" id="a0000000021">
-<li id="a0000000022">
+<ul class="itemize" id="a0000000025">
+<li id="a0000000026">
 <p>
 \(P(A) = \frac{45 + 25}{100} = \frac{70}{100} = 0.7\), 
 </p>
 </li>
-<li id="a0000000023">
+<li id="a0000000027">
 <p>
 \(P(B) = \frac{25 + 20}{100} = \frac{45}{100} = 0.45\). 
 </p>
@@ -1200,7 +1281,7 @@ Clearly \(P(B)\) and \(P(B|A)\) are different, just as \(P(A)\) and \(P(A|B)\) a
 
     <div id="footer-text">
         <p>Generated using <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.2.1, written by the Digital Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
-        <p>This page last generated: 2025-01-21</p>
+        <p>This page last generated: 2025-01-28</p>
         
         
         

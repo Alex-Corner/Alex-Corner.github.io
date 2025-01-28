@@ -433,6 +433,21 @@ structure:
       formats:
       - filetype: html
         format: default
+        url: mathematics/week_02_probability_/lecture_slides/index.html
+      - filetype: pdf
+        format: default
+        url: mathematics/week_02_probability_/lecture_slides/lecture_slides.pdf
+      is_hidden: false
+      pdf_url: mathematics/week_02_probability_/lecture_slides/lecture_slides.pdf
+      slug: lecture_slides
+      source: week_01-sets-probability/stats_and_probability.tex
+      title: Lecture Slides
+      type: chapter
+      url: mathematics/week_02_probability_/lecture_slides/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
         url: mathematics/week_02_probability_/background/index.html
       - filetype: pdf
         format: default
@@ -501,7 +516,7 @@ structure:
       pdf_url: mathematics/week_02_probability_/exercise_12/exercise_12.pdf
       slug: exercise_12
       source: week_01-sets-probability/prob-exercises.tex
-      title: Exercises 1
+      title: Exercises 2
       type: chapter
       url: mathematics/week_02_probability_/exercise_12/index.html
     formats:
