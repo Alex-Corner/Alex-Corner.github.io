@@ -433,102 +433,102 @@ structure:
       formats:
       - filetype: html
         format: default
-        url: mathematics/week_02_probability/lecture_slides/index.html
+        url: mathematics/week_02_probability_/lecture_slides/index.html
       - filetype: pdf
         format: default
-        url: mathematics/week_02_probability/lecture_slides/lecture_slides.pdf
+        url: mathematics/week_02_probability_/lecture_slides/lecture_slides.pdf
       is_hidden: false
-      pdf_url: mathematics/week_02_probability/lecture_slides/lecture_slides.pdf
+      pdf_url: mathematics/week_02_probability_/lecture_slides/lecture_slides.pdf
       slug: lecture_slides
       source: week_01-sets-probability/stats_and_probability.tex
       title: Lecture Slides
       type: chapter
-      url: mathematics/week_02_probability/lecture_slides/index.html
+      url: mathematics/week_02_probability_/lecture_slides/index.html
     - build_pdf: true
       formats:
       - filetype: html
         format: default
-        url: mathematics/week_02_probability/background/index.html
+        url: mathematics/week_02_probability_/background/index.html
       - filetype: pdf
         format: default
-        url: mathematics/week_02_probability/background/background.pdf
+        url: mathematics/week_02_probability_/background/background.pdf
       is_hidden: false
-      pdf_url: mathematics/week_02_probability/background/background.pdf
+      pdf_url: mathematics/week_02_probability_/background/background.pdf
       slug: background
       source: week_01-sets-probability/stats-background.tex
       title: Background
       type: chapter
-      url: mathematics/week_02_probability/background/index.html
+      url: mathematics/week_02_probability_/background/index.html
     - build_pdf: true
       formats:
       - filetype: html
         format: default
-        url: mathematics/week_02_probability/statistics/index.html
+        url: mathematics/week_02_probability_/statistics/index.html
       - filetype: pdf
         format: default
-        url: mathematics/week_02_probability/statistics/statistics.pdf
+        url: mathematics/week_02_probability_/statistics/statistics.pdf
       is_hidden: false
-      pdf_url: mathematics/week_02_probability/statistics/statistics.pdf
+      pdf_url: mathematics/week_02_probability_/statistics/statistics.pdf
       slug: statistics
       source: week_01-sets-probability/stats-notes.tex
       title: Statistics
       type: chapter
-      url: mathematics/week_02_probability/statistics/index.html
+      url: mathematics/week_02_probability_/statistics/index.html
     - build_pdf: true
       formats:
       - filetype: html
         format: default
-        url: mathematics/week_02_probability/exercise_11/index.html
+        url: mathematics/week_02_probability_/exercise_11/index.html
       - filetype: pdf
         format: default
-        url: mathematics/week_02_probability/exercise_11/exercise_11.pdf
+        url: mathematics/week_02_probability_/exercise_11/exercise_11.pdf
       is_hidden: false
-      pdf_url: mathematics/week_02_probability/exercise_11/exercise_11.pdf
+      pdf_url: mathematics/week_02_probability_/exercise_11/exercise_11.pdf
       slug: exercise_11
       source: week_01-sets-probability/stats-exercises-1.tex
       title: Exercises 1
       type: chapter
-      url: mathematics/week_02_probability/exercise_11/index.html
+      url: mathematics/week_02_probability_/exercise_11/index.html
     - build_pdf: true
       formats:
       - filetype: html
         format: default
-        url: mathematics/week_02_probability/probability/index.html
+        url: mathematics/week_02_probability_/probability/index.html
       - filetype: pdf
         format: default
-        url: mathematics/week_02_probability/probability/probability.pdf
+        url: mathematics/week_02_probability_/probability/probability.pdf
       is_hidden: false
-      pdf_url: mathematics/week_02_probability/probability/probability.pdf
+      pdf_url: mathematics/week_02_probability_/probability/probability.pdf
       slug: probability
       source: week_01-sets-probability/prob-notes.tex
       title: Probability
       type: chapter
-      url: mathematics/week_02_probability/probability/index.html
+      url: mathematics/week_02_probability_/probability/index.html
     - build_pdf: true
       formats:
       - filetype: html
         format: default
-        url: mathematics/week_02_probability/exercise_12/index.html
+        url: mathematics/week_02_probability_/exercise_12/index.html
       - filetype: pdf
         format: default
-        url: mathematics/week_02_probability/exercise_12/exercise_12.pdf
+        url: mathematics/week_02_probability_/exercise_12/exercise_12.pdf
       is_hidden: false
-      pdf_url: mathematics/week_02_probability/exercise_12/exercise_12.pdf
+      pdf_url: mathematics/week_02_probability_/exercise_12/exercise_12.pdf
       slug: exercise_12
       source: week_01-sets-probability/prob-exercises.tex
       title: Exercises 2
       type: chapter
-      url: mathematics/week_02_probability/exercise_12/index.html
+      url: mathematics/week_02_probability_/exercise_12/index.html
     formats:
     - filetype: html
       format: default
-      url: mathematics/week_02_probability/index.html
+      url: mathematics/week_02_probability_/index.html
     is_hidden: false
-    slug: week_02_probability
+    slug: week_02_probability_
     source: .
-    title: Week 02 - Probability
+    title: Week 02 - Probability and Statistics
     type: part
-    url: mathematics/week_02_probability/index.html
+    url: mathematics/week_02_probability_/index.html
   - build_pdf: false
     content:
     - build_pdf: true
