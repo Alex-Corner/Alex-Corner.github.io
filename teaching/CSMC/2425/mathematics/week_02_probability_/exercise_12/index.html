@@ -15,41 +15,41 @@
         
     
     
-            <link rel="stylesheet" href="../../../static/styles.css?build_time=1738146350.111617">
+            <link rel="stylesheet" href="../../../static/styles.css?build_time=1738153656.399051">
             
             
         
-    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1738146350.111617">
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1738153656.399051">
 
-    <link rel="stylesheet" href="../../../static/print.css?build_time=1738146350.111617">
+    <link rel="stylesheet" href="../../../static/print.css?build_time=1738153656.399051">
 
 
         
     
 			<script>
-				var chirun_static_url = new URL('../../../static?build_time=1738146350.111617', location.href);
+				var chirun_static_url = new URL('../../../static?build_time=1738153656.399051', location.href);
 			</script>
 
             
-                <script defer src="../../../static/mathjax_config.js?build_time=1738146350.111617"></script>
+                <script defer src="../../../static/mathjax_config.js?build_time=1738153656.399051"></script>
                 <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             
 
-            <script type="module" src="../../../static/localisation.js?build_time=1738146350.111617"></script>
+            <script type="module" src="../../../static/localisation.js?build_time=1738153656.399051"></script>
 
-            <script defer src="../../../static/customisation.js?build_time=1738146350.111617"></script>
+            <script defer src="../../../static/customisation.js?build_time=1738153656.399051"></script>
 
             
 
             
         
-    <script defer src="../../../static/code.js?build_time=1738146350.111617" type="module"></script>
-    <script defer src="../../../static/embed_numbas.js?build_time=1738146350.111617" type="module"></script>
-    <script defer src="../../../static/embed_qrcode.js?build_time=1738146350.111617" type="module"></script>
+    <script defer src="../../../static/code.js?build_time=1738153656.399051" type="module"></script>
+    <script defer src="../../../static/embed_numbas.js?build_time=1738153656.399051" type="module"></script>
+    <script defer src="../../../static/embed_qrcode.js?build_time=1738153656.399051" type="module"></script>
 
 
         <template id="runnable-code-template">
-            <link rel="stylesheet" href="../../../static/code.css?build_time=1738146350.111617">
+            <link rel="stylesheet" href="../../../static/code.css?build_time=1738153656.399051">
             <div class="runnable-code-wrapper">
                 <section class="fullscreenable code">
                     <div id="code"></div>
@@ -230,7 +230,7 @@
         </template>
 
         <template id="embed-numbas-template">
-            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1738146350.111617">
+            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1738153656.399051">
             <details id="wrapper" data-completion-status="incomplete">
                 <summary>
                     <h1 id="title">Test Yourself</h1>
@@ -455,7 +455,7 @@
 <li role="none" data-toc-level="1" class="toc-header  has-children">
     <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000002" href="#a0000000002">
         <span class="toc-marker"></span>
-        Exercises: Probability
+        Exercises 1: Probability
     </a>
 
     
@@ -484,7 +484,7 @@
 
     <article class="item-content" id="item-content">
          <!-- Latex Chapter/Part -->
-<h1 id="a0000000002">Exercises: Probability</h1>
+<h1 id="a0000000002">Exercises 1: Probability</h1>
 <ol class="enumerate" id="a0000000003">
 <li id="a0000000004" value="1">
 <p>
@@ -687,39 +687,60 @@ The following NUMBAS test will allow you to practice more questions about condit
 <ol class="enumerate" id="a0000000043">
 <li id="a0000000044" value="1">
 <p>
-A normal pack of 52 playing cards has 4 suits: clubs, diamonds, hearts, and spades, each with 13 cards. One card is drawn from the full pack at random, then replaced in the pack. Then a second card is drawn from the pack. 
+A normal pack of 52 playing cards has 4 suits: clubs, diamonds, hearts, and spades, each with 13 cards. One card is drawn from the full pack at random, then replaced in the pack. Then a second card is drawn from the pack. Let \(C\) denote the event that a club is drawn. 
 </p>
 <ol class="enumerate" id="a0000000045">
 <li id="a0000000046" value="1">
 <p>
-Both are clubs: \(\frac{13}{52} \times \frac{13}{52} = 0.00625\). 
+Both are clubs: \(P(C \wedge C) = \frac{13}{52} \times \frac{13}{52} = 0.00625\). 
 </p>
 </li>
 <li id="a0000000047" value="2">
 <p>
-At least one is a club: \((\frac{13}{52} \times \frac{39}{52}) + (\frac{39}{52} \times \frac{13}{52}) + (\frac{13}{52} \times \frac{13}{52}) = 0.4375\). 
+To calculate the probability that at least one of the cards is a club, we can find the following probabilities: 
+</p>
+<ul class="itemize" id="a0000000048">
+<li id="a0000000049">
+<p>
+First card is a club, second card is a club: \(P(C \wedge C) = \frac{13}{52} \times \frac{13}{52} = 0.00625\); 
 </p>
 </li>
-<li id="a0000000048" value="3">
+<li id="a0000000050">
 <p>
-Neither is a club: \(1 - 0.4375 = 0.5625\). 
+First card is not a club, second card is a club: \(P(\neg ~ C \wedge C) = \frac{39}{52} \times \frac{13}{52} = 0.1875\); 
+</p>
+</li>
+<li id="a0000000051">
+<p>
+First card is a club, second card is not a club: \(P(C \wedge \neg ~ C) = \frac{13}{52} \times \frac{39}{52} = 0.1875\). 
+</p>
+</li>
+</ul>
+<p>
+ Then we can add them together: 
+</p>
+<span class="dmath">\[  (\frac{13}{52} \times \frac{39}{52}) + (\frac{39}{52} \times \frac{13}{52}) + (\frac{13}{52} \times \frac{13}{52}) = 0.4375.  \]</span>
+</li>
+<li id="a0000000052" value="3">
+<p>
+Neither is a club: \(P(\neg ~ C \wedge \neg ~ C) = 1 - 0.4375 = 0.5625 = \frac{39}{52} \times \frac{39}{52}\). 
 </p>
 </li>
 </ol>
 </li>
-<li id="a0000000049" value="2">
+<li id="a0000000053" value="2">
 <p>
 \(P(A \wedge B) = 0.9 \times 0.95 = 0.855\) 
 </p>
 </li>
-<li id="a0000000050" value="3">
-<ol class="enumerate" id="a0000000051">
-<li id="a0000000052" value="1">
+<li id="a0000000054" value="3">
+<ol class="enumerate" id="a0000000055">
+<li id="a0000000056" value="1">
 <p>
 \(P(C \vee D) = P(C) + P(D) - P(C \wedge D) = 0.95 + 0.97 - 0.95 \times 0.97 = 0.9985\) 
 </p>
 </li>
-<li id="a0000000053" value="2">
+<li id="a0000000057" value="2">
 <p>
 The link failing corresponds to the following logical expression being true: 
 </p>
@@ -728,84 +749,84 @@ The link failing corresponds to the following logical expression being true:
  (Or \(\overline{C + D} = \overline{C} \cdot \overline{D}\).) 
 </p>
 </li>
-<li id="a0000000054" value="3">
+<li id="a0000000058" value="3">
 <p>
 \(P(\neg ~ (C \vee D)) = 1 - P(C \vee D) = 1 - 0.9985 = 0.0015\). Or \(P(\neg ~ C \wedge \neg ~ D) = P(\neg ~ C) \times P(\neg ~ D) = 0.05 \times 0.3 = 0.015\). 
 </p>
 </li>
 </ol>
 </li>
-<li id="a0000000055" value="4">
+<li id="a0000000059" value="4">
 <p>
 The events are independent, so \(P(A \wedge B \wedge C) = P(A) \times P(B) \times P(C) = 0.95 \times 0.96 \times 0.91 = 0.83\). 
 </p>
 </li>
-<li id="a0000000056" value="5">
+<li id="a0000000060" value="5">
 <p>
 The NUMBAS test provides a worked solution for each question in this part. 
 </p>
 </li>
-<li id="a0000000057" value="6">
-<ol class="enumerate" id="a0000000058">
-<li id="a0000000059" value="1">
+<li id="a0000000061" value="6">
+<ol class="enumerate" id="a0000000062">
+<li id="a0000000063" value="1">
 <p>
 \(P(A) = \frac{135+765}{1000} = 0.9\), \(P(B) = \frac{765+85}{1000} = 0.85\) 
 </p>
 </li>
-<li id="a0000000060" value="2">
+<li id="a0000000064" value="2">
 <p>
 For this we will need \(P(A \wedge B) = \frac{765}{1000} = 0.765\). Then \(P(B|A) = \frac{P(A \wedge B)}{P(A)} = \frac{0.765}{0.9} = 0.85\) and \(P(A|B) = \frac{0.765}{0.85} = 0.9\). 
 </p>
 </li>
 </ol>
 </li>
-<li id="a0000000061" value="7">
+<li id="a0000000065" value="7">
 <p>
 The following Venn diagram represents the occurrence of two events \(A\) and \(B\). The outer rectangle is the universal set and the two circular regions represent \(A\) and \(B\) as shown. The values in the diagram indicate the number of outcomes (total 1000) in each case. 
 </p>
-<ol class="enumerate" id="a0000000062">
-<li id="a0000000063" value="1">
+<ol class="enumerate" id="a0000000066">
+<li id="a0000000067" value="1">
 <p>
 \(P(A) = \frac{13 + 811}{1000} = 0.824\), \(P(B) = \frac{811+124}{1000} = 0.935\) 
 </p>
 </li>
-<li id="a0000000064" value="2">
+<li id="a0000000068" value="2">
 <p>
 For this we will need \(P(A \wedge B) = \frac{811}{1000} = 0.811\). Then \(P(B|A) = \frac{P(A \wedge B)}{P(A)} = \frac{0.811}{0.824} = 0.984\) and \(P(A|B) = \frac{P(A \wedge B)}{P(B)} = \frac{0.811}{0.935} = 0.867\). 
 </p>
 </li>
-<li id="a0000000065" value="3">
+<li id="a0000000069" value="3">
 <p>
 \(P(\neg ~ B|A) = \frac{P(A \wedge \neg ~ B)}{P(A)} = \frac{13}{13+811} = 0.0158\). Notice that this is \(1 - P(B|A)\). 
 </p>
 </li>
-<li id="a0000000066" value="4">
+<li id="a0000000070" value="4">
 <p>
 \(P(B|\neg ~ A) = \frac{P(\neg ~ A \wedge B)}{P(\neg ~ A)} = \frac{124}{124+52} = 0.705\) 
 </p>
 </li>
-<li id="a0000000067" value="5">
+<li id="a0000000071" value="5">
 <p>
 \(P(\neg ~ B|\neg ~ A) = \frac{P(\neg ~ A \wedge \neg ~ B)}{P(\neg ~ A)} = \frac{52}{52+124} = 0.295\), \(P(B|\neg ~ A) = 0.705\). These are complements again, in that \(P(\neg ~ B|\neg ~ A) = 1 - P(B|\neg ~ A)\). 
 </p>
 </li>
-<li id="a0000000068" value="6">
+<li id="a0000000072" value="6">
 <p>
 \(P(\neg ~ A|\neg ~ B) = \frac{52}{13+52} = 0.8\) 
 </p>
 </li>
 </ol>
 </li>
-<li id="a0000000069" value="8">
-<ol class="enumerate" id="a0000000070">
-<li id="a0000000071" value="1">
+<li id="a0000000073" value="8">
+<ol class="enumerate" id="a0000000074">
+<li id="a0000000075" value="1">
 <p>
 \(P(A \vee B) = P(A) + P(B) - P(A \wedge B) = 0.94 + 0.92 - 0.94 \times 0.92 = 0.9952\). (We can use \(P(A \wedge B) = P(A) \times P(B)\) since the events are independent.) Then \(P((A \vee B) \wedge C) = P(A \vee B) \times P(C) = 0.9952 \times 0.96 = 0.955\). 
 </p>
 </li>
 </ol>
 </li>
-<li id="a0000000072" value="9">
+<li id="a0000000076" value="9">
 <p>
 The NUMBAS test provides a worked solution for each question in this part. 
 </p>
