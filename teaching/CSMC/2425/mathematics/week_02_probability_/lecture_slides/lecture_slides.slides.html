@@ -1,0 +1,2357 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        
+            <meta charset="utf-8">
+            <meta name="robots" content="noindex">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="author" content="Alex Corner" />
+            <meta name="date" content="2025-02-07" />
+        
+
+        <title>Lecture Slides | 55-408808: Introduction to Cyber Security, Maths and Cryptography</title>
+
+        
+    
+    
+            <link rel="stylesheet" href="../../../static/styles.css?build_time=1738927136.359327">
+            
+            
+        
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1738927136.359327">
+
+
+    <link rel="stylesheet" href="../../../static/slides.css?build_time=1738927136.359327">
+
+
+
+        
+    
+    
+			<script>
+				var chirun_static_url = new URL('../../../static?build_time=1738927136.359327', location.href);
+			</script>
+
+            
+                <script defer src="../../../static/mathjax_config.js?build_time=1738927136.359327"></script>
+                <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+            
+
+            <script type="module" src="../../../static/localisation.js?build_time=1738927136.359327"></script>
+
+            <script defer src="../../../static/customisation.js?build_time=1738927136.359327"></script>
+
+            
+
+            
+        
+    <script defer src="../../../static/code.js?build_time=1738927136.359327" type="module"></script>
+    <script defer src="../../../static/embed_numbas.js?build_time=1738927136.359327" type="module"></script>
+    <script defer src="../../../static/embed_qrcode.js?build_time=1738927136.359327" type="module"></script>
+
+
+    <script type="module" src="../../../static/slides.js?build_time=1738927136.359327"></script>
+
+
+
+        <template id="runnable-code-template">
+            <link rel="stylesheet" href="../../../static/code.css?build_time=1738927136.359327">
+            <div class="runnable-code-wrapper">
+                <section class="fullscreenable code">
+                    <div id="code"></div>
+                    <button class="fullscreen icon-button" title="Fullscreen code"><svg class="icon" aria-label="Fullscreen code" viewBox="0 0 180 180">
+    <use href="#fullscreen"/>
+</svg></button>
+                </section>
+                <section class="fullscreenable output">
+                    <div id="output" aria-live="polite">
+                        <pre class="stdout"></pre>
+                        <pre class="result"></pre>
+                        <div class="images"></div>
+                    </div>
+                    <button class="fullscreen icon-button" title="Fullscreen output"><svg class="icon" aria-label="Fullscreen output" viewBox="0 0 180 180">
+    <use href="#fullscreen"/>
+</svg></button>
+                </section>
+                <div class="buttons">
+                    <button type="button" class="run-code">Run code</button>
+                </div>
+                <svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="icon-defs"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <g id="cog">
+            <path 
+                style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z"
+            />
+        </g>
+        <g id="pdf">
+            <path
+                style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z"
+            />
+        </g>
+        <g id="slides">
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,21.25 30,137.5"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 90,21.25 60,158.75"
+            />
+            <rect
+                style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="119.79137"
+                height="82.273766"
+                x="30.104315"
+                y="36.476234"
+                ry="4.7737675"
+                rx="4.7737675"
+            />
+            <rect
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="140"
+                height="5.2262344"
+                x="20"
+                y="31.25"
+                ry="1.6724058"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,66.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,76.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,86.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,56.25 h 50"
+            />
+            <path
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z"
+            />
+        </g>
+
+        <g id="notebook">
+            <path
+                style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="58.699139"
+               cy="59.503937"
+               r="3.8077738"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="113.59385"
+               cy="52.885151"
+               r="4.9348516"
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z"
+           
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z"
+              
+            />
+            <ellipse
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="63.813011"
+               cy="125.96338"
+               rx="6.4332962"
+               ry="6.4347191"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="M 34,46.266514 V 62.316215"
+            
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="M 34,77.849849 V 93.89955"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 34,109.43318 v 16.0497"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0"
+            />
+        </g>
+
+        <g id="fullscreen">
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+               d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="M 150.95833,68.801471 V 28.958332 h -39.84314"
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="m 28.958332,111.11519 v 39.84314 h 39.843139"
+            />
+        </g>
+    </defs>
+</svg>
+            </div>
+        </template>
+
+        <template id="embed-numbas-template">
+            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1738927136.359327">
+            <details id="wrapper" data-completion-status="incomplete">
+                <summary>
+                    <h1 id="title">Test Yourself</h1>
+                    <div id="completion-status" data-completion-status="unknown">
+                        <span class="complete">Complete</span>
+                        <span class="incomplete">Incomplete</span>
+                    </div>
+                    <label id="score-feedback">
+                        Score:
+                        <progress min="0"></progress>
+                    </label>
+                </summary>
+                <iframe class="embed" title="Numbas"></iframe>
+            </details>
+        </template>
+
+    </head>
+    <body class="" data-format="slides">
+        
+    
+        <form id="display-options">
+    <div class="buttons">
+        <button type="button" id="reset-display-options">Reset to defaults</button>
+
+        <a href="https://chirun.org.uk/accessibility-statement/material">Accessibility statement</a>
+
+        <button type="button" aria-controls="display-options" aria-expanded="false">
+            Close
+        </button>
+    </div>
+
+    <div class="inputs">
+        <div class="input-group">
+            <label for="display-options-font-scale">
+                Text size
+            </label>
+            <input type="range" min="50" max="600" step="5" value="100" id="display-options-font-scale">
+            <output for="display-options-font-scale">100%</output>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-spacing-factor">
+                Spacing
+            </label>
+            <input type="range" min="0" max="1200" step="5" value="100" id="display-options-spacing-factor">
+            <output for="display-options-spacing-factor">100%</output>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-font-family">
+                Text font
+            </label>
+            <select id="display-options-font-family">
+                <option value="var(--sans-serif-font)" selected>Sans-serif</option>
+                <option value="var(--serif-font)">Serif</option>
+                <option value="Atkinson Hyperlegible">Atkinson Hyperlegible</option>
+                <option value="Comic Sans MS">Comic Sans</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-colour-scheme">
+                Colour scheme
+            </label>
+            <select id="display-options-colour-scheme">
+                <option value="auto" selected>Automatic (default)</option>
+                <option value="light">Black text on white</option>
+                <option value="dark">White text on black</option>
+                <option value="custom">Custom</option>
+            </select>
+        </div>
+
+        <section id="custom-colour-scheme-options" class="inputs">
+            <div class="input-group">
+                <label for="display-options-text-colour">
+                    Text colour
+                </label>
+                <input type="color" value="#000000" id="display-options-text-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-link-colour">
+                    Link colour
+                </label>
+                <input type="color" value="#0000ee" id="display-options-link-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour">
+                    Background colour
+                </label>
+                <input type="color" value="#ffffff" id="display-options-bg-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-off">
+                    Muted background colour
+                </label>
+                <input type="color" value="#eeeeee" id="display-options-bg-colour-off">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-1">
+                    Accent colour 1
+                </label>
+                <input type="color" value="#4caf50" id="display-options-bg-colour-accent-1">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-2">
+                    Accent colour 2
+                </label>
+                <input type="color" value="#f6f6ff" id="display-options-bg-colour-accent-2">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-3">
+                    Accent colour 3
+                </label>
+                <input type="color" value="#eeffd3" id="display-options-bg-colour-accent-3">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-4">
+                    Accent colour 4
+                </label>
+                <input type="color" value="#ffeeee" id="display-options-bg-colour-accent-4">
+            </div>
+        </section>
+
+        <section id="filter-colour-scheme-options" class="inputs">
+            <div class="input-group">
+                <label for="display-options-filter-sepia">
+                    Sepia filter
+                </label>
+                <input type="range" min="0" max="100" step="1" value="0" id="display-options-filter-sepia">
+                <output for="display-options-filter-sepia">0%</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-filter-hue-rotate">
+                    Rotate hues
+                </label>
+                <input type="range" min="0" max="1" step="0.01" value="0" id="display-options-filter-hue-rotate">
+                <output for="display-options-filter-hue-rotate">0 turns</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-invert-images">
+                    Invert images in dark mode
+                </label>
+                <input type="checkbox" id="display-options-invert-images">
+            </div>
+
+        </section>
+    </div>
+</form>
+    
+
+    <main>
+        
+
+            
+            <header>
+                <div id="slides-title">Lecture Slides</div>
+                
+                <div id="slides-author">Alex Corner</div>
+                
+
+                
+<button class="icon-button" type="button" aria-controls="display-options" aria-expanded="false" title="Display options">
+    <svg class="icon" aria-label="Display options" viewBox="0 0 180 180">
+    <use href="#cog"/>
+</svg>
+</button>
+
+            </header>
+            
+
+            
+                
+                <section id="title-slide">
+                    <h1 class="title">Lecture Slides</h1>
+                    
+                    <p class="author">Alex Corner</p>
+                    
+                </section>
+                
+            
+
+            
+                <section class="beamer-frame">
+<section class="beamer-titlepage">
+<h1 id="statistics_and_proba">Statistics and Probability</h1>
+<p class="beamer-authors">
+<span class="author">Alex Corner</span>
+</p>
+<p class="beamer-date">[</p>
+</section>
+</section>
+<section class="beamer-section" id="a0000000002">
+<h2 aria-hidden="true" class="beamer-section-heading" id="statistics">Statistics</h2>
+<section class="beamer-frame">
+<div class="centered"><p>
+[sep=8pt,center,shadow=true,rounded=true]title 
+</p>
+<h2 class="beamer-section-title" id="statisti_1">Statistics</h2>
+</div>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="some_terminology">Some terminology</h2>
+</header>
+<ul class="itemize" id="a0000000003">
+<li id="a0000000004">
+<p>
+<b class="bf">Population: <em>All</em> relevant data. <p>
+<b class="bf">Sample: <em>Some</em> of the relevant data, hopefully enough to be <em>representative</em> of the population.     <ul class="itemize" id="a0000000005">
+<li id="a0000000006">
+<p>
+This should be a <b class="bf">random sample with no <b class="bf">bias towards a group or individual in the population. <p>
+This can be difficult to achieve and careful thought needs to be given as to how data is collected. 
+</p>
+</b></b>
+</p>
+</li>
+</ul>
+<p>
+Sample/population <b class="bf">data can be:     <ul class="itemize" id="a0000000007">
+<li id="a0000000008">
+<p>
+<b class="bf">Discrete: E.g., number of attacks on a port in a given hour of the day. Usually integer-valued, e.g., \(0\), \(1\), \(2\), etc. <p>
+<b class="bf">Continuous: E.g., amount of time elapsed since previous attack. Often classified into groups, e.g., \(0-5\) minutes, \(5-10\) minutes, \(10-15\) minutes, etc. </b>
+</p>
+</b>
+</p>
+</li>
+</ul>
+</b>
+</p>
+</b>
+</p>
+</b>
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="grouping_data">Grouping Data</h2>
+</header>
+<ul class="itemize" id="a0000000009">
+<li id="a0000000010">
+<p>
+Suppose that we have data from a random sample of 100 people, giving their age at their last birthday. 
+</p>
+</li>
+</ul>
+<div class="centered"> <div class="table" id="a0000000011">
+<table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:right"><p>
+ 66 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 70 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 10 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 54 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 62 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 13 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 11 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 15 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 69 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 26 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 49 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 11 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 3 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:right"><p>
+67 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 10 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 54 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 42 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 32 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 56 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 39 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 60 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 79 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 33 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 12 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 47 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 24 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:right"><p>
+19 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 47 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 63 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 32 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 7 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 70 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 55 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 46 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 11 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 20 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 15 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 39 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 37 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:right"><p>
+28 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 72 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 46 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 64 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 61 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 51 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 56 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 53 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 61 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 11 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 80 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 53 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 28 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:right"><p>
+76 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 6 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 5 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 39 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 58 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 29 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 52 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 54 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 47 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 60 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 62 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 51 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 72 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:right"><p>
+41 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 57 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 32 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 12 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 33 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 17 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 40 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 20 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 10 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 27 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 47 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 71 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 68 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:right"><p>
+44 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 7 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 23 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 17 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 81 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 23 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 12 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 33 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 16 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 46 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 71 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 48 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 58 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:right"><p>
+79 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 80 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 43 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 31 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 72 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 68 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 36 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 41 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 11 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"> </td>
+<td colspan="" rowspan="" style="text-align:right"> </td>
+<td colspan="" rowspan="" style="text-align:right"> </td>
+<td colspan="" rowspan="" style="text-align:right"> </td>
+</tr>
+</table>
+</div> </div>
+<ul class="itemize" id="a0000000012">
+<li id="a0000000013">
+<p>
+It’s a little hard to get a feel for the data, so we could count the frequency in each bin, order the data numerically, or calculate various <b class="bfseries">statistics</b>. 
+</p>
+</li>
+<li id="a0000000014">
+<p>
+In doing so, we lose some of the information but might get a clearer overview. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="grouping_da_1">Grouping Data</h2>
+</header>
+<ul class="itemize" id="a0000000015">
+<li id="a0000000016">
+<p>
+Here we have placed the data into bins of <b class="bf">class width 5. </b>
+</p>
+</li>
+</ul>
+<div class="centered"> <img alt="\includegraphics[width=0.3\textwidth ]{images/table.pdf}" src="images/img-0001.svg"/> </div>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="charts_bar_chart">Charts: Bar Chart</h2>
+</header>
+<div class="centered"> <figure>
+<p>
+<img alt="\includegraphics[scale=0.3]{images/bar_chart_ages.pdf}" src="images/img-0002.svg"/>
+</p>
+</figure> </div>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="charts_histogram">Charts: Histogram</h2>
+</header>
+<div class="centered"> <figure>
+<p>
+<img alt="\includegraphics[scale=0.3]{images/histogram_ages.pdf}" src="images/img-0003.svg"/>
+</p>
+</figure> </div>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="charts_histogr_1">Charts: Histogram</h2>
+</header>
+<div class="centered"> <figure>
+<p>
+<img alt="\includegraphics[scale=0.3]{images/histogram_wide_ages.pdf}" src="images/img-0004.svg"/>
+</p>
+</figure> </div>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="measures_of_central_">Measures of Central Tendency</h2>
+</header>
+<ul class="itemize" id="a0000000017">
+<li id="a0000000018">
+<p>
+<b class="bf">Arithmetic Mean: Add up all of the values and divide by how many there are. <p>
+<b class="bf">Median: Order the data and look at the middle value(s). <p>
+<b class="bf">Mode: Tally the data and select the one with the highest frequency. </b>
+</p>
+</b>
+</p>
+</b>
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="_arithmetic_mean">(Arithmetic) Mean</h2>
+</header>
+<ul class="itemize" id="a0000000019">
+<li id="a0000000020">
+<p>
+In a sample of five values (6, 9, 2, 4, 3) the mean value is: 
+</p>
+<span class="dmath">\[  \frac{6 + 9 + 2 + 4 + 3}{5} = \frac{24}{5} = 4.8.  \]</span>
+</li>
+<li id="a0000000021">
+<p>
+The one hundred values from the previous histogram example add up to 4165 and so the mean value is \(\frac{4165}{100} = 41.65\). 
+</p>
+</li>
+<li id="a0000000022">
+<p>
+For \(n\) data values \(x_1\), \(x_2\), \(\ldots \), \(x_n\), the formula for the mean is: 
+</p>
+<span class="dmath">\[  \bar{x} = \frac{x_1 + x_2 + \ldots + x_n}{n}.  \]</span>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="median">Median</h2>
+</header>
+<ul class="itemize" id="a0000000023">
+<li id="a0000000024">
+<p>
+Here we arrange the data values in ascending (or descending) order. Then the <b class="bfseries">median</b> is: 
+</p>
+<ol class="enumerate" id="a0000000025">
+<li id="a0000000026" value="1">
+<p>
+the middle item if there is an odd number of data items; 
+</p>
+</li>
+<li id="a0000000027" value="2">
+<p>
+the average of the middle two items if there is an even number of data items. 
+</p>
+</li>
+</ol>
+</li>
+<li id="a0000000028">
+<p>
+E.g., if the ordered data is 2, 3, 4, 6, 9, then the middle item is 4 and so the median is 4. 
+</p>
+</li>
+<li id="a0000000029">
+<p>
+From our histogram example, the sample of one hundred data values, the ordered data is: 
+</p>
+<div class="centered"> <div class="table" id="a0000000030">
+<table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:right"><p>
+ 3 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 5 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 6 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 7 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 7 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 10 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 10 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 10 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 11 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 11 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 11 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 11 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 11 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:right"><p>
+12 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 12 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 12 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 13 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 15 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 15 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 16 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 17 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 17 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 19 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 20 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 20 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 23 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:right"><p>
+23 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 24 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 26 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 27 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 28 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 28 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 29 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 31 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 32 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 32 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 32 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 33 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 33 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:right"><p>
+33 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 36 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 37 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 39 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 39 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 39 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 40 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 41 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 41 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 42 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+<span style="color:#FF0000"><i class="itshape"><b class="bfseries">43</b></i></span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+<span style="color:#FF0000"><i class="itshape"><b class="bfseries">44</b></i></span>
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 46 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:right"><p>
+46 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 46 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 47 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 47 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 47 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 47 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 48 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 49 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 51 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 51 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 52 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 53 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 53 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:right"><p>
+54 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 54 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 54 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 55 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 56 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 56 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 57 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 58 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 58 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 60 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 60 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 61 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 61 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:right"><p>
+62 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 62 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 63 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 64 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 66 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 67 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 68 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 68 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 69 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 70 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 70 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 71 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 71 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:right"><p>
+72 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 72 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 72 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 76 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 79 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 79 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 80 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 80 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"><p>
+ 81 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:right"> </td>
+<td colspan="" rowspan="" style="text-align:right"> </td>
+<td colspan="" rowspan="" style="text-align:right"> </td>
+<td colspan="" rowspan="" style="text-align:right"> </td>
+</tr>
+</table>
+</div> </div>
+</li>
+<li id="a0000000031">
+<p>
+The middle two values are 43 and 44, hence the median is 43.5. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="mode">Mode</h2>
+</header>
+<ul class="itemize" id="a0000000032">
+<li id="a0000000033">
+<p>
+The <b class="bf">mode is the data value which occurs most in the sample. <p>
+For grouped data we can talk of a <b class="bf">modal group or <b class="bf">modal class, sometimes specifying the mid-point in order to give a single value. <p>
+For the one hundred data values in the histogram example the mode is clearly indicated on the bar chart as the tallest bar: 11. We can also tally values to find it. 
+</p>
+<div class="centered"> <figure>
+<p>
+<img alt="\includegraphics[scale=0.25]{images/bar_chart_ages.pdf}" src="images/img-0002.svg"/>
+</p>
+</figure> </div>
+</b></b>
+</p>
+</b>
+</p>
+</li>
+</ul>
+</section>
+</section><section class="beamer-section" id="a0000000034">
+<h2 aria-hidden="true" class="beamer-section-heading" id="probability">Probability</h2>
+<section class="beamer-frame">
+<div class="centered"><p>
+[sep=8pt,center,shadow=true,rounded=true]title 
+</p>
+<h2 class="beamer-section-title" id="probabili_1">Probability</h2>
+</div>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="definition_of_probab">Definition of Probability</h2>
+</header>
+<ul class="itemize" id="a0000000035">
+<li id="a0000000036">
+<p>
+\(A\) is a statement which is either true or false. 
+</p>
+</li>
+<li id="a0000000037">
+<p>
+\(N\) is the number of trials, or observations. 
+</p>
+</li>
+<li id="a0000000038">
+<p>
+\(S\) is the number of successes (so \(N - S\) is the number of failures). 
+</p>
+</li>
+<li id="a0000000039">
+<p>
+For a single trial: Probability that \(A\) is true, or the <b class="bf">probability of success, is: <span class="dmath">\[  P(A) = \frac{S}{N}.  \]</span> <p>
+Since \(0 \leq S \leq N\), then \(0 \leq P(A) \leq 1\). 
+</p>
+<p>
+The <em>probability of failure</em> is: 
+</p>
+<span class="dmath">\[  P(\overline{A}) = \frac{N-S}{N} = 1 - \frac{S}{N} = 1 - P(A).  \]</span>
+</b>
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="probability_example_">Probability: Example 1</h2>
+</header>
+<p>
+ Tossing a coin: 
+</p>
+<ul class="itemize" id="a0000000040">
+<li id="a0000000041">
+<p>
+Toss a coin \(4\) times: we <em>expect</em> \(2\) heads. 
+</p>
+</li>
+<li id="a0000000042">
+<p>
+Toss a coin \(100\) times: we <em>expect</em> \(50\) heads. 
+</p>
+</li>
+<li id="a0000000043">
+<p>
+Toss a coin once: what do we <em>expect</em>? 
+</p>
+<span class="dmath">\[  P(\mbox{one head in one trial}) = \frac{1}{2}.  \]</span>
+</li>
+<li id="a0000000044">
+<p>
+\(A\) = ‘a head shows when a coin is tossed’, so \(P(A) = \frac{1}{2}\). 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="probability_example">Probability: Example</h2>
+</header>
+<div class="centered"> <img alt="\includegraphics[width=0.23\textwidth ]{images/table.pdf}" src="images/img-0001.svg"/> </div>
+<p>
+ Age at last birthday: 
+</p>
+<ul class="itemize" id="a0000000045">
+<li id="a0000000046">
+<p>
+Probability that one of the people selected at random is in the 15-19 age group. 
+</p>
+</li>
+<li id="a0000000047">
+<p>
+The total number of outcomes is \(100\) and the number of ‘successes’ is \(6\). 
+</p>
+</li>
+<li id="a0000000048">
+<p>
+The probability of success is: \(P(\mbox{Success}) = \frac{6}{100}\). 
+</p>
+</li>
+<li id="a0000000049">
+<p>
+The probability of failure is: \(P(\mbox{Failure}) = \frac{94}{100}\). 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="probability_exampl_1">Probability: Example 3</h2>
+</header>
+<p>
+ Rolling dice: 
+</p>
+<ul class="itemize" id="a0000000050">
+<li id="a0000000051">
+<p>
+Two dice are rolled and the sum of the spots is calculated. 
+</p>
+</li>
+<li id="a0000000052">
+<p>
+\(A\) = ‘The sum is \(7\) when two dice are rolled.’ 
+</p>
+<div class="centered"> <div class="table" id="a0000000053">
+<table class="tabular">
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+ (1, 1) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (1, 2) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (1, 3) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (1, 4) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (1, 5) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">(1, 6)</b>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+(2, 1) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (2, 2) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (2, 3) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (2, 4) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">(2, 5)</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (2, 6) 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+(3, 1) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (3, 2) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (3, 3) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">(3, 4)</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (3, 5) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (3, 6) 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+(4, 1) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (4, 2) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">(4, 3)</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (4, 4) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (4, 5) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (4, 6) 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+(5, 1) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">(5, 2)</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (5, 3) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (5, 4) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (5, 5) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ (5, 6) 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<b class="bfseries">(6, 1)</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ (6, 2) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ (6, 3) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ (6, 4) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ (6, 5) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ (6, 6) 
+</p>
+</td>
+</tr>
+</table>
+</div> </div>
+</li>
+<li id="a0000000054">
+<p>
+There are 36 possible outcomes when rolling two dice. But only six of these outcomes make \(A\) true. 
+</p>
+</li>
+<li id="a0000000055">
+<p>
+Number of trials \(N = 36\), number of successes \(S = 6\). 
+</p>
+<span class="dmath">\[  P(A) = \frac{6}{36} = \frac{1}{6}.  \]</span>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<div class="centered"> <figure>
+<p>
+<img alt="\includegraphics[scale=0.1]{images/catan.jpg}" src="images/img-0001.jpg"/>
+</p>
+</figure> </div>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="and_or_intersection_">And, Or: Intersection, Union</h2>
+</header>
+<ul class="itemize" id="a0000000056">
+<li id="a0000000057">
+<p>
+Last semester you used \(A \cdot B\) to mean \(A\) <span class="ttfamily">AND</span> \(B\). We will sometimes use \(A \wedge B\) instead. 
+</p>
+</li>
+<li id="a0000000058">
+<p>
+Its analogue in set theory is <b class="bfseries">intersection</b>: \(A \cap B\). 
+</p>
+</li>
+<li id="a0000000059">
+<p>
+Last semester you used \(A + B\) to mean \(A\) <span class="ttfamily">OR</span> \(B\). We will sometimes use \(A \vee B\) instead. 
+</p>
+</li>
+<li id="a0000000060">
+<p>
+Its analogue in set theory is <b class="bfseries">union</b>: \(A \cup B\). 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="law_of_multiplicatio">Law of multiplication</h2>
+</header>
+<ul class="itemize" id="a0000000061">
+<li id="a0000000062">
+<p>
+Consider two events \(A\) and \(B\). 
+</p>
+</li>
+<li id="a0000000063">
+<p>
+\(P(A)\) and \(P(B)\) are denoted by the sets in the Venn diagram. 
+</p>
+<div class="centered"> <div class="tikzcd" id="a0000000064">
+<img alt="\begin{tikzpicture} [framed, background rectangle/.style={draw=black,fill=white}, inner frame sep=3ex,
+    dot/.style = {circle, inner sep=0pt, minimum size=1mm, fill,
+                  node contents={}}
+                            ]
+    \def\firstcircle{(-0.9,0) coordinate (a) circle (1.5cm)}
+    \def\secondcircle{(0.9,0) coordinate (b)  circle (1.5cm)}
+        % \begin{scope}
+        %     \clip \secondcircle;
+        %     \fill[cyan] \firstcircle;
+        % \end{scope}
+    \draw[overlay] node [] at (3.5,2.4) {$U$};
+    \draw[fill=orange, fill opacity = 0.4] \firstcircle;
+    \draw node[above left, label distance=3ex] at (-2,1) {$P(A)$};
+    % \draw \firstcircle  node[dot,label=$n_{ij}$];
+    \draw[fill=blue, fill opacity = 0.4] \secondcircle;
+    \draw node[above right, label distance=3ex] at (2,1) {$P(B)$};
+    % \node (c) [above] at (current bounding box.north -| a) {$t_i$};
+    % \node at (c -| b) {$t_j$};
+    % \alttext{A venn diagram of two sets. A rectangular area labelled U surrounds two overlapping circles, one of which is labelled A and the other is labelled B.}
+\end{tikzpicture}" src="images/img-0005.svg"/>
+</div> </div>
+</li>
+<li id="a0000000065">
+<p>
+The intersection of the sets is \(P(A \wedge B)\): this is the probability \(A\) and \(B\) are both true. 
+</p>
+</li>
+<li id="a0000000066">
+<p>
+If \(A\) and \(B\) are mutually exclusive (i.e., can’t both be true at the same time), then \(P(A \wedge B) = 0\). 
+</p>
+</li>
+<li id="a0000000067">
+<p>
+If \(A\) and \(B\) are <b class="bf">independent (i.e., the outcome of one does not affect the other), then \(P(A \wedge B) = P(A) \times P(B)\). </b>
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="probability_exampl_2">Probability: Example 4</h2>
+</header>
+<ul class="itemize" id="a0000000068">
+<li id="a0000000069">
+<p>
+A pack of 52 playing cards has 26 red cards and 26 black cards. 
+</p>
+</li>
+<li id="a0000000070">
+<p>
+One card is drawn from the full pack at random, then replaced in the pack. 
+</p>
+</li>
+<li id="a0000000071">
+<p>
+Then a second card is drawn from the pack. 
+</p>
+</li>
+<li id="a0000000072">
+<p>
+Calculate the probability that both cards are red. 
+</p>
+</li>
+<li id="a0000000073">
+<p>
+Let \(A =\) ‘The first card is red’ and \(B = \) ‘The second card is red’. 
+</p>
+</li>
+<li id="a0000000074">
+<p>
+\(P(A) = \frac{26}{52} = \frac{1}{2}\) and \(P(B) = \frac{26}{52} = \frac{1}{2}\). The two events are independent, so: 
+</p>
+<span class="dmath">\[  P(A \wedge B) = P(A) \times P(B) = \frac{1}{2} \times \frac{1}{2} = \frac{1}{4}.  \]</span>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="law_of_addition">Law of Addition</h2>
+</header>
+<ul class="itemize" id="a0000000075">
+<li id="a0000000076">
+<p>
+Consider two events \(A\) and \(B\). 
+</p>
+</li>
+<li id="a0000000077">
+<p>
+\(P(A)\) and \(P(B)\) are denoted by the sets in the Venn diagram. 
+</p>
+<div class="centered"> <div class="tikzcd" id="a0000000078">
+<img alt="\begin{tikzpicture} [framed, background rectangle/.style={draw=black,fill=white}, inner frame sep=3ex,
+    dot/.style = {circle, inner sep=0pt, minimum size=1mm, fill,
+                  node contents={}}
+                            ]
+    \def\firstcircle{(-0.9,0) coordinate (a) circle (1.5cm)}
+    \def\secondcircle{(0.9,0) coordinate (b)  circle (1.5cm)}
+        % \begin{scope}
+        %     \clip \secondcircle;
+        %     \fill[cyan] \firstcircle;
+        % \end{scope}
+    \draw[overlay] node [] at (3.5,2.4) {$U$};
+    \draw[fill=orange, fill opacity = 0.4] \firstcircle;
+    \draw node[above left, label distance=3ex] at (-2,1) {$P(A)$};
+    % \draw \firstcircle  node[dot,label=$n_{ij}$];
+    \draw[fill=blue, fill opacity = 0.4] \secondcircle;
+    \draw node[above right, label distance=3ex] at (2,1) {$P(B)$};
+    % \node (c) [above] at (current bounding box.north -| a) {$t_i$};
+    % \node at (c -| b) {$t_j$};
+    % \alttext{A venn diagram of two sets. A rectangular area labelled U surrounds two overlapping circles, one of which is labelled A and the other is labelled B.}
+\end{tikzpicture}" src="images/img-0005.svg"/>
+</div> </div>
+</li>
+<li id="a0000000079">
+<p>
+The union of the sets is \(P(A \vee B)\): this is the probability that \(A\) or \(B\) are true. 
+</p>
+</li>
+<li id="a0000000080">
+<p>
+If \(A\) and \(B\) are mutually exclusive, then \(P(A \vee B) = P(A) + P(B)\). 
+</p>
+</li>
+<li id="a0000000081">
+<p>
+In general, 
+</p>
+<span class="dmath">\[  P(A \vee B) = P(A) + P(B) - P(A \wedge B).  \]</span>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="probability_exampl_3">Probability: Example 4 continued</h2>
+</header>
+<ul class="itemize" id="a0000000082">
+<li id="a0000000083">
+<p>
+Same setup as our previous example, but now we want the probability that at least one card is red. (\(P(A) = P(B) = \frac{1}{2}\)) 
+</p>
+</li>
+<li id="a0000000084">
+<p>
+We want to find \(P(A \vee B) = P(A) + P(B) - P(A \wedge B)\). Since \(A\) and \(B\) are independent, then \(P(A \wedge B) = P(A) \times P(B)\). So: 
+</p>
+<span class="dmath">\[  P(A) + P(B) - P(A) \times P(B) = \frac{1}{2} + \frac{1}{2} - \frac{1}{2} \times \frac{1}{2} = \frac{3}{4}.  \]</span>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="example_network_1">Example: Network 1</h2>
+</header>
+<ul class="itemize" id="a0000000085">
+<li id="a0000000086">
+<p>
+A short network link consists of two sections (\(a\)) and (\(b\)), in series as shown below. 
+</p>
+<div class="centered"> <figure>
+<p>
+<img alt="\includegraphics{images/link2.pdf}" src="images/img-0006.svg"/>
+</p>
+</figure> </div>
+</li>
+<li id="a0000000087">
+<p>
+The link functions only if both (\(a\)) and (\(b\)) both function. 
+</p>
+</li>
+<li id="a0000000088">
+<p>
+The two sections are independent. If one fails, the other is not affected. 
+</p>
+</li>
+<li id="a0000000089">
+<p>
+The probability that (\(a\)) functions is \(P(A) = 0.8\), while for (\(b\)) the probability is \(P(B) = 0.9\). 
+</p>
+</li>
+<li id="a0000000090">
+<p>
+The probability that the network functions (both sections function) is: 
+</p>
+<span class="dmath">\[  P(A \wedge B) = P(A) \times P(B) = 0.8 \times 0.9 = 0.72.  \]</span>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="example_network_2">Example: Network 2</h2>
+</header>
+<ul class="itemize" id="a0000000091">
+<li id="a0000000092">
+<p>
+A short network link consists of two sections (\(a\)) and (\(b\)), in parallel as shown below. 
+</p>
+<div class="centered"> <figure>
+<p>
+<img alt="\includegraphics{images/link1.pdf}" src="images/img-0007.svg"/>
+</p>
+</figure> </div>
+</li>
+<li id="a0000000093">
+<p>
+The link functions if either of (\(a\)) or (\(b\)) function (or both). 
+</p>
+</li>
+<li id="a0000000094">
+<p>
+The two sections are independent. If one fails, the other is not affected. 
+</p>
+</li>
+<li id="a0000000095">
+<p>
+The probability that (\(a\)) functions is \(P(A) = 0.8\), while for (\(b\)) the probability is \(P(B) = 0.9\). 
+</p>
+</li>
+<li id="a0000000096">
+<p>
+The probability that the network functions is: 
+</p>
+<span class="dmath">\[  P(A \vee B) = P(A) + P(B) - P(A \wedge B) = 0.8 + 0.9 - 0.72 = 0.98.  \]</span>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="conditional_probabil">Conditional Probability</h2>
+</header>
+<ul class="itemize" id="a0000000097">
+<li id="a0000000098">
+<p>
+When two events are <em>not independent</em>, then the process is not as simple. 
+</p>
+</li>
+<li id="a0000000099">
+<p>
+Consider a single trial consisting of two events \(A\) and \(B\). 
+</p>
+</li>
+<li id="a0000000100">
+<p>
+The <b class="bf">conditional probability \(P(B|A)\) means ‘the probability that \(B\) will be true <em>given that</em> \(A\) is already true’. </b>
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="probability_exampl_4">Probability: Example 5</h2>
+</header>
+<ul class="itemize" id="a0000000101">
+<li id="a0000000102">
+<p>
+A pack of 52 playing cards has 26 red cards and 26 black cards. 
+</p>
+</li>
+<li id="a0000000103">
+<p>
+One card is drawn from the full pack at random, then <em>kept</em>. 
+</p>
+</li>
+<li id="a0000000104">
+<p>
+Then a second card is drawn from the pack. 
+</p>
+</li>
+<li id="a0000000105">
+<p>
+Calculate the probability that both cards are red. 
+</p>
+</li>
+<li id="a0000000106">
+<p>
+Let \(A =\) ‘The first card is red’ and \(B = \) ‘The second card is red’. 
+</p>
+</li>
+<li id="a0000000107">
+<p>
+\(P(A) = \frac{26}{52} = \frac{1}{2}\) as before but \(P(B)\) is a conditional probability because it depends on the result of event \(A\). 
+</p>
+</li>
+<li id="a0000000108">
+<p>
+If the first card was red, then there are now only 25 cards left in the remaining 51 cards, so: 
+</p>
+<span class="dmath">\[  P(B|A) = \frac{25}{51}.  \]</span>
+</li>
+<li id="a0000000109">
+<p>
+This means the probability that the second card is red given the first card was red is: 
+</p>
+<span class="dmath">\[  P(A \wedge B) = P(B|A) \times P(A) = \frac{25}{51} \times \frac{1}{2} = \frac{25}{102}.  \]</span>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="conditional_probab_1">Conditional Probability</h2>
+</header>
+<ul class="itemize" id="a0000000110">
+<li id="a0000000111">
+<p>
+The <b class="bf">conditional probability can be expressed as <span class="dmath">\[  P(B|A) = \frac{P(A \wedge B)}{P(A)}.  \]</span> <p>
+This can be rearranged as 
+</p>
+<span class="dmath">\[  P(A \wedge B) = P(B|A) \times P(A).  \]</span>
+<p>
+If \(A\) and \(B\) are independent, then 
+</p>
+<span class="dmath">\[  P(B|A) = P(B).  \]</span>
+</b>
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="probability_exampl_5">Probability: Example 6</h2>
+</header>
+<ul class="itemize" id="a0000000112">
+<li id="a0000000113">
+<p>
+Calculate the probability that the first card is black and the second card is red. 
+</p>
+</li>
+<li id="a0000000114">
+<p>
+Both cards are red: 
+</p>
+<span class="dmath">\[  P(A \wedge B) = P(B|A) \times P(A) = \frac{25}{51} \times \frac{1}{2} = \frac{25}{102}.  \]</span>
+</li>
+<li id="a0000000115">
+<p>
+First card is black, second card is red: 
+</p>
+<span class="dmath">\[  P(\overline{A} \wedge B) = P(B|\overline{A}) \times P(\overline{A}) = \frac{26}{51} \times \frac{1}{2} = \frac{26}{102}.  \]</span>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="probability_trees">Probability Trees</h2>
+</header>
+<ul class="itemize" id="a0000000116">
+<li id="a0000000117">
+<p>
+For small examples, we can often visualise things in the form of a <b class="bf">probability tree. <div class="centered"> <figure>
+<p>
+<img alt="\includegraphics{images/tree.pdf}" src="images/img-0008.svg"/>
+</p>
+</figure> </div> </b>
+</p>
+</li>
+</ul>
+</section>
+</section>
+<script id="plastex-labels" type="application/json">{}</script>
+            
+
+        
+
+        <nav id="pager">
+            <button type="button" id="move-backwards" aria-label="Backwards">←</button>
+            <button type="button" id="move-forwards" aria-label="Forwards">→</button>
+        </nav>
+    </main>
+
+
+        <svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="icon-defs"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <g id="cog">
+            <path 
+                style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z"
+            />
+        </g>
+        <g id="pdf">
+            <path
+                style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z"
+            />
+        </g>
+        <g id="slides">
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,21.25 30,137.5"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 90,21.25 60,158.75"
+            />
+            <rect
+                style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="119.79137"
+                height="82.273766"
+                x="30.104315"
+                y="36.476234"
+                ry="4.7737675"
+                rx="4.7737675"
+            />
+            <rect
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="140"
+                height="5.2262344"
+                x="20"
+                y="31.25"
+                ry="1.6724058"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,66.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,76.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,86.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,56.25 h 50"
+            />
+            <path
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z"
+            />
+        </g>
+
+        <g id="notebook">
+            <path
+                style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="58.699139"
+               cy="59.503937"
+               r="3.8077738"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="113.59385"
+               cy="52.885151"
+               r="4.9348516"
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z"
+           
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z"
+              
+            />
+            <ellipse
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="63.813011"
+               cy="125.96338"
+               rx="6.4332962"
+               ry="6.4347191"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="M 34,46.266514 V 62.316215"
+            
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="M 34,77.849849 V 93.89955"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 34,109.43318 v 16.0497"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0"
+            />
+        </g>
+
+        <g id="fullscreen">
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+               d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="M 150.95833,68.801471 V 28.958332 h -39.84314"
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="m 28.958332,111.11519 v 39.84314 h 39.843139"
+            />
+        </g>
+    </defs>
+</svg>
+    </body>
+</html>

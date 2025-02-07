@@ -437,12 +437,16 @@ structure:
       - filetype: pdf
         format: default
         url: mathematics/week_02_probability_/lecture_slides/lecture_slides.pdf
+      - filetype: html
+        format: slides
+        url: mathematics/week_02_probability_/lecture_slides/lecture_slides.slides.html
       is_hidden: false
       pdf_url: mathematics/week_02_probability_/lecture_slides/lecture_slides.pdf
+      slides_url: mathematics/week_02_probability_/lecture_slides/lecture_slides.slides.html
       slug: lecture_slides
       source: week_01-sets-probability/stats_and_probability.tex
       title: Lecture Slides
-      type: chapter
+      type: slides
       url: mathematics/week_02_probability_/lecture_slides/index.html
     - build_pdf: true
       formats:
@@ -619,6 +623,25 @@ structure:
       formats:
       - filetype: html
         format: default
+        url: cryptography/week_04_05_classical/lecture_overview/index.html
+      - filetype: pdf
+        format: default
+        url: cryptography/week_04_05_classical/lecture_overview/lecture_overview.pdf
+      - filetype: html
+        format: slides
+        url: cryptography/week_04_05_classical/lecture_overview/lecture_overview.slides.html
+      is_hidden: false
+      pdf_url: cryptography/week_04_05_classical/lecture_overview/lecture_overview.pdf
+      slides_url: cryptography/week_04_05_classical/lecture_overview/lecture_overview.slides.html
+      slug: lecture_overview
+      source: week_03-classical_ciphers_I/cryptography_overview.tex
+      title: Lecture - Overview
+      type: slides
+      url: cryptography/week_04_05_classical/lecture_overview/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
         url: cryptography/week_04_05_classical/shift_and_substituti/index.html
       - filetype: pdf
         format: default
@@ -630,6 +653,36 @@ structure:
       title: Shift and Substitution
       type: chapter
       url: cryptography/week_04_05_classical/shift_and_substituti/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: cryptography/week_04_05_classical/exercises_caesar/index.html
+      - filetype: pdf
+        format: default
+        url: cryptography/week_04_05_classical/exercises_caesar/exercises_caesar.pdf
+      is_hidden: false
+      pdf_url: cryptography/week_04_05_classical/exercises_caesar/exercises_caesar.pdf
+      slug: exercises_caesar
+      source: week_03-classical_ciphers_I/caesar-exercises.tex
+      title: Exercises - Caesar
+      type: chapter
+      url: cryptography/week_04_05_classical/exercises_caesar/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: cryptography/week_04_05_classical/exercises_frequency_/index.html
+      - filetype: pdf
+        format: default
+        url: cryptography/week_04_05_classical/exercises_frequency_/exercises_frequency_.pdf
+      is_hidden: false
+      pdf_url: cryptography/week_04_05_classical/exercises_frequency_/exercises_frequency_.pdf
+      slug: exercises_frequency_
+      source: week_03-classical_ciphers_I/frequency-exercises.tex
+      title: Exercises - Frequency Analysis
+      type: chapter
+      url: cryptography/week_04_05_classical/exercises_frequency_/index.html
     formats:
     - filetype: html
       format: default
