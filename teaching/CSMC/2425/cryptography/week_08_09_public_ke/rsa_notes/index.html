@@ -7,7 +7,7 @@
             <meta name="robots" content="noindex">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta name="author" content="Alex Corner" />
-            <meta name="date" content="2025-02-11" />
+            <meta name="date" content="2025-02-12" />
         
 
         <title>RSA Notes | 55-408808: Introduction to Cyber Security, Maths and Cryptography</title>
@@ -15,41 +15,41 @@
         
     
     
-            <link rel="stylesheet" href="../../../static/styles.css?build_time=1739285285.356127">
+            <link rel="stylesheet" href="../../../static/styles.css?build_time=1739373414.231493">
             
             
         
-    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1739285285.356127">
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1739373414.231493">
 
-    <link rel="stylesheet" href="../../../static/print.css?build_time=1739285285.356127">
+    <link rel="stylesheet" href="../../../static/print.css?build_time=1739373414.231493">
 
 
         
     
 			<script>
-				var chirun_static_url = new URL('../../../static?build_time=1739285285.356127', location.href);
+				var chirun_static_url = new URL('../../../static?build_time=1739373414.231493', location.href);
 			</script>
 
             
-                <script defer src="../../../static/mathjax_config.js?build_time=1739285285.356127"></script>
+                <script defer src="../../../static/mathjax_config.js?build_time=1739373414.231493"></script>
                 <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             
 
-            <script type="module" src="../../../static/localisation.js?build_time=1739285285.356127"></script>
+            <script type="module" src="../../../static/localisation.js?build_time=1739373414.231493"></script>
 
-            <script defer src="../../../static/customisation.js?build_time=1739285285.356127"></script>
+            <script defer src="../../../static/customisation.js?build_time=1739373414.231493"></script>
 
             
 
             
         
-    <script defer src="../../../static/code.js?build_time=1739285285.356127" type="module"></script>
-    <script defer src="../../../static/embed_numbas.js?build_time=1739285285.356127" type="module"></script>
-    <script defer src="../../../static/embed_qrcode.js?build_time=1739285285.356127" type="module"></script>
+    <script defer src="../../../static/code.js?build_time=1739373414.231493" type="module"></script>
+    <script defer src="../../../static/embed_numbas.js?build_time=1739373414.231493" type="module"></script>
+    <script defer src="../../../static/embed_qrcode.js?build_time=1739373414.231493" type="module"></script>
 
 
         <template id="runnable-code-template">
-            <link rel="stylesheet" href="../../../static/code.css?build_time=1739285285.356127">
+            <link rel="stylesheet" href="../../../static/code.css?build_time=1739373414.231493">
             <div class="runnable-code-wrapper">
                 <section class="fullscreenable code">
                     <div id="code"></div>
@@ -230,7 +230,7 @@
         </template>
 
         <template id="embed-numbas-template">
-            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1739285285.356127">
+            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1739373414.231493">
             <details id="wrapper" data-completion-status="incomplete">
                 <summary>
                     <h1 id="title">Test Yourself</h1>
@@ -924,7 +924,7 @@ Alice decrypts this by calculating \(c^d = 59^{29} \operatorname {mod} 91\).
 </section><section class="section">
 <h2 id="a0000000050">RSA: Decryption Exponent</h2>
 <p>
- When Alice sets up her RSA scheme, she chooses large primes \(p\) and \(q\). Using these she calculates \(n = pq\) and \(\varphi (n) = (p-1)(q-1)\), but she also requires a value \(e\) such that \(1 {\lt} e {\lt} \varphi (n)\) with \(\operatorname {hcf}(e,\varphi (n)) = 1\) and a value \(d\) such that \(de = 1 \operatorname {mod} \varphi (n)\). This can be hard to find by trial and error, so we can introduce the <b class="bfseries">Euclidean Algorithm</b>. 
+ When Alice sets up her RSA scheme, she chooses large primes \(p\) and \(q\). Using these she calculates \(n = pq\) and \(\varphi (n) = (p-1)(q-1)\), but she also requires a value \(e\) such that \(1 {\lt} e {\lt} \varphi (n)\) with \(\operatorname {hcf}(e,\varphi (n)) = 1\) and a value \(d\) such that \(de = 1 \operatorname {mod} \varphi (n)\). This can be hard to find by trial and error, but we can use the <b class="bfseries">Euclidean Algorithm</b>. 
 </p>
 <p>
 For example, how could we easily check that the highest common factor of \(e = \textcolor{red}{5}\) and \(\varphi (n) = 72\) is actually equal to 1? 
@@ -1196,6 +1196,9 @@ We need a value of \(d\) such that \(de = 1 \operatorname {mod} \varphi (n)\), s
 The algorithm suggests that \(d = -77\), but we want \(d\) to be positive. Since we want \(de = 1 \operatorname {mod} \varphi (n)\) and \(\varphi (n) = 180\), we can add \(180\) to \(-77\) to find that 
 </p>
 <span class="dmath">\[ d = -77 = -77 + 180 = 103 \operatorname {mod} 180. \]</span>
+<p>
+<div class="youtube-aspect-ratio"><iframe allowfullscreen="" class="youtube" frameborder="0" src="https://www.youtube.com/embed/yY74TbgU0qc?ecver=1"></iframe></div>
+</p>
 </section><section class="section">
 <h2 id="a0000000055">Concept Checks</h2>
 <p>
@@ -1225,7 +1228,7 @@ Our examples only include small primes so that we can understand how RSA works, 
 
     <div id="footer-text">
         <p>Generated using <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.2.1, written by the Digital Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
-        <p>This page last generated: 2025-02-11</p>
+        <p>This page last generated: 2025-02-12</p>
         
         
         

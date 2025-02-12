@@ -7,7 +7,7 @@
             <meta name="robots" content="noindex">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta name="author" content="Alex Corner" />
-            <meta name="date" content="2025-02-11" />
+            <meta name="date" content="2025-02-12" />
         
 
         <title>Exercises - Caesar | 55-408808: Introduction to Cyber Security, Maths and Cryptography</title>
@@ -15,41 +15,41 @@
         
     
     
-            <link rel="stylesheet" href="../../../static/styles.css?build_time=1739285285.356127">
+            <link rel="stylesheet" href="../../../static/styles.css?build_time=1739373414.231493">
             
             
         
-    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1739285285.356127">
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1739373414.231493">
 
-    <link rel="stylesheet" href="../../../static/print.css?build_time=1739285285.356127">
+    <link rel="stylesheet" href="../../../static/print.css?build_time=1739373414.231493">
 
 
         
     
 			<script>
-				var chirun_static_url = new URL('../../../static?build_time=1739285285.356127', location.href);
+				var chirun_static_url = new URL('../../../static?build_time=1739373414.231493', location.href);
 			</script>
 
             
-                <script defer src="../../../static/mathjax_config.js?build_time=1739285285.356127"></script>
+                <script defer src="../../../static/mathjax_config.js?build_time=1739373414.231493"></script>
                 <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             
 
-            <script type="module" src="../../../static/localisation.js?build_time=1739285285.356127"></script>
+            <script type="module" src="../../../static/localisation.js?build_time=1739373414.231493"></script>
 
-            <script defer src="../../../static/customisation.js?build_time=1739285285.356127"></script>
+            <script defer src="../../../static/customisation.js?build_time=1739373414.231493"></script>
 
             
 
             
         
-    <script defer src="../../../static/code.js?build_time=1739285285.356127" type="module"></script>
-    <script defer src="../../../static/embed_numbas.js?build_time=1739285285.356127" type="module"></script>
-    <script defer src="../../../static/embed_qrcode.js?build_time=1739285285.356127" type="module"></script>
+    <script defer src="../../../static/code.js?build_time=1739373414.231493" type="module"></script>
+    <script defer src="../../../static/embed_numbas.js?build_time=1739373414.231493" type="module"></script>
+    <script defer src="../../../static/embed_qrcode.js?build_time=1739373414.231493" type="module"></script>
 
 
         <template id="runnable-code-template">
-            <link rel="stylesheet" href="../../../static/code.css?build_time=1739285285.356127">
+            <link rel="stylesheet" href="../../../static/code.css?build_time=1739373414.231493">
             <div class="runnable-code-wrapper">
                 <section class="fullscreenable code">
                     <div id="code"></div>
@@ -230,7 +230,7 @@
         </template>
 
         <template id="embed-numbas-template">
-            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1739285285.356127">
+            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1739373414.231493">
             <details id="wrapper" data-completion-status="incomplete">
                 <summary>
                     <h1 id="title">Test Yourself</h1>
@@ -455,7 +455,7 @@
 <li role="none" data-toc-level="1" class="toc-header  has-children">
     <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000002" href="#a0000000002">
         <span class="toc-marker"></span>
-        Exercises: Substitution Ciphers
+        Exercises: Caesar and Substitution
     </a>
 
     
@@ -472,7 +472,7 @@
 </li>
 
 <li role="none" data-toc-level="2" class="toc-header ">
-    <a role="treeitem"  aria-owns="#toc-subtree-a0000000022" href="#a0000000022">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000023" href="#a0000000023">
         
         Exercises
     </a>
@@ -481,7 +481,7 @@
 </li>
 
 <li role="none" data-toc-level="2" class="toc-header ">
-    <a role="treeitem"  aria-owns="#toc-subtree-a0000000033" href="#a0000000033">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000034" href="#a0000000034">
         
         Solutions
     </a>
@@ -502,7 +502,7 @@
 
     <article class="item-content" id="item-content">
          <!-- Latex Chapter/Part -->
-<h1 id="a0000000002">Exercises: Substitution Ciphers</h1>
+<h1 id="a0000000002">Exercises: Caesar and Substitution</h1>
 <section class="section">
 <h2 id="a0000000003">Spreadsheet Exercise</h2>
 <p>
@@ -591,21 +591,26 @@ To put the ciphertext back together, we can use the <a href="https://support.mic
 (Optional) Can you extend your spreadsheet so that it can handle larger pieces of text? You could also investigate the <a href="https://support.microsoft.com/en-gb/office/iferror-function-c526fd07-caeb-47b8-8bb6-63f3e417f611">IFERROR</a> function in order to remove errors when you use shorter pieces of text. 
 </p>
 </li>
+<li id="a0000000022" value="13">
+<p>
+(Optional) Can you use the <a href="https://support.microsoft.com/en-gb/office/lower-function-3f21df02-a80c-44b2-afaf-81358f9fdeb4">LOWER</a> function in Row 5 to force the text you enter in B1 to all be lower case? 
+</p>
+</li>
 </ol>
 </section><section class="section">
-<h2 id="a0000000022">Exercises</h2>
-<ol class="enumerate" id="a0000000023">
-<li id="a0000000024" value="1">
+<h2 id="a0000000023">Exercises</h2>
+<ol class="enumerate" id="a0000000024">
+<li id="a0000000025" value="1">
 <p>
 Using Caesar encryption modulo 26 with key 16, 
 </p>
-<ol class="enumerate" id="a0000000025">
-<li id="a0000000026" value="1">
+<ol class="enumerate" id="a0000000026">
+<li id="a0000000027" value="1">
 <p>
 encrypt <span class="ttfamily">stop</span>
 </p>
 </li>
-<li id="a0000000027" value="2">
+<li id="a0000000028" value="2">
 <p>
 decrypt <span class="ttfamily">THEF</span>. 
 </p>
@@ -615,7 +620,7 @@ decrypt <span class="ttfamily">THEF</span>.
  Be careful with capital and lower case letters here. The spreadsheet we have made can only deal with lower case letters, so when entering ciphertext to decrypt you should enter these in lower case. 
 </p>
 </li>
-<li id="a0000000028" value="2">
+<li id="a0000000029" value="2">
 <p>
 Decipher the following word, which has been subject to a Caesar shift: <span class="ttfamily">TZITLDJKRETVJ</span>. 
 </p>
@@ -840,14 +845,14 @@ Ciphertext
 </tr>
 </table> </div>
 </li>
-<li id="a0000000029" value="3">
-<ol class="enumerate" id="a0000000030">
-<li id="a0000000031" value="1">
+<li id="a0000000030" value="3">
+<ol class="enumerate" id="a0000000031">
+<li id="a0000000032" value="1">
 <p>
 Using the cipher given above, encode the message<br/><span class="ttfamily">yourcodenameisredfox</span>. 
 </p>
 </li>
-<li id="a0000000032" value="2">
+<li id="a0000000033" value="2">
 <p>
 Using the same cipher, decode the message <span class="ttfamily">ERHOBVNGOHHMGEVNBYRE</span>. 
 </p>
@@ -856,11 +861,11 @@ Using the same cipher, decode the message <span class="ttfamily">ERHOBVNGOHHMGEV
 </li>
 </ol>
 </section><section class="section">
-<h2 id="a0000000033">Solutions</h2>
-<ol class="enumerate" id="a0000000034">
-<li id="a0000000035" value="1">
-<ol class="enumerate" id="a0000000036">
-<li id="a0000000037" value="1">
+<h2 id="a0000000034">Solutions</h2>
+<ol class="enumerate" id="a0000000035">
+<li id="a0000000036" value="1">
+<ol class="enumerate" id="a0000000037">
+<li id="a0000000038" value="1">
 <p>
 Since the key is 16, we need to convert letters to numbers (the table in the notes may be helpful) and add 16 to each to encode (modulo 26): 
 </p>
@@ -872,7 +877,7 @@ Since the key is 16, we need to convert letters to numbers (the table in the not
  So the encoded message is IJEF. 
 </p>
 </li>
-<li id="a0000000038" value="2">
+<li id="a0000000039" value="2">
 <p>
 To decrypt, we need to subtract 16 (modulo 26): 
 </p>
@@ -886,19 +891,19 @@ To decrypt, we need to subtract 16 (modulo 26):
 </li>
 </ol>
 </li>
-<li id="a0000000039" value="2">
+<li id="a0000000040" value="2">
 <p>
 Trying each of the different shift amounts between 1 and 26 for the first few letters mainly gives invalid letter combinations, but eventually it can be seen that a shift by 9 spaces (\(T=20 \mapsto 20+9=29 \equiv 3\) mod \(26 \mapsto C\)) gives the decoded word <span class="ttfamily">CIRCUMSTANCES</span>. 
 </p>
 </li>
-<li id="a0000000040" value="3">
-<ol class="enumerate" id="a0000000041">
-<li id="a0000000042" value="1">
+<li id="a0000000041" value="3">
+<ol class="enumerate" id="a0000000042">
+<li id="a0000000043" value="1">
 <p>
 To encode, we need to find the letter in the top row of the given table, and write down the corresponding letter from the bottom row. yourcodenameisredfox encodes to <span class="ttfamily">AVPIUVTHNKZHBGIHTLVD</span>. 
 </p>
 </li>
-<li id="a0000000043" value="2">
+<li id="a0000000044" value="2">
 <p>
 To decode, we must find each letter of the ciphertext in the bottom row, and write down the corresponding letter from the top row. <span class="ttfamily">ERHOBVNGOHHMGEVNBYRE</span> decodes to <span class="ttfamily">thelionsleepstonight</span>. 
 </p>
@@ -922,7 +927,7 @@ To decode, we must find each letter of the ciphertext in the bottom row, and wri
 
     <div id="footer-text">
         <p>Generated using <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.2.1, written by the Digital Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
-        <p>This page last generated: 2025-02-11</p>
+        <p>This page last generated: 2025-02-12</p>
         
         
         

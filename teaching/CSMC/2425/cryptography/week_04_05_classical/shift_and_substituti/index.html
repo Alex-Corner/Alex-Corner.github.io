@@ -7,7 +7,7 @@
             <meta name="robots" content="noindex">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta name="author" content="Alex Corner" />
-            <meta name="date" content="2025-02-11" />
+            <meta name="date" content="2025-02-12" />
         
 
         <title>Shift and Substitution | 55-408808: Introduction to Cyber Security, Maths and Cryptography</title>
@@ -15,41 +15,41 @@
         
     
     
-            <link rel="stylesheet" href="../../../static/styles.css?build_time=1739285285.356127">
+            <link rel="stylesheet" href="../../../static/styles.css?build_time=1739373414.231493">
             
             
         
-    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1739285285.356127">
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1739373414.231493">
 
-    <link rel="stylesheet" href="../../../static/print.css?build_time=1739285285.356127">
+    <link rel="stylesheet" href="../../../static/print.css?build_time=1739373414.231493">
 
 
         
     
 			<script>
-				var chirun_static_url = new URL('../../../static?build_time=1739285285.356127', location.href);
+				var chirun_static_url = new URL('../../../static?build_time=1739373414.231493', location.href);
 			</script>
 
             
-                <script defer src="../../../static/mathjax_config.js?build_time=1739285285.356127"></script>
+                <script defer src="../../../static/mathjax_config.js?build_time=1739373414.231493"></script>
                 <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             
 
-            <script type="module" src="../../../static/localisation.js?build_time=1739285285.356127"></script>
+            <script type="module" src="../../../static/localisation.js?build_time=1739373414.231493"></script>
 
-            <script defer src="../../../static/customisation.js?build_time=1739285285.356127"></script>
+            <script defer src="../../../static/customisation.js?build_time=1739373414.231493"></script>
 
             
 
             
         
-    <script defer src="../../../static/code.js?build_time=1739285285.356127" type="module"></script>
-    <script defer src="../../../static/embed_numbas.js?build_time=1739285285.356127" type="module"></script>
-    <script defer src="../../../static/embed_qrcode.js?build_time=1739285285.356127" type="module"></script>
+    <script defer src="../../../static/code.js?build_time=1739373414.231493" type="module"></script>
+    <script defer src="../../../static/embed_numbas.js?build_time=1739373414.231493" type="module"></script>
+    <script defer src="../../../static/embed_qrcode.js?build_time=1739373414.231493" type="module"></script>
 
 
         <template id="runnable-code-template">
-            <link rel="stylesheet" href="../../../static/code.css?build_time=1739285285.356127">
+            <link rel="stylesheet" href="../../../static/code.css?build_time=1739373414.231493">
             <div class="runnable-code-wrapper">
                 <section class="fullscreenable code">
                     <div id="code"></div>
@@ -230,7 +230,7 @@
         </template>
 
         <template id="embed-numbas-template">
-            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1739285285.356127">
+            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1739373414.231493">
             <details id="wrapper" data-completion-status="incomplete">
                 <summary>
                     <h1 id="title">Test Yourself</h1>
@@ -1025,7 +1025,10 @@ It can even be decrypted quickly by hand by making use of frequency analysis (se
 However, we can still use this principle of letter frequency to analyse messages which we suspect have been encrypted using a substitution cipher. For example, if the most common letter of the message we have intercepted is <span class="ttfamily">Q</span>, then it is likely that this corresponds to an <span class="ttfamily">E</span> in the original message. Similarly for the second most common letter, and so on. The frequencies will not always match up exactly, since the intercepted message may not be very long. For this reason, this method usually works more reliably on longer texts. Another weakness is in the groupings of letters - double letters will still be double letters, and common digraphs (double letter combinations) such as <span class="ttfamily">CH</span>, <span class="ttfamily">TH</span>, and <span class="ttfamily">SH</span> will start to become apparent. 
 </p>
 <p>
-If the encipher is not too savvy, they might even leave punctuation in the text, including spaces. This has the effect of allowing the codebreaker to identify single letter words, such as A or I, and common two-letter words such as <span class="ttfamily">IN</span>, <span class="ttfamily">AS</span>, <span class="ttfamily">OR</span>, and <span class="ttfamily">ON</span>. 
+If the encipherer is not too savvy, they might even leave punctuation in the text, including spaces. This has the effect of allowing the codebreaker to identify single letter words, such as A or I, and common two-letter words such as <span class="ttfamily">IN</span>, <span class="ttfamily">AS</span>, <span class="ttfamily">OR</span>, and <span class="ttfamily">ON</span>. 
+</p>
+<p>
+<div class="youtube-aspect-ratio"><iframe allowfullscreen="" class="youtube" frameborder="0" src="https://www.youtube.com/embed/BatEAy-fZQM?ecver=1"></iframe></div>
 </p>
 <div class="centered"> <img alt="\includegraphics[width=\textwidth ]{images/dancing_men.pdf}" src="images/img-0001.svg" style="width:469.755pt"/> </div>
 <p>
@@ -1048,8 +1051,9 @@ Some substitution ciphers substitute different symbols for the original letters,
 <span class="dmath">\[  E(m_i) = (5m_i + 12) ~ \operatorname {mod}~  n.  \]</span>
 <div class="table" id="a0000000010">
 <table class="tabular">
-<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
- 0 
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+0 
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
@@ -1154,111 +1158,116 @@ Some substitution ciphers substitute different symbols for the original letters,
 </td>
 </tr>
 <tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
-a 
+plaintext
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
- b 
+<span class="ttfamily">a</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
- c 
+<span class="ttfamily">b</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
- d 
+<span class="ttfamily">c</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
- e 
+<span class="ttfamily">d</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
- f 
+<span class="ttfamily">e</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
- g 
+<span class="ttfamily">f</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
- h 
+<span class="ttfamily">g</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
- i 
+<span class="ttfamily">h</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
- j 
+<span class="ttfamily">i</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
- k 
+<span class="ttfamily">j</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
- l 
+<span class="ttfamily">k</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
- m 
+<span class="ttfamily">l</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
- n 
+<span class="ttfamily">m</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
- o 
+<span class="ttfamily">n</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
- p 
+<span class="ttfamily">o</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
- q 
+<span class="ttfamily">p</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
- r 
+<span class="ttfamily">q</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
- s 
+<span class="ttfamily">r</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
- t 
+<span class="ttfamily">s</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
- u 
+<span class="ttfamily">t</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
- v 
+<span class="ttfamily">u</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
- w 
+<span class="ttfamily">v</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
- x 
+<span class="ttfamily">w</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
- y 
+<span class="ttfamily">x</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
- z 
+<span class="ttfamily">y</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">z</span>
 </p>
 </td>
 </tr>
-<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
 12 
 </p>
 </td>
@@ -1364,107 +1373,111 @@ a
 </td>
 </tr>
 <tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
-M 
+ciphertext
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
- R 
+<span class="ttfamily">M</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
- W 
+<span class="ttfamily">R</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
- B 
+<span class="ttfamily">W</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
- G 
+<span class="ttfamily">B</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
- L 
+<span class="ttfamily">G</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
- Q 
+<span class="ttfamily">L</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
- V 
+<span class="ttfamily">Q</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
- A 
+<span class="ttfamily">V</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
- F 
+<span class="ttfamily">A</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
- K 
+<span class="ttfamily">F</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
- P 
+<span class="ttfamily">K</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
- U 
+<span class="ttfamily">P</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
- Z 
+<span class="ttfamily">U</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
- E 
+<span class="ttfamily">Z</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
- J 
+<span class="ttfamily">E</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
- O 
+<span class="ttfamily">J</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
- T 
+<span class="ttfamily">O</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
- Y 
+<span class="ttfamily">T</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
- D 
+<span class="ttfamily">Y</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
- I 
+<span class="ttfamily">D</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
- N 
+<span class="ttfamily">I</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
- S 
+<span class="ttfamily">N</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
- X 
+<span class="ttfamily">S</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
- C 
+<span class="ttfamily">X</span>
 </p>
 </td>
 <td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
- H 
+<span class="ttfamily">C</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<span class="ttfamily">H</span>
 </p>
 </td>
 </tr>
@@ -2369,7 +2382,7 @@ It is possible that some repeated sequences are just due to coincidence, but wit
 
     <div id="footer-text">
         <p>Generated using <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.2.1, written by the Digital Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
-        <p>This page last generated: 2025-02-11</p>
+        <p>This page last generated: 2025-02-12</p>
         
         
         
