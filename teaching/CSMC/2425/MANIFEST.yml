@@ -683,6 +683,63 @@ structure:
       title: Exercises - Frequency Analysis
       type: chapter
       url: cryptography/week_04_05_classical/exercises_frequency_/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: "cryptography/week_04_05_classical/lecture_vigen\xE8re_and/index.html"
+      - filetype: pdf
+        format: default
+        url: "cryptography/week_04_05_classical/lecture_vigen\xE8re_and/lecture_vigen\xE8\
+          re_and.pdf"
+      - filetype: html
+        format: slides
+        url: "cryptography/week_04_05_classical/lecture_vigen\xE8re_and/lecture_vigen\xE8\
+          re_and.slides.html"
+      is_hidden: false
+      pdf_url: "cryptography/week_04_05_classical/lecture_vigen\xE8re_and/lecture_vigen\xE8\
+        re_and.pdf"
+      slides_url: "cryptography/week_04_05_classical/lecture_vigen\xE8re_and/lecture_vigen\xE8\
+        re_and.slides.html"
+      slug: "lecture_vigen\xE8re_and"
+      source: week_04-classical_ciphers_II/kasiski.tex
+      title: "Lecture - Vigen\xE8re and Kasiski"
+      type: slides
+      url: "cryptography/week_04_05_classical/lecture_vigen\xE8re_and/index.html"
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: cryptography/week_04_05_classical/exercises_kasiski/index.html
+      - filetype: pdf
+        format: default
+        url: cryptography/week_04_05_classical/exercises_kasiski/exercises_kasiski.pdf
+      is_hidden: false
+      pdf_url: cryptography/week_04_05_classical/exercises_kasiski/exercises_kasiski.pdf
+      slug: exercises_kasiski
+      source: week_04-classical_ciphers_II/attacks-exercises.tex
+      title: Exercises - Kasiski
+      type: chapter
+      url: cryptography/week_04_05_classical/exercises_kasiski/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: cryptography/week_04_05_classical/optional_lecture_eni/index.html
+      - filetype: pdf
+        format: default
+        url: cryptography/week_04_05_classical/optional_lecture_eni/optional_lecture_eni.pdf
+      - filetype: html
+        format: slides
+        url: cryptography/week_04_05_classical/optional_lecture_eni/optional_lecture_eni.slides.html
+      is_hidden: false
+      pdf_url: cryptography/week_04_05_classical/optional_lecture_eni/optional_lecture_eni.pdf
+      slides_url: cryptography/week_04_05_classical/optional_lecture_eni/optional_lecture_eni.slides.html
+      slug: optional_lecture_eni
+      source: week_04-classical_ciphers_II/enigma.tex
+      title: Optional Lecture - Enigma
+      type: slides
+      url: cryptography/week_04_05_classical/optional_lecture_eni/index.html
     formats:
     - filetype: html
       format: default

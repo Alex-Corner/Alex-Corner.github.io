@@ -1,0 +1,2275 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        
+            <meta charset="utf-8">
+            <meta name="robots" content="noindex">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="author" content="Alex Corner" />
+            <meta name="date" content="2025-02-14" />
+        
+
+        <title>Lecture - Vigenère and Kasiski | 55-408808: Introduction to Cyber Security, Maths and Cryptography</title>
+
+        
+    
+    
+            <link rel="stylesheet" href="../../../static/styles.css?build_time=1739550347.692722">
+            
+            
+        
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1739550347.692722">
+
+    <link rel="stylesheet" href="../../../static/print.css?build_time=1739550347.692722">
+
+
+        
+    
+			<script>
+				var chirun_static_url = new URL('../../../static?build_time=1739550347.692722', location.href);
+			</script>
+
+            
+                <script defer src="../../../static/mathjax_config.js?build_time=1739550347.692722"></script>
+                <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+            
+
+            <script type="module" src="../../../static/localisation.js?build_time=1739550347.692722"></script>
+
+            <script defer src="../../../static/customisation.js?build_time=1739550347.692722"></script>
+
+            
+
+            
+        
+    <script defer src="../../../static/code.js?build_time=1739550347.692722" type="module"></script>
+    <script defer src="../../../static/embed_numbas.js?build_time=1739550347.692722" type="module"></script>
+    <script defer src="../../../static/embed_qrcode.js?build_time=1739550347.692722" type="module"></script>
+
+
+        <template id="runnable-code-template">
+            <link rel="stylesheet" href="../../../static/code.css?build_time=1739550347.692722">
+            <div class="runnable-code-wrapper">
+                <section class="fullscreenable code">
+                    <div id="code"></div>
+                    <button class="fullscreen icon-button" title="Fullscreen code"><svg class="icon" aria-label="Fullscreen code" viewBox="0 0 180 180">
+    <use href="#fullscreen"/>
+</svg></button>
+                </section>
+                <section class="fullscreenable output">
+                    <div id="output" aria-live="polite">
+                        <pre class="stdout"></pre>
+                        <pre class="result"></pre>
+                        <div class="images"></div>
+                    </div>
+                    <button class="fullscreen icon-button" title="Fullscreen output"><svg class="icon" aria-label="Fullscreen output" viewBox="0 0 180 180">
+    <use href="#fullscreen"/>
+</svg></button>
+                </section>
+                <div class="buttons">
+                    <button type="button" class="run-code">Run code</button>
+                </div>
+                <svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="icon-defs"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <g id="cog">
+            <path 
+                style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z"
+            />
+        </g>
+        <g id="pdf">
+            <path
+                style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z"
+            />
+        </g>
+        <g id="slides">
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,21.25 30,137.5"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 90,21.25 60,158.75"
+            />
+            <rect
+                style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="119.79137"
+                height="82.273766"
+                x="30.104315"
+                y="36.476234"
+                ry="4.7737675"
+                rx="4.7737675"
+            />
+            <rect
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="140"
+                height="5.2262344"
+                x="20"
+                y="31.25"
+                ry="1.6724058"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,66.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,76.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,86.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,56.25 h 50"
+            />
+            <path
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z"
+            />
+        </g>
+
+        <g id="notebook">
+            <path
+                style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="58.699139"
+               cy="59.503937"
+               r="3.8077738"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="113.59385"
+               cy="52.885151"
+               r="4.9348516"
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z"
+           
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z"
+              
+            />
+            <ellipse
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="63.813011"
+               cy="125.96338"
+               rx="6.4332962"
+               ry="6.4347191"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="M 34,46.266514 V 62.316215"
+            
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="M 34,77.849849 V 93.89955"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 34,109.43318 v 16.0497"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0"
+            />
+        </g>
+
+        <g id="fullscreen">
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+               d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="M 150.95833,68.801471 V 28.958332 h -39.84314"
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="m 28.958332,111.11519 v 39.84314 h 39.843139"
+            />
+        </g>
+    </defs>
+</svg>
+            </div>
+        </template>
+
+        <template id="embed-numbas-template">
+            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1739550347.692722">
+            <details id="wrapper" data-completion-status="incomplete">
+                <summary>
+                    <h1 id="title">Test Yourself</h1>
+                    <div id="completion-status" data-completion-status="unknown">
+                        <span class="complete">Complete</span>
+                        <span class="incomplete">Incomplete</span>
+                    </div>
+                    <label id="score-feedback">
+                        Score:
+                        <progress min="0"></progress>
+                    </label>
+                </summary>
+                <iframe class="embed" title="Numbas"></iframe>
+            </details>
+        </template>
+
+    </head>
+    <body class="" >
+        
+
+        <a class="skip-to-content-link" href="#main-content">Skip to content</a>
+        
+            <form id="display-options">
+    <div class="buttons">
+        <button type="button" id="reset-display-options">Reset to defaults</button>
+
+        <a href="https://chirun.org.uk/accessibility-statement/material">Accessibility statement</a>
+
+        <button type="button" aria-controls="display-options" aria-expanded="false">
+            Close
+        </button>
+    </div>
+
+    <div class="inputs">
+        <div class="input-group">
+            <label for="display-options-font-scale">
+                Text size
+            </label>
+            <input type="range" min="50" max="600" step="5" value="100" id="display-options-font-scale">
+            <output for="display-options-font-scale">100%</output>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-spacing-factor">
+                Spacing
+            </label>
+            <input type="range" min="0" max="1200" step="5" value="100" id="display-options-spacing-factor">
+            <output for="display-options-spacing-factor">100%</output>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-font-family">
+                Text font
+            </label>
+            <select id="display-options-font-family">
+                <option value="var(--sans-serif-font)" selected>Sans-serif</option>
+                <option value="var(--serif-font)">Serif</option>
+                <option value="Atkinson Hyperlegible">Atkinson Hyperlegible</option>
+                <option value="Comic Sans MS">Comic Sans</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-colour-scheme">
+                Colour scheme
+            </label>
+            <select id="display-options-colour-scheme">
+                <option value="auto" selected>Automatic (default)</option>
+                <option value="light">Black text on white</option>
+                <option value="dark">White text on black</option>
+                <option value="custom">Custom</option>
+            </select>
+        </div>
+
+        <section id="custom-colour-scheme-options" class="inputs">
+            <div class="input-group">
+                <label for="display-options-text-colour">
+                    Text colour
+                </label>
+                <input type="color" value="#000000" id="display-options-text-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-link-colour">
+                    Link colour
+                </label>
+                <input type="color" value="#0000ee" id="display-options-link-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour">
+                    Background colour
+                </label>
+                <input type="color" value="#ffffff" id="display-options-bg-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-off">
+                    Muted background colour
+                </label>
+                <input type="color" value="#eeeeee" id="display-options-bg-colour-off">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-1">
+                    Accent colour 1
+                </label>
+                <input type="color" value="#4caf50" id="display-options-bg-colour-accent-1">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-2">
+                    Accent colour 2
+                </label>
+                <input type="color" value="#f6f6ff" id="display-options-bg-colour-accent-2">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-3">
+                    Accent colour 3
+                </label>
+                <input type="color" value="#eeffd3" id="display-options-bg-colour-accent-3">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-4">
+                    Accent colour 4
+                </label>
+                <input type="color" value="#ffeeee" id="display-options-bg-colour-accent-4">
+            </div>
+        </section>
+
+        <section id="filter-colour-scheme-options" class="inputs">
+            <div class="input-group">
+                <label for="display-options-filter-sepia">
+                    Sepia filter
+                </label>
+                <input type="range" min="0" max="100" step="1" value="0" id="display-options-filter-sepia">
+                <output for="display-options-filter-sepia">0%</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-filter-hue-rotate">
+                    Rotate hues
+                </label>
+                <input type="range" min="0" max="1" step="0.01" value="0" id="display-options-filter-hue-rotate">
+                <output for="display-options-filter-hue-rotate">0 turns</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-invert-images">
+                    Invert images in dark mode
+                </label>
+                <input type="checkbox" id="display-options-invert-images">
+            </div>
+
+        </section>
+    </div>
+</form>
+        
+
+        <header>
+            
+<button class="icon-button" type="button" aria-controls="display-options" aria-expanded="false" title="Display options">
+    <svg class="icon" aria-label="Display options" viewBox="0 0 180 180">
+    <use href="#cog"/>
+</svg>
+</button>
+            
+    
+    <nav aria-label="breadcrumb">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../../../index.html">55-408808: Introduction to Cyber Security, Maths and Cryptography</a>
+            </li>
+            
+            <li class="breadcrumb-item">
+                <a href="../index.html">Week 04-05 - Classical Ciphers</a>
+            </li>
+            
+            <li class="breadcrumb-item active">
+                Lecture - Vigenère and Kasiski
+            </li>
+        </ul>
+
+        
+        <p class="pager" id="item-pager">
+            
+            <a rel="prev" href="../exercises_frequency_/index.html">Previous: Exercises - Frequency Analysis</a>
+            
+            
+            <a rel="next" href="../exercises_kasiski/index.html">Next: Exercises - Kasiski</a>
+            
+        </p>
+        
+    </nav>
+    
+
+            
+            
+        </header>
+
+        <main id="main-content">
+            
+    <nav id="sidebar">
+        
+        <ul class="alternative-formats">
+            
+            <li><a rel="alternate" type="" href="lecture_vigenère_and.slides.html"><svg class="icon" aria-label="Slides" viewBox="0 0 180 180">
+    <use href="#slides"/>
+</svg> View as Slides</a></li>
+            
+            <li><a rel="alternate" type="application/pdf" href="lecture_vigenère_and.pdf"download><svg class="icon" aria-label="PDF" viewBox="0 0 180 180">
+    <use href="#pdf"/>
+</svg> Download as PDF</a></li>
+            
+        </ul>
+        
+
+        <h1>Table of Contents</h1>
+        <a class="jump-to-item-content" href="#item-content">Jump to content</a>
+        
+            <ol class="table-of-contents" role="tree">
+                
+                    
+<li role="none" data-toc-level="1" class="toc-header  has-children">
+    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-cryptography_vigenèr" href="#cryptography_vigenèr">
+        <span class="toc-marker"></span>
+        Cryptography: Vigenère and Kasiski
+    </a>
+
+    
+        <ol role="group" id="toc-subtree-cryptography_vigenèr">
+            
+            
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-the_story_so_far" href="#the_story_so_far">
+        
+        The Story So Far
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-vigenère_cipher" href="#vigenère_cipher">
+        
+        Vigenère Cipher
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-vigenère_ciph_1" href="#vigenère_ciph_1">
+        
+        Vigenère Cipher
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-vigenère_ciph_2" href="#vigenère_ciph_2">
+        
+        Vigenère Cipher
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-vigenère_ciph_3" href="#vigenère_ciph_3">
+        
+        Vigenère Cipher
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-breaking_vigenère" href="#breaking_vigenère">
+        
+        Breaking Vigenère
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-breaking_vigenè_1" href="#breaking_vigenè_1">
+        
+        Breaking Vigenère
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-breaking_vigenè_2" href="#breaking_vigenè_2">
+        
+        Breaking Vigenère
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-patterns_in_the_stan" href="#patterns_in_the_stan">
+        
+        Patterns in the Standard Frequencies
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-letter_group_1" href="#letter_group_1">
+        
+        Letter Group 1
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-letter_group_2" href="#letter_group_2">
+        
+        Letter Group 2
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-other_letter_groups" href="#other_letter_groups">
+        
+        Other Letter Groups
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-finding_the_key_leng" href="#finding_the_key_leng">
+        
+        Finding the Key Length
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-breaking_vigenè_3" href="#breaking_vigenè_3">
+        
+        Breaking Vigenère
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-breaking_vigenè_4" href="#breaking_vigenè_4">
+        
+        Breaking Vigenère
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-breaking_vigenè_5" href="#breaking_vigenè_5">
+        
+        Breaking Vigenère
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-breaking_vigenè_6" href="#breaking_vigenè_6">
+        
+        Breaking Vigenère
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-breaking_vigenè_7" href="#breaking_vigenè_7">
+        
+        Breaking Vigenère
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-breaking_vigenè_8" href="#breaking_vigenè_8">
+        
+        Breaking Vigenère
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-breaking_vigenè_9" href="#breaking_vigenè_9">
+        
+        Breaking Vigenère
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-breaking_vigen_10" href="#breaking_vigen_10">
+        
+        Breaking Vigenère
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-who_broke_the_unbrea" href="#who_broke_the_unbrea">
+        
+        Who broke the unbreakable cipher?
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-tutorials" href="#tutorials">
+        
+        Tutorials
+    </a>
+
+    
+</li>
+
+            
+        </ol>
+    
+</li>
+
+                
+            </ol>
+        
+
+    </nav>
+
+    <article class="item-content" id="item-content">
+        <section class="beamer-frame">
+<section class="beamer-titlepage">
+<h1 id="cryptography_vigenèr">Cryptography: Vigenère and Kasiski</h1>
+<p class="beamer-authors">
+<span class="author">Alex Corner</span>
+</p>
+<p class="beamer-date">[</p>
+</section>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="the_story_so_far">The Story So Far</h2>
+</header>
+<ul class="itemize" id="a0000000002">
+<li id="a0000000003">
+<p>
+Classical ciphers generally used one of two methods: 
+</p>
+<ul class="itemize" id="a0000000004">
+<li id="a0000000005">
+<p>
+<b class="bfseries">Transposition:</b> Rearranging the characters of the message. 
+</p>
+</li>
+<li id="a0000000006">
+<p>
+<b class="bfseries">Substitution:</b> Disguise each letter as another. 
+</p>
+</li>
+</ul>
+</li>
+<li id="a0000000007">
+<p>
+Simple ciphers of either type were quite easily broken: substitution ciphers suffered from attacks using <b class="bfseries">frequency analysis</b>. 
+</p>
+</li>
+<li id="a0000000008">
+<p>
+The Vigenère cipher was developed and was thought to tackle these problems. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="vigenère_cipher">Vigenère Cipher</h2>
+</header>
+<ul class="itemize" id="a0000000009">
+<li id="a0000000010">
+<p>
+The cipher depends on a keyword and the use of twenty six shifted alphabets. 
+</p>
+</li>
+<li id="a0000000011">
+<p>
+The alphabets form a square: the Vigenère square, or <em>tabula recta</em>. 
+</p>
+</li>
+</ul>
+<div class="centered"> <figure>
+<p>
+<img alt="\includegraphics[scale=0.3]{images/vig_square.png}" src="images/img-0001.png" style="width:243.0px; height:243.0px"/>
+</p>
+</figure> </div>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="vigenère_ciph_1">Vigenère Cipher</h2>
+</header>
+<ul class="itemize" id="a0000000012">
+<li id="a0000000013">
+<p>
+Plaintext: <span class="ttfamily">invade at dawn on friday</span>. Keyword: <span class="ttfamily">CODES</span>. 
+</p>
+</li>
+<li id="a0000000014">
+<p>
+The keyword is written repeatedly along the message. We look up the row of the key and match it to the column of the plaintext: row <span class="ttfamily">C</span> and column <span class="ttfamily">i</span> gives ciphertext <span class="ttfamily">K</span>. 
+</p>
+<div class="centered"> <div class="table" id="a0000000015">
+<table class="tabular">
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">key</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">C</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">O</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">D</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">E</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">S</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">C</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">O</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">D</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">E</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">S</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">C</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">O</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">D</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">E</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">S</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">C</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">O</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">D</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">E</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">S</span>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">plain</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">i</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">n</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">v</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">a</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">d</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">e</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">a</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">t</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">d</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">a</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">w</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">n</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">o</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">n</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">f</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">r</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">i</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">d</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">a</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<span class="ttfamily">y</span>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<b class="bfseries">cipher</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<span class="ttfamily">K</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<span class="ttfamily">B</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<span class="ttfamily">Y</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<span class="ttfamily">E</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<span class="ttfamily">V</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<span class="ttfamily">G</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<span class="ttfamily">O</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<span class="ttfamily">W</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<span class="ttfamily">H</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<span class="ttfamily">S</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<span class="ttfamily">Y</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<span class="ttfamily">B</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<span class="ttfamily">R</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<span class="ttfamily">R</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<span class="ttfamily">X</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<span class="ttfamily">T</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<span class="ttfamily">W</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<span class="ttfamily">G</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<span class="ttfamily">E</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<span class="ttfamily">Q</span>
+</p>
+</td>
+</tr>
+</table>
+</div> </div>
+</li>
+<li id="a0000000016">
+<p>
+Can also be thought of in terms of modular arithmetic: 
+</p>
+<div class="table" id="a0000000017">
+<table class="tabular">
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">keyword</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 2 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 14 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 3 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 4 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 18 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 2 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 14 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 3 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 4 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 18 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 2 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 14 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 3 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">plaintext</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 8 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 13 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 21 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 0 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 3 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 4 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 0 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 19 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 3 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 0 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 22 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 13 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 14 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<b class="bfseries">ciphertext</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 10 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 1 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 24 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 4 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 21 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 6 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 14 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 22 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 7 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 18 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 24 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 1 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 17 
+</p>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li id="a0000000018">
+<p>
+Encryption is achieved by performing the addition 
+</p>
+<span class="dmath">\[  c_i = m_i + k_i ~ \operatorname {mod}~  26,  \]</span>
+<p>
+ where \(m_i\) is the \(i\)th letter of the message and \(k_i\) is the \(i\)th letter of the keyword repeated over and over again. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="vigenère_ciph_2">Vigenère Cipher</h2>
+</header>
+<ul class="itemize" id="a0000000019">
+<li id="a0000000020">
+<p>
+The plaintext <span class="ttfamily">invade at dawn on friday</span> has become the ciphertext 
+</p>
+<div class="centered"> <span class="ttfamily">KBYE<span style="color:#FF0000">V</span>GOW<span style="color:#FF0000">H</span>SYBRRXTW<span style="color:#FF0000">G</span>EQ</span>. </div>
+</li>
+<li id="a0000000021">
+<p>
+This is much more secure than a monoalphabetic substitution: the three <span class="ttfamily">d</span> characters in the plaintext are encrypted differently each time as <span class="ttfamily">V</span>, <span class="ttfamily">H</span>, and <span class="ttfamily">G</span>. 
+</p>
+</li>
+<li id="a0000000022">
+<p>
+Our simple frequency analysis will not work any more and this type of cipher was thought unbreakable right up until the end of World War 1 (1914-1918). 
+</p>
+</li>
+<li id="a0000000023">
+<p>
+A few people were involved in the cracking of this cipher, including quite a famous name in computing history. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="vigenère_ciph_3">Vigenère Cipher</h2>
+</header>
+<ul class="itemize" id="a0000000024">
+<li id="a0000000025">
+<p>
+On the face of it, this new method is resistant to attacks using frequency analysis. 
+</p>
+</li>
+<li id="a0000000026">
+<p>
+There is a very large keyspace (number of keys), which depends on the length of the key used. 
+</p>
+<ul class="itemize" id="a0000000027">
+<li id="a0000000028">
+<p>
+For a key of length 5, there are \(11881376\) different possibilities: 
+</p>
+<span class="dmath">\[  26^5 = 11881376.  \]</span>
+</li>
+</ul>
+</li>
+<li id="a0000000029">
+<p>
+But it turns out we can still use frequency analysis, we just have to be a bit more clever in its use: 
+</p>
+<ul class="itemize" id="a0000000030">
+<li id="a0000000031">
+<p>
+If the <b class="bfseries">key length</b> is discovered, then we can apply frequency analysis, given a long enough message. 
+</p>
+</li>
+<li id="a0000000032">
+<p>
+Suppose the key length is \(k = 5\). 
+</p>
+</li>
+<li id="a0000000033">
+<p>
+We can apply frequency analysis on groups of letters which are separated by five letters: the key length. 
+</p>
+</li>
+<li id="a0000000034">
+<p>
+<span class="ttfamily"><span style="color:#FF0000">A</span>NYVG<span style="color:#FF0000">Y</span>STYN<span style="color:#FF0000">R</span>PLWH...</span>
+</p>
+</li>
+<li id="a0000000035">
+<p>
+These letters must have used the same row of the Vigenère square. 
+</p>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="breaking_vigenère">Breaking Vigenère</h2>
+</header>
+<p>
+<span class="ttfamily">ZSHRSNAYEHVRHIUIZZQZXHWEFLXPOJFCXEFJAJMLSEURXXSVZXAGSEFYKCHYMXMLWJISKPRN MWUIWESATXQYQHDISEXCTRRTXSLIZPNCBRHVXPBKSEOILKFVMXXVHYMRFEBJMRWCSKMWFSFK MPTWVZESPRHYMXTWAVZFNWWVPXAIAJQPOIGRNSNXHYQMKZOIUSNWQFZGXVBJFLXCKVDILGFL FMGMGVPEGHGKGHBIRGQVAEDJMPFSGKMWGEFIAAECOJMQTRKZFLTQWTDSLGCGQQBKVKEGKYHZ ZMLIHYQXKEBJUIGXQIQEMYFVEXAEHJIEKQOEPQNPHZBPRMBRPVHTCWIEMIFNUXAMBWURBXST AQIPOTQRVCAVZAXRHKAEGHTIASOIFKTMLKZFNITFCLFXAIWIXMMXZVMJYEWIEWXVSEQMGXVV UVTWGLDEGGSFRXAIWIQQIMFVAZXVARFXXVWKUWISGJUFEIHYMXMLSZZJNWCIUENRRVDXAIAZ OVHWQFBIWSHYQWTQSEASGIURHITXVFGKAXHFFLXSZUQVPSFCPWHJGGMGXEGJAYKGSJAJAYAR ZHTRUVDSKXVFGKAXCWFLXQCEXCMSRZEQBWGKTIBHSRAJEMTVGTHRHYQQTWWDBSLWWSXIHVWD BVHFOSXIBXWJOYKMCLEXHVSTMPEWCDQSYXVVYIGXOCTEUMHJAJMLCJQHXTOIFIWHOPEEMQCJ FXXVFVEXKMOCYIGJOEOMXHHYQVXQWXTXUICKTIKQSEGTHRARDWIIFYMTLMBWQVBSFKAXAIAJ QPOIGRZHKIOUKXHASCOSFIODUWLMCEMVRIBKQVIVWJQCXXOTDSLWHYQKNPTFRWIEQVYMGHGK TEMEFVFSHYFDURWWOJAYKWOIQXHXVFEIHJHYQFXEGKEXAEHGQVBWVZZXXPZVOXLZOJFEGHQF APTRRLZWRQDRFLXXWTDIZEFUQHMLWJQEKXVNUXAIBMUSNWSPQWTRRJXSPPMRZHLYFVXCWVSN FLXMFGXEGWOXMMGWHLE </span>
+</p>
+<ul class="itemize" id="a0000000036">
+<li id="a0000000037">
+<p>
+Assume we know the key length: \(k = 6\). We’ll look into how to figure this out later. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="breaking_vigenè_1">Breaking Vigenère</h2>
+</header>
+<p>
+<span class="ttfamily"><span style="color:#FF0000">Z</span>SHRSN<span style="color:#FF0000">A</span>YEHVR<span style="color:#FF0000">H</span>IUIZZ<span style="color:#FF0000">Q</span>ZXHWE<span style="color:#FF0000">F</span>LXPOJ<span style="color:#FF0000">F</span>CXEFJ<span style="color:#FF0000">A</span>JMLSE<span style="color:#FF0000">U</span>RXXSV<span style="color:#FF0000">Z</span>XAGSE<span style="color:#FF0000">F</span>YKCHY<span style="color:#FF0000">M</span>XMLWJ<span style="color:#FF0000">I</span>SKPRN <span style="color:#FF0000">M</span>WUIWE<span style="color:#FF0000">S</span>ATXQY<span style="color:#FF0000">Q</span>HDISE<span style="color:#FF0000">X</span>CTRRT<span style="color:#FF0000">X</span>SLIZP<span style="color:#FF0000">N</span>CBRHV<span style="color:#FF0000">X</span>PBKSE<span style="color:#FF0000">O</span>ILKFV<span style="color:#FF0000">M</span>XXVHY<span style="color:#FF0000">M</span>RFEBJ<span style="color:#FF0000">M</span>RWCSK<span style="color:#FF0000">M</span>WFSFK <span style="color:#FF0000">M</span>PTWVZ<span style="color:#FF0000">E</span>SPRHY<span style="color:#FF0000">M</span>XTWAV<span style="color:#FF0000">Z</span>FNWWV<span style="color:#FF0000">P</span>XAIAJ<span style="color:#FF0000">Q</span>POIGR<span style="color:#FF0000">N</span>SNXHY<span style="color:#FF0000">Q</span>MKZOI<span style="color:#FF0000">U</span>SNWQF<span style="color:#FF0000">Z</span>GXVBJ<span style="color:#FF0000">F</span>LXCKV<span style="color:#FF0000">D</span>ILGFL <span style="color:#FF0000">F</span>MGMGV<span style="color:#FF0000">P</span>EGHGK<span style="color:#FF0000">G</span>HBIRG<span style="color:#FF0000">Q</span>VAEDJ<span style="color:#FF0000">M</span>PFSGK<span style="color:#FF0000">M</span>WGEFI<span style="color:#FF0000">A</span>AECOJ<span style="color:#FF0000">M</span>QTRKZ<span style="color:#FF0000">F</span>LTQWT<span style="color:#FF0000">D</span>SLGCG<span style="color:#FF0000">Q</span>QBKVK<span style="color:#FF0000">E</span>GKYHZ <span style="color:#FF0000">Z</span>MLIHY<span style="color:#FF0000">Q</span>XKEBJ<span style="color:#FF0000">U</span>IGXQI<span style="color:#FF0000">Q</span>EMYFV<span style="color:#FF0000">E</span>XAEHJ<span style="color:#FF0000">I</span>EKQOE<span style="color:#FF0000">P</span>QNPHZ<span style="color:#FF0000">B</span>PRMBR<span style="color:#FF0000">P</span>VHTCW<span style="color:#FF0000">I</span>EMIFN<span style="color:#FF0000">U</span>XAMBW<span style="color:#FF0000">U</span>RBXST <span style="color:#FF0000">A</span>QIPOT<span style="color:#FF0000">Q</span>RVCAV<span style="color:#FF0000">Z</span>AXRHK<span style="color:#FF0000">A</span>EGHTI<span style="color:#FF0000">A</span>SOIFK<span style="color:#FF0000">T</span>MLKZF<span style="color:#FF0000">N</span>ITFCL<span style="color:#FF0000">F</span>XAIWI<span style="color:#FF0000">X</span>MMXZV<span style="color:#FF0000">M</span>JYEWI<span style="color:#FF0000">E</span>WXVSE<span style="color:#FF0000">Q</span>MGXVV <span style="color:#FF0000">U</span>VTWGL<span style="color:#FF0000">D</span>EGGSF<span style="color:#FF0000">R</span>XAIWI<span style="color:#FF0000">Q</span>QIMFV<span style="color:#FF0000">A</span>ZXVAR<span style="color:#FF0000">F</span>XXVWK<span style="color:#FF0000">U</span>WISGJ<span style="color:#FF0000">U</span>FEIHY<span style="color:#FF0000">M</span>XMLSZ<span style="color:#FF0000">Z</span>JNWCI<span style="color:#FF0000">U</span>ENRRV<span style="color:#FF0000">D</span>XAIAZ <span style="color:#FF0000">O</span>VHWQF<span style="color:#FF0000">B</span>IWSHY<span style="color:#FF0000">Q</span>WTQSE<span style="color:#FF0000">A</span>SGIUR<span style="color:#FF0000">H</span>ITXVF<span style="color:#FF0000">G</span>KAXHF<span style="color:#FF0000">F</span>LXSZU<span style="color:#FF0000">Q</span>VPSFC<span style="color:#FF0000">P</span>WHJGG<span style="color:#FF0000">M</span>GXEGJ<span style="color:#FF0000">A</span>YKGSJ<span style="color:#FF0000">A</span>JAYAR <span style="color:#FF0000">Z</span>HTRUV<span style="color:#FF0000">D</span>SKXVF<span style="color:#FF0000">G</span>KAXCW<span style="color:#FF0000">F</span>LXQCE<span style="color:#FF0000">X</span>CMSRZ<span style="color:#FF0000">E</span>QBWGK<span style="color:#FF0000">T</span>IBHSR<span style="color:#FF0000">A</span>JEMTV<span style="color:#FF0000">G</span>THRHY<span style="color:#FF0000">Q</span>QTWWD<span style="color:#FF0000">B</span>SLWWS<span style="color:#FF0000">X</span>IHVWD <span style="color:#FF0000">B</span>VHFOS<span style="color:#FF0000">X</span>IBXWJ<span style="color:#FF0000">O</span>YKMCL<span style="color:#FF0000">E</span>XHVST<span style="color:#FF0000">M</span>PEWCD<span style="color:#FF0000">Q</span>SYXVV<span style="color:#FF0000">Y</span>IGXOC<span style="color:#FF0000">T</span>EUMHJ<span style="color:#FF0000">A</span>JMLCJ<span style="color:#FF0000">Q</span>HXTOI<span style="color:#FF0000">F</span>IWHOP<span style="color:#FF0000">E</span>EMQCJ <span style="color:#FF0000">F</span>XXVFV<span style="color:#FF0000">E</span>XKMOC<span style="color:#FF0000">Y</span>IGJOE<span style="color:#FF0000">O</span>MXHHY<span style="color:#FF0000">Q</span>VXQWX<span style="color:#FF0000">T</span>XUICK<span style="color:#FF0000">T</span>IKQSE<span style="color:#FF0000">G</span>THRAR<span style="color:#FF0000">D</span>WIIFY<span style="color:#FF0000">M</span>TLMBW<span style="color:#FF0000">Q</span>VBSFK<span style="color:#FF0000">A</span>XAIAJ <span style="color:#FF0000">Q</span>POIGR<span style="color:#FF0000">Z</span>HKIOU<span style="color:#FF0000">K</span>XHASC<span style="color:#FF0000">O</span>SFIOD<span style="color:#FF0000">U</span>WLMCE<span style="color:#FF0000">M</span>VRIBK<span style="color:#FF0000">Q</span>VIVWJ<span style="color:#FF0000">Q</span>CXXOT<span style="color:#FF0000">D</span>SLWHY<span style="color:#FF0000">Q</span>KNPTF<span style="color:#FF0000">R</span>WIEQV<span style="color:#FF0000">Y</span>MGHGK <span style="color:#FF0000">T</span>EMEFV<span style="color:#FF0000">F</span>SHYFD<span style="color:#FF0000">U</span>RWWOJ<span style="color:#FF0000">A</span>YKWOI<span style="color:#FF0000">Q</span>XHXVF<span style="color:#FF0000">E</span>IHJHY<span style="color:#FF0000">Q</span>FXEGK<span style="color:#FF0000">E</span>XAEHG<span style="color:#FF0000">Q</span>VBWVZ<span style="color:#FF0000">Z</span>XXPZV<span style="color:#FF0000">O</span>XLZOJ<span style="color:#FF0000">F</span>EGHQF <span style="color:#FF0000">A</span>PTRRL<span style="color:#FF0000">Z</span>WRQDR<span style="color:#FF0000">F</span>LXXWT<span style="color:#FF0000">D</span>IZEFU<span style="color:#FF0000">Q</span>HMLWJ<span style="color:#FF0000">Q</span>EKXVN<span style="color:#FF0000">U</span>XAIBM<span style="color:#FF0000">U</span>SNWSP<span style="color:#FF0000">Q</span>WTRRJ<span style="color:#FF0000">X</span>SPPMR<span style="color:#FF0000">Z</span>HLYFV<span style="color:#FF0000">X</span>CWVSN <span style="color:#FF0000">F</span>LXMFG<span style="color:#FF0000">X</span>EGWOX<span style="color:#FF0000">M</span>MGWHL<span style="color:#FF0000">E</span> </span>
+</p>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="breaking_vigenè_2">Breaking Vigenère</h2>
+</header>
+<p>
+<span class="ttfamily">Z<span style="color:#FF0000">S</span>HRSNA<span style="color:#FF0000">Y</span>EHVRH<span style="color:#FF0000">I</span>UIZZQ<span style="color:#FF0000">Z</span>XHWEF<span style="color:#FF0000">L</span>XPOJF<span style="color:#FF0000">C</span>XEFJA<span style="color:#FF0000">J</span>MLSEU<span style="color:#FF0000">R</span>XXSVZ<span style="color:#FF0000">X</span>AGSEF<span style="color:#FF0000">Y</span>KCHYM<span style="color:#FF0000">X</span>MLWJI<span style="color:#FF0000">S</span>KPRN M<span style="color:#FF0000">W</span>UIWES<span style="color:#FF0000">A</span>TXQYQ<span style="color:#FF0000">H</span>DISEX<span style="color:#FF0000">C</span>TRRTX<span style="color:#FF0000">S</span>LIZPN<span style="color:#FF0000">C</span>BRHVX<span style="color:#FF0000">P</span>BKSEO<span style="color:#FF0000">I</span>LKFVM<span style="color:#FF0000">X</span>XVHYM<span style="color:#FF0000">R</span>FEBJM<span style="color:#FF0000">R</span>WCSKM<span style="color:#FF0000">W</span>FSFK M<span style="color:#FF0000">P</span>TWVZE<span style="color:#FF0000">S</span>PRHYM<span style="color:#FF0000">X</span>TWAVZ<span style="color:#FF0000">F</span>NWWVP<span style="color:#FF0000">X</span>AIAJQ<span style="color:#FF0000">P</span>OIGRN<span style="color:#FF0000">S</span>NXHYQ<span style="color:#FF0000">M</span>KZOIU<span style="color:#FF0000">S</span>NWQFZ<span style="color:#FF0000">G</span>XVBJF<span style="color:#FF0000">L</span>XCKVD<span style="color:#FF0000">I</span>LGFL F<span style="color:#FF0000">M</span>GMGVP<span style="color:#FF0000">E</span>GHGKG<span style="color:#FF0000">H</span>BIRGQ<span style="color:#FF0000">V</span>AEDJM<span style="color:#FF0000">P</span>FSGKM<span style="color:#FF0000">W</span>GEFIA<span style="color:#FF0000">A</span>ECOJM<span style="color:#FF0000">Q</span>TRKZF<span style="color:#FF0000">L</span>TQWTD<span style="color:#FF0000">S</span>LGCGQ<span style="color:#FF0000">Q</span>BKVKE<span style="color:#FF0000">G</span>KYHZ Z<span style="color:#FF0000">M</span>LIHYQ<span style="color:#FF0000">X</span>KEBJU<span style="color:#FF0000">I</span>GXQIQ<span style="color:#FF0000">E</span>MYFVE<span style="color:#FF0000">X</span>AEHJI<span style="color:#FF0000">E</span>KQOEP<span style="color:#FF0000">Q</span>NPHZB<span style="color:#FF0000">P</span>RMBRP<span style="color:#FF0000">V</span>HTCWI<span style="color:#FF0000">E</span>MIFNU<span style="color:#FF0000">X</span>AMBWU<span style="color:#FF0000">R</span>BXST A<span style="color:#FF0000">Q</span>IPOTQ<span style="color:#FF0000">R</span>VCAVZ<span style="color:#FF0000">A</span>XRHKA<span style="color:#FF0000">E</span>GHTIA<span style="color:#FF0000">S</span>OIFKT<span style="color:#FF0000">M</span>LKZFN<span style="color:#FF0000">I</span>TFCLF<span style="color:#FF0000">X</span>AIWIX<span style="color:#FF0000">M</span>MXZVM<span style="color:#FF0000">J</span>YEWIE<span style="color:#FF0000">W</span>XVSEQ<span style="color:#FF0000">M</span>GXVV U<span style="color:#FF0000">V</span>TWGLD<span style="color:#FF0000">E</span>GGSFR<span style="color:#FF0000">X</span>AIWIQ<span style="color:#FF0000">Q</span>IMFVA<span style="color:#FF0000">Z</span>XVARF<span style="color:#FF0000">X</span>XVWKU<span style="color:#FF0000">W</span>ISGJU<span style="color:#FF0000">F</span>EIHYM<span style="color:#FF0000">X</span>MLSZZ<span style="color:#FF0000">J</span>NWCIU<span style="color:#FF0000">E</span>NRRVD<span style="color:#FF0000">X</span>AIAZ O<span style="color:#FF0000">V</span>HWQFB<span style="color:#FF0000">I</span>WSHYQ<span style="color:#FF0000">W</span>TQSEA<span style="color:#FF0000">S</span>GIURH<span style="color:#FF0000">I</span>TXVFG<span style="color:#FF0000">K</span>AXHFF<span style="color:#FF0000">L</span>XSZUQ<span style="color:#FF0000">V</span>PSFCP<span style="color:#FF0000">W</span>HJGGM<span style="color:#FF0000">G</span>XEGJA<span style="color:#FF0000">Y</span>KGSJA<span style="color:#FF0000">J</span>AYAR Z<span style="color:#FF0000">H</span>TRUVD<span style="color:#FF0000">S</span>KXVFG<span style="color:#FF0000">K</span>AXCWF<span style="color:#FF0000">L</span>XQCEX<span style="color:#FF0000">C</span>MSRZE<span style="color:#FF0000">Q</span>BWGKT<span style="color:#FF0000">I</span>BHSRA<span style="color:#FF0000">J</span>EMTVG<span style="color:#FF0000">T</span>HRHYQ<span style="color:#FF0000">Q</span>TWWDB<span style="color:#FF0000">S</span>LWWSX<span style="color:#FF0000">I</span>HVWD B<span style="color:#FF0000">V</span>HFOSX<span style="color:#FF0000">I</span>BXWJO<span style="color:#FF0000">Y</span>KMCLE<span style="color:#FF0000">X</span>HVSTM<span style="color:#FF0000">P</span>EWCDQ<span style="color:#FF0000">S</span>YXVVY<span style="color:#FF0000">I</span>GXOCT<span style="color:#FF0000">E</span>UMHJA<span style="color:#FF0000">J</span>MLCJQ<span style="color:#FF0000">H</span>XTOIF<span style="color:#FF0000">I</span>WHOPE<span style="color:#FF0000">E</span>MQCJ F<span style="color:#FF0000">X</span>XVFVE<span style="color:#FF0000">X</span>KMOCY<span style="color:#FF0000">I</span>GJOEO<span style="color:#FF0000">M</span>XHHYQ<span style="color:#FF0000">V</span>XQWXT<span style="color:#FF0000">X</span>UICKT<span style="color:#FF0000">I</span>KQSEG<span style="color:#FF0000">T</span>HRARD<span style="color:#FF0000">W</span>IIFYM<span style="color:#FF0000">T</span>LMBWQ<span style="color:#FF0000">V</span>BSFKA<span style="color:#FF0000">X</span>AIAJ Q<span style="color:#FF0000">P</span>OIGRZ<span style="color:#FF0000">H</span>KIOUK<span style="color:#FF0000">X</span>HASCO<span style="color:#FF0000">S</span>FIODU<span style="color:#FF0000">W</span>LMCEM<span style="color:#FF0000">V</span>RIBKQ<span style="color:#FF0000">V</span>IVWJQ<span style="color:#FF0000">C</span>XXOTD<span style="color:#FF0000">S</span>LWHYQ<span style="color:#FF0000">K</span>NPTFR<span style="color:#FF0000">W</span>IEQVY<span style="color:#FF0000">M</span>GHGK T<span style="color:#FF0000">E</span>MEFVF<span style="color:#FF0000">S</span>HYFDU<span style="color:#FF0000">R</span>WWOJA<span style="color:#FF0000">Y</span>KWOIQ<span style="color:#FF0000">X</span>HXVFE<span style="color:#FF0000">I</span>HJHYQ<span style="color:#FF0000">F</span>XEGKE<span style="color:#FF0000">X</span>AEHGQ<span style="color:#FF0000">V</span>BWVZZ<span style="color:#FF0000">X</span>XPZVO<span style="color:#FF0000">X</span>LZOJF<span style="color:#FF0000">E</span>GHQF A<span style="color:#FF0000">P</span>TRRLZ<span style="color:#FF0000">W</span>RQDRF<span style="color:#FF0000">L</span>XXWTD<span style="color:#FF0000">I</span>ZEFUQ<span style="color:#FF0000">H</span>MLWJQ<span style="color:#FF0000">E</span>KXVNU<span style="color:#FF0000">X</span>AIBMU<span style="color:#FF0000">S</span>NWSPQ<span style="color:#FF0000">W</span>TRRJX<span style="color:#FF0000">S</span>PPMRZ<span style="color:#FF0000">H</span>LYFVX<span style="color:#FF0000">C</span>WVSN F<span style="color:#FF0000">L</span>XMFGX<span style="color:#FF0000">E</span>GWOXM<span style="color:#FF0000">M</span>GWHLE </span>
+</p>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="patterns_in_the_stan">Patterns in the Standard Frequencies</h2>
+</header>
+<div class="centered"> <figure>
+<p>
+<img alt="\includegraphics[scale=0.8]{images/standard.png}" src="images/img-0002.png" style="width:1322.4px; height:794.4000000000001px"/>
+</p>
+</figure> </div>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="letter_group_1">Letter Group 1</h2>
+</header>
+<div class="centered"> <figure>
+<p>
+<img alt="\includegraphics[scale=0.6]{images/group1.png}" src="images/img-0003.png" style="width:991.8px; height:595.8px"/>
+</p>
+</figure> </div>
+<ul class="itemize" id="a0000000038">
+<li id="a0000000039">
+<p>
+Each group has been shifted by the same value: a Caesar cipher. 
+</p>
+</li>
+<li id="a0000000040">
+<p>
+The charts will look the same, just shifted by a number of places. 
+</p>
+</li>
+<li id="a0000000041">
+<p>
+There is a gap of 4 letters from <span class="ttfamily">a</span> to <span class="ttfamily">e</span>, with <span class="ttfamily">e</span> having the higher frequency. 
+</p>
+</li>
+<li id="a0000000042">
+<p>
+We can find this same gap, or other patterns, and deduce that the likely shift is <span class="ttfamily">a</span> to <span class="ttfamily">m</span>: shift value \(12\). 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="letter_group_2">Letter Group 2</h2>
+</header>
+<div class="centered"> <figure>
+<p>
+<img alt="\includegraphics[scale=0.6]{images/group2.png}" src="images/img-0004.png" style="width:991.8px; height:595.8px"/>
+</p>
+</figure> </div>
+<ul class="itemize" id="a0000000043">
+<li id="a0000000044">
+<p>
+Each group has been shifted by the same value: a Caesar cipher. 
+</p>
+</li>
+<li id="a0000000045">
+<p>
+The charts will look the same, just shifted by a number of places. 
+</p>
+</li>
+<li id="a0000000046">
+<p>
+There looks to be a gap like before from <span class="ttfamily">s</span> to <span class="ttfamily">x</span>, but the gap is 5 so can’t be the gap from <span class="ttfamily">a</span> to <span class="ttfamily">e</span>. 
+</p>
+</li>
+<li id="a0000000047">
+<p>
+Instead we can choose the gap <span class="ttfamily">e</span> to <span class="ttfamily">i</span> and deduce that the likely shift is <span class="ttfamily">a</span> to <span class="ttfamily">e</span>: shift value \(4\). 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="other_letter_groups">Other Letter Groups</h2>
+</header>
+<ul class="itemize" id="a0000000048">
+<li id="a0000000049">
+<p>
+We can continue this analysis for each of the groups. The key length is 6 so there will be six groups to consider. 
+</p>
+</li>
+<li id="a0000000050">
+<p>
+We make the following guesses: 
+</p>
+<ul class="itemize" id="a0000000051">
+<li id="a0000000052">
+<p>
+Group 1: shift 12, key letter <span class="ttfamily">m</span>. 
+</p>
+</li>
+<li id="a0000000053">
+<p>
+Group 2: shift 4, key letter <span class="ttfamily">e</span>. 
+</p>
+</li>
+<li id="a0000000054">
+<p>
+Group 3: shift 19, key letter <span class="ttfamily">t</span>. 
+</p>
+</li>
+<li id="a0000000055">
+<p>
+Group 4: shift 4, key letter <span class="ttfamily">e</span>. 
+</p>
+</li>
+<li id="a0000000056">
+<p>
+Group 5: shift 14, key letter <span class="ttfamily">o</span>. 
+</p>
+</li>
+<li id="a0000000057">
+<p>
+Group 6: shift 17. key letter <span class="ttfamily">r</span>. 
+</p>
+</li>
+</ul>
+</li>
+<li id="a0000000058">
+<p>
+So the keyword appears to be <span class="ttfamily">meteor</span> and we can then attempt to decrypt the text. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<p>
+<span class="ttfamily"><span style="color:#FF0000">noonewouldhavebelievedinthelastyearsofthenineteenthcenturythatthisworldw asbeingwatchedkeenlyandcloselybyintelligencesgreaterthanmansandyetasmortalashiso wnthatasmenbusiedthemselvesabouttheirvariousconcernstheywerescrutinisedandstudie dperhapsalmostasnarrowlyasamanwithamicroscopemightscrutinisethetransientcreature sthatswarmandmultiplyinadropofwaterwithinfinitecomplacencymenwenttoandfrooverthi sglobeabouttheirlittleaffairssereneintheirassuranceoftheirempireovermatteritispo ssiblethattheinfusoriaunderthemicroscopedothesamenoonegaveathoughttotheolderworl dsofspaceassourcesofhumandangerorthoughtofthemonlytodismisstheideaoflifeuponthem asimpossibleorimprobableitiscurioustorecallsomeofthementalhabitsofthosedepartedd aysatmostterrestrialmenfanciedtheremightbeothermenuponmarsperhapsinferiortothems elvesandreadytowelcomeamissionaryenterpriseyetacrossthegulfofspacemindsthatareto ourmindsasoursaretothoseofthebeaststhatperishintellectsvastandcoolandunsympathet icregardedthisearthwithenviouseyesandslowlyandsurelydrewtheirplansagainstus</span> </span>
+</p>
+</section>
+<section class="beamer-frame">
+<p>
+<span class="ttfamily"><span style="color:#FF0000">noone would have believed in the last years of the nineteenth century that this world was being watched keenly and closely by intelligences greater than mans and yet as mortal as his own that as men busied themselves about their various concerns they were scrutinised and studied perhaps almost as narrowly as a man with a microscope might scrutinise the transient creatures that swarm and multiply in a drop of water with infinite complacency men went to and fro over this globe about their little affairs serene in their assurance of their empire over matter it is possible that the infusoria under the microscope do the same noone gave a thought to the older worlds of space as sources of human danger or thought of them only to dismiss the idea of life upon them as impossible or improbable it is curious to recall some of the mental habits of those departed days at most terrestrial men fancied there might be other men upon mars perhaps inferior to themselves and ready to welcome a missionary enterprise yet across the gulf of space minds that are to our minds as ours are to those of the beasts that perish intellects vast and cool and unsympathetic regarded this earth with envious eyes and slowly and surely drew their plans against us</span> </span>
+</p>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="finding_the_key_leng">Finding the Key Length</h2>
+</header>
+<ul class="itemize" id="a0000000059">
+<li id="a0000000060">
+<p>
+Common letter groupings like ‘<span class="ttfamily">the</span>’ will often get encrypted using the same key letters. 
+</p>
+</li>
+<li id="a0000000061">
+<p>
+This gives repeated strings of letters in the ciphertext. 
+</p>
+</li>
+<li id="a0000000062">
+<p>
+This forms the basis of a <b class="bfseries">Kasiski attack</b>. 
+</p>
+</li>
+<li id="a0000000063">
+<p>
+Longer messages are more likely to yield to such an attack as there will be more repeated segments. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="breaking_vigenè_3">Breaking Vigenère</h2>
+</header>
+<p>
+<span class="ttfamily">ZSHRSNAYEHVRHIUIZZQZXHWEFLXPOJFCXEFJAJMLSEURXXSVZXAGSEFYKCHYMXMLWJISKPRN MWUIWESATXQYQHDISEXCTRRTXSLIZPNCBRHVXPBKSEOILKFVMXXVHYMRFEBJMRWCSKMWFSFK MPTWVZESPRHYMXTWAVZFNWWVPXAIAJQPOIGRNSNXHYQMKZOIUSNWQFZGXVBJFLXCKVDILGFL FMGMGVPEGHGKGHBIRGQVAEDJMPFSGKMWGEFIAAECOJMQTRKZFLTQWTDSLGCGQQBKVKEGKYHZ ZMLIHYQXKEBJUIGXQIQEMYFVEXAEHJIEKQOEPQNPHZBPRMBRPVHTCWIEMIFNUXAMBWURBXST AQIPOTQRVCAVZAXRHKAEGHTIASOIFKTMLKZFNITFCLFXAIWIXMMXZVMJYEWIEWXVSEQMGXVV UVTWGLDEGGSFRXAIWIQQIMFVAZXVARFXXVWKUWISGJUFEIHYMXMLSZZJNWCIUENRRVD<span style="color:#FF0000">XAIA</span>Z OVHWQFBIWSHYQWTQSEASGIURHITXVFGKAXHFFLXSZUQVPSFCPWHJGGMGXEGJAYKGSJAJAYAR ZHTRUVDSKXVFGKAXCWFLXQCEXCMSRZEQBWGKTIBHSRAJEMTVGTHRHYQQTWWDBSLWWSXIHVWD BVHFOSXIBXWJOYKMCLEXHVSTMPEWCDQSYXVVYIGXOCTEUMHJAJMLCJQHXTOIFIWHOPEEMQCJ FXXVFVEXKMOCYIGJOEOMXHHYQVXQWXTXUICKTIKQSEGTHRARDWIIFYMTLMBWQVBSFKA<span style="color:#FF0000">XAIA</span>J QPOIGRZHKIOUKXHASCOSFIODUWLMCEMVRIBKQVIVWJQCXXOTDSLWHYQKNPTFRWIEQVYMGHGK TEMEFVFSHYFDURWWOJAYKWOIQXHXVFEIHJHYQFXEGKEXAEHGQVBWVZZXXPZVOXLZOJFEGHQF APTRRLZWRQDRFLXXWTDIZEFUQHMLWJQEKXVNUXAIBMUSNWSPQWTRRJXSPPMRZHLYFVXCWVSN FLXMFGXEGWOXMMGWHLE </span>
+</p>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="breaking_vigenè_4">Breaking Vigenère</h2>
+</header>
+<ul class="itemize" id="a0000000064">
+<li id="a0000000065">
+<p>
+The sequence <span class="ttfamily">XAIA</span> is repeated in the ciphertext and the two sequences are 288 letters apart. 
+</p>
+</li>
+<li id="a0000000066">
+<p>
+This length is called the <b class="bfseries">interval</b>. 
+</p>
+</li>
+<li id="a0000000067">
+<p>
+We break this interval into its prime factors: 
+</p>
+<span class="dmath">\[  288 = 2 \times 2 \times 2 \times 2 \times 2 \times 3 \times 3.  \]</span>
+</li>
+<li id="a0000000068">
+<p>
+The key length could be 2, 3, 4, 6, 8, 9, 12, 18, 24, 32, 36, 48, 72, 96, 133, or 288. 
+</p>
+</li>
+<li id="a0000000069">
+<p>
+We’ve narrowed it down, but that’s still a lot of options. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="breaking_vigenè_5">Breaking Vigenère</h2>
+</header>
+<p>
+<span class="ttfamily">ZSHRSNAYEHVRHIUIZZQZXHWEFLXPOJFCXEFJAJMLSEURXXSVZXAGSEFYKCHYMXMLWJISKPRN MWUIWESATXQYQHDISEXCTRRTXSLIZPNCBRHVXPBKSEOILKFVMXXVHYMRFEBJMRWCSKMWFSFK MPTWVZESPRHYMXTWAVZFNWWVPXAIAJQPOIGRNSNXHYQMKZOIUSNWQFZGXVBJFLXCKVDILGFL FMGMGVPEGHGKGHBIRGQVAEDJMPFSGKMWGEFIAAECOJMQTRKZFLTQWTDSLGCGQQBKVKEGKYHZ ZMLIHYQXKEBJUIGXQIQEMYFVEXAEHJIEKQOEPQNPHZBPRMBRPVHTCWIEMIFNUXAMBWURBXST AQIPOTQRVCAVZAXRHKAEGHTIASOIFKTMLKZFNITFCLFXAIWIXMMXZVMJYEWIEWXVSEQMGXVV UVTWGLDEGGSFRXAIWIQQIMFVAZXVARFXXVWKUWISGJUFEIHYMXMLSZZJNWCIUENRRVD<span style="color:#FF0000">XAIA</span>Z OVHWQFBIWSHYQWTQSEASGIURHITXVFGKAXHFFLXSZUQVPSFCPWHJGGMGXEGJAYKGSJAJAYAR ZHTRUVDSKXVFGKAXCWFLXQCEXCMSRZEQBWGKTIBHSRAJEMTVGTHRHYQQTWWDBSLWWSXIHVWD BVHFOSXIBXWJOYKMCLEXHVSTMPEWCDQSYXVVYIGXOCTEUMHJAJMLCJQHXTOIFIWHOPEEMQCJ FXXVFVEXKMOCYIGJOEOMXHHYQVXQWXTXUICKTIKQSEGTHRARDWIIFYMTLMBWQVBSFKA<span style="color:#FF0000">XAIA</span>J QPOIGRZHKIOUKXHASCOSFIODUWLMCEMVRIBKQVIVWJQCXXOTDSLWHYQKNPTFRWIEQVYMGHGK TEMEFVFSHYFDURWWOJAYKWOIQXHXVFEIHJHYQFXEGKEXAEHGQVBWVZZXXPZVOXLZOJFEGHQF APTRRLZWRQDR<span style="color:#808000">FLX</span>XWTDIZEFUQHMLWJQEKXVNUXAIBMUSNWSPQWTRRJXSPPMRZHLYFVXCWVSN <span style="color:#808000">FLX</span>MFGXEGWOXMMGWHLE </span>
+</p>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="breaking_vigenè_6">Breaking Vigenère</h2>
+</header>
+<ul class="itemize" id="a0000000070">
+<li id="a0000000071">
+<p>
+The sequence <span class="ttfamily">FLX</span> is repeated in the ciphertext and the two sequences are 60 letters apart. 
+</p>
+</li>
+<li id="a0000000072">
+<p>
+We break this interval into its prime factors: 
+</p>
+<span class="dmath">\[  60 = 2 \times 2 \times 3 \times 5.  \]</span>
+</li>
+<li id="a0000000073">
+<p>
+The key length could be 2, 3, 4, 5, 6, 10, 12, 15, 30, or 60. 
+</p>
+</li>
+<li id="a0000000074">
+<p>
+Some of these options match what we had before. 
+</p>
+</li>
+<li id="a0000000075">
+<p>
+We repeat this with other sequences. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="breaking_vigenè_7">Breaking Vigenère</h2>
+</header>
+<p>
+<span class="ttfamily">ZSHRSNAYEHVRHIUIZZQZXHWEFLXPOJFCXEFJAJMLSEURXXSVZXAGSEFYKCHYMXMLWJISKPRN MWUIWESATXQYQHDISEXCTRRTXSLIZPNCBRHVXPBKSEOILKFVMXXVHYMRFEBJMRWCSKMWFSFK MPTWVZESPRHYMXTWAVZFNWWVPXAIAJQPOIGRNSNX<span style="color:#FBCEB1">HYQ</span>MKZOIUSNWQFZGXVBJFLXCKVDILGFL FMGMGVPEGHGKGHBIRGQVAEDJMPFSGKMWGEFIAAECOJMQTRKZFLTQWTDSLGCGQQBKVKEGKYHZ ZMLI<span style="color:#FBCEB1">HYQ</span>XKEBJUIGXQIQEMYFVEXAEHJIEKQOEPQNPHZBPRMBRPVHTCWIEMIFNUXAMBWURBXST AQIPOTQRVCAVZAXRHKAEGHTIASOIFKTMLKZFNITFCLFXAIWIXMMXZVMJYEWIEWXVSEQMGXVV UVTWGLDEGGSFRXAIWIQQIMFVAZXVARFXXVWKUWISGJUFEIHYMXMLSZZJNWCIUENRRVD<span style="color:#FF0000">XAIA</span>Z OVHWQFBIWSHYQWTQSEASGIURHITXVFGKAXHFFLXSZUQVPSFCPWHJGGMGXEGJAYKGSJAJAYAR ZHTRUVDSKXVFGKAXCWFLXQCEXCMSRZEQBWGKTIBHSRAJEMTVGTHRHYQQTWWDBSLWWSXIHVWD BVHFOSXIBXWJOYKMCLEXHVSTMPEWCDQSYXVVYIGXOCTEUMHJAJMLCJQHXTOIFIWHOPEEMQCJ FXXVFVEXKMOCYIGJOEOMXHHYQVXQWXTXUICKTIKQSEGTHRARDWIIFYMTLMBWQVBSFKA<span style="color:#FF0000">XAIA</span>J QPOIGRZHKIOUKXHASCOSFIODUWLMCEMVRIBKQVIVWJQCXXOTDSLWHYQKNPTFRWIEQVYMGHGK TEMEFVFSHYFDURWWOJAYKWOIQXHXVFEIHJHYQFXEGKEXAEHGQVBWVZZXXPZVOXLZOJFEGHQF APTRRLZWRQDR<span style="color:#808000">FLX</span>XWTDIZEFUQHMLWJQEKXVNUXAIBMUSNWSPQWTRRJXSPPMRZHLYFVXCWVSN <span style="color:#808000">FLX</span>MFGXEGWOXMMGWHLE </span>
+</p>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="breaking_vigenè_8">Breaking Vigenère</h2>
+</header>
+<ul class="itemize" id="a0000000076">
+<li id="a0000000077">
+<p>
+The sequence <span class="ttfamily">HYQ</span> is repeated in the ciphertext and the two sequences are 108 letters apart. 
+</p>
+</li>
+<li id="a0000000078">
+<p>
+We break this interval into its prime factors: 
+</p>
+<span class="dmath">\[  108 = 2 \times 2 \times 3 \times 3 \times 3.  \]</span>
+</li>
+<li id="a0000000079">
+<p>
+The key length could be 2, 3, 4, 6, 9, 12, 18, 27, 36, 54, or 108. 
+</p>
+</li>
+<li id="a0000000080">
+<p>
+Some of these options again match what we had before. 
+</p>
+</li>
+<li id="a0000000081">
+<p>
+We repeat this again with other sequences. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="breaking_vigenè_9">Breaking Vigenère</h2>
+</header>
+<div class="table" id="a0000000082">
+<div class="centered"><table class="tabular">
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">sequence</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">interval</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">2</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">3</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">4</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">5</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">6</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">7</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">8</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">9</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">10</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">11</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">12</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">13</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">14</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">15</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">16</b>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<span class="ttfamily">XAIA</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 288 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<span class="ttfamily">FLX</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 60 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<span class="ttfamily">HYQ</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 108 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<span class="ttfamily">XVF</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 54 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<span class="ttfamily">YMX</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 96 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<span class="ttfamily">KAX</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 54 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"> </td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<span class="ttfamily">FXXV</span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 258 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ X 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ X 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ X 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"> </td>
+</tr>
+</table> </div>
+</div>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="breaking_vigen_10">Breaking Vigenère</h2>
+</header>
+<ul class="itemize" id="a0000000083">
+<li id="a0000000084">
+<p>
+It is possible that some repeated sequences are just due to coincidence. 
+</p>
+</li>
+<li id="a0000000085">
+<p>
+With longer sequences, this becomes less likely. 
+</p>
+</li>
+<li id="a0000000086">
+<p>
+If we analyse the factors in the table, the obvious candidates for key lengths are 2, 3, 4, and 6. 
+</p>
+</li>
+<li id="a0000000087">
+<p>
+Key lengths of 2, 3 or 4 are quite short, so we rule them out. (We may have to come back to them.) The key length is likely to be 6 and as we found out, the actual keyword was <span class="ttfamily">meteor</span>. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="who_broke_the_unbrea">Who broke the unbreakable cipher?</h2>
+</header>
+<div class="centered"> <table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:center"><table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+<img alt="\includegraphics[width=0.2\linewidth ]{images/babbage.jpg}" src="images/img-0005.jpg" style="width:93.95100000000001pt"/>
+</p>
+</td>
+</tr>
+</table>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:left"><p>
+<div class="parbox" id="a0000000088" style="width: 234.8775pt"> <ul class="itemize" id="a0000000089">
+<li id="a0000000090">
+<p>
+Our method is known as a Kasiski attack, but somebody else had got there first. 
+</p>
+</li>
+<li id="a0000000091">
+<p>
+German cryptographer and archaeologist Friedrick Kasiski attacked the problem in 1863. 
+</p>
+</li>
+<li id="a0000000092">
+<p>
+But Charles Babbage had cracked it in 1854. The British government wanted to keept it secret in the Crimean War. 
+</p>
+</li>
+<li id="a0000000093">
+<p>
+We know Babbage better as being the originator of the programmable computer, having designed the Analytical and Differences Engines. 
+</p>
+</li>
+</ul>
+</div>
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table> </div>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="tutorials">Tutorials</h2>
+</header>
+<p>
+ In the tutorial this week we will: 
+</p>
+<ul class="itemize" id="a0000000094">
+<li id="a0000000095">
+<p>
+Create a spreadsheet to perform Vigenère encryption. 
+</p>
+</li>
+<li id="a0000000096">
+<p>
+Use a premade spreadsheet to perform a Kasiski-style attack on Vigenère encryption. 
+</p>
+</li>
+</ul>
+</section>
+<script id="plastex-labels" type="application/json">{}</script>
+    </article>
+
+        </main>
+
+		
+		<footer>
+	<hr>
+
+    <nav id="footer-nav">
+        <a href="#">Back to top</a>
+    </nav>
+
+    <div id="footer-text">
+        <p>Generated using <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.2.1, written by the Digital Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
+        <p>This page last generated: 2025-02-14</p>
+        
+        
+        
+    </div>
+</footer>
+		
+
+        
+
+        <svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="icon-defs"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <g id="cog">
+            <path 
+                style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z"
+            />
+        </g>
+        <g id="pdf">
+            <path
+                style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z"
+            />
+        </g>
+        <g id="slides">
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,21.25 30,137.5"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 90,21.25 60,158.75"
+            />
+            <rect
+                style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="119.79137"
+                height="82.273766"
+                x="30.104315"
+                y="36.476234"
+                ry="4.7737675"
+                rx="4.7737675"
+            />
+            <rect
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="140"
+                height="5.2262344"
+                x="20"
+                y="31.25"
+                ry="1.6724058"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,66.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,76.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,86.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,56.25 h 50"
+            />
+            <path
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z"
+            />
+        </g>
+
+        <g id="notebook">
+            <path
+                style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="58.699139"
+               cy="59.503937"
+               r="3.8077738"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="113.59385"
+               cy="52.885151"
+               r="4.9348516"
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z"
+           
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z"
+              
+            />
+            <ellipse
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="63.813011"
+               cy="125.96338"
+               rx="6.4332962"
+               ry="6.4347191"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="M 34,46.266514 V 62.316215"
+            
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="M 34,77.849849 V 93.89955"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 34,109.43318 v 16.0497"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0"
+            />
+        </g>
+
+        <g id="fullscreen">
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+               d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="M 150.95833,68.801471 V 28.958332 h -39.84314"
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="m 28.958332,111.11519 v 39.84314 h 39.843139"
+            />
+        </g>
+    </defs>
+</svg>
+    </body>
+</html>
