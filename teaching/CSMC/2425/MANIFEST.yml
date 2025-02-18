@@ -756,6 +756,101 @@ structure:
       formats:
       - filetype: html
         format: default
+        url: cryptography/week_06_07_encryptio/lecture_des/index.html
+      - filetype: pdf
+        format: default
+        url: cryptography/week_06_07_encryptio/lecture_des/lecture_des.pdf
+      - filetype: html
+        format: slides
+        url: cryptography/week_06_07_encryptio/lecture_des/lecture_des.slides.html
+      is_hidden: false
+      pdf_url: cryptography/week_06_07_encryptio/lecture_des/lecture_des.pdf
+      slides_url: cryptography/week_06_07_encryptio/lecture_des/lecture_des.slides.html
+      slug: lecture_des
+      source: week_05-DES/DES.tex
+      title: Lecture - DES
+      type: slides
+      url: cryptography/week_06_07_encryptio/lecture_des/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: cryptography/week_06_07_encryptio/exercises_xor/index.html
+      - filetype: pdf
+        format: default
+        url: cryptography/week_06_07_encryptio/exercises_xor/exercises_xor.pdf
+      is_hidden: false
+      pdf_url: cryptography/week_06_07_encryptio/exercises_xor/exercises_xor.pdf
+      slug: exercises_xor
+      source: week_05-DES/xor-exercises.tex
+      title: Exercises - XOR
+      type: chapter
+      url: cryptography/week_06_07_encryptio/exercises_xor/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: cryptography/week_06_07_encryptio/optional_exercises_d/index.html
+      - filetype: pdf
+        format: default
+        url: cryptography/week_06_07_encryptio/optional_exercises_d/optional_exercises_d.pdf
+      is_hidden: false
+      pdf_url: cryptography/week_06_07_encryptio/optional_exercises_d/optional_exercises_d.pdf
+      slug: optional_exercises_d
+      source: week_05-DES/DES-exercises.tex
+      title: Optional Exercises - DES
+      type: chapter
+      url: cryptography/week_06_07_encryptio/optional_exercises_d/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: cryptography/week_06_07_encryptio/lecture_aes/index.html
+      - filetype: pdf
+        format: default
+        url: cryptography/week_06_07_encryptio/lecture_aes/lecture_aes.pdf
+      - filetype: html
+        format: slides
+        url: cryptography/week_06_07_encryptio/lecture_aes/lecture_aes.slides.html
+      is_hidden: false
+      pdf_url: cryptography/week_06_07_encryptio/lecture_aes/lecture_aes.pdf
+      slides_url: cryptography/week_06_07_encryptio/lecture_aes/lecture_aes.slides.html
+      slug: lecture_aes
+      source: week_06-AES/AES.tex
+      title: Lecture - AES
+      type: slides
+      url: cryptography/week_06_07_encryptio/lecture_aes/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: cryptography/week_06_07_encryptio/exercises_aes/index.html
+      - filetype: pdf
+        format: default
+        url: cryptography/week_06_07_encryptio/exercises_aes/exercises_aes.pdf
+      is_hidden: false
+      pdf_url: cryptography/week_06_07_encryptio/exercises_aes/exercises_aes.pdf
+      slug: exercises_aes
+      source: week_06-AES/AES-exercises.tex
+      title: Exercises - AES
+      type: chapter
+      url: cryptography/week_06_07_encryptio/exercises_aes/index.html
+    formats:
+    - filetype: html
+      format: default
+      url: cryptography/week_06_07_encryptio/index.html
+    is_hidden: false
+    slug: week_06_07_encryptio
+    source: .
+    title: Week 06-07 - Encryption Standards
+    type: part
+    url: cryptography/week_06_07_encryptio/index.html
+  - build_pdf: false
+    content:
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
         url: cryptography/week_08_09_public_ke/euclidean_algorithm/index.html
       - filetype: pdf
         format: default

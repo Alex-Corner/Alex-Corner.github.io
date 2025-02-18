@@ -7,7 +7,7 @@
             <meta name="robots" content="noindex">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta name="author" content="Alex Corner" />
-            <meta name="date" content="2025-02-14" />
+            <meta name="date" content="2025-02-18" />
         
 
         <title>Lecture - Vigenère and Kasiski | 55-408808: Introduction to Cyber Security, Maths and Cryptography</title>
@@ -15,41 +15,41 @@
         
     
     
-            <link rel="stylesheet" href="../../../static/styles.css?build_time=1739550347.692722">
+            <link rel="stylesheet" href="../../../static/styles.css?build_time=1739869014.283806">
             
             
         
-    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1739550347.692722">
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1739869014.283806">
 
-    <link rel="stylesheet" href="../../../static/print.css?build_time=1739550347.692722">
+    <link rel="stylesheet" href="../../../static/print.css?build_time=1739869014.283806">
 
 
         
     
 			<script>
-				var chirun_static_url = new URL('../../../static?build_time=1739550347.692722', location.href);
+				var chirun_static_url = new URL('../../../static?build_time=1739869014.283806', location.href);
 			</script>
 
             
-                <script defer src="../../../static/mathjax_config.js?build_time=1739550347.692722"></script>
+                <script defer src="../../../static/mathjax_config.js?build_time=1739869014.283806"></script>
                 <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             
 
-            <script type="module" src="../../../static/localisation.js?build_time=1739550347.692722"></script>
+            <script type="module" src="../../../static/localisation.js?build_time=1739869014.283806"></script>
 
-            <script defer src="../../../static/customisation.js?build_time=1739550347.692722"></script>
+            <script defer src="../../../static/customisation.js?build_time=1739869014.283806"></script>
 
             
 
             
         
-    <script defer src="../../../static/code.js?build_time=1739550347.692722" type="module"></script>
-    <script defer src="../../../static/embed_numbas.js?build_time=1739550347.692722" type="module"></script>
-    <script defer src="../../../static/embed_qrcode.js?build_time=1739550347.692722" type="module"></script>
+    <script defer src="../../../static/code.js?build_time=1739869014.283806" type="module"></script>
+    <script defer src="../../../static/embed_numbas.js?build_time=1739869014.283806" type="module"></script>
+    <script defer src="../../../static/embed_qrcode.js?build_time=1739869014.283806" type="module"></script>
 
 
         <template id="runnable-code-template">
-            <link rel="stylesheet" href="../../../static/code.css?build_time=1739550347.692722">
+            <link rel="stylesheet" href="../../../static/code.css?build_time=1739869014.283806">
             <div class="runnable-code-wrapper">
                 <section class="fullscreenable code">
                     <div id="code"></div>
@@ -230,7 +230,7 @@
         </template>
 
         <template id="embed-numbas-template">
-            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1739550347.692722">
+            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1739869014.283806">
             <details id="wrapper" data-completion-status="incomplete">
                 <summary>
                     <h1 id="title">Test Yourself</h1>
@@ -512,6 +512,24 @@
 </li>
 
 <li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-vigenère_ciph_4" href="#vigenère_ciph_4">
+        
+        Vigenère Cipher
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-vigenère_ciph_5" href="#vigenère_ciph_5">
+        
+        Vigenère Cipher
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
     <a role="treeitem"  aria-owns="#toc-subtree-breaking_vigenère" href="#breaking_vigenère">
         
         Breaking Vigenère
@@ -732,13 +750,95 @@ The Vigenère cipher was developed and was thought to tackle these problems.
 <header>
 <h2 class="beamer-frame-title" id="vigenère_cipher">Vigenère Cipher</h2>
 </header>
-<ul class="itemize" id="a0000000009">
-<li id="a0000000010">
+<div class="centered"> <table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:left"><table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+<div class="parbox" id="a0000000009" style="width: 234.8775pt"> <ul class="itemize" id="a0000000010">
+<li id="a0000000011">
+<p>
+Shortcomings of the general substitution cipher were addressed in the 15th century. 
+</p>
+</li>
+<li id="a0000000012">
+<p>
+The solution: don’t rely on just one substitution alphabet. 
+</p>
+</li>
+<li id="a0000000013">
+<p>
+Instead of a <em>mono</em>alphabetic cipher, a <b class="bfseries">polyalphabetic</b> cipher was designed. 
+</p>
+</li>
+<li id="a0000000014">
+<p>
+This was originally formulated by Leon Battista Alberti in 1467. 
+</p>
+</li>
+</ul>
+</div>
+</p>
+</td>
+</tr>
+</table>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:left"><p>
+<img alt="\includegraphics[width=0.2\linewidth ]{images/alberti.jpg}" src="images/img-0001.jpg" style="width:93.95100000000001pt"/>
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table> </div>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="vigenère_ciph_1">Vigenère Cipher</h2>
+</header>
+<div class="centered"> <table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:center"><table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+<img alt="\includegraphics[width=0.2\linewidth ]{images/vigenere.jpg}" src="images/img-0002.jpg" style="width:93.95100000000001pt"/>
+</p>
+</td>
+</tr>
+</table>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:left"><p>
+<div class="parbox" id="a0000000015" style="width: 234.8775pt"> <ul class="itemize" id="a0000000016">
+<li id="a0000000017">
+<p>
+Attributed to Blaise Vigenère, it was known as ‘le chiffre indéchiffrable’: the unbreakable cipher. 
+</p>
+</li>
+<li id="a0000000018">
+<p>
+Used for many centuries, this was the state of the art, and truly thought to be unbreakable. 
+</p>
+</li>
+</ul>
+</div>
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table> </div>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="vigenère_ciph_2">Vigenère Cipher</h2>
+</header>
+<ul class="itemize" id="a0000000019">
+<li id="a0000000020">
 <p>
 The cipher depends on a keyword and the use of twenty six shifted alphabets. 
 </p>
 </li>
-<li id="a0000000011">
+<li id="a0000000021">
 <p>
 The alphabets form a square: the Vigenère square, or <em>tabula recta</em>. 
 </p>
@@ -746,25 +846,25 @@ The alphabets form a square: the Vigenère square, or <em>tabula recta</em>.
 </ul>
 <div class="centered"> <figure>
 <p>
-<img alt="\includegraphics[scale=0.3]{images/vig_square.png}" src="images/img-0001.png" style="width:243.0px; height:243.0px"/>
+<img alt="\includegraphics[scale=0.3]{images/vig_square.png}" src="images/img-0003.png" style="width:243.0px; height:243.0px"/>
 </p>
 </figure> </div>
 </section>
 <section class="beamer-frame">
 <header>
-<h2 class="beamer-frame-title" id="vigenère_ciph_1">Vigenère Cipher</h2>
+<h2 class="beamer-frame-title" id="vigenère_ciph_3">Vigenère Cipher</h2>
 </header>
-<ul class="itemize" id="a0000000012">
-<li id="a0000000013">
+<ul class="itemize" id="a0000000022">
+<li id="a0000000023">
 <p>
 Plaintext: <span class="ttfamily">invade at dawn on friday</span>. Keyword: <span class="ttfamily">CODES</span>. 
 </p>
 </li>
-<li id="a0000000014">
+<li id="a0000000024">
 <p>
 The keyword is written repeatedly along the message. We look up the row of the key and match it to the column of the plaintext: row <span class="ttfamily">C</span> and column <span class="ttfamily">i</span> gives ciphertext <span class="ttfamily">K</span>. 
 </p>
-<div class="centered"> <div class="table" id="a0000000015">
+<div class="centered"> <div class="table" id="a0000000025">
 <table class="tabular">
 <tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
 <b class="bfseries">key</b>
@@ -1024,11 +1124,11 @@ The keyword is written repeatedly along the message. We look up the row of the k
 </table>
 </div> </div>
 </li>
-<li id="a0000000016">
+<li id="a0000000026">
 <p>
 Can also be thought of in terms of modular arithmetic: 
 </p>
-<div class="table" id="a0000000017">
+<div class="table" id="a0000000027">
 <table class="tabular">
 <tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
 <b class="bfseries">keyword</b>
@@ -1204,7 +1304,7 @@ Can also be thought of in terms of modular arithmetic:
 </table>
 </div>
 </li>
-<li id="a0000000018">
+<li id="a0000000028">
 <p>
 Encryption is achieved by performing the addition 
 </p>
@@ -1217,26 +1317,26 @@ Encryption is achieved by performing the addition
 </section>
 <section class="beamer-frame">
 <header>
-<h2 class="beamer-frame-title" id="vigenère_ciph_2">Vigenère Cipher</h2>
+<h2 class="beamer-frame-title" id="vigenère_ciph_4">Vigenère Cipher</h2>
 </header>
-<ul class="itemize" id="a0000000019">
-<li id="a0000000020">
+<ul class="itemize" id="a0000000029">
+<li id="a0000000030">
 <p>
 The plaintext <span class="ttfamily">invade at dawn on friday</span> has become the ciphertext 
 </p>
 <div class="centered"> <span class="ttfamily">KBYE<span style="color:#FF0000">V</span>GOW<span style="color:#FF0000">H</span>SYBRRXTW<span style="color:#FF0000">G</span>EQ</span>. </div>
 </li>
-<li id="a0000000021">
+<li id="a0000000031">
 <p>
 This is much more secure than a monoalphabetic substitution: the three <span class="ttfamily">d</span> characters in the plaintext are encrypted differently each time as <span class="ttfamily">V</span>, <span class="ttfamily">H</span>, and <span class="ttfamily">G</span>. 
 </p>
 </li>
-<li id="a0000000022">
+<li id="a0000000032">
 <p>
 Our simple frequency analysis will not work any more and this type of cipher was thought unbreakable right up until the end of World War 1 (1914-1918). 
 </p>
 </li>
-<li id="a0000000023">
+<li id="a0000000033">
 <p>
 A few people were involved in the cracking of this cipher, including quite a famous name in computing history. 
 </p>
@@ -1245,20 +1345,20 @@ A few people were involved in the cracking of this cipher, including quite a fam
 </section>
 <section class="beamer-frame">
 <header>
-<h2 class="beamer-frame-title" id="vigenère_ciph_3">Vigenère Cipher</h2>
+<h2 class="beamer-frame-title" id="vigenère_ciph_5">Vigenère Cipher</h2>
 </header>
-<ul class="itemize" id="a0000000024">
-<li id="a0000000025">
+<ul class="itemize" id="a0000000034">
+<li id="a0000000035">
 <p>
 On the face of it, this new method is resistant to attacks using frequency analysis. 
 </p>
 </li>
-<li id="a0000000026">
+<li id="a0000000036">
 <p>
 There is a very large keyspace (number of keys), which depends on the length of the key used. 
 </p>
-<ul class="itemize" id="a0000000027">
-<li id="a0000000028">
+<ul class="itemize" id="a0000000037">
+<li id="a0000000038">
 <p>
 For a key of length 5, there are \(11881376\) different possibilities: 
 </p>
@@ -1266,32 +1366,32 @@ For a key of length 5, there are \(11881376\) different possibilities:
 </li>
 </ul>
 </li>
-<li id="a0000000029">
+<li id="a0000000039">
 <p>
 But it turns out we can still use frequency analysis, we just have to be a bit more clever in its use: 
 </p>
-<ul class="itemize" id="a0000000030">
-<li id="a0000000031">
+<ul class="itemize" id="a0000000040">
+<li id="a0000000041">
 <p>
 If the <b class="bfseries">key length</b> is discovered, then we can apply frequency analysis, given a long enough message. 
 </p>
 </li>
-<li id="a0000000032">
+<li id="a0000000042">
 <p>
 Suppose the key length is \(k = 5\). 
 </p>
 </li>
-<li id="a0000000033">
+<li id="a0000000043">
 <p>
 We can apply frequency analysis on groups of letters which are separated by five letters: the key length. 
 </p>
 </li>
-<li id="a0000000034">
+<li id="a0000000044">
 <p>
 <span class="ttfamily"><span style="color:#FF0000">A</span>NYVG<span style="color:#FF0000">Y</span>STYN<span style="color:#FF0000">R</span>PLWH...</span>
 </p>
 </li>
-<li id="a0000000035">
+<li id="a0000000045">
 <p>
 These letters must have used the same row of the Vigenère square. 
 </p>
@@ -1307,8 +1407,8 @@ These letters must have used the same row of the Vigenère square.
 <p>
 <span class="ttfamily">ZSHRSNAYEHVRHIUIZZQZXHWEFLXPOJFCXEFJAJMLSEURXXSVZXAGSEFYKCHYMXMLWJISKPRN MWUIWESATXQYQHDISEXCTRRTXSLIZPNCBRHVXPBKSEOILKFVMXXVHYMRFEBJMRWCSKMWFSFK MPTWVZESPRHYMXTWAVZFNWWVPXAIAJQPOIGRNSNXHYQMKZOIUSNWQFZGXVBJFLXCKVDILGFL FMGMGVPEGHGKGHBIRGQVAEDJMPFSGKMWGEFIAAECOJMQTRKZFLTQWTDSLGCGQQBKVKEGKYHZ ZMLIHYQXKEBJUIGXQIQEMYFVEXAEHJIEKQOEPQNPHZBPRMBRPVHTCWIEMIFNUXAMBWURBXST AQIPOTQRVCAVZAXRHKAEGHTIASOIFKTMLKZFNITFCLFXAIWIXMMXZVMJYEWIEWXVSEQMGXVV UVTWGLDEGGSFRXAIWIQQIMFVAZXVARFXXVWKUWISGJUFEIHYMXMLSZZJNWCIUENRRVDXAIAZ OVHWQFBIWSHYQWTQSEASGIURHITXVFGKAXHFFLXSZUQVPSFCPWHJGGMGXEGJAYKGSJAJAYAR ZHTRUVDSKXVFGKAXCWFLXQCEXCMSRZEQBWGKTIBHSRAJEMTVGTHRHYQQTWWDBSLWWSXIHVWD BVHFOSXIBXWJOYKMCLEXHVSTMPEWCDQSYXVVYIGXOCTEUMHJAJMLCJQHXTOIFIWHOPEEMQCJ FXXVFVEXKMOCYIGJOEOMXHHYQVXQWXTXUICKTIKQSEGTHRARDWIIFYMTLMBWQVBSFKAXAIAJ QPOIGRZHKIOUKXHASCOSFIODUWLMCEMVRIBKQVIVWJQCXXOTDSLWHYQKNPTFRWIEQVYMGHGK TEMEFVFSHYFDURWWOJAYKWOIQXHXVFEIHJHYQFXEGKEXAEHGQVBWVZZXXPZVOXLZOJFEGHQF APTRRLZWRQDRFLXXWTDIZEFUQHMLWJQEKXVNUXAIBMUSNWSPQWTRRJXSPPMRZHLYFVXCWVSN FLXMFGXEGWOXMMGWHLE </span>
 </p>
-<ul class="itemize" id="a0000000036">
-<li id="a0000000037">
+<ul class="itemize" id="a0000000046">
+<li id="a0000000047">
 <p>
 Assume we know the key length: \(k = 6\). We’ll look into how to figure this out later. 
 </p>
@@ -1337,7 +1437,7 @@ Assume we know the key length: \(k = 6\). We’ll look into how to figure this o
 </header>
 <div class="centered"> <figure>
 <p>
-<img alt="\includegraphics[scale=0.8]{images/standard.png}" src="images/img-0002.png" style="width:1322.4px; height:794.4000000000001px"/>
+<img alt="\includegraphics[scale=0.8]{images/standard.png}" src="images/img-0004.png" style="width:1322.4px; height:794.4000000000001px"/>
 </p>
 </figure> </div>
 </section>
@@ -1347,26 +1447,26 @@ Assume we know the key length: \(k = 6\). We’ll look into how to figure this o
 </header>
 <div class="centered"> <figure>
 <p>
-<img alt="\includegraphics[scale=0.6]{images/group1.png}" src="images/img-0003.png" style="width:991.8px; height:595.8px"/>
+<img alt="\includegraphics[scale=0.6]{images/group1.png}" src="images/img-0005.png" style="width:991.8px; height:595.8px"/>
 </p>
 </figure> </div>
-<ul class="itemize" id="a0000000038">
-<li id="a0000000039">
+<ul class="itemize" id="a0000000048">
+<li id="a0000000049">
 <p>
 Each group has been shifted by the same value: a Caesar cipher. 
 </p>
 </li>
-<li id="a0000000040">
+<li id="a0000000050">
 <p>
 The charts will look the same, just shifted by a number of places. 
 </p>
 </li>
-<li id="a0000000041">
+<li id="a0000000051">
 <p>
 There is a gap of 4 letters from <span class="ttfamily">a</span> to <span class="ttfamily">e</span>, with <span class="ttfamily">e</span> having the higher frequency. 
 </p>
 </li>
-<li id="a0000000042">
+<li id="a0000000052">
 <p>
 We can find this same gap, or other patterns, and deduce that the likely shift is <span class="ttfamily">a</span> to <span class="ttfamily">m</span>: shift value \(12\). 
 </p>
@@ -1379,26 +1479,26 @@ We can find this same gap, or other patterns, and deduce that the likely shift i
 </header>
 <div class="centered"> <figure>
 <p>
-<img alt="\includegraphics[scale=0.6]{images/group2.png}" src="images/img-0004.png" style="width:991.8px; height:595.8px"/>
+<img alt="\includegraphics[scale=0.6]{images/group2.png}" src="images/img-0006.png" style="width:991.8px; height:595.8px"/>
 </p>
 </figure> </div>
-<ul class="itemize" id="a0000000043">
-<li id="a0000000044">
+<ul class="itemize" id="a0000000053">
+<li id="a0000000054">
 <p>
 Each group has been shifted by the same value: a Caesar cipher. 
 </p>
 </li>
-<li id="a0000000045">
+<li id="a0000000055">
 <p>
 The charts will look the same, just shifted by a number of places. 
 </p>
 </li>
-<li id="a0000000046">
+<li id="a0000000056">
 <p>
 There looks to be a gap like before from <span class="ttfamily">s</span> to <span class="ttfamily">x</span>, but the gap is 5 so can’t be the gap from <span class="ttfamily">a</span> to <span class="ttfamily">e</span>. 
 </p>
 </li>
-<li id="a0000000047">
+<li id="a0000000057">
 <p>
 Instead we can choose the gap <span class="ttfamily">e</span> to <span class="ttfamily">i</span> and deduce that the likely shift is <span class="ttfamily">a</span> to <span class="ttfamily">e</span>: shift value \(4\). 
 </p>
@@ -1409,50 +1509,50 @@ Instead we can choose the gap <span class="ttfamily">e</span> to <span class="tt
 <header>
 <h2 class="beamer-frame-title" id="other_letter_groups">Other Letter Groups</h2>
 </header>
-<ul class="itemize" id="a0000000048">
-<li id="a0000000049">
+<ul class="itemize" id="a0000000058">
+<li id="a0000000059">
 <p>
 We can continue this analysis for each of the groups. The key length is 6 so there will be six groups to consider. 
 </p>
 </li>
-<li id="a0000000050">
+<li id="a0000000060">
 <p>
 We make the following guesses: 
 </p>
-<ul class="itemize" id="a0000000051">
-<li id="a0000000052">
+<ul class="itemize" id="a0000000061">
+<li id="a0000000062">
 <p>
 Group 1: shift 12, key letter <span class="ttfamily">m</span>. 
 </p>
 </li>
-<li id="a0000000053">
+<li id="a0000000063">
 <p>
 Group 2: shift 4, key letter <span class="ttfamily">e</span>. 
 </p>
 </li>
-<li id="a0000000054">
+<li id="a0000000064">
 <p>
 Group 3: shift 19, key letter <span class="ttfamily">t</span>. 
 </p>
 </li>
-<li id="a0000000055">
+<li id="a0000000065">
 <p>
 Group 4: shift 4, key letter <span class="ttfamily">e</span>. 
 </p>
 </li>
-<li id="a0000000056">
+<li id="a0000000066">
 <p>
 Group 5: shift 14, key letter <span class="ttfamily">o</span>. 
 </p>
 </li>
-<li id="a0000000057">
+<li id="a0000000067">
 <p>
 Group 6: shift 17. key letter <span class="ttfamily">r</span>. 
 </p>
 </li>
 </ul>
 </li>
-<li id="a0000000058">
+<li id="a0000000068">
 <p>
 So the keyword appears to be <span class="ttfamily">meteor</span> and we can then attempt to decrypt the text. 
 </p>
@@ -1473,23 +1573,23 @@ So the keyword appears to be <span class="ttfamily">meteor</span> and we can the
 <header>
 <h2 class="beamer-frame-title" id="finding_the_key_leng">Finding the Key Length</h2>
 </header>
-<ul class="itemize" id="a0000000059">
-<li id="a0000000060">
+<ul class="itemize" id="a0000000069">
+<li id="a0000000070">
 <p>
 Common letter groupings like ‘<span class="ttfamily">the</span>’ will often get encrypted using the same key letters. 
 </p>
 </li>
-<li id="a0000000061">
+<li id="a0000000071">
 <p>
 This gives repeated strings of letters in the ciphertext. 
 </p>
 </li>
-<li id="a0000000062">
+<li id="a0000000072">
 <p>
 This forms the basis of a <b class="bfseries">Kasiski attack</b>. 
 </p>
 </li>
-<li id="a0000000063">
+<li id="a0000000073">
 <p>
 Longer messages are more likely to yield to such an attack as there will be more repeated segments. 
 </p>
@@ -1508,29 +1608,29 @@ Longer messages are more likely to yield to such an attack as there will be more
 <header>
 <h2 class="beamer-frame-title" id="breaking_vigenè_4">Breaking Vigenère</h2>
 </header>
-<ul class="itemize" id="a0000000064">
-<li id="a0000000065">
+<ul class="itemize" id="a0000000074">
+<li id="a0000000075">
 <p>
 The sequence <span class="ttfamily">XAIA</span> is repeated in the ciphertext and the two sequences are 288 letters apart. 
 </p>
 </li>
-<li id="a0000000066">
+<li id="a0000000076">
 <p>
 This length is called the <b class="bfseries">interval</b>. 
 </p>
 </li>
-<li id="a0000000067">
+<li id="a0000000077">
 <p>
 We break this interval into its prime factors: 
 </p>
 <span class="dmath">\[  288 = 2 \times 2 \times 2 \times 2 \times 2 \times 3 \times 3.  \]</span>
 </li>
-<li id="a0000000068">
+<li id="a0000000078">
 <p>
 The key length could be 2, 3, 4, 6, 8, 9, 12, 18, 24, 32, 36, 48, 72, 96, 133, or 288. 
 </p>
 </li>
-<li id="a0000000069">
+<li id="a0000000079">
 <p>
 We’ve narrowed it down, but that’s still a lot of options. 
 </p>
@@ -1549,29 +1649,29 @@ We’ve narrowed it down, but that’s still a lot of options.
 <header>
 <h2 class="beamer-frame-title" id="breaking_vigenè_6">Breaking Vigenère</h2>
 </header>
-<ul class="itemize" id="a0000000070">
-<li id="a0000000071">
+<ul class="itemize" id="a0000000080">
+<li id="a0000000081">
 <p>
 The sequence <span class="ttfamily">FLX</span> is repeated in the ciphertext and the two sequences are 60 letters apart. 
 </p>
 </li>
-<li id="a0000000072">
+<li id="a0000000082">
 <p>
 We break this interval into its prime factors: 
 </p>
 <span class="dmath">\[  60 = 2 \times 2 \times 3 \times 5.  \]</span>
 </li>
-<li id="a0000000073">
+<li id="a0000000083">
 <p>
 The key length could be 2, 3, 4, 5, 6, 10, 12, 15, 30, or 60. 
 </p>
 </li>
-<li id="a0000000074">
+<li id="a0000000084">
 <p>
 Some of these options match what we had before. 
 </p>
 </li>
-<li id="a0000000075">
+<li id="a0000000085">
 <p>
 We repeat this with other sequences. 
 </p>
@@ -1590,29 +1690,29 @@ We repeat this with other sequences.
 <header>
 <h2 class="beamer-frame-title" id="breaking_vigenè_8">Breaking Vigenère</h2>
 </header>
-<ul class="itemize" id="a0000000076">
-<li id="a0000000077">
+<ul class="itemize" id="a0000000086">
+<li id="a0000000087">
 <p>
 The sequence <span class="ttfamily">HYQ</span> is repeated in the ciphertext and the two sequences are 108 letters apart. 
 </p>
 </li>
-<li id="a0000000078">
+<li id="a0000000088">
 <p>
 We break this interval into its prime factors: 
 </p>
 <span class="dmath">\[  108 = 2 \times 2 \times 3 \times 3 \times 3.  \]</span>
 </li>
-<li id="a0000000079">
+<li id="a0000000089">
 <p>
 The key length could be 2, 3, 4, 6, 9, 12, 18, 27, 36, 54, or 108. 
 </p>
 </li>
-<li id="a0000000080">
+<li id="a0000000090">
 <p>
 Some of these options again match what we had before. 
 </p>
 </li>
-<li id="a0000000081">
+<li id="a0000000091">
 <p>
 We repeat this again with other sequences. 
 </p>
@@ -1623,7 +1723,7 @@ We repeat this again with other sequences.
 <header>
 <h2 class="beamer-frame-title" id="breaking_vigenè_9">Breaking Vigenère</h2>
 </header>
-<div class="table" id="a0000000082">
+<div class="table" id="a0000000092">
 <div class="centered"><table class="tabular">
 <tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
 <b class="bfseries">sequence</b>
@@ -2001,23 +2101,23 @@ We repeat this again with other sequences.
 <header>
 <h2 class="beamer-frame-title" id="breaking_vigen_10">Breaking Vigenère</h2>
 </header>
-<ul class="itemize" id="a0000000083">
-<li id="a0000000084">
+<ul class="itemize" id="a0000000093">
+<li id="a0000000094">
 <p>
 It is possible that some repeated sequences are just due to coincidence. 
 </p>
 </li>
-<li id="a0000000085">
+<li id="a0000000095">
 <p>
 With longer sequences, this becomes less likely. 
 </p>
 </li>
-<li id="a0000000086">
+<li id="a0000000096">
 <p>
 If we analyse the factors in the table, the obvious candidates for key lengths are 2, 3, 4, and 6. 
 </p>
 </li>
-<li id="a0000000087">
+<li id="a0000000097">
 <p>
 Key lengths of 2, 3 or 4 are quite short, so we rule them out. (We may have to come back to them.) The key length is likely to be 6 and as we found out, the actual keyword was <span class="ttfamily">meteor</span>. 
 </p>
@@ -2031,7 +2131,7 @@ Key lengths of 2, 3 or 4 are quite short, so we rule them out. (We may have to c
 <div class="centered"> <table class="tabular">
 <tr><td colspan="" rowspan="" style="text-align:center"><table class="tabular">
 <tr><td colspan="" rowspan="" style="text-align:center"><p>
-<img alt="\includegraphics[width=0.2\linewidth ]{images/babbage.jpg}" src="images/img-0005.jpg" style="width:93.95100000000001pt"/>
+<img alt="\includegraphics[width=0.2\linewidth ]{images/babbage.jpg}" src="images/img-0007.jpg" style="width:93.95100000000001pt"/>
 </p>
 </td>
 </tr>
@@ -2039,23 +2139,23 @@ Key lengths of 2, 3 or 4 are quite short, so we rule them out. (We may have to c
 </td>
 <td colspan="" rowspan="" style="text-align:left"><table class="tabular">
 <tr><td colspan="" rowspan="" style="text-align:left"><p>
-<div class="parbox" id="a0000000088" style="width: 234.8775pt"> <ul class="itemize" id="a0000000089">
-<li id="a0000000090">
+<div class="parbox" id="a0000000098" style="width: 234.8775pt"> <ul class="itemize" id="a0000000099">
+<li id="a0000000100">
 <p>
 Our method is known as a Kasiski attack, but somebody else had got there first. 
 </p>
 </li>
-<li id="a0000000091">
+<li id="a0000000101">
 <p>
 German cryptographer and archaeologist Friedrick Kasiski attacked the problem in 1863. 
 </p>
 </li>
-<li id="a0000000092">
+<li id="a0000000102">
 <p>
 But Charles Babbage had cracked it in 1854. The British government wanted to keept it secret in the Crimean War. 
 </p>
 </li>
-<li id="a0000000093">
+<li id="a0000000103">
 <p>
 We know Babbage better as being the originator of the programmable computer, having designed the Analytical and Differences Engines. 
 </p>
@@ -2077,13 +2177,13 @@ We know Babbage better as being the originator of the programmable computer, hav
 <p>
  In the tutorial this week we will: 
 </p>
-<ul class="itemize" id="a0000000094">
-<li id="a0000000095">
+<ul class="itemize" id="a0000000104">
+<li id="a0000000105">
 <p>
 Create a spreadsheet to perform Vigenère encryption. 
 </p>
 </li>
-<li id="a0000000096">
+<li id="a0000000106">
 <p>
 Use a premade spreadsheet to perform a Kasiski-style attack on Vigenère encryption. 
 </p>
@@ -2105,7 +2205,7 @@ Use a premade spreadsheet to perform a Kasiski-style attack on Vigenère encrypt
 
     <div id="footer-text">
         <p>Generated using <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.2.1, written by the Digital Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
-        <p>This page last generated: 2025-02-14</p>
+        <p>This page last generated: 2025-02-18</p>
         
         
         

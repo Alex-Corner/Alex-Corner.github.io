@@ -7,7 +7,7 @@
             <meta name="robots" content="noindex">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta name="author" content="Alex Corner" />
-            <meta name="date" content="2025-02-14" />
+            <meta name="date" content="2025-02-18" />
         
 
         <title>Lecture - Overview | 55-408808: Introduction to Cyber Security, Maths and Cryptography</title>
@@ -15,14 +15,14 @@
         
     
     
-            <link rel="stylesheet" href="../../../static/styles.css?build_time=1739550347.692722">
+            <link rel="stylesheet" href="../../../static/styles.css?build_time=1739869014.283806">
             
             
         
-    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1739550347.692722">
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1739869014.283806">
 
 
-    <link rel="stylesheet" href="../../../static/slides.css?build_time=1739550347.692722">
+    <link rel="stylesheet" href="../../../static/slides.css?build_time=1739869014.283806">
 
 
 
@@ -30,33 +30,33 @@
     
     
 			<script>
-				var chirun_static_url = new URL('../../../static?build_time=1739550347.692722', location.href);
+				var chirun_static_url = new URL('../../../static?build_time=1739869014.283806', location.href);
 			</script>
 
             
-                <script defer src="../../../static/mathjax_config.js?build_time=1739550347.692722"></script>
+                <script defer src="../../../static/mathjax_config.js?build_time=1739869014.283806"></script>
                 <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             
 
-            <script type="module" src="../../../static/localisation.js?build_time=1739550347.692722"></script>
+            <script type="module" src="../../../static/localisation.js?build_time=1739869014.283806"></script>
 
-            <script defer src="../../../static/customisation.js?build_time=1739550347.692722"></script>
+            <script defer src="../../../static/customisation.js?build_time=1739869014.283806"></script>
 
             
 
             
         
-    <script defer src="../../../static/code.js?build_time=1739550347.692722" type="module"></script>
-    <script defer src="../../../static/embed_numbas.js?build_time=1739550347.692722" type="module"></script>
-    <script defer src="../../../static/embed_qrcode.js?build_time=1739550347.692722" type="module"></script>
+    <script defer src="../../../static/code.js?build_time=1739869014.283806" type="module"></script>
+    <script defer src="../../../static/embed_numbas.js?build_time=1739869014.283806" type="module"></script>
+    <script defer src="../../../static/embed_qrcode.js?build_time=1739869014.283806" type="module"></script>
 
 
-    <script type="module" src="../../../static/slides.js?build_time=1739550347.692722"></script>
+    <script type="module" src="../../../static/slides.js?build_time=1739869014.283806"></script>
 
 
 
         <template id="runnable-code-template">
-            <link rel="stylesheet" href="../../../static/code.css?build_time=1739550347.692722">
+            <link rel="stylesheet" href="../../../static/code.css?build_time=1739869014.283806">
             <div class="runnable-code-wrapper">
                 <section class="fullscreenable code">
                     <div id="code"></div>
@@ -237,7 +237,7 @@
         </template>
 
         <template id="embed-numbas-template">
-            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1739550347.692722">
+            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1739869014.283806">
             <details id="wrapper" data-completion-status="incomplete">
                 <summary>
                     <h1 id="title">Test Yourself</h1>
@@ -2017,7 +2017,7 @@ The men with the flags represent the ends of words and this deciphers to: <span 
 </li>
 <li id="a0000000092">
 <p>
-Even using symbols doesn’t make this method secure, as Mary Queen of Scots found out as part of the Babington Plot. (Though her cipher was a touch more complicated!) 
+Even using symbols doesn’t make this method secure, as Mary Queen of Scots found out as part of the <a href="https://phys.org/news/2023-02-codebreakers-decipher-lost-letters-mary.html">Babington Plot</a>. Similarly, Anne Lister’s diaries were <a href="https://www.visitcalderdale.com/the-secret-diaries-of-anne-lister-cracking-the-crypthand-code/">eventually decoded</a> after being discovered by a distant relative. 
 </p>
 </li>
 </ul>
@@ -2245,88 +2245,6 @@ If we could use more than one alphabet, then <span class="ttfamily">a</span> wou
 </section>
 <section class="beamer-frame">
 <header>
-<h2 class="beamer-frame-title" id="vigenère_cipher">Vigenère Cipher</h2>
-</header>
-<div class="centered"> <table class="tabular">
-<tr><td colspan="" rowspan="" style="text-align:left"><table class="tabular">
-<tr><td colspan="" rowspan="" style="text-align:center"><p>
-<div class="parbox" id="a0000000119" style="width: 234.8775pt"> <ul class="itemize" id="a0000000120">
-<li id="a0000000121">
-<p>
-Shortcomings of the general substitution cipher were addressed in the 15th century. 
-</p>
-</li>
-<li id="a0000000122">
-<p>
-The solution: don’t rely on just one substitution alphabet. 
-</p>
-</li>
-<li id="a0000000123">
-<p>
-Instead of a <em>mono</em>alphabetic cipher, a <b class="bfseries">polyalphabetic</b> cipher was designed. 
-</p>
-</li>
-<li id="a0000000124">
-<p>
-This was originally formulated by Leon Battista Alberti in 1467. 
-</p>
-</li>
-</ul>
-</div>
-</p>
-</td>
-</tr>
-</table>
-</td>
-<td colspan="" rowspan="" style="text-align:center"><table class="tabular">
-<tr><td colspan="" rowspan="" style="text-align:left"><p>
-<img alt="\includegraphics[width=0.2\linewidth ]{images/alberti.jpg}" src="images/img-0007.jpg" style="width:93.95100000000001pt"/>
-</p>
-</td>
-</tr>
-</table>
-</td>
-</tr>
-</table> </div>
-</section>
-<section class="beamer-frame">
-<header>
-<h2 class="beamer-frame-title" id="vigenère_ciph_1">Vigenère Cipher</h2>
-</header>
-<div class="centered"> <table class="tabular">
-<tr><td colspan="" rowspan="" style="text-align:center"><table class="tabular">
-<tr><td colspan="" rowspan="" style="text-align:center"><p>
-<img alt="\includegraphics[width=0.2\linewidth ]{images/vigenere.jpg}" src="images/img-0008.jpg" style="width:93.95100000000001pt"/>
-</p>
-</td>
-</tr>
-</table>
-</td>
-<td colspan="" rowspan="" style="text-align:left"><table class="tabular">
-<tr><td colspan="" rowspan="" style="text-align:left"><p>
-<div class="parbox" id="a0000000125" style="width: 234.8775pt"> <ul class="itemize" id="a0000000126">
-<li id="a0000000127">
-<p>
-Attributed to Blaise Vigenère, it was known as ‘le chiffre indéchiffrable’: the unbreakable cipher. 
-</p>
-</li>
-<li id="a0000000128">
-<p>
-Used for many centuries, this was the state of the art, and truly thought to be unbreakable. 
-</p>
-</li>
-</ul>
-</div>
-</p>
-</td>
-</tr>
-</table>
-</td>
-</tr>
-</table> </div>
-</section>
-<section class="beamer-frame">
-<header>
 <h2 class="beamer-frame-title" id="is_there_anything_od">Is there anything odd here...?</h2>
 </header>
 <p>
@@ -2337,8 +2255,8 @@ Used for many centuries, this was the state of the art, and truly thought to be 
 <header>
 <h2 class="beamer-frame-title" id="is_there_anything_1">Is there anything odd here...?</h2>
 </header>
-<ul class="itemize" id="a0000000129">
-<li id="a0000000130">
+<ul class="itemize" id="a0000000119">
+<li id="a0000000120">
 <p>
 Written in 1939, <a href="https://www.gutenberg.org/cache/epub/47342/pg47342-images.html"><em>Gadsby</em></a> is a novel written by Ernest Vincent Wright. It has 260 pages, over 50,000 words, but without using a single ‘<span class="ttfamily">e</span>’. 
 </p>
@@ -2346,7 +2264,7 @@ Written in 1939, <a href="https://www.gutenberg.org/cache/epub/47342/pg47342-ima
 </ul>
 <div class="centered"> <figure>
 <p>
-<img alt="\includegraphics[scale=0.5]{images/gadsby.jpg}" src="images/img-0009.jpg" style="width:125.0px; height:190.0px"/>
+<img alt="\includegraphics[scale=0.5]{images/gadsby.jpg}" src="images/img-0007.jpg" style="width:125.0px; height:190.0px"/>
 </p>
 </figure> </div>
 </section>
@@ -2357,13 +2275,13 @@ Written in 1939, <a href="https://www.gutenberg.org/cache/epub/47342/pg47342-ima
 <p>
  In the tutorial this week we will: 
 </p>
-<ul class="itemize" id="a0000000131">
-<li id="a0000000132">
+<ul class="itemize" id="a0000000121">
+<li id="a0000000122">
 <p>
 Create a spreadsheet to perform encryption using a Caesar cipher. 
 </p>
 </li>
-<li id="a0000000133">
+<li id="a0000000123">
 <p>
 Create and use a spreadsheet to perform frequency analysis attacks on general substitution ciphers. 
 </p>

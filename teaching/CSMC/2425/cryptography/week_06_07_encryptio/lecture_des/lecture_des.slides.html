@@ -1,0 +1,2092 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        
+            <meta charset="utf-8">
+            <meta name="robots" content="noindex">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="author" content="Alex Corner" />
+            <meta name="date" content="2025-02-18" />
+        
+
+        <title>Lecture - DES | 55-408808: Introduction to Cyber Security, Maths and Cryptography</title>
+
+        
+    
+    
+            <link rel="stylesheet" href="../../../static/styles.css?build_time=1739869014.283806">
+            
+            
+        
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1739869014.283806">
+
+
+    <link rel="stylesheet" href="../../../static/slides.css?build_time=1739869014.283806">
+
+
+
+        
+    
+    
+			<script>
+				var chirun_static_url = new URL('../../../static?build_time=1739869014.283806', location.href);
+			</script>
+
+            
+                <script defer src="../../../static/mathjax_config.js?build_time=1739869014.283806"></script>
+                <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+            
+
+            <script type="module" src="../../../static/localisation.js?build_time=1739869014.283806"></script>
+
+            <script defer src="../../../static/customisation.js?build_time=1739869014.283806"></script>
+
+            
+
+            
+        
+    <script defer src="../../../static/code.js?build_time=1739869014.283806" type="module"></script>
+    <script defer src="../../../static/embed_numbas.js?build_time=1739869014.283806" type="module"></script>
+    <script defer src="../../../static/embed_qrcode.js?build_time=1739869014.283806" type="module"></script>
+
+
+    <script type="module" src="../../../static/slides.js?build_time=1739869014.283806"></script>
+
+
+
+        <template id="runnable-code-template">
+            <link rel="stylesheet" href="../../../static/code.css?build_time=1739869014.283806">
+            <div class="runnable-code-wrapper">
+                <section class="fullscreenable code">
+                    <div id="code"></div>
+                    <button class="fullscreen icon-button" title="Fullscreen code"><svg class="icon" aria-label="Fullscreen code" viewBox="0 0 180 180">
+    <use href="#fullscreen"/>
+</svg></button>
+                </section>
+                <section class="fullscreenable output">
+                    <div id="output" aria-live="polite">
+                        <pre class="stdout"></pre>
+                        <pre class="result"></pre>
+                        <div class="images"></div>
+                    </div>
+                    <button class="fullscreen icon-button" title="Fullscreen output"><svg class="icon" aria-label="Fullscreen output" viewBox="0 0 180 180">
+    <use href="#fullscreen"/>
+</svg></button>
+                </section>
+                <div class="buttons">
+                    <button type="button" class="run-code">Run code</button>
+                </div>
+                <svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="icon-defs"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <g id="cog">
+            <path 
+                style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z"
+            />
+        </g>
+        <g id="pdf">
+            <path
+                style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z"
+            />
+        </g>
+        <g id="slides">
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,21.25 30,137.5"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 90,21.25 60,158.75"
+            />
+            <rect
+                style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="119.79137"
+                height="82.273766"
+                x="30.104315"
+                y="36.476234"
+                ry="4.7737675"
+                rx="4.7737675"
+            />
+            <rect
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="140"
+                height="5.2262344"
+                x="20"
+                y="31.25"
+                ry="1.6724058"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,66.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,76.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,86.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,56.25 h 50"
+            />
+            <path
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z"
+            />
+        </g>
+
+        <g id="notebook">
+            <path
+                style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="58.699139"
+               cy="59.503937"
+               r="3.8077738"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="113.59385"
+               cy="52.885151"
+               r="4.9348516"
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z"
+           
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z"
+              
+            />
+            <ellipse
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="63.813011"
+               cy="125.96338"
+               rx="6.4332962"
+               ry="6.4347191"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="M 34,46.266514 V 62.316215"
+            
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="M 34,77.849849 V 93.89955"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 34,109.43318 v 16.0497"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0"
+            />
+        </g>
+
+        <g id="fullscreen">
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+               d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="M 150.95833,68.801471 V 28.958332 h -39.84314"
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="m 28.958332,111.11519 v 39.84314 h 39.843139"
+            />
+        </g>
+    </defs>
+</svg>
+            </div>
+        </template>
+
+        <template id="embed-numbas-template">
+            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1739869014.283806">
+            <details id="wrapper" data-completion-status="incomplete">
+                <summary>
+                    <h1 id="title">Test Yourself</h1>
+                    <div id="completion-status" data-completion-status="unknown">
+                        <span class="complete">Complete</span>
+                        <span class="incomplete">Incomplete</span>
+                    </div>
+                    <label id="score-feedback">
+                        Score:
+                        <progress min="0"></progress>
+                    </label>
+                </summary>
+                <iframe class="embed" title="Numbas"></iframe>
+            </details>
+        </template>
+
+    </head>
+    <body class="" data-format="slides">
+        
+    
+        <form id="display-options">
+    <div class="buttons">
+        <button type="button" id="reset-display-options">Reset to defaults</button>
+
+        <a href="https://chirun.org.uk/accessibility-statement/material">Accessibility statement</a>
+
+        <button type="button" aria-controls="display-options" aria-expanded="false">
+            Close
+        </button>
+    </div>
+
+    <div class="inputs">
+        <div class="input-group">
+            <label for="display-options-font-scale">
+                Text size
+            </label>
+            <input type="range" min="50" max="600" step="5" value="100" id="display-options-font-scale">
+            <output for="display-options-font-scale">100%</output>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-spacing-factor">
+                Spacing
+            </label>
+            <input type="range" min="0" max="1200" step="5" value="100" id="display-options-spacing-factor">
+            <output for="display-options-spacing-factor">100%</output>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-font-family">
+                Text font
+            </label>
+            <select id="display-options-font-family">
+                <option value="var(--sans-serif-font)" selected>Sans-serif</option>
+                <option value="var(--serif-font)">Serif</option>
+                <option value="Atkinson Hyperlegible">Atkinson Hyperlegible</option>
+                <option value="Comic Sans MS">Comic Sans</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-colour-scheme">
+                Colour scheme
+            </label>
+            <select id="display-options-colour-scheme">
+                <option value="auto" selected>Automatic (default)</option>
+                <option value="light">Black text on white</option>
+                <option value="dark">White text on black</option>
+                <option value="custom">Custom</option>
+            </select>
+        </div>
+
+        <section id="custom-colour-scheme-options" class="inputs">
+            <div class="input-group">
+                <label for="display-options-text-colour">
+                    Text colour
+                </label>
+                <input type="color" value="#000000" id="display-options-text-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-link-colour">
+                    Link colour
+                </label>
+                <input type="color" value="#0000ee" id="display-options-link-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour">
+                    Background colour
+                </label>
+                <input type="color" value="#ffffff" id="display-options-bg-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-off">
+                    Muted background colour
+                </label>
+                <input type="color" value="#eeeeee" id="display-options-bg-colour-off">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-1">
+                    Accent colour 1
+                </label>
+                <input type="color" value="#4caf50" id="display-options-bg-colour-accent-1">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-2">
+                    Accent colour 2
+                </label>
+                <input type="color" value="#f6f6ff" id="display-options-bg-colour-accent-2">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-3">
+                    Accent colour 3
+                </label>
+                <input type="color" value="#eeffd3" id="display-options-bg-colour-accent-3">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-4">
+                    Accent colour 4
+                </label>
+                <input type="color" value="#ffeeee" id="display-options-bg-colour-accent-4">
+            </div>
+        </section>
+
+        <section id="filter-colour-scheme-options" class="inputs">
+            <div class="input-group">
+                <label for="display-options-filter-sepia">
+                    Sepia filter
+                </label>
+                <input type="range" min="0" max="100" step="1" value="0" id="display-options-filter-sepia">
+                <output for="display-options-filter-sepia">0%</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-filter-hue-rotate">
+                    Rotate hues
+                </label>
+                <input type="range" min="0" max="1" step="0.01" value="0" id="display-options-filter-hue-rotate">
+                <output for="display-options-filter-hue-rotate">0 turns</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-invert-images">
+                    Invert images in dark mode
+                </label>
+                <input type="checkbox" id="display-options-invert-images">
+            </div>
+
+        </section>
+    </div>
+</form>
+    
+
+    <main>
+        
+
+            
+            <header>
+                <div id="slides-title">Lecture - DES</div>
+                
+                <div id="slides-author">Alex Corner</div>
+                
+
+                
+<button class="icon-button" type="button" aria-controls="display-options" aria-expanded="false" title="Display options">
+    <svg class="icon" aria-label="Display options" viewBox="0 0 180 180">
+    <use href="#cog"/>
+</svg>
+</button>
+
+            </header>
+            
+
+            
+                
+                <section id="title-slide">
+                    <h1 class="title">Lecture - DES</h1>
+                    
+                    <p class="author">Alex Corner</p>
+                    
+                </section>
+                
+            
+
+            
+                <section class="beamer-frame">
+<section class="beamer-titlepage">
+<h1 id="data_encryption_stan">Data Encryption Standard (DES)</h1>
+<p class="beamer-authors">
+<span class="author">Alex Corner</span>
+</p>
+<p class="beamer-date">[</p>
+</section>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="the_story_so_far">The Story So Far</h2>
+</header>
+<ul class="itemize" id="a0000000002">
+<li id="a0000000003">
+<p>
+Mechanical ciphers like Enigma allowed much more complex algorithms to be used for encryption. 
+</p>
+</li>
+<li id="a0000000004">
+<p>
+They still didn’t necessarily ensure security. 
+</p>
+</li>
+<li id="a0000000005">
+<p>
+The advent of the computer allowed even more complex algorithms to be used, using the <span class="ttfamily">XOR</span> operation in conjunction with more familiar methods of substitution and transposition. 
+</p>
+</li>
+<li id="a0000000006">
+<p>
+In the 1970s two very different breakthroughs changed the face of cryptography: 
+</p>
+<ul class="itemize" id="a0000000007">
+<li id="a0000000008">
+<p>
+<b class="bfseries">Public Key Cryptography</b>
+</p>
+</li>
+<li id="a0000000009">
+<p>
+<b class="bfseries">DES</b>
+</p>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="xor_exclusive_or"><span class="ttfamily">XOR</span>: Exclusive-<span class="ttfamily">OR</span></h2>
+</header>
+<ul class="itemize" id="a0000000010">
+<li id="a0000000011">
+<p>
+There are various ways to write the exclusive-<span class="ttfamily">OR</span>. We might write \(x\) <span class="ttfamily">XOR</span> \(y\), or in logical notation \(x \oplus y\). (Even sometimes \(\underline{\vee }\).) 
+</p>
+</li>
+<li id="a0000000012">
+<p>
+It is described by the truth table below: 
+</p>
+<span class="dmath">\[  \begin{array}{|cc|c|} \hline x &amp;  y &amp;  x \oplus y \\ \hline 0 &amp;  0 &amp;  0 \\ 0 &amp;  1 &amp;  1 \\ 1 &amp;  0 &amp;  1 \\ 1 &amp;  1 &amp;  0 \\ \end{array}  \]</span>
+</li>
+<li id="a0000000013">
+<p>
+This is in fact the same as performing modular arithmetic using modulus \(2\): \(0 + 0 = 0 = 1 + 1 \operatorname {mod} 2\) and \(1 + 0 = 1 = 0 + 1 \operatorname {mod} 2\). 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="bitwise_xor">Bitwise <span class="ttfamily">XOR</span></h2>
+</header>
+<span class="dmath">\[  \begin{array}{|cc|c|} \hline x &amp;  y &amp;  x \oplus y \\ \hline 0 &amp;  0 &amp;  0 \\ 0 &amp;  1 &amp;  1 \\ 1 &amp;  0 &amp;  1 \\ 1 &amp;  1 &amp;  0 \\ \end{array}  \]</span>
+<ul class="itemize" id="a0000000014">
+<li id="a0000000015">
+<p>
+We can apply this operator to whole strings of bits. 
+</p>
+</li>
+<li id="a0000000016">
+<p>
+For example, calculating \(1010 \oplus 1011\) we perform <span class="ttfamily">XOR</span> on the bits individually. 
+</p>
+</li>
+<li id="a0000000017">
+<p>
+So \(1 \,  0 \,  1 \,  0 \oplus 1 \,  0 \,  1 \,  1 = 0 \,  0 \,  0 \,  1\). 
+</p>
+</li>
+<li id="a0000000018">
+<p>
+Digital data is generally stored in binary or hex, using bits, so this type of operation is well-suited for implementation in a computer-aided cipher scheme. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="ascii_american_stand">ASCII: American Standard Code for Information Interchange</h2>
+</header>
+<div class="table" id="a0000000019">
+<table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+ DEC 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ OCT 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ HEX 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ BIN 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ Symbol 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ Description 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+65 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 101 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 41 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 01000001 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ A 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ Uppercase A 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+66 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 102 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 42 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 01000010 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ B 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ Uppercase B 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+67 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 103 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 43 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 01000011 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ C 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ Uppercase C 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+68 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 104 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 44 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 01000100 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ D 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ Uppercase D 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+69 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 105 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 45 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 01000101 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ E 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ Uppercase E 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+70 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 106 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 46 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 01000110 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ F 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ Uppercase F 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+71 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 107 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 47 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 01000111 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ G 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ Uppercase G 
+</p>
+</td>
+</tr>
+</table>
+</div>
+<ul class="itemize" id="a0000000020">
+<li id="a0000000021">
+<p>
+A standard way to encode text and other characters. Each character is represented by a 7-bit binary string. 
+</p>
+</li>
+<li id="a0000000022">
+<p>
+Microsoft Excel uses 8-bit ANSI as above - not <em>quite</em> the same mapping of characters to strings. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="the_one_time_pad">The One-Time Pad</h2>
+</header>
+<ul class="itemize" id="a0000000023">
+<li id="a0000000024">
+<p>
+Edgar Allen Poe: “Human ingenuity cannot concoct a cipher which human ingenuity cannot resolve.” Wrong. 
+</p>
+</li>
+<li id="a0000000025">
+<p>
+The original idea of a <b class="bfseries">one-time pad</b> was developed in 1918 by Vernam and Mauborgne, implemented mechanically. 
+</p>
+</li>
+<li id="a0000000026">
+<p>
+The idea is to write the plaintext in binary, e.g., using ASCII. 
+</p>
+</li>
+<li id="a0000000027">
+<p>
+Then a random key of 0s and 1s is chosen which is the same length as the plaintext. 
+</p>
+</li>
+<li id="a0000000028">
+<p>
+Encryption is performed via the <span class="ttfamily">XOR</span> operation and the key is then discarded. 
+</p>
+</li>
+<li id="a0000000029">
+<p>
+Shannon and Kotelnikov had both showed that this encryption scheme is <em>theoretically</em> unbreakable. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="the_one_time_p_1">The One-Time Pad</h2>
+</header>
+<ul class="itemize" id="a0000000030">
+<li id="a0000000031">
+<p>
+Theoretically unbreakable, but not really very practical. 
+</p>
+<ol class="enumerate" id="a0000000032">
+<li id="a0000000033" value="1">
+<p>
+There is a problem generating a truly random sequence. Computers can never produce truly random numbers, only <b class="bfseries">pseudo-random</b> numbers, which are prone to attack. 
+</p>
+</li>
+<li id="a0000000034" value="2">
+<p>
+It requires a very long key which is computationally expensive to produce and difficult to distribute securely. 
+</p>
+</li>
+<li id="a0000000035" value="3">
+<p>
+A new key is required each time. 
+</p>
+</li>
+</ol>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="development_of_des">Development of DES</h2>
+</header>
+<div class="centered"> <table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:center"><table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+<img alt="\includegraphics[width=0.2\linewidth ]{images/feistel.jpg}" src="images/img-0001.jpg" style="width:93.95100000000001pt"/>
+</p>
+</td>
+</tr>
+</table>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:left"><p>
+<div class="parbox" id="a0000000036" style="width: 234.8775pt"> <ul class="itemize" id="a0000000037">
+<li id="a0000000038">
+<p>
+<b class="bfseries">DES:</b> <b class="bfseries">D</b>ata <b class="bfseries">E</b>ncryption <b class="bfseries">S</b>tandard. 
+</p>
+</li>
+<li id="a0000000039">
+<p>
+Developed by <a href="https://www.technologyreview.com/2022/04/27/1048456/in-praise-of-the-feistel-network/">Horst Feistel</a> at IBM. 
+</p>
+</li>
+<li id="a0000000040">
+<p>
+The National Bureau of Standards held a competition in 1974: IBM submitted Lucifer. 
+</p>
+</li>
+<li id="a0000000041">
+<p>
+Dataseal \(\rightarrow \) Demonstration Cipher \(\rightarrow \) Demon \(\rightarrow \) Lucifer \(\rightarrow \) DES. 
+</p>
+</li>
+<li id="a0000000042">
+<p>
+Made the official worldwide standard in 1977. 
+</p>
+</li>
+</ul>
+</div>
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table> </div>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="des_a_controversial_">DES: A Controversial Choice</h2>
+</header>
+<ul class="itemize" id="a0000000043">
+<li id="a0000000044">
+<p>
+A large key size or length is an important part of a secure cryptographic system. 
+</p>
+</li>
+<li id="a0000000045">
+<p>
+Some people, such as Whitfield Diffie and Martin Hellman, believed the DES key size to be too small to be secure. 
+</p>
+</li>
+<li id="a0000000046">
+<p>
+It was 56 bits compared to IBM’s original Lucifer key size of 128 bits. 
+</p>
+</li>
+<li id="a0000000047">
+<p>
+Others believed the National Security Agency (NSA) had included a <b class="bfseries">trapdoor</b>: a secret weakness which could be exploited by the security agencies. 
+</p>
+</li>
+<li id="a0000000048">
+<p>
+The most widely used cryptographic method ever designed - largely used for secure financial transactions by banks. 
+</p>
+</li>
+<li id="a0000000049">
+<p>
+Expected to be used for 10 years from 1977. Triple-DES, or 3DES, developed in 1981 to be more secure, but is now also disallowed as of 2023. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="block_ciphers_vs_str">Block Ciphers vs. Stream Ciphers</h2>
+</header>
+<ul class="itemize" id="a0000000050">
+<li id="a0000000051">
+<p>
+The ciphers we have seen so far have all been <b class="bfseries">stream ciphers</b>: each letter is encrypted separately. 
+</p>
+</li>
+<li id="a0000000052">
+<p>
+DES and many modern ciphers are a form of <b class="bfseries">block cipher</b>: how letters are encrypted depends on the letters around them. 
+</p>
+</li>
+<li id="a0000000053">
+<p>
+<b class="bfseries">Confusion:</b> Obscures the relationship between the key and the ciphertext - typically achieved with substitution. 
+</p>
+</li>
+<li id="a0000000054">
+<p>
+<b class="bfseries">Diffusion:</b> Spreads the influence of one plaintext bit over many ciphertext bits to hide statistical properties of the plaintext - typically achieved with transposition. 
+</p>
+</li>
+<li id="a0000000055">
+<p>
+<b class="bfseries">Multiple Rounds:</b> Intended to amplify the effect of confusion and diffusion. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="generating_a_key">Generating a Key</h2>
+</header>
+<ul class="itemize" id="a0000000056">
+<li id="a0000000057">
+<p>
+Keys in DES are of length 56, but are expanded by <b class="bfseries">parity bits</b> to be 64 bits. 
+</p>
+<span class="dmath">\[  0101100 \,  0001111 \,  1011110 \,  1001010 \,  1101001 \,  1010010 \,  0101001 \,  1110101  \]</span>
+</li>
+<li id="a0000000058">
+<p>
+The first seven bits (on the left) are \(0101100.\)
+</p>
+</li>
+<li id="a0000000059">
+<p>
+We put an extra bit on the <em>right</em> to make an <em>odd</em> number of 1s in each 8-bit byte: 
+</p>
+<span class="dmath">\[  0101100\textcolor{red}{0}.  \]</span>
+</li>
+<li id="a0000000060">
+<p>
+In hex this is \(0101 \,  1000_2 = 58_{16}\). 
+</p>
+</li>
+<li id="a0000000061">
+<p>
+This is done for all bytes, which eventually gives the key as: 
+</p>
+<span class="dmath">\[  K = 0101100\textcolor{red}{0} \,  0001111\textcolor{red}{1} \,  1011110\textcolor{red}{0} \,  1001010\textcolor{red}{0} \,  1101001\textcolor{red}{1} \,  1010010{0} \,  0101001\textcolor{red}{0} \,  1110101\textcolor{red}{0}  \]</span>
+<span class="dmath">\[  K = \mbox{58 \,  1F \,  BC \,  94 \,  D3 \,  A4 \,  52 \,  EA.}  \]</span>
+</li>
+<li id="a0000000062">
+<p>
+DES consists of 16 <b class="bfseries">rounds</b>, each using a 48-bit <b class="bfseries">round key</b> \(K_i\) derived from the original 56-bit key \(K\). 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="des_scheme">DES Scheme</h2>
+</header>
+<div class="centered"> <figure>
+<p>
+<img alt="\includegraphics[scale=0.15]{images/DES-scheme.png}" src="images/img-0002.png" style="width:125.85px; height:226.95px"/>
+</p>
+</figure> </div>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="des_scheme_single_ro">DES Scheme: Single Round</h2>
+</header>
+<div class="centered"> <figure>
+<p>
+<img alt="\includegraphics[scale=0.3]{images/DES-single_round.png}" src="images/img-0003.png" style="width:518.6999999999999px; height:214.2px"/>
+</p>
+</figure> </div>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="des_scheme_mangler_f">DES Scheme: Mangler Function</h2>
+</header>
+<div class="centered"> <figure>
+<p>
+<img alt="\includegraphics[scale=0.15]{images/DES-right_XOR.png}" src="images/img-0004.png" style="width:259.34999999999997px; height:244.95px"/>
+</p>
+</figure> </div>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="des_scheme_right_exp">DES Scheme: Right Expansion</h2>
+</header>
+<p>
+ A 32-bit <em>right half</em> is expanded to 48-bits in the following way, by repeating some of the bits. 
+</p>
+<div class="table" id="a0000000063">
+<table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+ 32 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 1 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 2 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 3 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 4 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 5 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+4 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 5 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 6 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 7 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 8 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 9 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+8 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 9 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 10 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 11 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 12 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 13 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+12 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 13 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 14 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 15 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 16 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 17 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+16 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 17 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 18 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 19 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 20 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 21 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+20 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 21 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 22 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 23 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 24 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 25 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+24 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 25 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 26 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 27 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 28 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 29 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+28 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 29 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 30 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 31 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 32 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ 1 
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p>
+ For example, if \(R = 0000 \,  0001 \,  0010 \,  0011 \,  0100 \,  0101 \,  0110 \,  0111\), then 
+</p>
+<span class="dmath">\[  E(R) = 100000 \,  000010 \,  100100 \,  000110 \,  101000 \,  001010 \,  101100 \,  001110.  \]</span>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="des_scheme_xor_with_">DES Scheme: <span class="ttfamily">XOR</span> with Round Key</h2>
+</header>
+<p>
+ After the right half is expanded, it is <span class="ttfamily">XOR</span>ed with the current round key. E.g., the first 48-bit round key \(K_1\) from our example key is 
+</p>
+<span class="dmath">\[  001001 \,  111010 \,  000101 \,  101001 \,  111001 \,  011000 \,  110111 \,  011010.  \]</span>
+<p>
+ When <span class="ttfamily">XOR</span>ed with the expanded right half 
+</p>
+<span class="dmath">\[  100000 \,  000010 \,  100100 \,  000110 \,  101000 \,  001010 \,  101100 \,  001110  \]</span>
+<p>
+ we get 
+</p>
+<span class="dmath">\[  101001 \,  111000 \,  100001 \,  101111 \,  010001 \,  010010 \,  011011 \,  010100.  \]</span>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="des_scheme_s_boxes">DES Scheme: S-Boxes</h2>
+</header>
+<div class="table" id="a0000000064">
+<div class="centered"><table class="tabular">
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">\(S_7\)</b>
+</p>
+</td>
+<td colspan="16" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">Column Number</b>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">Row No.</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">0</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">1</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">2</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">3</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">4</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">5</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">6</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">7</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">8</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">9</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">10</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">11</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">12</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">13</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">14</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">15</b>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">0</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 4 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 11 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 2 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 14 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 15 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 0 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 8 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 13 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 3 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 12 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 9 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 7 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 5 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 10 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 6 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 1 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">1</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 13 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 0 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 11 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 7 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 4 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 9 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 1 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 10 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 14 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 3 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 5 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 12 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 2 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 15 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 8 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 6 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">2</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 1 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 4 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 11 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 13 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 12 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 3 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 7 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 14 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 10 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 15 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 6 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 8 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 0 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 5 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 9 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ 2 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<b class="bfseries">3</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 6 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 11 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 13 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 8 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 1 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 4 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 10 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 7 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 9 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 5 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 0 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 15 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 14 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 2 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 3 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 12 
+</p>
+</td>
+</tr>
+</table> </div>
+</div>
+<span class="dmath">\[  K_1 \oplus E(R) = 100111 \,  100010 \,  101001 \,  010011 \,  010100 \,  000110 \,  011110 \,  100100.  \]</span>
+<ul class="itemize" id="a0000000065">
+<li id="a0000000066">
+<p>
+Each block passes through a separate S-box. 
+</p>
+</li>
+<li id="a0000000067">
+<p>
+A block \(b_1b_2b_3b_4b_5b_6\) is split into a pair \((b_1b_6, b_2b_3b_4b_5)\). 
+</p>
+</li>
+<li id="a0000000068">
+<p>
+The left part is a 2-bit binary number (decimal 0-3), the right part is a 4-bit binary number (decimal 0-15). 
+</p>
+</li>
+<li id="a0000000069">
+<p>
+These give the row and column to look up in the S-box. 
+</p>
+</li>
+<li id="a0000000070">
+<p>
+Block seven (\(011110\)) becomes \((00, 1111) = (0,15)\), giving \(1 = 0001\). 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="des_sche_1">DES Scheme</h2>
+</header>
+<div class="centered"> <figure>
+<p>
+<img alt="\includegraphics[scale=0.15]{images/DES-scheme.png}" src="images/img-0002.png" style="width:125.85px; height:226.95px"/>
+</p>
+</figure> </div>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="feistel_system_and_d">Feistel System and Decryption</h2>
+</header>
+<ul class="itemize" id="a0000000071">
+<li id="a0000000072">
+<p>
+The DES scheme is an example of a <b class="bfseries">Feistel system</b>: 
+</p>
+<ul class="itemize" id="a0000000073">
+<li id="a0000000074">
+<p>
+Ladder structure; 
+</p>
+</li>
+<li id="a0000000075">
+<p>
+Input split into left and right halves; 
+</p>
+</li>
+<li id="a0000000076">
+<p>
+A round function of one half is computed and combined with the other half using bitwise <span class="ttfamily">XOR</span>; 
+</p>
+</li>
+<li id="a0000000077">
+<p>
+The halves are swapped over. 
+</p>
+</li>
+</ul>
+</li>
+<li id="a0000000078">
+<p>
+To decrypt the ciphertext: retrace all the steps in the 16 rounds using the same key \(K\), but with the round keys used in the opposite order. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="modes_of_operation">Modes of Operation</h2>
+</header>
+<p>
+ Five standard ways of implementing DES: 
+</p>
+<ul class="itemize" id="a0000000079">
+<li id="a0000000080">
+<p>
+Mode 1: Electronic Code Book 
+</p>
+</li>
+<li id="a0000000081">
+<p>
+Mode 2: Cipher Block Chaining 
+</p>
+</li>
+<li id="a0000000082">
+<p>
+Mode 3: Cipher Feedback Mode 
+</p>
+</li>
+<li id="a0000000083">
+<p>
+Mode 4: Output Feedback Mode 
+</p>
+</li>
+<li id="a0000000084">
+<p>
+Mode 5: Counter Mode 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="modes_of_operation_e">Modes of Operation: Electronic Code Book</h2>
+</header>
+<div class="centered"> <figure>
+<p>
+<img alt="\includegraphics[scale=0.3]{images/DES-ECB.png}" src="images/img-0005.png" style="width:345.9px; height:128.1px"/>
+</p>
+</figure> </div>
+<p>
+ ECB encrypts the blocks one after another, but is vulnerable to attack for long messages because of plaintext patterns. 
+</p>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="modes_of_operation_c">Modes of Operation: Cipher Block Chaining</h2>
+</header>
+<div class="centered"> <figure>
+<p>
+<img alt="\includegraphics[scale=0.3]{images/DES-CBC.png}" src="images/img-0006.png" style="width:376.8px; height:138.6px"/>
+</p>
+</figure> </div>
+<p>
+ CBC uses the previous ciphertext block <span class="ttfamily">XOR</span>ed with the new plaintext block before proceeding with encryption. An Initialisation Vector (IV) is used to <span class="ttfamily">XOR</span> the first plaintext block. ECB is better at hiding plaintext patterns than ECB. 
+</p>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="modes_of_operation_1">Modes of Operation: ECB vs Other Modes</h2>
+</header>
+<div class="centered"> <figure>
+<p>
+<img alt="\includegraphics[height=0.3\linewidth ]{images/tux.png}" src="images/img-0007.png" style="height:&lt;plasTeX.TeXFragment object at 0x7f9280e70640&gt;"/> <img alt="\includegraphics[height=0.3\linewidth ]{images/Tux_ECB.png}" src="images/img-0008.png" style="height:&lt;plasTeX.TeXFragment object at 0x7f9280e70700&gt;"/> <img alt="\includegraphics[height=0.3\linewidth ]{images/Tux_secure.png}" src="images/img-0009.png" style="height:&lt;plasTeX.TeXFragment object at 0x7f9280e70820&gt;"/>
+</p>
+</figure> </div>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="breaking_des">Breaking DES</h2>
+</header>
+<ul class="itemize" id="a0000000085">
+<li id="a0000000086">
+<p>
+DES was expected to be used for 10 years: 1977-1987. 
+</p>
+</li>
+<li id="a0000000087">
+<p>
+It remained the standard <b class="bfseries">secret key</b> encryption method until 1998. 
+</p>
+</li>
+<li id="a0000000088">
+<p>
+Ongoing debates about security of DES focussed on the short key length. 
+</p>
+</li>
+<li id="a0000000089">
+<p>
+Brute force attacks were theoretically possible, but the hardware in the 1970s would take too long to make this an efficient attack. 
+</p>
+</li>
+<li id="a0000000090">
+<p>
+In the 1980s rumours circulated that intelligence agencies had already built machines to search for DES keys. 
+</p>
+</li>
+<li id="a0000000091">
+<p>
+By the 2000s, computers were 100,000 times more powerful making brute force attacks quite straightforward. 
+</p>
+</li>
+<li id="a0000000092">
+<p>
+A (second) challenge was issued in 1998 by the RSA Laboratory, with a \(\$ 10,000\)USD prize: 
+</p>
+<ul class="itemize" id="a0000000093">
+<li id="a0000000094">
+<p>
+Electronic Frontier Foundation’s DES Cracker, working as a botnet, took only 3 days to crack DES. 
+</p>
+</li>
+<li id="a0000000095">
+<p>
+The previous record was 39 days. 
+</p>
+</li>
+<li id="a0000000096">
+<p>
+In 1999, a network of 100,000 PCs on the Internet cracked DES in 22 hours and 15 minutes. 
+</p>
+</li>
+<li id="a0000000097">
+<p>
+DES needed to be replaced. 
+</p>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="double_des_2des">Double-DES: 2DES</h2>
+</header>
+<ul class="itemize" id="a0000000098">
+<li id="a0000000099">
+<p>
+How do we make DES more secure? Run it twice: Double DES. 
+</p>
+</li>
+<li id="a0000000100">
+<p>
+The idea here is that this would double the keyspace from \(2^{56}\) options to \(2^{112}\). 
+</p>
+</li>
+<li id="a0000000101">
+<p>
+Unfortunately, due to <b class="bfseries">meet-in-the-middle attacks</b>, this actually only increased the number of keys to \(2^{57}\). 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="triple_des_3des">Triple-DES: 3DES</h2>
+</header>
+<ul class="itemize" id="a0000000102">
+<li id="a0000000103">
+<p>
+How do we make DES more secure? Run it <em>three</em> times. 
+</p>
+</li>
+<li id="a0000000104">
+<p>
+Uses three independent keys: \(K_1\), \(K_2\), \(K_3\). 
+</p>
+</li>
+<li id="a0000000105">
+<p>
+\(m \mapsto DES(m, K_1) \mapsto DES^{-1}(DES(m,K_1),K_2) \mapsto DES(DES^{-1}(DES(m,K_1),K_2,K_3))\) 
+</p>
+</li>
+<li id="a0000000106">
+<p>
+If \(K_1 = K_2 = K_3\), this is the same as single DES (good for backwards compatibility). 
+</p>
+</li>
+<li id="a0000000107">
+<p>
+Often used with two keys, setting \(K_1 = K_3\), but keeping \(K_2\) independent. 
+</p>
+</li>
+<li id="a0000000108">
+<p>
+Much stronger against meet-in-the-middle attacks. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="triple_des_3d_1">Triple-DES: 3DES</h2>
+</header>
+<ul class="itemize" id="a0000000109">
+<li id="a0000000110">
+<p>
+3DES encryption was the standard for ATMs: all machines had to be compliant by 2005. 
+</p>
+</li>
+<li id="a0000000111">
+<p>
+CVE-2016-2183 (Critical Vulnerabilities and Exposures) released in 2016 describes the ‘Sweet32’ attack (a type of <b class="bfseries">birthday attack</b>, which shows that even Triple DES was not sufficient any more. 
+</p>
+</li>
+<li id="a0000000112">
+<p>
+All applications of 3DES were to cease by 2023. 
+</p>
+</li>
+<li id="a0000000113">
+<p>
+DES finally superseded by the Advanced Encryption Standard (AES). 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="tutorials">Tutorials</h2>
+</header>
+<p>
+ In the tutorial this week we will: 
+</p>
+<ul class="itemize" id="a0000000114">
+<li id="a0000000115">
+<p>
+Create a spreadsheet to perform bitwise XOR encryption. 
+</p>
+</li>
+<li id="a0000000116">
+<p>
+Expand this to XOR whole words at a time. 
+</p>
+</li>
+</ul>
+</section>
+<script id="plastex-labels" type="application/json">{}</script>
+            
+
+        
+
+        <nav id="pager">
+            <button type="button" id="move-backwards" aria-label="Backwards">←</button>
+            <button type="button" id="move-forwards" aria-label="Forwards">→</button>
+        </nav>
+    </main>
+
+
+        <svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="icon-defs"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <g id="cog">
+            <path 
+                style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z"
+            />
+        </g>
+        <g id="pdf">
+            <path
+                style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z"
+            />
+        </g>
+        <g id="slides">
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,21.25 30,137.5"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 90,21.25 60,158.75"
+            />
+            <rect
+                style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="119.79137"
+                height="82.273766"
+                x="30.104315"
+                y="36.476234"
+                ry="4.7737675"
+                rx="4.7737675"
+            />
+            <rect
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="140"
+                height="5.2262344"
+                x="20"
+                y="31.25"
+                ry="1.6724058"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,66.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,76.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,86.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,56.25 h 50"
+            />
+            <path
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z"
+            />
+        </g>
+
+        <g id="notebook">
+            <path
+                style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="58.699139"
+               cy="59.503937"
+               r="3.8077738"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="113.59385"
+               cy="52.885151"
+               r="4.9348516"
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z"
+           
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z"
+              
+            />
+            <ellipse
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="63.813011"
+               cy="125.96338"
+               rx="6.4332962"
+               ry="6.4347191"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="M 34,46.266514 V 62.316215"
+            
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="M 34,77.849849 V 93.89955"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 34,109.43318 v 16.0497"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0"
+            />
+        </g>
+
+        <g id="fullscreen">
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+               d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="M 150.95833,68.801471 V 28.958332 h -39.84314"
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="m 28.958332,111.11519 v 39.84314 h 39.843139"
+            />
+        </g>
+    </defs>
+</svg>
+    </body>
+</html>

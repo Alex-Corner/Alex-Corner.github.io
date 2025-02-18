@@ -1,0 +1,3718 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        
+            <meta charset="utf-8">
+            <meta name="robots" content="noindex">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="author" content="Alex Corner" />
+            <meta name="date" content="2025-02-18" />
+        
+
+        <title>Lecture - AES | 55-408808: Introduction to Cyber Security, Maths and Cryptography</title>
+
+        
+    
+    
+            <link rel="stylesheet" href="../../../static/styles.css?build_time=1739869014.283806">
+            
+            
+        
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1739869014.283806">
+
+    <link rel="stylesheet" href="../../../static/print.css?build_time=1739869014.283806">
+
+
+        
+    
+			<script>
+				var chirun_static_url = new URL('../../../static?build_time=1739869014.283806', location.href);
+			</script>
+
+            
+                <script defer src="../../../static/mathjax_config.js?build_time=1739869014.283806"></script>
+                <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+            
+
+            <script type="module" src="../../../static/localisation.js?build_time=1739869014.283806"></script>
+
+            <script defer src="../../../static/customisation.js?build_time=1739869014.283806"></script>
+
+            
+
+            
+        
+    <script defer src="../../../static/code.js?build_time=1739869014.283806" type="module"></script>
+    <script defer src="../../../static/embed_numbas.js?build_time=1739869014.283806" type="module"></script>
+    <script defer src="../../../static/embed_qrcode.js?build_time=1739869014.283806" type="module"></script>
+
+
+        <template id="runnable-code-template">
+            <link rel="stylesheet" href="../../../static/code.css?build_time=1739869014.283806">
+            <div class="runnable-code-wrapper">
+                <section class="fullscreenable code">
+                    <div id="code"></div>
+                    <button class="fullscreen icon-button" title="Fullscreen code"><svg class="icon" aria-label="Fullscreen code" viewBox="0 0 180 180">
+    <use href="#fullscreen"/>
+</svg></button>
+                </section>
+                <section class="fullscreenable output">
+                    <div id="output" aria-live="polite">
+                        <pre class="stdout"></pre>
+                        <pre class="result"></pre>
+                        <div class="images"></div>
+                    </div>
+                    <button class="fullscreen icon-button" title="Fullscreen output"><svg class="icon" aria-label="Fullscreen output" viewBox="0 0 180 180">
+    <use href="#fullscreen"/>
+</svg></button>
+                </section>
+                <div class="buttons">
+                    <button type="button" class="run-code">Run code</button>
+                </div>
+                <svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="icon-defs"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <g id="cog">
+            <path 
+                style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z"
+            />
+        </g>
+        <g id="pdf">
+            <path
+                style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z"
+            />
+        </g>
+        <g id="slides">
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,21.25 30,137.5"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 90,21.25 60,158.75"
+            />
+            <rect
+                style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="119.79137"
+                height="82.273766"
+                x="30.104315"
+                y="36.476234"
+                ry="4.7737675"
+                rx="4.7737675"
+            />
+            <rect
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="140"
+                height="5.2262344"
+                x="20"
+                y="31.25"
+                ry="1.6724058"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,66.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,76.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,86.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,56.25 h 50"
+            />
+            <path
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z"
+            />
+        </g>
+
+        <g id="notebook">
+            <path
+                style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="58.699139"
+               cy="59.503937"
+               r="3.8077738"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="113.59385"
+               cy="52.885151"
+               r="4.9348516"
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z"
+           
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z"
+              
+            />
+            <ellipse
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="63.813011"
+               cy="125.96338"
+               rx="6.4332962"
+               ry="6.4347191"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="M 34,46.266514 V 62.316215"
+            
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="M 34,77.849849 V 93.89955"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 34,109.43318 v 16.0497"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0"
+            />
+        </g>
+
+        <g id="fullscreen">
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+               d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="M 150.95833,68.801471 V 28.958332 h -39.84314"
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="m 28.958332,111.11519 v 39.84314 h 39.843139"
+            />
+        </g>
+    </defs>
+</svg>
+            </div>
+        </template>
+
+        <template id="embed-numbas-template">
+            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1739869014.283806">
+            <details id="wrapper" data-completion-status="incomplete">
+                <summary>
+                    <h1 id="title">Test Yourself</h1>
+                    <div id="completion-status" data-completion-status="unknown">
+                        <span class="complete">Complete</span>
+                        <span class="incomplete">Incomplete</span>
+                    </div>
+                    <label id="score-feedback">
+                        Score:
+                        <progress min="0"></progress>
+                    </label>
+                </summary>
+                <iframe class="embed" title="Numbas"></iframe>
+            </details>
+        </template>
+
+    </head>
+    <body class="" >
+        
+
+        <a class="skip-to-content-link" href="#main-content">Skip to content</a>
+        
+            <form id="display-options">
+    <div class="buttons">
+        <button type="button" id="reset-display-options">Reset to defaults</button>
+
+        <a href="https://chirun.org.uk/accessibility-statement/material">Accessibility statement</a>
+
+        <button type="button" aria-controls="display-options" aria-expanded="false">
+            Close
+        </button>
+    </div>
+
+    <div class="inputs">
+        <div class="input-group">
+            <label for="display-options-font-scale">
+                Text size
+            </label>
+            <input type="range" min="50" max="600" step="5" value="100" id="display-options-font-scale">
+            <output for="display-options-font-scale">100%</output>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-spacing-factor">
+                Spacing
+            </label>
+            <input type="range" min="0" max="1200" step="5" value="100" id="display-options-spacing-factor">
+            <output for="display-options-spacing-factor">100%</output>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-font-family">
+                Text font
+            </label>
+            <select id="display-options-font-family">
+                <option value="var(--sans-serif-font)" selected>Sans-serif</option>
+                <option value="var(--serif-font)">Serif</option>
+                <option value="Atkinson Hyperlegible">Atkinson Hyperlegible</option>
+                <option value="Comic Sans MS">Comic Sans</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-colour-scheme">
+                Colour scheme
+            </label>
+            <select id="display-options-colour-scheme">
+                <option value="auto" selected>Automatic (default)</option>
+                <option value="light">Black text on white</option>
+                <option value="dark">White text on black</option>
+                <option value="custom">Custom</option>
+            </select>
+        </div>
+
+        <section id="custom-colour-scheme-options" class="inputs">
+            <div class="input-group">
+                <label for="display-options-text-colour">
+                    Text colour
+                </label>
+                <input type="color" value="#000000" id="display-options-text-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-link-colour">
+                    Link colour
+                </label>
+                <input type="color" value="#0000ee" id="display-options-link-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour">
+                    Background colour
+                </label>
+                <input type="color" value="#ffffff" id="display-options-bg-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-off">
+                    Muted background colour
+                </label>
+                <input type="color" value="#eeeeee" id="display-options-bg-colour-off">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-1">
+                    Accent colour 1
+                </label>
+                <input type="color" value="#4caf50" id="display-options-bg-colour-accent-1">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-2">
+                    Accent colour 2
+                </label>
+                <input type="color" value="#f6f6ff" id="display-options-bg-colour-accent-2">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-3">
+                    Accent colour 3
+                </label>
+                <input type="color" value="#eeffd3" id="display-options-bg-colour-accent-3">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-4">
+                    Accent colour 4
+                </label>
+                <input type="color" value="#ffeeee" id="display-options-bg-colour-accent-4">
+            </div>
+        </section>
+
+        <section id="filter-colour-scheme-options" class="inputs">
+            <div class="input-group">
+                <label for="display-options-filter-sepia">
+                    Sepia filter
+                </label>
+                <input type="range" min="0" max="100" step="1" value="0" id="display-options-filter-sepia">
+                <output for="display-options-filter-sepia">0%</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-filter-hue-rotate">
+                    Rotate hues
+                </label>
+                <input type="range" min="0" max="1" step="0.01" value="0" id="display-options-filter-hue-rotate">
+                <output for="display-options-filter-hue-rotate">0 turns</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-invert-images">
+                    Invert images in dark mode
+                </label>
+                <input type="checkbox" id="display-options-invert-images">
+            </div>
+
+        </section>
+    </div>
+</form>
+        
+
+        <header>
+            
+<button class="icon-button" type="button" aria-controls="display-options" aria-expanded="false" title="Display options">
+    <svg class="icon" aria-label="Display options" viewBox="0 0 180 180">
+    <use href="#cog"/>
+</svg>
+</button>
+            
+    
+    <nav aria-label="breadcrumb">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../../../index.html">55-408808: Introduction to Cyber Security, Maths and Cryptography</a>
+            </li>
+            
+            <li class="breadcrumb-item">
+                <a href="../index.html">Week 06-07 - Encryption Standards</a>
+            </li>
+            
+            <li class="breadcrumb-item active">
+                Lecture - AES
+            </li>
+        </ul>
+
+        
+        <p class="pager" id="item-pager">
+            
+            <a rel="prev" href="../optional_exercises_d/index.html">Previous: Optional Exercises - DES</a>
+            
+            
+            <a rel="next" href="../exercises_aes/index.html">Next: Exercises - AES</a>
+            
+        </p>
+        
+    </nav>
+    
+
+            
+            
+        </header>
+
+        <main id="main-content">
+            
+    <nav id="sidebar">
+        
+        <ul class="alternative-formats">
+            
+            <li><a rel="alternate" type="" href="lecture_aes.slides.html"><svg class="icon" aria-label="Slides" viewBox="0 0 180 180">
+    <use href="#slides"/>
+</svg> View as Slides</a></li>
+            
+            <li><a rel="alternate" type="application/pdf" href="lecture_aes.pdf"download><svg class="icon" aria-label="PDF" viewBox="0 0 180 180">
+    <use href="#pdf"/>
+</svg> Download as PDF</a></li>
+            
+        </ul>
+        
+
+        <h1>Table of Contents</h1>
+        <a class="jump-to-item-content" href="#item-content">Jump to content</a>
+        
+            <ol class="table-of-contents" role="tree">
+                
+                    
+<li role="none" data-toc-level="1" class="toc-header  has-children">
+    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-cryptography_advance" href="#cryptography_advance">
+        <span class="toc-marker"></span>
+        Cryptography: Advanced Encryption Standard (AES)
+    </a>
+
+    
+        <ol role="group" id="toc-subtree-cryptography_advance">
+            
+            
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-the_story_so_far" href="#the_story_so_far">
+        
+        The Story So Far
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-development_of_aes" href="#development_of_aes">
+        
+        Development of AES
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-development_of_a_1" href="#development_of_a_1">
+        
+        Development of AES
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-the_winner_rijndael" href="#the_winner_rijndael">
+        
+        The Winner: Rijndael
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-development_of_a_2" href="#development_of_a_2">
+        
+        Development of AES
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-aes_scheme_128_bits" href="#aes_scheme_128_bits">
+        
+        AES Scheme: 128 Bits
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-the_input" href="#the_input">
+        
+        The Input
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-addroundkey" href="#addroundkey">
+        
+        AddRoundKey
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-bytesub" href="#bytesub">
+        
+        ByteSub
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-rijndael_s_box" href="#rijndael_s_box">
+        
+        Rijndael S-Box
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-rijndael_s_b_1" href="#rijndael_s_b_1">
+        
+        Rijndael S-Box
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-bytes_1" href="#bytes_1">
+        
+        ByteSub
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-shiftrow" href="#shiftrow">
+        
+        ShiftRow
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-mixcolumn" href="#mixcolumn">
+        
+        MixColumn
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-addroundk_1" href="#addroundk_1">
+        
+        AddRoundKey
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-addroundk_2" href="#addroundk_2">
+        
+        AddRoundKey
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-modes_of_operation" href="#modes_of_operation">
+        
+        Modes of Operation
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-where_is_aes_used_" href="#where_is_aes_used_">
+        
+        Where is AES used?
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-how_secure_is_aes_" href="#how_secure_is_aes_">
+        
+        How secure is AES?
+    </a>
+
+    
+</li>
+
+            
+        </ol>
+    
+</li>
+
+                
+            </ol>
+        
+
+    </nav>
+
+    <article class="item-content" id="item-content">
+        <section class="beamer-frame">
+<section class="beamer-titlepage">
+<h1 id="cryptography_advance">Cryptography: Advanced Encryption Standard (AES)</h1>
+<p class="beamer-authors">
+<span class="author">Alex Corner</span>
+</p>
+<p class="beamer-date">[</p>
+</section>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="the_story_so_far">The Story So Far</h2>
+</header>
+<ul class="itemize" id="a0000000002">
+<li id="a0000000003">
+<p>
+In the 1970s the Data Encryption Standard is introduced. 
+</p>
+</li>
+<li id="a0000000004">
+<p>
+It is quickly deemed insecure, but is still in use up to 2023 in the form of 3DES (Triple-DES). 
+</p>
+</li>
+<li id="a0000000005">
+<p>
+Other developments are happening at the time (public key cryptography), but we’ll visit these later. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="development_of_aes">Development of AES</h2>
+</header>
+<ul class="itemize" id="a0000000006">
+<li id="a0000000007">
+<p>
+Triple-DES was supposed to be a stopgap. 
+</p>
+</li>
+<li id="a0000000008">
+<p>
+In 1998 the National Institute of Standards and Technology held an open call for a new standard to replace DES. 
+</p>
+</li>
+<li id="a0000000009">
+<p>
+This was to be called <b class="bfseries">AES:</b> <b class="bfseries">A</b>dvanced <b class="bfseries">E</b>ncryption <b class="bfseries">S</b>tandard. 
+</p>
+</li>
+<li id="a0000000010">
+<p>
+Many of the world’s top cryptographers submitted entries to this competition. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="development_of_a_1">Development of AES</h2>
+</header>
+<ul class="itemize" id="a0000000011">
+<li id="a0000000012">
+<p>
+One requirement was the use of variable key sizes: 128, 192, and 256 bits. 
+</p>
+</li>
+<li id="a0000000013">
+<p>
+It should work on different hardware: PCs, smart cards, etc. 
+</p>
+</li>
+<li id="a0000000014">
+<p>
+Speed was also a criterion. 
+</p>
+</li>
+<li id="a0000000015">
+<p>
+Fifteen candidates were considered and a shortlist of five were chosen as finalists: 
+</p>
+<ul class="itemize" id="a0000000016">
+<li id="a0000000017">
+<p>
+MARS, 
+</p>
+</li>
+<li id="a0000000018">
+<p>
+RC6, 
+</p>
+</li>
+<li id="a0000000019">
+<p>
+Twofish, 
+</p>
+</li>
+<li id="a0000000020">
+<p>
+Serpent, 
+</p>
+</li>
+<li id="a0000000021">
+<p>
+<b class="bfseries">Rijndael</b>: the winner. 
+</p>
+</li>
+</ul>
+</li>
+<li id="a0000000022">
+<p>
+All algorithms were up to three times faster than DES. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="the_winner_rijndael">The Winner: Rijndael</h2>
+</header>
+<div class="centered"> <table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:center"><table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+<img alt="\includegraphics[width=0.2\linewidth ]{images/joan-vincent.jpg}" src="images/img-0001.jpg" style="width:93.95100000000001pt"/>
+</p>
+</td>
+</tr>
+</table>
+</td>
+<td colspan="" rowspan="" style="text-align:left"><table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:left"><p>
+<div class="parbox" id="a0000000023" style="width: 234.8775pt"> <ul class="itemize" id="a0000000024">
+<li id="a0000000025">
+<p>
+Designed by Belgian cryptographs Joan Daemen and Vincent Rijmen. 
+</p>
+</li>
+<li id="a0000000026">
+<p>
+Their algorithm became the official standard in 2002. 
+</p>
+</li>
+<li id="a0000000027">
+<p>
+It is fast, easy to implement, and requires little memory. 
+</p>
+</li>
+<li id="a0000000028">
+<p>
+<b class="bfseries">Not</b> a Feistel system like DES, as everything is considered as one block: no splitting. 
+</p>
+</li>
+<li id="a0000000029">
+<p>
+It is a substitution-permutation system. 
+</p>
+</li>
+</ul>
+</div>
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table> </div>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="development_of_a_2">Development of AES</h2>
+</header>
+<ul class="itemize" id="a0000000030">
+<li id="a0000000031">
+<p>
+Like DES it is a block cipher. 
+</p>
+</li>
+<li id="a0000000032">
+<p>
+Keys are of length 128, 192, or 256 bits, compared to DES’s 56-bit keys. 
+</p>
+</li>
+<li id="a0000000033">
+<p>
+For the 128-bit version this means that there are 
+</p>
+<span class="dmath">\[  2^{128} \approx 3.4 \times 10^{38}  \]</span>
+<p>
+ possible keys: much more than even Triple DES. 
+</p>
+</li>
+<li id="a0000000034">
+<p>
+Each block is 16 bytes (128 bits) arranged as an array of 4 rows and 4 columns. 
+</p>
+</li>
+<li id="a0000000035">
+<p>
+AES uses 10 rounds (128-bit key), 12 rounds (192-bit key), or 14 rounds (256-bit key) using round keys based on the original key, plus a 0th round using the original key. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="aes_scheme_128_bits">AES Scheme: 128 Bits</h2>
+</header>
+<div class="centered"> <figure>
+<p>
+<img alt="\includegraphics[scale=0.2]{images/AES-scheme.png}" src="images/img-0002.png" style="width:202.60000000000002px; height:236.8px"/>
+</p>
+</figure> </div>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="the_input">The Input</h2>
+</header>
+<p>
+ AES-128 is a block cipher, using blocks of 128 bits made up of 16 bytes. These are arranged in an array with 4 rows and 4 columns. E.g., if the plaintext is <span class="ttfamily">to be or not to be that is the question...</span>, then the array is represented in hex as 
+</p>
+<span class="dmath">\[  \begin{bmatrix} \end{bmatrix} t &amp;  o &amp;  t &amp;  e \\ o &amp;  r &amp;  t &amp;  t \\ b &amp;  n &amp;  o &amp;  h \\ e &amp;  o &amp;  b &amp;  a \end{bmatrix} = \begin{bmatrix} \end{bmatrix} 74 &amp;  6F &amp;  74 &amp;  65 \\ 6F &amp;  72 &amp;  74 &amp;  74 \\ 62 &amp;  6E &amp;  6E &amp;  68 \\ 65 &amp;  6F &amp;  62 &amp;  61 \end{bmatrix}.  \]</span>
+<p>
+ (Recall that each lower case letter is represented by an 8-bit binary number in ASCII. E.g., <span class="ttfamily">t</span> \(= 0111 \,  0100_2 = 74_{16}\).) 
+</p>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="addroundkey">AddRoundKey</h2>
+</header>
+<p>
+ The round keys are derived from the original keys (more on that later). At this stage we perform a bitwise <span class="ttfamily">XOR</span> with the plaintext, before beginning the first round. The 0th round key is the original key, where the columns are denoted by \(W(0)\), \(W(1)\), \(W(2)\), and \(W(3)\), respectively. 
+</p>
+<span class="dmath">\[  K \oplus P = \begin{bmatrix} \end{bmatrix} 0F &amp;  47 &amp;  0C &amp;  AF \\ 15 &amp;  D9 &amp;  B7 &amp;  7F \\ 71 &amp;  E8 &amp;  AD &amp;  67 \\ C9 &amp;  59 &amp;  D6 &amp;  98 \end{bmatrix} \oplus \begin{bmatrix} \end{bmatrix} 74 &amp;  6F &amp;  74 &amp;  65 \\ 6F &amp;  72 &amp;  74 &amp;  74 \\ 62 &amp;  6E &amp;  6E &amp;  68 \\ 65 &amp;  6F &amp;  62 &amp;  61 \end{bmatrix} = \begin{bmatrix} \end{bmatrix} 7B &amp;  28 &amp;  78 &amp;  CA \\ 7A &amp;  AB &amp;  C3 &amp;  0B \\ 13 &amp;  86 &amp;  C3 &amp;  0F \\ AC &amp;  36 &amp;  B4 &amp;  F9 \\ \end{bmatrix}.  \]</span>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="bytesub">ByteSub</h2>
+</header>
+<p>
+ In the ByteSub stage we replace each entry in the array using the Rijndael S-Box. We determine the row number using the first hex digit (first byte) and the column by the second hex digit (second byte). 
+</p>
+<span class="dmath">\[  \begin{bmatrix} \end{bmatrix} 7B &amp;  28 &amp;  78 &amp;  CA \\ 7A &amp;  AB &amp;  C3 &amp;  0B \\ 13 &amp;  86 &amp;  C3 &amp;  0F \\ AC &amp;  36 &amp;  B4 &amp;  F9 \\ \end{bmatrix}  \]</span>
+<p>
+ E.g., the first entry is \(7B\), which corresponds to the 7th row and column \(B\), the 11th column. 
+</p>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="rijndael_s_box">Rijndael S-Box</h2>
+</header>
+<p>
+<small class="small"> <div class="table" id="a0000000036">
+<div class="centered"><table class="tabular">
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries"></b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">0</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">1</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">2</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">3</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">4</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">5</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">6</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">7</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">8</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">9</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">A</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">B</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">C</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">D</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">E</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">F</b>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">0</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 63 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 7c 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 77 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 7b 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ f2 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 6b 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 6f 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ c5 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 30 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 01 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 67 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 2b 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ fe 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ d7 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ab 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 76 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">1</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ca 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 82 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ c9 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 7d 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ fa 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 59 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 47 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ f0 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ad 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ d4 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ a2 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ af 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 9c 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ a4 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 72 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ c0 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">2</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ b7 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ fd 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 93 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 26 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 36 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 3f 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ f7 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ cc 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 34 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ a5 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ e5 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ f1 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 71 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ d8 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 31 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 15 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">3</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 04 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ c7 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 23 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ c3 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 18 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 96 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 05 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 9a 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 07 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 12 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 80 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ e2 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ eb 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 27 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ b2 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 75 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">4</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 09 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 83 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 2c 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 1a 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 1b 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 6e 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 5a 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ a0 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 52 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 3b 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ d6 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ b3 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 29 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ e3 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 2f 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 84 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">5</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 53 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ d1 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 00 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ed 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 20 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ fc 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ b1 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 5b 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 6a 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ cb 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ be 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 39 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 4a 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 4c 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 58 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ cf 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">6</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ d0 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ef 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ aa 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ fb 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 43 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 4d 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 33 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 85 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 45 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ f9 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 02 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 7f 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 50 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 3c 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 9f 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ a8 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">7</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 51 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ a3 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 40 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 8f 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 92 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 9d 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 38 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ f5 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ bc 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ b6 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ da 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 21 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 10 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ff 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ f3 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ d2 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">8</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ cd 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 0c 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 13 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ec 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 5f 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 97 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 44 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 17 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ c4 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ a7 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 7e 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 3d 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 64 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 5d 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 19 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 73 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">9</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 60 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 81 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 4f 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ dc 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 22 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 2a 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 90 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 88 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 46 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ee 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ b8 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 14 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ de 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 5e 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 0b 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ db 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">A</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ e0 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 32 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 3a 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 0a 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 49 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 06 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 24 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 5c 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ c2 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ d3 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ac 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 62 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 91 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 95 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ e4 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 79 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">B</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ e7 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ c8 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 37 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 6d 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 8d 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ d5 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 4e 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ a9 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 6c 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 56 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ f4 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ea 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 65 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 7a 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ae 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 08 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">C</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ba 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 78 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 25 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 2e 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 1c 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ a6 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ b4 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ c6 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ e8 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ dd 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 74 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 1f 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 4b 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ bd 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 8b 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 8a 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">D</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 70 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 3e 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ b5 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 66 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 48 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 03 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ f6 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 0e 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 61 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 35 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 57 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ b9 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 86 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ c1 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 1d 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 9e 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">E</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ e1 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ f8 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 98 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 11 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 69 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ d9 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 8e 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 94 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 9b 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 1e 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 87 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ e9 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ce 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 55 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 28 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ df 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<b class="bfseries">F</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 8c 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ a1 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 89 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 0d 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ bf 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ e6 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 42 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 68 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 41 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 99 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 2d 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 0f 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ b0 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 54 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ bb 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 16 
+</p>
+</td>
+</tr>
+</table> </div>
+</div> </small>
+</p>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="rijndael_s_b_1">Rijndael S-Box</h2>
+</header>
+<p>
+<small class="small"> <div class="table" id="a0000000037">
+<div class="centered"><table class="tabular">
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries"></b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">0</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">1</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">2</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">3</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">4</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">5</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">6</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">7</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">8</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">9</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">A</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">B</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">C</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">D</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">E</b>
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+<b class="bfseries">F</b>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">0</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 63 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 7c 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 77 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 7b 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ f2 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 6b 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 6f 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ c5 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 30 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 01 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 67 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 2b 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ fe 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ d7 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ab 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 76 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">1</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ca 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 82 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ c9 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 7d 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ fa 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 59 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 47 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ f0 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ad 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ d4 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ a2 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ af 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 9c 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ a4 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 72 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ c0 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">2</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ b7 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ fd 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 93 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 26 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 36 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 3f 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ f7 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ cc 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 34 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ a5 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ e5 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ f1 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 71 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ d8 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 31 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 15 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">3</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 04 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ c7 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 23 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ c3 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 18 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 96 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 05 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 9a 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 07 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 12 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 80 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ e2 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ eb 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 27 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ b2 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 75 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">4</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 09 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 83 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 2c 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 1a 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 1b 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 6e 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 5a 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ a0 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 52 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 3b 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ d6 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ b3 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 29 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ e3 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 2f 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 84 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">5</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 53 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ d1 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 00 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ed 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 20 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ fc 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ b1 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 5b 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 6a 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ cb 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ be 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 39 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 4a 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 4c 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 58 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ cf 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">6</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ d0 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ef 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ aa 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ fb 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 43 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 4d 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 33 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 85 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 45 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ f9 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 02 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 7f 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 50 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 3c 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 9f 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ a8 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">7</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 51 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ a3 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 40 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 8f 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 92 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 9d 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 38 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ f5 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ bc 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ b6 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ da 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+<span style="color:#FF0000"><b class="bfseries">21</b></span>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 10 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ff 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ f3 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ d2 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">8</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ cd 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 0c 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 13 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ec 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 5f 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 97 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 44 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 17 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ c4 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ a7 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 7e 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 3d 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 64 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 5d 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 19 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 73 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">9</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 60 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 81 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 4f 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ dc 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 22 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 2a 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 90 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 88 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 46 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ee 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ b8 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 14 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ de 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 5e 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 0b 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ db 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">A</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ e0 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 32 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 3a 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 0a 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 49 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 06 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 24 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 5c 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ c2 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ d3 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ac 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 62 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 91 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 95 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ e4 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 79 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">B</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ e7 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ c8 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 37 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 6d 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 8d 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ d5 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 4e 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ a9 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 6c 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 56 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ f4 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ea 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 65 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 7a 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ae 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 08 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">C</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ba 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 78 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 25 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 2e 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 1c 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ a6 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ b4 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ c6 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ e8 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ dd 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 74 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 1f 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 4b 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ bd 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 8b 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 8a 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">D</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 70 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 3e 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ b5 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 66 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 48 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 03 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ f6 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 0e 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 61 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 35 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 57 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ b9 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 86 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ c1 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 1d 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 9e 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">E</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ e1 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ f8 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 98 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 11 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 69 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ d9 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 8e 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 94 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 9b 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 1e 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 87 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ e9 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ ce 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 55 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ 28 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ df 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+<b class="bfseries">F</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 8c 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ a1 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 89 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 0d 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ bf 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ e6 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 42 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 68 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 41 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 99 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 2d 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 0f 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ b0 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 54 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ bb 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ 16 
+</p>
+</td>
+</tr>
+</table> </div>
+</div> </small>
+</p>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="bytes_1">ByteSub</h2>
+</header>
+<p>
+ In the ByteSub stage we replace each entry in the array using the Rijndael S-Box. We determine the row number using the first hex digit (first byte) and the column by the second hex digit (second byte). 
+</p>
+<span class="dmath">\[  \begin{bmatrix} \end{bmatrix} 7B &amp;  28 &amp;  78 &amp;  CA \\ 7A &amp;  AB &amp;  C3 &amp;  0B \\ 13 &amp;  86 &amp;  C3 &amp;  0F \\ AC &amp;  36 &amp;  B4 &amp;  F9 \\ \end{bmatrix}  \]</span>
+<p>
+ E.g., the first entry is \(7B\), which corresponds to the 7th row and column \(B\), the 11th column. This gives \(21\). Doing this for each entry gives the following array. 
+</p>
+<span class="dmath">\[  \begin{bmatrix} \end{bmatrix} 21 &amp;  34 &amp;  BC &amp;  74 \\ DA &amp;  62 &amp;  2E &amp;  2B \\ 7D &amp;  44 &amp;  2E &amp;  76 \\ 91 &amp;  05 &amp;  8D &amp;  99 \\ \end{bmatrix}  \]</span>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="shiftrow">ShiftRow</h2>
+</header>
+<p>
+ The ShiftRow stage is quite simple. Each row is shifted by a certain amount: 
+</p>
+<ul class="itemize" id="a0000000038">
+<li id="a0000000039">
+<p>
+The first row doesn’t shift. 
+</p>
+</li>
+<li id="a0000000040">
+<p>
+The second row shifts one place to the left. 
+</p>
+</li>
+<li id="a0000000041">
+<p>
+The third row shifts two places to the left. 
+</p>
+</li>
+<li id="a0000000042">
+<p>
+The fourth row shifts three places to the left. 
+</p>
+</li>
+</ul>
+<span class="dmath">\[  \begin{bmatrix} \end{bmatrix} 21 &amp;  34 &amp;  BC &amp;  74 \\ DA &amp;  62 &amp;  2E &amp;  2B \\ 7D &amp;  44 &amp;  2E &amp;  76 \\ 91 &amp;  05 &amp;  8D &amp;  99 \\ \end{bmatrix} \mapsto \begin{bmatrix} \end{bmatrix} 21 &amp;  34 &amp;  BC &amp;  74 \\ 62 &amp;  2E &amp;  2B &amp;  DA \\ 2E &amp;  76 &amp;  7D &amp;  44 \\ 99 &amp;  91 &amp;  05 &amp;  8D \\ \end{bmatrix}  \]</span>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="mixcolumn">MixColumn</h2>
+</header>
+<p>
+ We won’t fully investigate what happens in the MixColum stage, as the mathematics gets rather complicated. It depends on an area of mathematics called Galois Fields. In particular, the Galois field \(GF(2^8)\). In practice, this is achieved by shifting bits and applying <span class="ttfamily">XOR</span>, but the mathematical underpinnings ensure that the scheme works out nicely. 
+</p>
+<p>
+Each column of the array is replaced by a combination of the bytes in the column, where \(\oplus \) means the usual bitwise <span class="ttfamily">XOR</span>, but \(2a\), \(3a\), \(2b\), etc. are <b class="bfseries">not</b> by simple multiplication. 
+</p>
+<span class="dmath">\[  \begin{bmatrix} \end{bmatrix} a \\ b \\ c \\ d \\ \end{bmatrix} \mapsto \begin{bmatrix} \end{bmatrix} 2a \oplus 3b \oplus c \oplus d \\ a \oplus 2b \oplus 3c \oplus d \\ a \oplus b \oplus 2c \oplus 3d \\ 3a \oplus b \oplus c \oplus 2d \\ \end{bmatrix}  \]</span>
+<p>
+ In our example, this would be as follows. 
+</p>
+<span class="dmath">\[  \begin{bmatrix} \end{bmatrix} 21 &amp;  34 &amp;  BC &amp;  74 \\ 62 &amp;  2E &amp;  2B &amp;  DA \\ 2E &amp;  76 &amp;  7D &amp;  44 \\ 99 &amp;  91 &amp;  05 &amp;  8D \\ \end{bmatrix} \mapsto \begin{bmatrix} \end{bmatrix} 58 &amp;  FD &amp;  66 &amp;  54 \\ 13 &amp;  63 &amp;  68 &amp;  9A \\ B9 &amp;  5E &amp;  62 &amp;  AA \\ 0D &amp;  3D &amp;  83 &amp;  03 \\ \end{bmatrix}  \]</span>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="addroundk_1">AddRoundKey</h2>
+</header>
+<p>
+ At this stage, we perform another <span class="ttfamily">XOR</span> operation with the round key. The keys are generated in a fairly straightforward way, using some modular arithmetic, the Rijndael S-Box, and some more mathematical operations in \(GF(2^8)\). 
+</p>
+<ul class="itemize" id="a0000000043">
+<li id="a0000000044">
+<p>
+We then perform another 8 rounds, to get to the end of round 9. 
+</p>
+</li>
+<li id="a0000000045">
+<p>
+The final round is Round 10: 
+</p>
+<ol class="enumerate" id="a0000000046">
+<li id="a0000000047" value="1">
+<p>
+ByteSub Transformation, 
+</p>
+</li>
+<li id="a0000000048" value="2">
+<p>
+ShiftRow Transformation, 
+</p>
+</li>
+<li id="a0000000049" value="3">
+<p>
+AddRoundKey. 
+</p>
+</li>
+</ol>
+</li>
+<li id="a0000000050">
+<p>
+Round 10 has no MixColumns Transformation, for decryption purposes. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="addroundk_2">AddRoundKey</h2>
+</header>
+<ul class="itemize" id="a0000000051">
+<li id="a0000000052">
+<p>
+10 rounds for 128-bit key, 12 rounds for 192-bit key, 14 rounds for 256-bit key. Why 10 rounds? 
+</p>
+</li>
+<li id="a0000000053">
+<p>
+There were known attacks up to 6 rounds which were better than brute force. 
+</p>
+</li>
+<li id="a0000000054">
+<p>
+An extra four rounds added a good margin of safety, and the number of rounds could always be increased if required. 
+</p>
+</li>
+<li id="a0000000055">
+<p>
+Decryption is a similar process, but not simply the direct inverse of the encryption process: not symmetric. 
+</p>
+<ol class="enumerate" id="a0000000056">
+<li id="a0000000057" value="1">
+<p>
+AddRoundKey is its own inverse, 
+</p>
+</li>
+<li id="a0000000058" value="2">
+<p>
+InverseByteSub uses an an Inverse S-Box, 
+</p>
+</li>
+<li id="a0000000059" value="3">
+<p>
+InverseShiftRow shifts rows to the right, instead of left, 
+</p>
+</li>
+<li id="a0000000060" value="4">
+<p>
+InvMixColumn is more complicated than the encryption process, but relies on a similar mathematical manipulation. 
+</p>
+</li>
+</ol>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="modes_of_operation">Modes of Operation</h2>
+</header>
+<p>
+ Five standard ways of implementing AES: 
+</p>
+<ul class="itemize" id="a0000000061">
+<li id="a0000000062">
+<p>
+Mode 1: Electronic Code Book - not recommended due to plaintext attacks 
+</p>
+</li>
+<li id="a0000000063">
+<p>
+Mode 2: Cipher Block Chaining 
+</p>
+</li>
+<li id="a0000000064">
+<p>
+Mode 3: Cipher Feedback Mode 
+</p>
+</li>
+<li id="a0000000065">
+<p>
+Mode 4: Output Feedback Mode 
+</p>
+</li>
+<li id="a0000000066">
+<p>
+Mode 5: Counter Mode - NIST recommended mode (2001) 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="where_is_aes_used_">Where is AES used?</h2>
+</header>
+<p>
+ AES was officially ratified in 2002, with the intention that it takes over from Triple-DES in most applications: 
+</p>
+<ul class="itemize" id="a0000000067">
+<li id="a0000000068">
+<p>
+Compression Tools: WinZip, RAR, 7-Zip. 
+</p>
+</li>
+<li id="a0000000069">
+<p>
+Wireless Connections: WPA2. 
+</p>
+</li>
+<li id="a0000000070">
+<p>
+VPNs: IPsec. 
+</p>
+</li>
+<li id="a0000000071">
+<p>
+Password Managers: LastPass. 
+</p>
+</li>
+<li id="a0000000072">
+<p>
+Communication: Signal Protocol in WhatsApp, Signal, Facebook Messenger, etc. 
+</p>
+</li>
+</ul>
+<p>
+ The common Cipher Block Chaining mode of operation is processor intensive, so some chip designs include partial AES instructions to improve efficiency: 
+</p>
+<ul class="itemize" id="a0000000073">
+<li id="a0000000074">
+<p>
+x86-64 architecture processors. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="how_secure_is_aes_">How secure is AES?</h2>
+</header>
+<ul class="itemize" id="a0000000075">
+<li id="a0000000076">
+<p>
+In 2008 AES was reapproved to 2030. 
+</p>
+</li>
+<li id="a0000000077">
+<p>
+SECRET: 128, 192, or 256-bit keys. 
+</p>
+</li>
+<li id="a0000000078">
+<p>
+TOP SECRET: 192 or 256-bit keys. 
+</p>
+</li>
+<li id="a0000000079">
+<p>
+Best brute force attack to date was against a 64-bit key. 
+</p>
+</li>
+<li id="a0000000080">
+<p>
+Many cryptographers research potential attacks on AES using more nuanced techniques. 
+</p>
+</li>
+</ul>
+<p>
+With that in mind, there is some concern that quantum computation will allow various techniques to be brought to bear on the problem of cracking AES. But the NIST doesn’t seem too worried for now: 
+</p>
+<p>
+‘<em>Taking these mitigating factors into account, it is quite likely that Grover’s algorithm will provide little or no advantage in attacking AES, and AES 128 will remain secure for decades to come.</em>’ 
+</p>
+</section>
+<script id="plastex-labels" type="application/json">{}</script>
+    </article>
+
+        </main>
+
+		
+		<footer>
+	<hr>
+
+    <nav id="footer-nav">
+        <a href="#">Back to top</a>
+    </nav>
+
+    <div id="footer-text">
+        <p>Generated using <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.2.1, written by the Digital Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
+        <p>This page last generated: 2025-02-18</p>
+        
+        
+        
+    </div>
+</footer>
+		
+
+        
+
+        <svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="icon-defs"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <g id="cog">
+            <path 
+                style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z"
+            />
+        </g>
+        <g id="pdf">
+            <path
+                style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z"
+            />
+        </g>
+        <g id="slides">
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,21.25 30,137.5"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 90,21.25 60,158.75"
+            />
+            <rect
+                style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="119.79137"
+                height="82.273766"
+                x="30.104315"
+                y="36.476234"
+                ry="4.7737675"
+                rx="4.7737675"
+            />
+            <rect
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="140"
+                height="5.2262344"
+                x="20"
+                y="31.25"
+                ry="1.6724058"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,66.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,76.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,86.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,56.25 h 50"
+            />
+            <path
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z"
+            />
+        </g>
+
+        <g id="notebook">
+            <path
+                style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="58.699139"
+               cy="59.503937"
+               r="3.8077738"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="113.59385"
+               cy="52.885151"
+               r="4.9348516"
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z"
+           
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z"
+              
+            />
+            <ellipse
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="63.813011"
+               cy="125.96338"
+               rx="6.4332962"
+               ry="6.4347191"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="M 34,46.266514 V 62.316215"
+            
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="M 34,77.849849 V 93.89955"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 34,109.43318 v 16.0497"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0"
+            />
+        </g>
+
+        <g id="fullscreen">
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+               d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="M 150.95833,68.801471 V 28.958332 h -39.84314"
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="m 28.958332,111.11519 v 39.84314 h 39.843139"
+            />
+        </g>
+    </defs>
+</svg>
+    </body>
+</html>
