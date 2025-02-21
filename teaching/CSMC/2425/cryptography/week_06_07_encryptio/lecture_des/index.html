@@ -7,7 +7,7 @@
             <meta name="robots" content="noindex">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta name="author" content="Alex Corner" />
-            <meta name="date" content="2025-02-18" />
+            <meta name="date" content="2025-02-20" />
         
 
         <title>Lecture - DES | 55-408808: Introduction to Cyber Security, Maths and Cryptography</title>
@@ -15,41 +15,41 @@
         
     
     
-            <link rel="stylesheet" href="../../../static/styles.css?build_time=1739874345.492142">
+            <link rel="stylesheet" href="../../../static/styles.css?build_time=1740052988.709879">
             
             
         
-    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1739874345.492142">
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1740052988.709879">
 
-    <link rel="stylesheet" href="../../../static/print.css?build_time=1739874345.492142">
+    <link rel="stylesheet" href="../../../static/print.css?build_time=1740052988.709879">
 
 
         
     
 			<script>
-				var chirun_static_url = new URL('../../../static?build_time=1739874345.492142', location.href);
+				var chirun_static_url = new URL('../../../static?build_time=1740052988.709879', location.href);
 			</script>
 
             
-                <script defer src="../../../static/mathjax_config.js?build_time=1739874345.492142"></script>
+                <script defer src="../../../static/mathjax_config.js?build_time=1740052988.709879"></script>
                 <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             
 
-            <script type="module" src="../../../static/localisation.js?build_time=1739874345.492142"></script>
+            <script type="module" src="../../../static/localisation.js?build_time=1740052988.709879"></script>
 
-            <script defer src="../../../static/customisation.js?build_time=1739874345.492142"></script>
+            <script defer src="../../../static/customisation.js?build_time=1740052988.709879"></script>
 
             
 
             
         
-    <script defer src="../../../static/code.js?build_time=1739874345.492142" type="module"></script>
-    <script defer src="../../../static/embed_numbas.js?build_time=1739874345.492142" type="module"></script>
-    <script defer src="../../../static/embed_qrcode.js?build_time=1739874345.492142" type="module"></script>
+    <script defer src="../../../static/code.js?build_time=1740052988.709879" type="module"></script>
+    <script defer src="../../../static/embed_numbas.js?build_time=1740052988.709879" type="module"></script>
+    <script defer src="../../../static/embed_qrcode.js?build_time=1740052988.709879" type="module"></script>
 
 
         <template id="runnable-code-template">
-            <link rel="stylesheet" href="../../../static/code.css?build_time=1739874345.492142">
+            <link rel="stylesheet" href="../../../static/code.css?build_time=1740052988.709879">
             <div class="runnable-code-wrapper">
                 <section class="fullscreenable code">
                     <div id="code"></div>
@@ -230,7 +230,7 @@
         </template>
 
         <template id="embed-numbas-template">
-            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1739874345.492142">
+            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1740052988.709879">
             <details id="wrapper" data-completion-status="incomplete">
                 <summary>
                     <h1 id="title">Test Yourself</h1>
@@ -476,6 +476,15 @@
 </li>
 
 <li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-lecture_aims" href="#lecture_aims">
+        
+        Lecture Aims
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
     <a role="treeitem"  aria-owns="#toc-subtree-xor_exclusive_or" href="#xor_exclusive_or">
         
         <span class="ttfamily">XOR</span>: Exclusive-<span class="ttfamily">OR</span>
@@ -629,42 +638,6 @@
 </li>
 
 <li role="none" data-toc-level="2" class="toc-header ">
-    <a role="treeitem"  aria-owns="#toc-subtree-modes_of_operation" href="#modes_of_operation">
-        
-        Modes of Operation
-    </a>
-
-    
-</li>
-
-<li role="none" data-toc-level="2" class="toc-header ">
-    <a role="treeitem"  aria-owns="#toc-subtree-modes_of_operation_e" href="#modes_of_operation_e">
-        
-        Modes of Operation: Electronic Code Book
-    </a>
-
-    
-</li>
-
-<li role="none" data-toc-level="2" class="toc-header ">
-    <a role="treeitem"  aria-owns="#toc-subtree-modes_of_operation_c" href="#modes_of_operation_c">
-        
-        Modes of Operation: Cipher Block Chaining
-    </a>
-
-    
-</li>
-
-<li role="none" data-toc-level="2" class="toc-header ">
-    <a role="treeitem"  aria-owns="#toc-subtree-modes_of_operation_1" href="#modes_of_operation_1">
-        
-        Modes of Operation: ECB vs Other Modes
-    </a>
-
-    
-</li>
-
-<li role="none" data-toc-level="2" class="toc-header ">
     <a role="treeitem"  aria-owns="#toc-subtree-breaking_des" href="#breaking_des">
         
         Breaking DES
@@ -709,6 +682,51 @@
     
 </li>
 
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-just_the_tip_of_the_" href="#just_the_tip_of_the_">
+        
+        Just the tip of the iceberg
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-modes_of_operation" href="#modes_of_operation">
+        
+        Modes of Operation
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-modes_of_operation_e" href="#modes_of_operation_e">
+        
+        Modes of Operation: Electronic Code Book
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-modes_of_operation_c" href="#modes_of_operation_c">
+        
+        Modes of Operation: Cipher Block Chaining
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-modes_of_operation_1" href="#modes_of_operation_1">
+        
+        Modes of Operation: ECB vs Other Modes
+    </a>
+
+    
+</li>
+
             
         </ol>
     
@@ -737,7 +755,7 @@
 <ul class="itemize" id="a0000000002">
 <li id="a0000000003">
 <p>
-Mechanical ciphers like Enigma allowed much more complex algorithms to be used for encryption. 
+Mechanical ciphers like Enigma allowed much more complex algorithms to be used for encryption - see the optional lecture slides. 
 </p>
 </li>
 <li id="a0000000004">
@@ -771,23 +789,40 @@ In the 1970s two very different breakthroughs changed the face of cryptography:
 </section>
 <section class="beamer-frame">
 <header>
+<h2 class="beamer-frame-title" id="lecture_aims">Lecture Aims</h2>
+</header>
+<ol class="enumerate" id="a0000000010">
+<li id="a0000000011" value="1">
+<p>
+Understand how the <span class="ttfamily">XOR</span> operation works. 
+</p>
+</li>
+<li id="a0000000012" value="2">
+<p>
+Get a sense of how DES operates. 
+</p>
+</li>
+</ol>
+</section>
+<section class="beamer-frame">
+<header>
 <h2 class="beamer-frame-title" id="xor_exclusive_or"><span class="ttfamily">XOR</span>: Exclusive-<span class="ttfamily">OR</span></h2>
 </header>
-<ul class="itemize" id="a0000000010">
-<li id="a0000000011">
+<ul class="itemize" id="a0000000013">
+<li id="a0000000014">
 <p>
 There are various ways to write the exclusive-<span class="ttfamily">OR</span>. We might write \(x\) <span class="ttfamily">XOR</span> \(y\), or in logical notation \(x \oplus y\). (Even sometimes \(\underline{\vee }\).) 
 </p>
 </li>
-<li id="a0000000012">
+<li id="a0000000015">
 <p>
 It is described by the truth table below: 
 </p>
 <span class="dmath">\[  \begin{array}{|cc|c|} \hline x &amp;  y &amp;  x \oplus y \\ \hline 0 &amp;  0 &amp;  0 \\ 0 &amp;  1 &amp;  1 \\ 1 &amp;  0 &amp;  1 \\ 1 &amp;  1 &amp;  0 \\ \end{array}  \]</span>
 </li>
-<li id="a0000000013">
+<li id="a0000000016">
 <p>
-This is in fact the same as performing modular arithmetic using modulus \(2\): \(0 + 0 = 0 = 1 + 1 \operatorname {mod} 2\) and \(1 + 0 = 1 = 0 + 1 \operatorname {mod} 2\). 
+This is the same as performing modular arithmetic using modulus \(2\): \(0 + 0 = 0 = 1 + 1 \operatorname {mod} 2\) and \(1 + 0 = 1 = 0 + 1 \operatorname {mod} 2\). 
 </p>
 </li>
 </ul>
@@ -797,23 +832,23 @@ This is in fact the same as performing modular arithmetic using modulus \(2\): \
 <h2 class="beamer-frame-title" id="bitwise_xor">Bitwise <span class="ttfamily">XOR</span></h2>
 </header>
 <span class="dmath">\[  \begin{array}{|cc|c|} \hline x &amp;  y &amp;  x \oplus y \\ \hline 0 &amp;  0 &amp;  0 \\ 0 &amp;  1 &amp;  1 \\ 1 &amp;  0 &amp;  1 \\ 1 &amp;  1 &amp;  0 \\ \end{array}  \]</span>
-<ul class="itemize" id="a0000000014">
-<li id="a0000000015">
+<ul class="itemize" id="a0000000017">
+<li id="a0000000018">
 <p>
 We can apply this operator to whole strings of bits. 
 </p>
 </li>
-<li id="a0000000016">
+<li id="a0000000019">
 <p>
 For example, calculating \(1010 \oplus 1011\) we perform <span class="ttfamily">XOR</span> on the bits individually. 
 </p>
 </li>
-<li id="a0000000017">
+<li id="a0000000020">
 <p>
 So \(1 \,  0 \,  1 \,  0 \oplus 1 \,  0 \,  1 \,  1 = 0 \,  0 \,  0 \,  1\). 
 </p>
 </li>
-<li id="a0000000018">
+<li id="a0000000021">
 <p>
 Digital data is generally stored in binary or hex, using bits, so this type of operation is well-suited for implementation in a computer-aided cipher scheme. 
 </p>
@@ -824,7 +859,7 @@ Digital data is generally stored in binary or hex, using bits, so this type of o
 <header>
 <h2 class="beamer-frame-title" id="ascii_american_stand">ASCII: American Standard Code for Information Interchange</h2>
 </header>
-<div class="table" id="a0000000019">
+<div class="table" id="a0000000022">
 <table class="tabular">
 <tr><td colspan="" rowspan="" style="text-align:center"><p>
  DEC 
@@ -1028,13 +1063,13 @@ Digital data is generally stored in binary or hex, using bits, so this type of o
 </tr>
 </table>
 </div>
-<ul class="itemize" id="a0000000020">
-<li id="a0000000021">
+<ul class="itemize" id="a0000000023">
+<li id="a0000000024">
 <p>
 A standard way to encode text and other characters. Each character is represented by a 7-bit binary string. 
 </p>
 </li>
-<li id="a0000000022">
+<li id="a0000000025">
 <p>
 Microsoft Excel uses 8-bit ANSI as above - not <em>quite</em> the same mapping of characters to strings. 
 </p>
@@ -1045,33 +1080,33 @@ Microsoft Excel uses 8-bit ANSI as above - not <em>quite</em> the same mapping o
 <header>
 <h2 class="beamer-frame-title" id="the_one_time_pad">The One-Time Pad</h2>
 </header>
-<ul class="itemize" id="a0000000023">
-<li id="a0000000024">
+<ul class="itemize" id="a0000000026">
+<li id="a0000000027">
 <p>
 Edgar Allen Poe: “Human ingenuity cannot concoct a cipher which human ingenuity cannot resolve.” Wrong. 
 </p>
 </li>
-<li id="a0000000025">
+<li id="a0000000028">
 <p>
 The original idea of a <b class="bfseries">one-time pad</b> was developed in 1918 by Vernam and Mauborgne, implemented mechanically. 
 </p>
 </li>
-<li id="a0000000026">
+<li id="a0000000029">
 <p>
 The idea is to write the plaintext in binary, e.g., using ASCII. 
 </p>
 </li>
-<li id="a0000000027">
+<li id="a0000000030">
 <p>
 Then a random key of 0s and 1s is chosen which is the same length as the plaintext. 
 </p>
 </li>
-<li id="a0000000028">
+<li id="a0000000031">
 <p>
 Encryption is performed via the <span class="ttfamily">XOR</span> operation and the key is then discarded. 
 </p>
 </li>
-<li id="a0000000029">
+<li id="a0000000032">
 <p>
 Shannon and Kotelnikov had both showed that this encryption scheme is <em>theoretically</em> unbreakable. 
 </p>
@@ -1082,23 +1117,23 @@ Shannon and Kotelnikov had both showed that this encryption scheme is <em>theore
 <header>
 <h2 class="beamer-frame-title" id="the_one_time_p_1">The One-Time Pad</h2>
 </header>
-<ul class="itemize" id="a0000000030">
-<li id="a0000000031">
+<ul class="itemize" id="a0000000033">
+<li id="a0000000034">
 <p>
 Theoretically unbreakable, but not really very practical. 
 </p>
-<ol class="enumerate" id="a0000000032">
-<li id="a0000000033" value="1">
+<ol class="enumerate" id="a0000000035">
+<li id="a0000000036" value="1">
 <p>
 There is a problem generating a truly random sequence. Computers can never produce truly random numbers, only <b class="bfseries">pseudo-random</b> numbers, which are prone to attack. 
 </p>
 </li>
-<li id="a0000000034" value="2">
+<li id="a0000000037" value="2">
 <p>
 It requires a very long key which is computationally expensive to produce and difficult to distribute securely. 
 </p>
 </li>
-<li id="a0000000035" value="3">
+<li id="a0000000038" value="3">
 <p>
 A new key is required each time. 
 </p>
@@ -1122,28 +1157,28 @@ A new key is required each time.
 </td>
 <td colspan="" rowspan="" style="text-align:left"><table class="tabular">
 <tr><td colspan="" rowspan="" style="text-align:left"><p>
-<div class="parbox" id="a0000000036" style="width: 234.8775pt"> <ul class="itemize" id="a0000000037">
-<li id="a0000000038">
+<div class="parbox" id="a0000000039" style="width: 234.8775pt"> <ul class="itemize" id="a0000000040">
+<li id="a0000000041">
 <p>
 <b class="bfseries">DES:</b> <b class="bfseries">D</b>ata <b class="bfseries">E</b>ncryption <b class="bfseries">S</b>tandard. 
 </p>
 </li>
-<li id="a0000000039">
+<li id="a0000000042">
 <p>
 Developed by <a href="https://www.technologyreview.com/2022/04/27/1048456/in-praise-of-the-feistel-network/">Horst Feistel</a> at IBM. 
 </p>
 </li>
-<li id="a0000000040">
+<li id="a0000000043">
 <p>
 The National Bureau of Standards held a competition in 1974: IBM submitted Lucifer. 
 </p>
 </li>
-<li id="a0000000041">
+<li id="a0000000044">
 <p>
 Dataseal \(\rightarrow \) Demonstration Cipher \(\rightarrow \) Demon \(\rightarrow \) Lucifer \(\rightarrow \) DES. 
 </p>
 </li>
-<li id="a0000000042">
+<li id="a0000000045">
 <p>
 Made the official worldwide standard in 1977. 
 </p>
@@ -1162,35 +1197,35 @@ Made the official worldwide standard in 1977.
 <header>
 <h2 class="beamer-frame-title" id="des_a_controversial_">DES: A Controversial Choice</h2>
 </header>
-<ul class="itemize" id="a0000000043">
-<li id="a0000000044">
+<ul class="itemize" id="a0000000046">
+<li id="a0000000047">
 <p>
 A large key size or length is an important part of a secure cryptographic system. 
 </p>
 </li>
-<li id="a0000000045">
+<li id="a0000000048">
 <p>
 Some people, such as Whitfield Diffie and Martin Hellman, believed the DES key size to be too small to be secure. 
 </p>
 </li>
-<li id="a0000000046">
+<li id="a0000000049">
 <p>
 It was 56 bits compared to IBM’s original Lucifer key size of 128 bits. 
 </p>
 </li>
-<li id="a0000000047">
+<li id="a0000000050">
 <p>
 Others believed the National Security Agency (NSA) had included a <b class="bfseries">trapdoor</b>: a secret weakness which could be exploited by the security agencies. 
 </p>
 </li>
-<li id="a0000000048">
+<li id="a0000000051">
 <p>
 The most widely used cryptographic method ever designed - largely used for secure financial transactions by banks. 
 </p>
 </li>
-<li id="a0000000049">
+<li id="a0000000052">
 <p>
-Expected to be used for 10 years from 1977. Triple-DES, or 3DES, developed in 1981 to be more secure, but is now also disallowed as of 2023. 
+Expected to be used for 10 years from 1977. Triple-DES, or 3DES, developed in 1981 to be more secure, but is now finally disallowed as of 2023. 
 </p>
 </li>
 </ul>
@@ -1199,28 +1234,28 @@ Expected to be used for 10 years from 1977. Triple-DES, or 3DES, developed in 19
 <header>
 <h2 class="beamer-frame-title" id="block_ciphers_vs_str">Block Ciphers vs. Stream Ciphers</h2>
 </header>
-<ul class="itemize" id="a0000000050">
-<li id="a0000000051">
+<ul class="itemize" id="a0000000053">
+<li id="a0000000054">
 <p>
 The ciphers we have seen so far have all been <b class="bfseries">stream ciphers</b>: each letter is encrypted separately. 
 </p>
 </li>
-<li id="a0000000052">
+<li id="a0000000055">
 <p>
 DES and many modern ciphers are a form of <b class="bfseries">block cipher</b>: how letters are encrypted depends on the letters around them. 
 </p>
 </li>
-<li id="a0000000053">
+<li id="a0000000056">
 <p>
 <b class="bfseries">Confusion:</b> Obscures the relationship between the key and the ciphertext - typically achieved with substitution. 
 </p>
 </li>
-<li id="a0000000054">
+<li id="a0000000057">
 <p>
 <b class="bfseries">Diffusion:</b> Spreads the influence of one plaintext bit over many ciphertext bits to hide statistical properties of the plaintext - typically achieved with transposition. 
 </p>
 </li>
-<li id="a0000000055">
+<li id="a0000000058">
 <p>
 <b class="bfseries">Multiple Rounds:</b> Intended to amplify the effect of confusion and diffusion. 
 </p>
@@ -1231,37 +1266,37 @@ DES and many modern ciphers are a form of <b class="bfseries">block cipher</b>: 
 <header>
 <h2 class="beamer-frame-title" id="generating_a_key">Generating a Key</h2>
 </header>
-<ul class="itemize" id="a0000000056">
-<li id="a0000000057">
+<ul class="itemize" id="a0000000059">
+<li id="a0000000060">
 <p>
 Keys in DES are of length 56, but are expanded by <b class="bfseries">parity bits</b> to be 64 bits. 
 </p>
 <span class="dmath">\[  0101100 \,  0001111 \,  1011110 \,  1001010 \,  1101001 \,  1010010 \,  0101001 \,  1110101  \]</span>
 </li>
-<li id="a0000000058">
+<li id="a0000000061">
 <p>
-The first seven bits (on the left) are \(0101100.\)
+The first seven bits (on the left) are \(0101100.\) 
 </p>
 </li>
-<li id="a0000000059">
+<li id="a0000000062">
 <p>
 We put an extra bit on the <em>right</em> to make an <em>odd</em> number of 1s in each 8-bit byte: 
 </p>
 <span class="dmath">\[  0101100\textcolor{red}{0}.  \]</span>
 </li>
-<li id="a0000000060">
+<li id="a0000000063">
 <p>
 In hex this is \(0101 \,  1000_2 = 58_{16}\). 
 </p>
 </li>
-<li id="a0000000061">
+<li id="a0000000064">
 <p>
 This is done for all bytes, which eventually gives the key as: 
 </p>
 <span class="dmath">\[  K = 0101100\textcolor{red}{0} \,  0001111\textcolor{red}{1} \,  1011110\textcolor{red}{0} \,  1001010\textcolor{red}{0} \,  1101001\textcolor{red}{1} \,  1010010{0} \,  0101001\textcolor{red}{0} \,  1110101\textcolor{red}{0}  \]</span>
 <span class="dmath">\[  K = \mbox{58 \,  1F \,  BC \,  94 \,  D3 \,  A4 \,  52 \,  EA.}  \]</span>
 </li>
-<li id="a0000000062">
+<li id="a0000000065">
 <p>
 DES consists of 16 <b class="bfseries">rounds</b>, each using a 48-bit <b class="bfseries">round key</b> \(K_i\) derived from the original 56-bit key \(K\). 
 </p>
@@ -1305,7 +1340,7 @@ DES consists of 16 <b class="bfseries">rounds</b>, each using a 48-bit <b class=
 <p>
  A 32-bit <em>right half</em> is expanded to 48-bits in the following way, by repeating some of the bits. 
 </p>
-<div class="table" id="a0000000063">
+<div class="table" id="a0000000066">
 <table class="tabular">
 <tr><td colspan="" rowspan="" style="text-align:center"><p>
  32 
@@ -1535,7 +1570,7 @@ DES consists of 16 <b class="bfseries">rounds</b>, each using a 48-bit <b class=
 <header>
 <h2 class="beamer-frame-title" id="des_scheme_s_boxes">DES Scheme: S-Boxes</h2>
 </header>
-<div class="table" id="a0000000064">
+<div class="table" id="a0000000067">
 <div class="centered"><table class="tabular">
 <tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
 <b class="bfseries">\(S_7\)</b>
@@ -1894,28 +1929,28 @@ DES consists of 16 <b class="bfseries">rounds</b>, each using a 48-bit <b class=
 </table> </div>
 </div>
 <span class="dmath">\[  K_1 \oplus E(R) = 100111 \,  100010 \,  101001 \,  010011 \,  010100 \,  000110 \,  011110 \,  100100.  \]</span>
-<ul class="itemize" id="a0000000065">
-<li id="a0000000066">
+<ul class="itemize" id="a0000000068">
+<li id="a0000000069">
 <p>
-Each block passes through a separate S-box. 
+Each block passes through a separate S-box, or <b class="bfseries">substitution box</b>. 
 </p>
 </li>
-<li id="a0000000067">
+<li id="a0000000070">
 <p>
 A block \(b_1b_2b_3b_4b_5b_6\) is split into a pair \((b_1b_6, b_2b_3b_4b_5)\). 
 </p>
 </li>
-<li id="a0000000068">
+<li id="a0000000071">
 <p>
 The left part is a 2-bit binary number (decimal 0-3), the right part is a 4-bit binary number (decimal 0-15). 
 </p>
 </li>
-<li id="a0000000069">
+<li id="a0000000072">
 <p>
 These give the row and column to look up in the S-box. 
 </p>
 </li>
-<li id="a0000000070">
+<li id="a0000000073">
 <p>
 Block seven (\(011110\)) becomes \((00, 1111) = (0,15)\), giving \(1 = 0001\). 
 </p>
@@ -1936,35 +1971,35 @@ Block seven (\(011110\)) becomes \((00, 1111) = (0,15)\), giving \(1 = 0001\).
 <header>
 <h2 class="beamer-frame-title" id="feistel_system_and_d">Feistel System and Decryption</h2>
 </header>
-<ul class="itemize" id="a0000000071">
-<li id="a0000000072">
+<ul class="itemize" id="a0000000074">
+<li id="a0000000075">
 <p>
 The DES scheme is an example of a <b class="bfseries">Feistel system</b>: 
 </p>
-<ul class="itemize" id="a0000000073">
-<li id="a0000000074">
+<ul class="itemize" id="a0000000076">
+<li id="a0000000077">
 <p>
 Ladder structure; 
 </p>
 </li>
-<li id="a0000000075">
+<li id="a0000000078">
 <p>
 Input split into left and right halves; 
 </p>
 </li>
-<li id="a0000000076">
+<li id="a0000000079">
 <p>
 A round function of one half is computed and combined with the other half using bitwise <span class="ttfamily">XOR</span>; 
 </p>
 </li>
-<li id="a0000000077">
+<li id="a0000000080">
 <p>
 The halves are swapped over. 
 </p>
 </li>
 </ul>
 </li>
-<li id="a0000000078">
+<li id="a0000000081">
 <p>
 To decrypt the ciphertext: retrace all the steps in the 16 rounds using the same key \(K\), but with the round keys used in the opposite order. 
 </p>
@@ -1973,131 +2008,60 @@ To decrypt the ciphertext: retrace all the steps in the 16 rounds using the same
 </section>
 <section class="beamer-frame">
 <header>
-<h2 class="beamer-frame-title" id="modes_of_operation">Modes of Operation</h2>
-</header>
-<p>
- Five standard ways of implementing DES: 
-</p>
-<ul class="itemize" id="a0000000079">
-<li id="a0000000080">
-<p>
-Mode 1: Electronic Code Book 
-</p>
-</li>
-<li id="a0000000081">
-<p>
-Mode 2: Cipher Block Chaining 
-</p>
-</li>
-<li id="a0000000082">
-<p>
-Mode 3: Cipher Feedback Mode 
-</p>
-</li>
-<li id="a0000000083">
-<p>
-Mode 4: Output Feedback Mode 
-</p>
-</li>
-<li id="a0000000084">
-<p>
-Mode 5: Counter Mode 
-</p>
-</li>
-</ul>
-</section>
-<section class="beamer-frame">
-<header>
-<h2 class="beamer-frame-title" id="modes_of_operation_e">Modes of Operation: Electronic Code Book</h2>
-</header>
-<div class="centered"> <figure>
-<p>
-<img alt="\includegraphics[scale=0.3]{images/DES-ECB.png}" src="images/img-0005.png" style="width:345.9px; height:128.1px"/>
-</p>
-</figure> </div>
-<p>
- ECB encrypts the blocks one after another, but is vulnerable to attack for long messages because of plaintext patterns. 
-</p>
-</section>
-<section class="beamer-frame">
-<header>
-<h2 class="beamer-frame-title" id="modes_of_operation_c">Modes of Operation: Cipher Block Chaining</h2>
-</header>
-<div class="centered"> <figure>
-<p>
-<img alt="\includegraphics[scale=0.3]{images/DES-CBC.png}" src="images/img-0006.png" style="width:376.8px; height:138.6px"/>
-</p>
-</figure> </div>
-<p>
- CBC uses the previous ciphertext block <span class="ttfamily">XOR</span>ed with the new plaintext block before proceeding with encryption. An Initialisation Vector (IV) is used to <span class="ttfamily">XOR</span> the first plaintext block. ECB is better at hiding plaintext patterns than ECB. 
-</p>
-</section>
-<section class="beamer-frame">
-<header>
-<h2 class="beamer-frame-title" id="modes_of_operation_1">Modes of Operation: ECB vs Other Modes</h2>
-</header>
-<div class="centered"> <figure>
-<p>
-<img alt="\includegraphics[height=0.3\linewidth ]{images/tux.png}" src="images/img-0007.png" style="height:&lt;plasTeX.TeXFragment object at 0x7efc76570640&gt;"/> <img alt="\includegraphics[height=0.3\linewidth ]{images/Tux_ECB.png}" src="images/img-0008.png" style="height:&lt;plasTeX.TeXFragment object at 0x7efc76570700&gt;"/> <img alt="\includegraphics[height=0.3\linewidth ]{images/Tux_secure.png}" src="images/img-0009.png" style="height:&lt;plasTeX.TeXFragment object at 0x7efc76570820&gt;"/>
-</p>
-</figure> </div>
-</section>
-<section class="beamer-frame">
-<header>
 <h2 class="beamer-frame-title" id="breaking_des">Breaking DES</h2>
 </header>
-<ul class="itemize" id="a0000000085">
-<li id="a0000000086">
+<ul class="itemize" id="a0000000082">
+<li id="a0000000083">
 <p>
 DES was expected to be used for 10 years: 1977-1987. 
 </p>
 </li>
-<li id="a0000000087">
+<li id="a0000000084">
 <p>
 It remained the standard <b class="bfseries">secret key</b> encryption method until 1998. 
 </p>
 </li>
-<li id="a0000000088">
+<li id="a0000000085">
 <p>
 Ongoing debates about security of DES focussed on the short key length. 
 </p>
 </li>
-<li id="a0000000089">
+<li id="a0000000086">
 <p>
 Brute force attacks were theoretically possible, but the hardware in the 1970s would take too long to make this an efficient attack. 
 </p>
 </li>
-<li id="a0000000090">
+<li id="a0000000087">
 <p>
 In the 1980s rumours circulated that intelligence agencies had already built machines to search for DES keys. 
 </p>
 </li>
-<li id="a0000000091">
+<li id="a0000000088">
 <p>
 By the 2000s, computers were 100,000 times more powerful making brute force attacks quite straightforward. 
 </p>
 </li>
-<li id="a0000000092">
+<li id="a0000000089">
 <p>
 A (second) challenge was issued in 1998 by the RSA Laboratory, with a \(\$ 10,000\)USD prize: 
 </p>
-<ul class="itemize" id="a0000000093">
-<li id="a0000000094">
+<ul class="itemize" id="a0000000090">
+<li id="a0000000091">
 <p>
 Electronic Frontier Foundation’s DES Cracker, working as a botnet, took only 3 days to crack DES. 
 </p>
 </li>
-<li id="a0000000095">
+<li id="a0000000092">
 <p>
 The previous record was 39 days. 
 </p>
 </li>
-<li id="a0000000096">
+<li id="a0000000093">
 <p>
 In 1999, a network of 100,000 PCs on the Internet cracked DES in 22 hours and 15 minutes. 
 </p>
 </li>
-<li id="a0000000097">
+<li id="a0000000094">
 <p>
 DES needed to be replaced. 
 </p>
@@ -2110,18 +2074,18 @@ DES needed to be replaced.
 <header>
 <h2 class="beamer-frame-title" id="double_des_2des">Double-DES: 2DES</h2>
 </header>
-<ul class="itemize" id="a0000000098">
-<li id="a0000000099">
+<ul class="itemize" id="a0000000095">
+<li id="a0000000096">
 <p>
 How do we make DES more secure? Run it twice: Double DES. 
 </p>
 </li>
-<li id="a0000000100">
+<li id="a0000000097">
 <p>
 The idea here is that this would double the keyspace from \(2^{56}\) options to \(2^{112}\). 
 </p>
 </li>
-<li id="a0000000101">
+<li id="a0000000098">
 <p>
 Unfortunately, due to <b class="bfseries">meet-in-the-middle attacks</b>, this actually only increased the number of keys to \(2^{57}\). 
 </p>
@@ -2132,33 +2096,33 @@ Unfortunately, due to <b class="bfseries">meet-in-the-middle attacks</b>, this a
 <header>
 <h2 class="beamer-frame-title" id="triple_des_3des">Triple-DES: 3DES</h2>
 </header>
-<ul class="itemize" id="a0000000102">
-<li id="a0000000103">
+<ul class="itemize" id="a0000000099">
+<li id="a0000000100">
 <p>
 How do we make DES more secure? Run it <em>three</em> times. 
 </p>
 </li>
-<li id="a0000000104">
+<li id="a0000000101">
 <p>
 Uses three independent keys: \(K_1\), \(K_2\), \(K_3\). 
 </p>
 </li>
-<li id="a0000000105">
+<li id="a0000000102">
 <p>
 \(m \mapsto DES(m, K_1) \mapsto DES^{-1}(DES(m,K_1),K_2) \mapsto DES(DES^{-1}(DES(m,K_1),K_2,K_3))\) 
 </p>
 </li>
-<li id="a0000000106">
+<li id="a0000000103">
 <p>
 If \(K_1 = K_2 = K_3\), this is the same as single DES (good for backwards compatibility). 
 </p>
 </li>
-<li id="a0000000107">
+<li id="a0000000104">
 <p>
 Often used with two keys, setting \(K_1 = K_3\), but keeping \(K_2\) independent. 
 </p>
 </li>
-<li id="a0000000108">
+<li id="a0000000105">
 <p>
 Much stronger against meet-in-the-middle attacks. 
 </p>
@@ -2169,23 +2133,30 @@ Much stronger against meet-in-the-middle attacks.
 <header>
 <h2 class="beamer-frame-title" id="triple_des_3d_1">Triple-DES: 3DES</h2>
 </header>
-<ul class="itemize" id="a0000000109">
-<li id="a0000000110">
+<ul class="itemize" id="a0000000106">
+<li id="a0000000107">
 <p>
 3DES encryption was the standard for ATMs: all machines had to be compliant by 2005. 
 </p>
 </li>
-<li id="a0000000111">
+<li id="a0000000108">
 <p>
-CVE-2016-2183 (Critical Vulnerabilities and Exposures) released in 2016 describes the ‘Sweet32’ attack (a type of <b class="bfseries">birthday attack</b>, which shows that even Triple DES was not sufficient any more. 
+<a href="https://nvd.nist.gov/vuln/detail/cve-2016-2183">CVE-2016-2183</a> (Critical Vulnerabilities and Exposures) released in 2016 describes the ‘<a href="https://sweet32.info/">Sweet32</a>’ attack (a type of <b class="bfseries">birthday attack</b>, which shows that even Triple DES was not sufficient any more. 
 </p>
 </li>
-<li id="a0000000112">
+</ul>
+<div class="centered"> <figure>
+<p>
+<img alt="\includegraphics[scale=0.8]{images/sweet32.png}" src="images/img-0005.png" style="width:349.6px; height:411.20000000000005px"/>
+</p>
+</figure> </div>
+<ul class="itemize" id="a0000000109">
+<li id="a0000000110">
 <p>
 All applications of 3DES were to cease by 2023. 
 </p>
 </li>
-<li id="a0000000113">
+<li id="a0000000111">
 <p>
 DES finally superseded by the Advanced Encryption Standard (AES). 
 </p>
@@ -2199,18 +2170,228 @@ DES finally superseded by the Advanced Encryption Standard (AES).
 <p>
  In the tutorial this week we will: 
 </p>
-<ul class="itemize" id="a0000000114">
-<li id="a0000000115">
+<ul class="itemize" id="a0000000112">
+<li id="a0000000113">
 <p>
 Create a spreadsheet to perform bitwise XOR encryption. 
 </p>
 </li>
-<li id="a0000000116">
+<li id="a0000000114">
 <p>
 Expand this to XOR whole words at a time. 
 </p>
 </li>
+<li id="a0000000115">
+<p>
+Use the remaining time to make a start on the coursework. We’ve seen everything we need for Questions 1 and 2 of Section B. 
+</p>
+</li>
 </ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="just_the_tip_of_the_">Just the tip of the iceberg</h2>
+</header>
+<div class="table" id="a0000000116">
+<table class="tabular">
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+ One-time Pad 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ Blowfish 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ Autokey 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ RSA 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ Pigpen 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ Scytale 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+McEliece 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ Atbash 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ DES 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ Vigenère 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ Zig Zag 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ ElGamal 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+Beaufort 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ ECC 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ Hill 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ Chaocipher 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ Twofish 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ Alphabet 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black"><p>
+Caesar 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ Rail Fence 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ ROT13 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ SPHINCS 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ RC4 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black"><p>
+ Enigma 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+Alberti 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ Cramer-Shoup 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ Kyber 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ Playfair 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ AES 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ Affine 
+</p>
+</td>
+</tr>
+</table>
+</div>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="modes_of_operation">Modes of Operation</h2>
+</header>
+<p>
+ Five standard ways of implementing DES: 
+</p>
+<ul class="itemize" id="a0000000117">
+<li id="a0000000118">
+<p>
+Mode 1: Electronic Code Book 
+</p>
+</li>
+<li id="a0000000119">
+<p>
+Mode 2: Cipher Block Chaining 
+</p>
+</li>
+<li id="a0000000120">
+<p>
+Mode 3: Cipher Feedback Mode 
+</p>
+</li>
+<li id="a0000000121">
+<p>
+Mode 4: Output Feedback Mode 
+</p>
+</li>
+<li id="a0000000122">
+<p>
+Mode 5: Counter Mode 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="modes_of_operation_e">Modes of Operation: Electronic Code Book</h2>
+</header>
+<div class="centered"> <figure>
+<p>
+<img alt="\includegraphics[scale=0.3]{images/DES-ECB.png}" src="images/img-0006.png" style="width:345.9px; height:128.1px"/>
+</p>
+</figure> </div>
+<p>
+ ECB encrypts the blocks one after another, but is vulnerable to attack for long messages because of plaintext patterns. 
+</p>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="modes_of_operation_c">Modes of Operation: Cipher Block Chaining</h2>
+</header>
+<div class="centered"> <figure>
+<p>
+<img alt="\includegraphics[scale=0.3]{images/DES-CBC.png}" src="images/img-0007.png" style="width:376.8px; height:138.6px"/>
+</p>
+</figure> </div>
+<p>
+ CBC uses the previous ciphertext block <span class="ttfamily">XOR</span>ed with the new plaintext block before proceeding with encryption. An Initialisation Vector (IV) is used to <span class="ttfamily">XOR</span> the first plaintext block. ECB is better at hiding plaintext patterns than ECB. 
+</p>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="modes_of_operation_1">Modes of Operation: ECB vs Other Modes</h2>
+</header>
+<div class="centered"> <figure>
+<p>
+<img alt="\includegraphics[height=0.3\linewidth ]{images/tux.png}" src="images/img-0008.png" style="height:&lt;plasTeX.TeXFragment object at 0x7f0aba30dfc0&gt;"/> <img alt="\includegraphics[height=0.3\linewidth ]{images/Tux_ECB.png}" src="images/img-0009.png" style="height:&lt;plasTeX.TeXFragment object at 0x7f0aba30e080&gt;"/> <img alt="\includegraphics[height=0.3\linewidth ]{images/Tux_secure.png}" src="images/img-0010.png" style="height:&lt;plasTeX.TeXFragment object at 0x7f0aba30e1a0&gt;"/>
+</p>
+</figure> </div>
 </section>
 <script id="plastex-labels" type="application/json">{}</script>
     </article>
@@ -2227,7 +2408,7 @@ Expand this to XOR whole words at a time.
 
     <div id="footer-text">
         <p>Generated using <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.2.1, written by the Digital Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
-        <p>This page last generated: 2025-02-18</p>
+        <p>This page last generated: 2025-02-20</p>
         
         
         
