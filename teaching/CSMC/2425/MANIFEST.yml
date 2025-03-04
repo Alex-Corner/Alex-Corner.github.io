@@ -683,63 +683,6 @@ structure:
       title: Exercises - Frequency Analysis
       type: chapter
       url: cryptography/week_04_05_classical/exercises_frequency_/index.html
-    - build_pdf: true
-      formats:
-      - filetype: html
-        format: default
-        url: "cryptography/week_04_05_classical/lecture_vigen\xE8re_and/index.html"
-      - filetype: pdf
-        format: default
-        url: "cryptography/week_04_05_classical/lecture_vigen\xE8re_and/lecture_vigen\xE8\
-          re_and.pdf"
-      - filetype: html
-        format: slides
-        url: "cryptography/week_04_05_classical/lecture_vigen\xE8re_and/lecture_vigen\xE8\
-          re_and.slides.html"
-      is_hidden: false
-      pdf_url: "cryptography/week_04_05_classical/lecture_vigen\xE8re_and/lecture_vigen\xE8\
-        re_and.pdf"
-      slides_url: "cryptography/week_04_05_classical/lecture_vigen\xE8re_and/lecture_vigen\xE8\
-        re_and.slides.html"
-      slug: "lecture_vigen\xE8re_and"
-      source: week_04-classical_ciphers_II/kasiski.tex
-      title: "Lecture - Vigen\xE8re and Kasiski"
-      type: slides
-      url: "cryptography/week_04_05_classical/lecture_vigen\xE8re_and/index.html"
-    - build_pdf: true
-      formats:
-      - filetype: html
-        format: default
-        url: cryptography/week_04_05_classical/exercises_kasiski/index.html
-      - filetype: pdf
-        format: default
-        url: cryptography/week_04_05_classical/exercises_kasiski/exercises_kasiski.pdf
-      is_hidden: false
-      pdf_url: cryptography/week_04_05_classical/exercises_kasiski/exercises_kasiski.pdf
-      slug: exercises_kasiski
-      source: week_04-classical_ciphers_II/attacks-exercises.tex
-      title: Exercises - Kasiski
-      type: chapter
-      url: cryptography/week_04_05_classical/exercises_kasiski/index.html
-    - build_pdf: true
-      formats:
-      - filetype: html
-        format: default
-        url: cryptography/week_04_05_classical/optional_lecture_eni/index.html
-      - filetype: pdf
-        format: default
-        url: cryptography/week_04_05_classical/optional_lecture_eni/optional_lecture_eni.pdf
-      - filetype: html
-        format: slides
-        url: cryptography/week_04_05_classical/optional_lecture_eni/optional_lecture_eni.slides.html
-      is_hidden: false
-      pdf_url: cryptography/week_04_05_classical/optional_lecture_eni/optional_lecture_eni.pdf
-      slides_url: cryptography/week_04_05_classical/optional_lecture_eni/optional_lecture_eni.slides.html
-      slug: optional_lecture_eni
-      source: week_04-classical_ciphers_II/enigma.tex
-      title: Optional Lecture - Enigma
-      type: slides
-      url: cryptography/week_04_05_classical/optional_lecture_eni/index.html
     formats:
     - filetype: html
       format: default
@@ -756,95 +699,95 @@ structure:
       formats:
       - filetype: html
         format: default
-        url: cryptography/week_06_07_encryptio/lecture_des/index.html
+        url: cryptography/week_05_06_encryptio/lecture_des/index.html
       - filetype: pdf
         format: default
-        url: cryptography/week_06_07_encryptio/lecture_des/lecture_des.pdf
+        url: cryptography/week_05_06_encryptio/lecture_des/lecture_des.pdf
       - filetype: html
         format: slides
-        url: cryptography/week_06_07_encryptio/lecture_des/lecture_des.slides.html
+        url: cryptography/week_05_06_encryptio/lecture_des/lecture_des.slides.html
       is_hidden: false
-      pdf_url: cryptography/week_06_07_encryptio/lecture_des/lecture_des.pdf
-      slides_url: cryptography/week_06_07_encryptio/lecture_des/lecture_des.slides.html
+      pdf_url: cryptography/week_05_06_encryptio/lecture_des/lecture_des.pdf
+      slides_url: cryptography/week_05_06_encryptio/lecture_des/lecture_des.slides.html
       slug: lecture_des
       source: week_05-DES/DES.tex
       title: Lecture - DES
       type: slides
-      url: cryptography/week_06_07_encryptio/lecture_des/index.html
+      url: cryptography/week_05_06_encryptio/lecture_des/index.html
     - build_pdf: true
       formats:
       - filetype: html
         format: default
-        url: cryptography/week_06_07_encryptio/exercises_xor/index.html
+        url: cryptography/week_05_06_encryptio/exercises_xor/index.html
       - filetype: pdf
         format: default
-        url: cryptography/week_06_07_encryptio/exercises_xor/exercises_xor.pdf
+        url: cryptography/week_05_06_encryptio/exercises_xor/exercises_xor.pdf
       is_hidden: false
-      pdf_url: cryptography/week_06_07_encryptio/exercises_xor/exercises_xor.pdf
+      pdf_url: cryptography/week_05_06_encryptio/exercises_xor/exercises_xor.pdf
       slug: exercises_xor
       source: week_05-DES/xor-exercises.tex
       title: Exercises - XOR
       type: chapter
-      url: cryptography/week_06_07_encryptio/exercises_xor/index.html
+      url: cryptography/week_05_06_encryptio/exercises_xor/index.html
     - build_pdf: true
       formats:
       - filetype: html
         format: default
-        url: cryptography/week_06_07_encryptio/optional_exercises_d/index.html
+        url: cryptography/week_05_06_encryptio/optional_exercises_d/index.html
       - filetype: pdf
         format: default
-        url: cryptography/week_06_07_encryptio/optional_exercises_d/optional_exercises_d.pdf
+        url: cryptography/week_05_06_encryptio/optional_exercises_d/optional_exercises_d.pdf
       is_hidden: false
-      pdf_url: cryptography/week_06_07_encryptio/optional_exercises_d/optional_exercises_d.pdf
+      pdf_url: cryptography/week_05_06_encryptio/optional_exercises_d/optional_exercises_d.pdf
       slug: optional_exercises_d
       source: week_05-DES/DES-exercises.tex
       title: Optional Exercises - DES
       type: chapter
-      url: cryptography/week_06_07_encryptio/optional_exercises_d/index.html
+      url: cryptography/week_05_06_encryptio/optional_exercises_d/index.html
     - build_pdf: true
       formats:
       - filetype: html
         format: default
-        url: cryptography/week_06_07_encryptio/lecture_aes/index.html
+        url: cryptography/week_05_06_encryptio/lecture_aes/index.html
       - filetype: pdf
         format: default
-        url: cryptography/week_06_07_encryptio/lecture_aes/lecture_aes.pdf
+        url: cryptography/week_05_06_encryptio/lecture_aes/lecture_aes.pdf
       - filetype: html
         format: slides
-        url: cryptography/week_06_07_encryptio/lecture_aes/lecture_aes.slides.html
+        url: cryptography/week_05_06_encryptio/lecture_aes/lecture_aes.slides.html
       is_hidden: false
-      pdf_url: cryptography/week_06_07_encryptio/lecture_aes/lecture_aes.pdf
-      slides_url: cryptography/week_06_07_encryptio/lecture_aes/lecture_aes.slides.html
+      pdf_url: cryptography/week_05_06_encryptio/lecture_aes/lecture_aes.pdf
+      slides_url: cryptography/week_05_06_encryptio/lecture_aes/lecture_aes.slides.html
       slug: lecture_aes
       source: week_06-AES/AES.tex
       title: Lecture - AES
       type: slides
-      url: cryptography/week_06_07_encryptio/lecture_aes/index.html
+      url: cryptography/week_05_06_encryptio/lecture_aes/index.html
     - build_pdf: true
       formats:
       - filetype: html
         format: default
-        url: cryptography/week_06_07_encryptio/exercises_aes/index.html
+        url: cryptography/week_05_06_encryptio/exercises_aes/index.html
       - filetype: pdf
         format: default
-        url: cryptography/week_06_07_encryptio/exercises_aes/exercises_aes.pdf
+        url: cryptography/week_05_06_encryptio/exercises_aes/exercises_aes.pdf
       is_hidden: false
-      pdf_url: cryptography/week_06_07_encryptio/exercises_aes/exercises_aes.pdf
+      pdf_url: cryptography/week_05_06_encryptio/exercises_aes/exercises_aes.pdf
       slug: exercises_aes
       source: week_06-AES/AES-exercises.tex
       title: Exercises - AES
       type: chapter
-      url: cryptography/week_06_07_encryptio/exercises_aes/index.html
+      url: cryptography/week_05_06_encryptio/exercises_aes/index.html
     formats:
     - filetype: html
       format: default
-      url: cryptography/week_06_07_encryptio/index.html
+      url: cryptography/week_05_06_encryptio/index.html
     is_hidden: false
-    slug: week_06_07_encryptio
+    slug: week_05_06_encryptio
     source: .
-    title: Week 06-07 - Encryption Standards
+    title: Week 05-06 - Encryption Standards
     type: part
-    url: cryptography/week_06_07_encryptio/index.html
+    url: cryptography/week_05_06_encryptio/index.html
   - build_pdf: false
     content:
     - build_pdf: true
@@ -866,6 +809,59 @@ structure:
       formats:
       - filetype: html
         format: default
+        url: cryptography/week_08_09_public_ke/lecture_euclidean_al/index.html
+      - filetype: pdf
+        format: default
+        url: cryptography/week_08_09_public_ke/lecture_euclidean_al/lecture_euclidean_al.pdf
+      - filetype: html
+        format: slides
+        url: cryptography/week_08_09_public_ke/lecture_euclidean_al/lecture_euclidean_al.slides.html
+      is_hidden: false
+      pdf_url: cryptography/week_08_09_public_ke/lecture_euclidean_al/lecture_euclidean_al.pdf
+      slides_url: cryptography/week_08_09_public_ke/lecture_euclidean_al/lecture_euclidean_al.slides.html
+      slug: lecture_euclidean_al
+      source: week_07-euclidean_algorithm/euclidean.tex
+      title: Lecture - Euclidean Algorithm
+      type: slides
+      url: cryptography/week_08_09_public_ke/lecture_euclidean_al/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: cryptography/week_08_09_public_ke/exercises_euclidean_/index.html
+      - filetype: pdf
+        format: default
+        url: cryptography/week_08_09_public_ke/exercises_euclidean_/exercises_euclidean_.pdf
+      is_hidden: false
+      pdf_url: cryptography/week_08_09_public_ke/exercises_euclidean_/exercises_euclidean_.pdf
+      slug: exercises_euclidean_
+      source: week_07-euclidean_algorithm/euclidean-exercises.tex
+      title: Exercises - Euclidean Algorithm
+      type: chapter
+      url: cryptography/week_08_09_public_ke/exercises_euclidean_/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: cryptography/week_08_09_public_ke/lecture_rsa/index.html
+      - filetype: pdf
+        format: default
+        url: cryptography/week_08_09_public_ke/lecture_rsa/lecture_rsa.pdf
+      - filetype: html
+        format: slides
+        url: cryptography/week_08_09_public_ke/lecture_rsa/lecture_rsa.slides.html
+      is_hidden: false
+      pdf_url: cryptography/week_08_09_public_ke/lecture_rsa/lecture_rsa.pdf
+      slides_url: cryptography/week_08_09_public_ke/lecture_rsa/lecture_rsa.slides.html
+      slug: lecture_rsa
+      source: week_08-RSA/RSA.tex
+      title: Lecture - RSA
+      type: slides
+      url: cryptography/week_08_09_public_ke/lecture_rsa/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
         url: cryptography/week_08_09_public_ke/rsa_notes/index.html
       - filetype: pdf
         format: default
@@ -877,6 +873,21 @@ structure:
       title: RSA Notes
       type: chapter
       url: cryptography/week_08_09_public_ke/rsa_notes/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: cryptography/week_08_09_public_ke/exercises_rsa/index.html
+      - filetype: pdf
+        format: default
+        url: cryptography/week_08_09_public_ke/exercises_rsa/exercises_rsa.pdf
+      is_hidden: false
+      pdf_url: cryptography/week_08_09_public_ke/exercises_rsa/exercises_rsa.pdf
+      slug: exercises_rsa
+      source: week_08-RSA/RSA-exercises.tex
+      title: Exercises - RSA
+      type: chapter
+      url: cryptography/week_08_09_public_ke/exercises_rsa/index.html
     formats:
     - filetype: html
       format: default

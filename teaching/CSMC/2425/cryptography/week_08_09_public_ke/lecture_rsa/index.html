@@ -1,0 +1,1336 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        
+            <meta charset="utf-8">
+            <meta name="robots" content="noindex">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="author" content="Alex Corner" />
+            <meta name="date" content="2025-03-04" />
+        
+
+        <title>Lecture - RSA | 55-408808: Introduction to Cyber Security, Maths and Cryptography</title>
+
+        
+    
+    
+            <link rel="stylesheet" href="../../../static/styles.css?build_time=1741085756.528123">
+            
+            
+        
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1741085756.528123">
+
+    <link rel="stylesheet" href="../../../static/print.css?build_time=1741085756.528123">
+
+
+        
+    
+			<script>
+				var chirun_static_url = new URL('../../../static?build_time=1741085756.528123', location.href);
+			</script>
+
+            
+                <script defer src="../../../static/mathjax_config.js?build_time=1741085756.528123"></script>
+                <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+            
+
+            <script type="module" src="../../../static/localisation.js?build_time=1741085756.528123"></script>
+
+            <script defer src="../../../static/customisation.js?build_time=1741085756.528123"></script>
+
+            
+
+            
+        
+    <script defer src="../../../static/code.js?build_time=1741085756.528123" type="module"></script>
+    <script defer src="../../../static/embed_numbas.js?build_time=1741085756.528123" type="module"></script>
+    <script defer src="../../../static/embed_qrcode.js?build_time=1741085756.528123" type="module"></script>
+
+
+        <template id="runnable-code-template">
+            <link rel="stylesheet" href="../../../static/code.css?build_time=1741085756.528123">
+            <div class="runnable-code-wrapper">
+                <section class="fullscreenable code">
+                    <div id="code"></div>
+                    <button class="fullscreen icon-button" title="Fullscreen code"><svg class="icon" aria-label="Fullscreen code" viewBox="0 0 180 180">
+    <use href="#fullscreen"/>
+</svg></button>
+                </section>
+                <section class="fullscreenable output">
+                    <div id="output" aria-live="polite">
+                        <pre class="stdout"></pre>
+                        <pre class="result"></pre>
+                        <div class="images"></div>
+                    </div>
+                    <button class="fullscreen icon-button" title="Fullscreen output"><svg class="icon" aria-label="Fullscreen output" viewBox="0 0 180 180">
+    <use href="#fullscreen"/>
+</svg></button>
+                </section>
+                <div class="buttons">
+                    <button type="button" class="run-code">Run code</button>
+                </div>
+                <svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="icon-defs"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <g id="cog">
+            <path 
+                style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z"
+            />
+        </g>
+        <g id="pdf">
+            <path
+                style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z"
+            />
+        </g>
+        <g id="slides">
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,21.25 30,137.5"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 90,21.25 60,158.75"
+            />
+            <rect
+                style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="119.79137"
+                height="82.273766"
+                x="30.104315"
+                y="36.476234"
+                ry="4.7737675"
+                rx="4.7737675"
+            />
+            <rect
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="140"
+                height="5.2262344"
+                x="20"
+                y="31.25"
+                ry="1.6724058"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,66.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,76.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,86.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,56.25 h 50"
+            />
+            <path
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z"
+            />
+        </g>
+
+        <g id="notebook">
+            <path
+                style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="58.699139"
+               cy="59.503937"
+               r="3.8077738"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="113.59385"
+               cy="52.885151"
+               r="4.9348516"
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z"
+           
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z"
+              
+            />
+            <ellipse
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="63.813011"
+               cy="125.96338"
+               rx="6.4332962"
+               ry="6.4347191"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="M 34,46.266514 V 62.316215"
+            
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="M 34,77.849849 V 93.89955"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 34,109.43318 v 16.0497"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0"
+            />
+        </g>
+
+        <g id="fullscreen">
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+               d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="M 150.95833,68.801471 V 28.958332 h -39.84314"
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="m 28.958332,111.11519 v 39.84314 h 39.843139"
+            />
+        </g>
+    </defs>
+</svg>
+            </div>
+        </template>
+
+        <template id="embed-numbas-template">
+            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1741085756.528123">
+            <details id="wrapper" data-completion-status="incomplete">
+                <summary>
+                    <h1 id="title">Test Yourself</h1>
+                    <div id="completion-status" data-completion-status="unknown">
+                        <span class="complete">Complete</span>
+                        <span class="incomplete">Incomplete</span>
+                    </div>
+                    <label id="score-feedback">
+                        Score:
+                        <progress min="0"></progress>
+                    </label>
+                </summary>
+                <iframe class="embed" title="Numbas"></iframe>
+            </details>
+        </template>
+
+    </head>
+    <body class="" >
+        
+
+        <a class="skip-to-content-link" href="#main-content">Skip to content</a>
+        
+            <form id="display-options">
+    <div class="buttons">
+        <button type="button" id="reset-display-options">Reset to defaults</button>
+
+        <a href="https://chirun.org.uk/accessibility-statement/material">Accessibility statement</a>
+
+        <button type="button" aria-controls="display-options" aria-expanded="false">
+            Close
+        </button>
+    </div>
+
+    <div class="inputs">
+        <div class="input-group">
+            <label for="display-options-font-scale">
+                Text size
+            </label>
+            <input type="range" min="50" max="600" step="5" value="100" id="display-options-font-scale">
+            <output for="display-options-font-scale">100%</output>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-spacing-factor">
+                Spacing
+            </label>
+            <input type="range" min="0" max="1200" step="5" value="100" id="display-options-spacing-factor">
+            <output for="display-options-spacing-factor">100%</output>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-font-family">
+                Text font
+            </label>
+            <select id="display-options-font-family">
+                <option value="var(--sans-serif-font)" selected>Sans-serif</option>
+                <option value="var(--serif-font)">Serif</option>
+                <option value="Atkinson Hyperlegible">Atkinson Hyperlegible</option>
+                <option value="Comic Sans MS">Comic Sans</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-colour-scheme">
+                Colour scheme
+            </label>
+            <select id="display-options-colour-scheme">
+                <option value="auto" selected>Automatic (default)</option>
+                <option value="light">Black text on white</option>
+                <option value="dark">White text on black</option>
+                <option value="custom">Custom</option>
+            </select>
+        </div>
+
+        <section id="custom-colour-scheme-options" class="inputs">
+            <div class="input-group">
+                <label for="display-options-text-colour">
+                    Text colour
+                </label>
+                <input type="color" value="#000000" id="display-options-text-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-link-colour">
+                    Link colour
+                </label>
+                <input type="color" value="#0000ee" id="display-options-link-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour">
+                    Background colour
+                </label>
+                <input type="color" value="#ffffff" id="display-options-bg-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-off">
+                    Muted background colour
+                </label>
+                <input type="color" value="#eeeeee" id="display-options-bg-colour-off">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-1">
+                    Accent colour 1
+                </label>
+                <input type="color" value="#4caf50" id="display-options-bg-colour-accent-1">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-2">
+                    Accent colour 2
+                </label>
+                <input type="color" value="#f6f6ff" id="display-options-bg-colour-accent-2">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-3">
+                    Accent colour 3
+                </label>
+                <input type="color" value="#eeffd3" id="display-options-bg-colour-accent-3">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-4">
+                    Accent colour 4
+                </label>
+                <input type="color" value="#ffeeee" id="display-options-bg-colour-accent-4">
+            </div>
+        </section>
+
+        <section id="filter-colour-scheme-options" class="inputs">
+            <div class="input-group">
+                <label for="display-options-filter-sepia">
+                    Sepia filter
+                </label>
+                <input type="range" min="0" max="100" step="1" value="0" id="display-options-filter-sepia">
+                <output for="display-options-filter-sepia">0%</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-filter-hue-rotate">
+                    Rotate hues
+                </label>
+                <input type="range" min="0" max="1" step="0.01" value="0" id="display-options-filter-hue-rotate">
+                <output for="display-options-filter-hue-rotate">0 turns</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-invert-images">
+                    Invert images in dark mode
+                </label>
+                <input type="checkbox" id="display-options-invert-images">
+            </div>
+
+        </section>
+    </div>
+</form>
+        
+
+        <header>
+            
+<button class="icon-button" type="button" aria-controls="display-options" aria-expanded="false" title="Display options">
+    <svg class="icon" aria-label="Display options" viewBox="0 0 180 180">
+    <use href="#cog"/>
+</svg>
+</button>
+            
+    
+    <nav aria-label="breadcrumb">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../../../index.html">55-408808: Introduction to Cyber Security, Maths and Cryptography</a>
+            </li>
+            
+            <li class="breadcrumb-item">
+                <a href="../index.html">Week 08-09 - Public Keys and RSA</a>
+            </li>
+            
+            <li class="breadcrumb-item active">
+                Lecture - RSA
+            </li>
+        </ul>
+
+        
+        <p class="pager" id="item-pager">
+            
+            <a rel="prev" href="../exercises_euclidean_/index.html">Previous: Exercises - Euclidean Algorithm</a>
+            
+            
+            <a rel="next" href="../rsa_notes/index.html">Next: RSA Notes</a>
+            
+        </p>
+        
+    </nav>
+    
+
+            
+            
+        </header>
+
+        <main id="main-content">
+            
+    <nav id="sidebar">
+        
+        <ul class="alternative-formats">
+            
+            <li><a rel="alternate" type="" href="lecture_rsa.slides.html"><svg class="icon" aria-label="Slides" viewBox="0 0 180 180">
+    <use href="#slides"/>
+</svg> View as Slides</a></li>
+            
+            <li><a rel="alternate" type="application/pdf" href="lecture_rsa.pdf"download><svg class="icon" aria-label="PDF" viewBox="0 0 180 180">
+    <use href="#pdf"/>
+</svg> Download as PDF</a></li>
+            
+        </ul>
+        
+
+        <h1>Table of Contents</h1>
+        <a class="jump-to-item-content" href="#item-content">Jump to content</a>
+        
+            <ol class="table-of-contents" role="tree">
+                
+                    
+<li role="none" data-toc-level="1" class="toc-header  has-children">
+    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-cryptography_public_" href="#cryptography_public_">
+        <span class="toc-marker"></span>
+        Cryptography: Public Key Cryptography
+    </a>
+
+    
+        <ol role="group" id="toc-subtree-cryptography_public_">
+            
+            
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-rsa_implementation" href="#rsa_implementation">
+        
+        RSA: Implementation
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-rsa_encryption" href="#rsa_encryption">
+        
+        RSA: Encryption
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-rsa_encryption_examp" href="#rsa_encryption_examp">
+        
+        RSA: Encryption Example
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-quick_powers_recap" href="#quick_powers_recap">
+        
+        Quick Powers: Recap
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-rsa_decryption_expon" href="#rsa_decryption_expon">
+        
+        RSA: Decryption Exponent and Euclidean Algorithm
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-extended_euclidean_a" href="#extended_euclidean_a">
+        
+        Extended Euclidean Algorithm
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-rsa_example" href="#rsa_example">
+        
+        RSA: Example
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-rsa_in_practice" href="#rsa_in_practice">
+        
+        RSA in Practice
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-rsa_public_key_shu_a" href="#rsa_public_key_shu_a">
+        
+        RSA Public Key: shu.ac.uk
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-rsa_public_key_shu_1" href="#rsa_public_key_shu_1">
+        
+        RSA Public Key: shu.ac.uk
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-rsa_in_practi_1" href="#rsa_in_practi_1">
+        
+        RSA in Practice
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-tutorials" href="#tutorials">
+        
+        Tutorials
+    </a>
+
+    
+</li>
+
+            
+        </ol>
+    
+</li>
+
+                
+            </ol>
+        
+
+    </nav>
+
+    <article class="item-content" id="item-content">
+        <section class="beamer-frame">
+<section class="beamer-titlepage">
+<h1 id="cryptography_public_">Cryptography: Public Key Cryptography</h1>
+<p class="beamer-authors">
+<span class="author">Alex Corner</span>
+</p>
+<p class="beamer-date">[</p>
+</section>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="rsa_implementation">RSA: Implementation</h2>
+</header>
+<ul class="itemize" id="a0000000002">
+<li id="a0000000003">
+<p>
+Alice chooses two ‘large’ primes \(p\) and \(q\). 
+</p>
+</li>
+<li id="a0000000004">
+<p>
+She calculates \(n = pq\) (the <b class="bfseries">modulus</b>) and then finds \(\varphi (n) = \varphi (pq) = (p-1)(q-1)\). 
+</p>
+</li>
+<li id="a0000000005">
+<p>
+Alice also selects a value of \(e\) (the <b class="bfseries">encryption exponent</b>) such that \(1 {\lt} e {\lt} \varphi (n)\) and \(\operatorname {hcf}(e,\varphi (n)) = 1\). 
+</p>
+</li>
+<li id="a0000000006">
+<p>
+She also finds a value \(d\) (the <b class="bfseries">decryption exponent</b>) such that \(de = 1 \operatorname {mod} \varphi (n)\). (More on this later.) 
+</p>
+</li>
+<li id="a0000000007">
+<p>
+Alice then publishes \((n,e)\) publicly: this is her <b class="bfseries">public key</b>. 
+</p>
+</li>
+<li id="a0000000008">
+<p>
+She keeps the value of \(d\) secret: this is her <b class="bfseries">private key</b>. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="rsa_encryption">RSA: Encryption</h2>
+</header>
+<ul class="itemize" id="a0000000009">
+<li id="a0000000010">
+<p>
+Alice has published her public key \((n,e)\) and kept her private key \(d\) secret. 
+</p>
+</li>
+<li id="a0000000011">
+<p>
+Bob can now encrypt messages to send to Alice. He selects a message value \(0 \leq m {\lt} n\) and calculates \(c = m^e \operatorname {mod} n\). He sends this to Alice. 
+</p>
+</li>
+<li id="a0000000012">
+<p>
+Alice can now decrypt this by finding \(c^d = m^{de} = m \operatorname {mod} n\). 
+</p>
+</li>
+<li id="a0000000013">
+<p>
+That this works relies on a result in number theory called Euler’s Theorem: 
+</p>
+<ul class="itemize" id="a0000000014">
+<li id="a0000000015">
+<p>
+Let \(n\) be a non-negative integer and let \(a\) be an integer coprime to \(n\). Then 
+</p>
+<span class="dmath">\[  a^{\varphi (n)} = 1 \operatorname {mod} n.  \]</span>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="rsa_encryption_examp">RSA: Encryption Example</h2>
+</header>
+<ul class="itemize" id="a0000000016">
+<li id="a0000000017">
+<p>
+Suppose that Alice has chosen primes \(p = 7\) and \(q = 13\), and <b class="bfseries">encryption exponent</b> \(e = 5\). 
+</p>
+</li>
+<li id="a0000000018">
+<p>
+Her <b class="bfseries">modulus</b> is \(n = pq = 7 \times 13 = 91\). 
+</p>
+</li>
+<li id="a0000000019">
+<p>
+She also calculates \(\varphi (n) = \varphi (91) = \varphi (7 \times 13) = 6 \times 12 = 72\). 
+</p>
+</li>
+<li id="a0000000020">
+<p>
+Alice finds \(d = 29\), so that \(de = 29 \times 5 = 145 = 1 \operatorname {mod} 72\). 
+</p>
+</li>
+<li id="a0000000021">
+<p>
+She publishes the public key \((n,e) = (91,5)\). 
+</p>
+</li>
+<li id="a0000000022">
+<p>
+Bob wants to send the message ‘<span class="ttfamily">Y</span>’ to Alice. He could convert this to ASCII (\(0101 \,  1001\) in binary, \(89\) in denary) so that the message value is \(m = 89\). 
+</p>
+</li>
+<li id="a0000000023">
+<p>
+Bob calculates \(c = m^e = 89^5 \operatorname {mod} 91\). He might do this by repeated squaring if the powers are large. (See previous notes on modular arithmetic.) 
+</p>
+</li>
+<li id="a0000000024">
+<p>
+\(c = m^e = 89^5 = (-2)^5 = -32 = 59 \operatorname {mod} 91\) 
+</p>
+</li>
+<li id="a0000000025">
+<p>
+Alice decrypts this by calculating \(c^d = 59^{29} \operatorname {mod} 91\). 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="quick_powers_recap">Quick Powers: Recap</h2>
+</header>
+<ul class="itemize" id="a0000000026">
+<li id="a0000000027">
+<p>
+To decrypt Bob’s encrypted message, Alice calculates \(c^d = 59^{29} \operatorname {mod} 91\). 
+</p>
+</li>
+<li id="a0000000028">
+<p>
+The power is \(29 = 16 + 8 + 4 + 1\). We write it as the sum of powers of 2, then \(59^{29} = 59^{16} \times 59^8 \times 59^4 \times 59^1\). 
+</p>
+</li>
+<li id="a0000000029">
+<p>
+<span><script type="math/tex; mode=display">\begin{align*} \end{align*}</script></span> 59^1 = 59 mod 91 <br/>59^2 = 3481 = 23 mod 91 <br/>59^4 = 23^2 = 529 = 74 mod 91 <br/>59^8 = 74^2 = 5476 = 16 mod 91 <br/>59^16 = 16^2 = 256 = 74 mod 91 <span><script type="math/tex; mode=display">\end{align*}</script></span>
+</p>
+</li>
+<li id="a0000000030">
+<p>
+\(59^{29} = 59^{16} \times 59^8 \times 59^4 \times 59^1 = 74 \times 16 \times 74 \times 59 = 89 \operatorname {mod} 91\). 
+</p>
+</li>
+<li id="a0000000031">
+<p>
+In practice we encrypt multiple letters at a time in blocks (255 letters), rather than just single letters. This prevents simple frequency analysis style attacks. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="rsa_decryption_expon">RSA: Decryption Exponent and Euclidean Algorithm</h2>
+</header>
+<p>
+ When Alice sets up her RSA scheme, she chooses large primes \(p\) and \(q\). Using these she calculates \(n = pq\) and \(\varphi (n) = (p-1)(q-1)\), but she also requires a value \(e\) such that \(1 {\lt} e {\lt} \varphi (n)\) with \(\operatorname {hcf}(e,\varphi (n)) = 1\) and a value \(d\) such that \(de = 1 \operatorname {mod} \varphi (n)\). This can be hard to find by trial and error, so we can use the <b class="bfseries">Euclidean Algorithm</b>. 
+</p>
+<p>
+We can easily check that the highest common factor of \(e = \textcolor{red}{5}\) and \(\varphi (n) = 72\) is actually equal to 1. <span><script type="math/tex; mode=display">\begin{align*} \end{align*}</script></span> 72 = 14 ×<span style="color:#FF0000">5</span> + <span style="color:#0000FF">2</span> <br/><span style="color:#FF0000">5</span> = 2 ×<span style="color:#0000FF">2</span> + <span style="color:#00FF00">1</span> <br/><span style="color:#0000FF">2</span> = 2 ×<span style="color:#00FF00">1</span> + 0 <span><script type="math/tex; mode=display">\end{align*}</script></span> The least number before 0 is the highest common factor. Here this is 1, so \(e\) and \(\varphi (n)\) are coprime. 
+</p>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="extended_euclidean_a">Extended Euclidean Algorithm</h2>
+</header>
+<p>
+ The RSA example used the value of \(d=29\), but didn’t explain where this came from. 
+</p>
+<div class="table" id="a0000000032">
+<table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(\varphi (n)\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(e\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+\((1,0)\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(72\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(5\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \((0,1)\) 
+</p>
+</td>
+</tr>
+<tr><td colspan="1" rowspan="" style="text-align:left"> </td>
+<td colspan="1" rowspan="" style="text-align:left"> </td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(\times 14\) 
+</p>
+</td>
+<td colspan="1" rowspan="" style="text-align:left"> </td>
+<td colspan="1" rowspan="" style="text-align:left"> </td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+\((0,14)\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(70\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(4\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \((2,-28)\) 
+</p>
+</td>
+</tr>
+<tr><td colspan="1" rowspan="" style="text-align:left"> </td>
+<td colspan="1" rowspan="" style="text-align:left"> </td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(\times 2\) 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left"> </td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left"> </td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+ \((1,-14)\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+ \(2\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(1\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \((-2,29)\) 
+</p>
+</td>
+</tr>
+<tr><td colspan="1" rowspan="" style="text-align:left"> </td>
+<td colspan="1" rowspan="" style="text-align:left"> </td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(\times 2\) 
+</p>
+</td>
+<td colspan="1" rowspan="" style="text-align:left"> </td>
+<td colspan="1" rowspan="" style="text-align:left"> </td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+\((-4,58)\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(2\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+ \((5,-72)\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+ \(0\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+</tr>
+</table>
+</div>
+<p>
+ At each stage, the pair of coordinates \((a,b)\) corresponding to a number \(c\) in the table tells us that \(72a + 5b = c\). E.g., the pair \((2,-28)\) corresponds to the number 4 in the table, so we know that \(72 \times 2 + 5 \times (-28) = 4\). Similarly, we know that \(72 \times (-2) + 5 \times 29 = 1\). 
+</p>
+<p>
+We need a value of \(d\) such that \(de = 1 \operatorname {mod} \varphi (n)\), so in our case such that \(5d = 1 \operatorname {mod} 72\). Now we know that \(72 \times (-2) + 5 \times 29 = 1\), so \(5 \times 29 = 1 \operatorname {mod} 72\). Hence \(d = 29\). 
+</p>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="rsa_example">RSA: Example</h2>
+</header>
+<p>
+ Alice changes her RSA scheme to use \(p = 11\), \(q = 19\), and \(e = 7\). She calculates \(n = pq = 11 \times 19 = 209\) and \(\varphi (n) = (p-1)(q-1) = 10 \times 18 = 180\). She publishes \((n,e) = (209,7)\) and calculates \(d\) using the extended Euclidean algorithm. 
+</p>
+<div class="table" id="a0000000033">
+<table class="tabular">
+<tr><td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(\varphi (n)\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(e\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+\((1,0)\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(180\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(7\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \((0,1)\) 
+</p>
+</td>
+</tr>
+<tr><td colspan="1" rowspan="" style="text-align:left"> </td>
+<td colspan="1" rowspan="" style="text-align:left"> </td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(\times 25\) 
+</p>
+</td>
+<td colspan="1" rowspan="" style="text-align:left"> </td>
+<td colspan="1" rowspan="" style="text-align:left"> </td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+\((0,25)\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(175\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(5\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \((1,-25)\) 
+</p>
+</td>
+</tr>
+<tr><td colspan="1" rowspan="" style="text-align:left"> </td>
+<td colspan="1" rowspan="" style="text-align:left"> </td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(\times 1\) 
+</p>
+</td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left"> </td>
+<td colspan="1" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left"> </td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+ \((1,-25)\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+ \(5\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(2\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \((-1,26)\) 
+</p>
+</td>
+</tr>
+<tr><td colspan="1" rowspan="" style="text-align:left"> </td>
+<td colspan="1" rowspan="" style="text-align:left"> </td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(\times 2\) 
+</p>
+</td>
+<td colspan="1" rowspan="" style="text-align:left"> </td>
+<td colspan="1" rowspan="" style="text-align:left"> </td>
+</tr>
+<tr><td colspan="" rowspan="" style="text-align:center"><p>
+\((-2,52)\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"><p>
+ \(4\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+ \((3,-77)\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center"><p>
+ \(1\) 
+</p>
+</td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+<td colspan="" rowspan="" style="text-align:center"> </td>
+</tr>
+</table>
+</div>
+<p>
+ The algorithm suggests that \(d = -77\), but we want \(d\) to be positive. Since we want \(de = 1 \operatorname {mod} \varphi (n)\) and \(\varphi (n) = 180\), we can add \(180\) to \(-77\) to find that 
+</p>
+<span class="dmath">\[ d = -77 = -77 + 180 = 103 \operatorname {mod} 180. \]</span>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="rsa_in_practice">RSA in Practice</h2>
+</header>
+<ul class="itemize" id="a0000000034">
+<li id="a0000000035">
+<p>
+The main idea behind RSA is that your encryption key \((n,e)\) can be made <b class="bfseries">public</b>: anybody can know it without any security issues. But, only you have access to the decryption key \((n,d)\). 
+</p>
+</li>
+<li id="a0000000036">
+<p>
+Theoretically, an attacker could factor the modulus \(n\) and use the primes to calculate the decryption exponent \(d\). The security of RSA depends on this being a very difficult problem. 
+</p>
+</li>
+<li id="a0000000037">
+<p>
+Our examples only include small primes so that we can understand how RSA works. In practice, the modulus will be 2048 or 3072 bits as <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-57Pt3r1.pdf">recommended by NIST</a> in 2015. This means that the modulus will be of the order of 600+ decimal digits. 
+</p>
+</li>
+<li id="a0000000038">
+<p>
+In general, RSA is not recommended for encrypting whole messages as it is computationally impractical. Instead it finds most of its use in key distribution (alongside Diffie-Hellman key exchange) and digital verification/authentication schemes. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="rsa_public_key_shu_a">RSA Public Key: shu.ac.uk</h2>
+</header>
+<ul class="itemize" id="a0000000039">
+<li id="a0000000040">
+<p>
+shu.ac.uk uses the <a href="https://datatracker.ietf.org/doc/html/rfc8017">PKCS #1 RSA Encryption</a> specification. 
+</p>
+</li>
+<li id="a0000000041">
+<p>
+It uses public key 
+</p>
+<p>
+<span class="ttfamily"><span style="color:#FF0000">30 82 01 0a 02 82 01 01 00</span> ad ef f1 f6 86 63 6a 58 60 b7 d9 16 ad ed 3b 8a 76 f5 47 30 aa a2 b2 b7 14 4c 57 72 c8 8f 11 9b 7d 62 2f 15 15 45 0e c8 4c 66 97 00 d1 9e f3 9a 59 9a 03 e3 93 93 a6 38 d9 16 5d ce 1e f6 02 f1 07 f3 ba 3e f1 a0 97 b6 d5 95 8c 5a c2 ad 88 04 15 86 15 08 45 a9 18 81 01 dd 75 ba 7e 31 07 78 3a f6 05 93 3e 37 90 fc 99 61 c2 ad 5f 69 a4 f3 59 b5 b5 90 f0 8e 14 97 be 31 6e c4 75 5b bf eb 11 4a 1f 87 c1 8f 97 ae ae 80 2f 8c 77 6a f8 c7 5c a2 d9 0b dd 3e 2f e4 03 d0 b4 d5 be 4f 50 8a d0 f7 c7 ea 7c 8c a5 69 94 7e dd 4b 72 e5 e0 fa 7a f9 be 38 f9 d9 90 af 34 d5 02 92 a2 99 3c 16 fb 23 e9 2d 0a 74 a1 38 f6 71 e2 8b 7a e1 ff 0b b1 b1 85 61 8f dc 21 9f e7 81 92 4c f3 24 01 df e1 c7 d2 66 94 f7 9b 8a 70 25 71 cf db a9 c4 94 a7 b0 e9 69 a6 2f ff a0 a5 bc f6 5f dc 23 6e cf <span style="color:#0000FF">02 03</span> <span style="color:#00FF00">01 00 01</span></span>
+</p>
+</li>
+<li id="a0000000042">
+<p>
+The modulus is the part of the key in black. The encryption exponent is the last three bytes (in green). The rest is to do with Distinguished Encoding Rules. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="rsa_public_key_shu_1">RSA Public Key: shu.ac.uk</h2>
+</header>
+<ul class="itemize" id="a0000000043">
+<li id="a0000000044">
+<p>
+The actual modulus in denary is: <span class="ttfamily"> 1439009874334747912175708580696616782489633913392424042420786858<br/>8493385513036561327933889300201125505036733509500125430474349113<br/>8392109631132209102846208024434773766208990866664115880472151837<br/>2314480955340551600970256190940881256277567983112709841760074703<br/>7746991422383533253603181640828388090653889268036267798634609551<br/>9367579321471090171158258338355210007966141574788860342131168459<br/>2859805329240698372132726428980674548023372409653959742420976883<br/>5330296670239424922714039292364401817591460156344469804908668602<br/>9534570294078337741486136447231027678544026989306624260832616420<br/>6560609424012939961934155724915138865916740099</span>. 
+</p>
+</li>
+<li id="a0000000045">
+<p>
+The encryption exponent in denary is: <span class="ttfamily">65537</span>. 
+</p>
+</li>
+<li id="a0000000046">
+<p>
+Encryption exponents are often primes of the form \(2^n + 1\), as this speeds up computation (repeated squaring). E.g., \(2^1 + 1 = 3\), \(2^4 + 1 = 17\), or \(2^{16} + 1 = 65537\). 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="rsa_in_practi_1">RSA in Practice</h2>
+</header>
+<ul class="itemize" id="a0000000047">
+<li id="a0000000048">
+<p>
+Part of PKCS #1 is how to <b class="bfseries">pad</b> the message. This is a way of adding random noise to the message to avoid sending the same message in the same way multiple times (certain attacks can exploit this). 
+</p>
+</li>
+<li id="a0000000049">
+<p>
+Another common padding scheme is OAEP. 
+</p>
+</li>
+<li id="a0000000050">
+<p>
+Investigating possible attacks on RSA is a very common topic: there are plenty of articles about this in <a href="https://scholar.google.com/scholar?start=0&amp;q=rsa+attack&amp;hl=en&amp;as_sdt=0,5&amp;as_ylo=2024">2024 alone</a>. 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="tutorials">Tutorials</h2>
+</header>
+<p>
+ In the tutorial this week we will: 
+</p>
+<ul class="itemize" id="a0000000051">
+<li id="a0000000052">
+<p>
+Create a spreadsheet to perform simple RSA encryption and allow us to handle larger modular powers. 
+</p>
+</li>
+<li id="a0000000053">
+<p>
+Use the spreadsheet from last week to calculate decryption exponents for RSA. 
+</p>
+</li>
+<li id="a0000000054">
+<p>
+Practice implementing RSA. 
+</p>
+</li>
+</ul>
+</section>
+<script id="plastex-labels" type="application/json">{}</script>
+    </article>
+
+        </main>
+
+		
+		<footer>
+	<hr>
+
+    <nav id="footer-nav">
+        <a href="#">Back to top</a>
+    </nav>
+
+    <div id="footer-text">
+        <p>Generated using <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.2.1, written by the Digital Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
+        <p>This page last generated: 2025-03-04</p>
+        
+        
+        
+    </div>
+</footer>
+		
+
+        
+
+        <svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="icon-defs"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <g id="cog">
+            <path 
+                style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z"
+            />
+        </g>
+        <g id="pdf">
+            <path
+                style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z"
+            />
+        </g>
+        <g id="slides">
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,21.25 30,137.5"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 90,21.25 60,158.75"
+            />
+            <rect
+                style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="119.79137"
+                height="82.273766"
+                x="30.104315"
+                y="36.476234"
+                ry="4.7737675"
+                rx="4.7737675"
+            />
+            <rect
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="140"
+                height="5.2262344"
+                x="20"
+                y="31.25"
+                ry="1.6724058"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,66.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,76.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,86.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,56.25 h 50"
+            />
+            <path
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z"
+            />
+        </g>
+
+        <g id="notebook">
+            <path
+                style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="58.699139"
+               cy="59.503937"
+               r="3.8077738"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="113.59385"
+               cy="52.885151"
+               r="4.9348516"
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z"
+           
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z"
+              
+            />
+            <ellipse
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="63.813011"
+               cy="125.96338"
+               rx="6.4332962"
+               ry="6.4347191"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="M 34,46.266514 V 62.316215"
+            
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="M 34,77.849849 V 93.89955"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 34,109.43318 v 16.0497"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0"
+            />
+        </g>
+
+        <g id="fullscreen">
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+               d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="M 150.95833,68.801471 V 28.958332 h -39.84314"
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="m 28.958332,111.11519 v 39.84314 h 39.843139"
+            />
+        </g>
+    </defs>
+</svg>
+    </body>
+</html>
