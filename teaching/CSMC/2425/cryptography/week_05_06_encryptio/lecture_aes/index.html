@@ -7,7 +7,7 @@
             <meta name="robots" content="noindex">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta name="author" content="Alex Corner" />
-            <meta name="date" content="2025-03-04" />
+            <meta name="date" content="2025-03-05" />
         
 
         <title>Lecture - AES | 55-408808: Introduction to Cyber Security, Maths and Cryptography</title>
@@ -15,41 +15,41 @@
         
     
     
-            <link rel="stylesheet" href="../../../static/styles.css?build_time=1741085756.528123">
+            <link rel="stylesheet" href="../../../static/styles.css?build_time=1741188126.422361">
             
             
         
-    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1741085756.528123">
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1741188126.422361">
 
-    <link rel="stylesheet" href="../../../static/print.css?build_time=1741085756.528123">
+    <link rel="stylesheet" href="../../../static/print.css?build_time=1741188126.422361">
 
 
         
     
 			<script>
-				var chirun_static_url = new URL('../../../static?build_time=1741085756.528123', location.href);
+				var chirun_static_url = new URL('../../../static?build_time=1741188126.422361', location.href);
 			</script>
 
             
-                <script defer src="../../../static/mathjax_config.js?build_time=1741085756.528123"></script>
+                <script defer src="../../../static/mathjax_config.js?build_time=1741188126.422361"></script>
                 <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             
 
-            <script type="module" src="../../../static/localisation.js?build_time=1741085756.528123"></script>
+            <script type="module" src="../../../static/localisation.js?build_time=1741188126.422361"></script>
 
-            <script defer src="../../../static/customisation.js?build_time=1741085756.528123"></script>
+            <script defer src="../../../static/customisation.js?build_time=1741188126.422361"></script>
 
             
 
             
         
-    <script defer src="../../../static/code.js?build_time=1741085756.528123" type="module"></script>
-    <script defer src="../../../static/embed_numbas.js?build_time=1741085756.528123" type="module"></script>
-    <script defer src="../../../static/embed_qrcode.js?build_time=1741085756.528123" type="module"></script>
+    <script defer src="../../../static/code.js?build_time=1741188126.422361" type="module"></script>
+    <script defer src="../../../static/embed_numbas.js?build_time=1741188126.422361" type="module"></script>
+    <script defer src="../../../static/embed_qrcode.js?build_time=1741188126.422361" type="module"></script>
 
 
         <template id="runnable-code-template">
-            <link rel="stylesheet" href="../../../static/code.css?build_time=1741085756.528123">
+            <link rel="stylesheet" href="../../../static/code.css?build_time=1741188126.422361">
             <div class="runnable-code-wrapper">
                 <section class="fullscreenable code">
                     <div id="code"></div>
@@ -230,7 +230,7 @@
         </template>
 
         <template id="embed-numbas-template">
-            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1741085756.528123">
+            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1741188126.422361">
             <details id="wrapper" data-completion-status="incomplete">
                 <summary>
                     <h1 id="title">Test Yourself</h1>
@@ -891,7 +891,7 @@ AES uses 10 rounds (128-bit key), 12 rounds (192-bit key), or 14 rounds (256-bit
 <p>
  The round keys are derived from the original keys (more on that later). At this stage we perform a bitwise <span class="ttfamily">XOR</span> with the plaintext, before beginning the first round. The 0th round key is the original key, where the columns are denoted by \(W(0)\), \(W(1)\), \(W(2)\), and \(W(3)\), respectively. 
 </p>
-<span class="dmath">\[  K \oplus P = \begin{bmatrix} \end{bmatrix} 0F &amp;  47 &amp;  0C &amp;  AF \\ 15 &amp;  D9 &amp;  B7 &amp;  7F \\ 71 &amp;  E8 &amp;  AD &amp;  67 \\ C9 &amp;  59 &amp;  D6 &amp;  98 \end{bmatrix} \oplus \begin{bmatrix} \end{bmatrix} 74 &amp;  6F &amp;  74 &amp;  65 \\ 6F &amp;  72 &amp;  74 &amp;  74 \\ 62 &amp;  6E &amp;  6E &amp;  68 \\ 65 &amp;  6F &amp;  62 &amp;  61 \end{bmatrix} = \begin{bmatrix} \end{bmatrix} 7B &amp;  28 &amp;  78 &amp;  CA \\ 7A &amp;  AB &amp;  C3 &amp;  0B \\ 13 &amp;  86 &amp;  C2 &amp;  0F \\ AC &amp;  36 &amp;  B4 &amp;  F9 \\ \end{bmatrix}.  \]</span>
+<span class="dmath">\[  K \oplus P = \begin{bmatrix} \end{bmatrix} 0F &amp;  47 &amp;  0C &amp;  AF \\ 15 &amp;  D9 &amp;  B7 &amp;  7F \\ 71 &amp;  E8 &amp;  AD &amp;  67 \\ C9 &amp;  59 &amp;  D6 &amp;  98 \end{bmatrix} \oplus \begin{bmatrix} \end{bmatrix} 74 &amp;  6F &amp;  74 &amp;  65 \\ 6F &amp;  72 &amp;  74 &amp;  74 \\ 62 &amp;  6E &amp;  6F &amp;  68 \\ 65 &amp;  6F &amp;  62 &amp;  61 \end{bmatrix} = \begin{bmatrix} \end{bmatrix} 7B &amp;  28 &amp;  78 &amp;  CA \\ 7A &amp;  AB &amp;  C3 &amp;  0B \\ 13 &amp;  86 &amp;  C2 &amp;  0F \\ AC &amp;  36 &amp;  B4 &amp;  F9 \\ \end{bmatrix}.  \]</span>
 <p>
 To see how this works for the first few entries: 
 </p>
@@ -3343,13 +3343,6 @@ The fourth row shifts three places to the left.
 Each column of the array is replaced by a combination of the bytes in the column, where \(\oplus \) means the usual bitwise <span class="ttfamily">XOR</span>, but \(2a\), \(3a\), \(2b\), etc. are <b class="bfseries">not</b> by simple multiplication. 
 </p>
 <span class="dmath">\[  \begin{bmatrix} \end{bmatrix} a \\ b \\ c \\ d \\ \end{bmatrix} \mapsto \begin{bmatrix} \end{bmatrix} 2a \oplus 3b \oplus c \oplus d \\ a \oplus 2b \oplus 3c \oplus d \\ a \oplus b \oplus 2c \oplus 3d \\ 3a \oplus b \oplus c \oplus 2d \\ \end{bmatrix}  \]</span>
-<p>
- In our example, this would be as follows. 
-</p>
-<span class="dmath">\[  \begin{bmatrix} \end{bmatrix} 21 &amp;  34 &amp;  BC &amp;  74 \\ 62 &amp;  2E &amp;  2B &amp;  DA \\ 25 &amp;  76 &amp;  7D &amp;  44 \\ 99 &amp;  91 &amp;  05 &amp;  8D \\ \end{bmatrix} \mapsto \begin{bmatrix} \end{bmatrix} 58 &amp;  FD &amp;  66 &amp;  54 \\ 13 &amp;  63 &amp;  68 &amp;  9A \\ B9 &amp;  5E &amp;  62 &amp;  AA \\ 0D &amp;  3D &amp;  83 &amp;  03 \\ \end{bmatrix}  \]</span>
-<p>
- (This may be slightly incorrect, but don’t worry!) 
-</p>
 </section>
 <section class="beamer-frame">
 <header>
@@ -3600,7 +3593,7 @@ Use any remaining time to carry on with the coursework.
 
     <div id="footer-text">
         <p>Generated using <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.2.1, written by the Digital Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
-        <p>This page last generated: 2025-03-04</p>
+        <p>This page last generated: 2025-03-05</p>
         
         
         
