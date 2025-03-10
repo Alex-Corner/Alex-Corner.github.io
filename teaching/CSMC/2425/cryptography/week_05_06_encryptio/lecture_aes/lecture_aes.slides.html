@@ -7,7 +7,7 @@
             <meta name="robots" content="noindex">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta name="author" content="Alex Corner" />
-            <meta name="date" content="2025-03-05" />
+            <meta name="date" content="2025-03-10" />
         
 
         <title>Lecture - AES | 55-408808: Introduction to Cyber Security, Maths and Cryptography</title>
@@ -15,14 +15,14 @@
         
     
     
-            <link rel="stylesheet" href="../../../static/styles.css?build_time=1741188126.422361">
+            <link rel="stylesheet" href="../../../static/styles.css?build_time=1741603085.660771">
             
             
         
-    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1741188126.422361">
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1741603085.660771">
 
 
-    <link rel="stylesheet" href="../../../static/slides.css?build_time=1741188126.422361">
+    <link rel="stylesheet" href="../../../static/slides.css?build_time=1741603085.660771">
 
 
 
@@ -30,33 +30,33 @@
     
     
 			<script>
-				var chirun_static_url = new URL('../../../static?build_time=1741188126.422361', location.href);
+				var chirun_static_url = new URL('../../../static?build_time=1741603085.660771', location.href);
 			</script>
 
             
-                <script defer src="../../../static/mathjax_config.js?build_time=1741188126.422361"></script>
+                <script defer src="../../../static/mathjax_config.js?build_time=1741603085.660771"></script>
                 <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             
 
-            <script type="module" src="../../../static/localisation.js?build_time=1741188126.422361"></script>
+            <script type="module" src="../../../static/localisation.js?build_time=1741603085.660771"></script>
 
-            <script defer src="../../../static/customisation.js?build_time=1741188126.422361"></script>
+            <script defer src="../../../static/customisation.js?build_time=1741603085.660771"></script>
 
             
 
             
         
-    <script defer src="../../../static/code.js?build_time=1741188126.422361" type="module"></script>
-    <script defer src="../../../static/embed_numbas.js?build_time=1741188126.422361" type="module"></script>
-    <script defer src="../../../static/embed_qrcode.js?build_time=1741188126.422361" type="module"></script>
+    <script defer src="../../../static/code.js?build_time=1741603085.660771" type="module"></script>
+    <script defer src="../../../static/embed_numbas.js?build_time=1741603085.660771" type="module"></script>
+    <script defer src="../../../static/embed_qrcode.js?build_time=1741603085.660771" type="module"></script>
 
 
-    <script type="module" src="../../../static/slides.js?build_time=1741188126.422361"></script>
+    <script type="module" src="../../../static/slides.js?build_time=1741603085.660771"></script>
 
 
 
         <template id="runnable-code-template">
-            <link rel="stylesheet" href="../../../static/code.css?build_time=1741188126.422361">
+            <link rel="stylesheet" href="../../../static/code.css?build_time=1741603085.660771">
             <div class="runnable-code-wrapper">
                 <section class="fullscreenable code">
                     <div id="code"></div>
@@ -237,7 +237,7 @@
         </template>
 
         <template id="embed-numbas-template">
-            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1741188126.422361">
+            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1741603085.660771">
             <details id="wrapper" data-completion-status="incomplete">
                 <summary>
                     <h1 id="title">Test Yourself</h1>
@@ -686,7 +686,7 @@ To see how this works for the first few entries:
 <p>
  In the ByteSub stage we replace each entry in the array using the Rijndael S-Box. We determine the row number using the first hex digit (first byte) and the column by the second hex digit (second byte). 
 </p>
-<span class="dmath">\[  \begin{bmatrix} \end{bmatrix} 7B &amp;  28 &amp;  78 &amp;  CA \\ 7A &amp;  AB &amp;  C3 &amp;  0B \\ 13 &amp;  86 &amp;  C2 &amp;  0F \\ AC &amp;  36 &amp;  B4 &amp;  F9 \\ \end{bmatrix}  \]</span>
+<span class="dmath">\[  \begin{bmatrix} \end{bmatrix} 7B &amp;  28 &amp;  78 &amp;  CA \\ 7A &amp;  AB &amp;  C3 &amp;  0B \\ 13 &amp;  86 &amp;  C2 &amp;  0F \\ AC &amp;  36 &amp;  B4 &amp;  F9 \end{bmatrix}  \]</span>
 <p>
  E.g., the first entry is \(7B\), which corresponds to the 7th row and column \(B\), the 11th column. 
 </p>
@@ -3066,11 +3066,11 @@ To see how this works for the first few entries:
 <p>
  In the ByteSub stage we replace each entry in the array using the Rijndael S-Box. We determine the row number using the first hex digit (first byte) and the column by the second hex digit (second byte). 
 </p>
-<span class="dmath">\[  \begin{bmatrix} \end{bmatrix} 7B &amp;  28 &amp;  78 &amp;  CA \\ 7A &amp;  AB &amp;  C3 &amp;  0B \\ 13 &amp;  86 &amp;  C2 &amp;  0F \\ AC &amp;  36 &amp;  B4 &amp;  F9 \\ \end{bmatrix}  \]</span>
+<span class="dmath">\[  \begin{bmatrix} \end{bmatrix} 7B &amp;  28 &amp;  78 &amp;  CA \\ 7A &amp;  AB &amp;  C3 &amp;  0B \\ 13 &amp;  86 &amp;  C2 &amp;  0F \\ AC &amp;  36 &amp;  B4 &amp;  F9 \end{bmatrix}  \]</span>
 <p>
  E.g., the first entry is \(7B\), which corresponds to the 7th row and column \(B\), the 11th column. This gives \(21\). Doing this for each entry gives the following array. 
 </p>
-<span class="dmath">\[  \begin{bmatrix} \end{bmatrix} 21 &amp;  34 &amp;  BC &amp;  74 \\ DA &amp;  62 &amp;  2E &amp;  2B \\ 7D &amp;  44 &amp;  25 &amp;  76 \\ 91 &amp;  05 &amp;  8D &amp;  99 \\ \end{bmatrix}  \]</span>
+<span class="dmath">\[  \begin{bmatrix} \end{bmatrix} 21 &amp;  34 &amp;  BC &amp;  74 \\ DA &amp;  62 &amp;  2E &amp;  2B \\ 7D &amp;  44 &amp;  25 &amp;  76 \\ 91 &amp;  05 &amp;  8D &amp;  99 \end{bmatrix}  \]</span>
 </section>
 <section class="beamer-frame">
 <header>
@@ -3101,7 +3101,7 @@ The fourth row shifts three places to the left.
 </p>
 </li>
 </ul>
-<span class="dmath">\[  \begin{bmatrix} \end{bmatrix} 21 &amp;  34 &amp;  BC &amp;  74 \\ DA &amp;  62 &amp;  2E &amp;  2B \\ 7D &amp;  44 &amp;  25 &amp;  76 \\ 91 &amp;  05 &amp;  8D &amp;  99 \\ \end{bmatrix} \mapsto \begin{bmatrix} \end{bmatrix} 21 &amp;  34 &amp;  BC &amp;  74 \\ 62 &amp;  2E &amp;  2B &amp;  DA \\ 25 &amp;  76 &amp;  7D &amp;  44 \\ 99 &amp;  91 &amp;  05 &amp;  8D \\ \end{bmatrix}  \]</span>
+<span class="dmath">\[  \begin{bmatrix} \end{bmatrix} 21 &amp;  34 &amp;  BC &amp;  74 \\ DA &amp;  62 &amp;  2E &amp;  2B \\ 7D &amp;  44 &amp;  25 &amp;  76 \\ 91 &amp;  05 &amp;  8D &amp;  99 \end{bmatrix} \mapsto \begin{bmatrix} \end{bmatrix} 21 &amp;  34 &amp;  BC &amp;  74 \\ 62 &amp;  2E &amp;  2B &amp;  DA \\ 25 &amp;  76 &amp;  7D &amp;  44 \\ 99 &amp;  91 &amp;  05 &amp;  8D \end{bmatrix}  \]</span>
 </section>
 <section class="beamer-frame">
 <header>
@@ -3113,7 +3113,7 @@ The fourth row shifts three places to the left.
 <p>
 Each column of the array is replaced by a combination of the bytes in the column, where \(\oplus \) means the usual bitwise <span class="ttfamily">XOR</span>, but \(2a\), \(3a\), \(2b\), etc. are <b class="bfseries">not</b> by simple multiplication. 
 </p>
-<span class="dmath">\[  \begin{bmatrix} \end{bmatrix} a \\ b \\ c \\ d \\ \end{bmatrix} \mapsto \begin{bmatrix} \end{bmatrix} 2a \oplus 3b \oplus c \oplus d \\ a \oplus 2b \oplus 3c \oplus d \\ a \oplus b \oplus 2c \oplus 3d \\ 3a \oplus b \oplus c \oplus 2d \\ \end{bmatrix}  \]</span>
+<span class="dmath">\[  \begin{bmatrix} \end{bmatrix} a \\ b \\ c \\ d \\ \end{bmatrix} \mapsto \begin{bmatrix} \end{bmatrix} 2a \oplus 3b \oplus c \oplus d \\ a \oplus 2b \oplus 3c \oplus d \\ a \oplus b \oplus 2c \oplus 3d \\ 3a \oplus b \oplus c \oplus 2d \end{bmatrix}  \]</span>
 </section>
 <section class="beamer-frame">
 <header>
