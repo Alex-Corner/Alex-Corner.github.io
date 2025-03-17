@@ -7,7 +7,7 @@
             <meta name="robots" content="noindex">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta name="author" content="Alex Corner" />
-            <meta name="date" content="2025-03-14" />
+            <meta name="date" content="2025-03-17" />
         
 
         <title>Lecture - RSA | 55-408808: Introduction to Cyber Security, Maths and Cryptography</title>
@@ -15,14 +15,14 @@
         
     
     
-            <link rel="stylesheet" href="../../../static/styles.css?build_time=1741968739.552068">
+            <link rel="stylesheet" href="../../../static/styles.css?build_time=1742206070.53208">
             
             
         
-    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1741968739.552068">
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1742206070.53208">
 
 
-    <link rel="stylesheet" href="../../../static/slides.css?build_time=1741968739.552068">
+    <link rel="stylesheet" href="../../../static/slides.css?build_time=1742206070.53208">
 
 
 
@@ -30,33 +30,33 @@
     
     
 			<script>
-				var chirun_static_url = new URL('../../../static?build_time=1741968739.552068', location.href);
+				var chirun_static_url = new URL('../../../static?build_time=1742206070.53208', location.href);
 			</script>
 
             
-                <script defer src="../../../static/mathjax_config.js?build_time=1741968739.552068"></script>
+                <script defer src="../../../static/mathjax_config.js?build_time=1742206070.53208"></script>
                 <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
             
 
-            <script type="module" src="../../../static/localisation.js?build_time=1741968739.552068"></script>
+            <script type="module" src="../../../static/localisation.js?build_time=1742206070.53208"></script>
 
-            <script defer src="../../../static/customisation.js?build_time=1741968739.552068"></script>
+            <script defer src="../../../static/customisation.js?build_time=1742206070.53208"></script>
 
             
 
             
         
-    <script defer src="../../../static/code.js?build_time=1741968739.552068" type="module"></script>
-    <script defer src="../../../static/embed_numbas.js?build_time=1741968739.552068" type="module"></script>
-    <script defer src="../../../static/embed_qrcode.js?build_time=1741968739.552068" type="module"></script>
+    <script defer src="../../../static/code.js?build_time=1742206070.53208" type="module"></script>
+    <script defer src="../../../static/embed_numbas.js?build_time=1742206070.53208" type="module"></script>
+    <script defer src="../../../static/embed_qrcode.js?build_time=1742206070.53208" type="module"></script>
 
 
-    <script type="module" src="../../../static/slides.js?build_time=1741968739.552068"></script>
+    <script type="module" src="../../../static/slides.js?build_time=1742206070.53208"></script>
 
 
 
         <template id="runnable-code-template">
-            <link rel="stylesheet" href="../../../static/code.css?build_time=1741968739.552068">
+            <link rel="stylesheet" href="../../../static/code.css?build_time=1742206070.53208">
             <div class="runnable-code-wrapper">
                 <section class="fullscreenable code">
                     <div id="code"></div>
@@ -237,7 +237,7 @@
         </template>
 
         <template id="embed-numbas-template">
-            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1741968739.552068">
+            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1742206070.53208">
             <details id="wrapper" data-completion-status="incomplete">
                 <summary>
                     <h1 id="title">Test Yourself</h1>
@@ -440,35 +440,62 @@
 </section>
 <section class="beamer-frame">
 <header>
-<h2 class="beamer-frame-title" id="rsa_implementation">RSA: Implementation</h2>
+<h2 class="beamer-frame-title" id="recap_number_theory">Recap: Number Theory</h2>
 </header>
 <ul class="itemize" id="a0000000002">
 <li id="a0000000003">
 <p>
-Alice chooses two ‘large’ primes \(p\) and \(q\). 
+<b class="bfseries">Prime number</b>: a number which is divisible only by itself and by 1, not including 1 itself. 
 </p>
 </li>
 <li id="a0000000004">
 <p>
-She calculates \(n = pq\) (the <b class="bfseries">modulus</b>) and then finds \(\varphi (n) = \varphi (pq) = (p-1)(q-1)\). 
+An integer \(a\) is <b class="bfseries">coprime</b> to \(p\) if the <b class="bfseries">highest common factor</b> of \(a\) and \(p\) is 1: \(\operatorname {hcf}(a,p) = 1\). Also known as the <b class="bfseries">greatest common divisor</b>. 
 </p>
 </li>
 <li id="a0000000005">
 <p>
-Alice also selects a value of \(e\) (the <b class="bfseries">encryption exponent</b>) such that \(1 {\lt} e {\lt} \varphi (n)\) and \(\operatorname {hcf}(e,\varphi (n)) = 1\). 
+Let \(n\) be a non-negative integer. The number of integers less than \(n\) which are coprime to \(n\) is written as \(\varphi (n)\). The function \(\varphi \) is known as <b class="bfseries">Euler’s totient function</b>. 
 </p>
 </li>
 <li id="a0000000006">
 <p>
+This is easy to compute for prime numbers: \(\varphi (p) = p-1\). And for products of primes: \(\varphi (pq) = (p-1)(q-1)\). 
+</p>
+</li>
+</ul>
+</section>
+<section class="beamer-frame">
+<header>
+<h2 class="beamer-frame-title" id="rsa_implementation">RSA: Implementation</h2>
+</header>
+<ul class="itemize" id="a0000000007">
+<li id="a0000000008">
+<p>
+Alice chooses two ‘large’ primes \(p\) and \(q\). 
+</p>
+</li>
+<li id="a0000000009">
+<p>
+She calculates \(n = pq\) (the <b class="bfseries">modulus</b>) and then finds \(\varphi (n) = \varphi (pq) = (p-1)(q-1)\). 
+</p>
+</li>
+<li id="a0000000010">
+<p>
+Alice also selects a value of \(e\) (the <b class="bfseries">encryption exponent</b>) such that \(1 {\lt} e {\lt} \varphi (n)\) and \(\operatorname {hcf}(e,\varphi (n)) = 1\). 
+</p>
+</li>
+<li id="a0000000011">
+<p>
 She also finds a value \(d\) (the <b class="bfseries">decryption exponent</b>) such that \(de = 1 \operatorname {mod} \varphi (n)\). (More on this later.) 
 </p>
 </li>
-<li id="a0000000007">
+<li id="a0000000012">
 <p>
 Alice then publishes \((n,e)\) publicly: this is her <b class="bfseries">public key</b>. 
 </p>
 </li>
-<li id="a0000000008">
+<li id="a0000000013">
 <p>
 She keeps the value of \(d\) secret: this is her <b class="bfseries">private key</b>. 
 </p>
@@ -479,28 +506,28 @@ She keeps the value of \(d\) secret: this is her <b class="bfseries">private key
 <header>
 <h2 class="beamer-frame-title" id="rsa_encryption">RSA: Encryption</h2>
 </header>
-<ul class="itemize" id="a0000000009">
-<li id="a0000000010">
+<ul class="itemize" id="a0000000014">
+<li id="a0000000015">
 <p>
 Alice has published her public key \((n,e)\) and kept her private key \(d\) secret. 
 </p>
 </li>
-<li id="a0000000011">
+<li id="a0000000016">
 <p>
 Bob can now encrypt messages to send to Alice. He selects a message value \(0 \leq m {\lt} n\) and calculates \(c = m^e \operatorname {mod} n\). He sends this to Alice. 
 </p>
 </li>
-<li id="a0000000012">
+<li id="a0000000017">
 <p>
 Alice can now decrypt this by finding \(c^d = m^{de} = m \operatorname {mod} n\). 
 </p>
 </li>
-<li id="a0000000013">
+<li id="a0000000018">
 <p>
 That this works relies on a result in number theory called Euler’s Theorem: 
 </p>
-<ul class="itemize" id="a0000000014">
-<li id="a0000000015">
+<ul class="itemize" id="a0000000019">
+<li id="a0000000020">
 <p>
 Let \(n\) be a non-negative integer and let \(a\) be an integer coprime to \(n\). Then 
 </p>
@@ -514,48 +541,48 @@ Let \(n\) be a non-negative integer and let \(a\) be an integer coprime to \(n\)
 <header>
 <h2 class="beamer-frame-title" id="rsa_encryption_examp">RSA: Encryption Example</h2>
 </header>
-<ul class="itemize" id="a0000000016">
-<li id="a0000000017">
+<ul class="itemize" id="a0000000021">
+<li id="a0000000022">
 <p>
 Suppose that Alice has chosen primes \(p = 7\) and \(q = 13\), and <b class="bfseries">encryption exponent</b> \(e = 5\). 
 </p>
 </li>
-<li id="a0000000018">
+<li id="a0000000023">
 <p>
 Her <b class="bfseries">modulus</b> is \(n = pq = 7 \times 13 = 91\). 
 </p>
 </li>
-<li id="a0000000019">
+<li id="a0000000024">
 <p>
 She also calculates \(\varphi (n) = \varphi (91) = \varphi (7 \times 13) = 6 \times 12 = 72\). 
 </p>
 </li>
-<li id="a0000000020">
+<li id="a0000000025">
 <p>
 Alice finds \(d = 29\), so that \(de = 29 \times 5 = 145 = 1 \operatorname {mod} 72\). 
 </p>
 </li>
-<li id="a0000000021">
+<li id="a0000000026">
 <p>
 She publishes the public key \((n,e) = (91,5)\). 
 </p>
 </li>
-<li id="a0000000022">
+<li id="a0000000027">
 <p>
 Bob wants to send the message ‘<span class="ttfamily">Y</span>’ to Alice. He could convert this to ASCII (\(0101 \,  1001\) in binary, \(89\) in denary) so that the message value is \(m = 89\). 
 </p>
 </li>
-<li id="a0000000023">
+<li id="a0000000028">
 <p>
 Bob calculates \(c = m^e = 89^5 \operatorname {mod} 91\). He might do this by repeated squaring if the powers are large. (See previous notes on modular arithmetic.) 
 </p>
 </li>
-<li id="a0000000024">
+<li id="a0000000029">
 <p>
 \(c = m^e = 89^5 = (-2)^5 = -32 = 59 \operatorname {mod} 91\) 
 </p>
 </li>
-<li id="a0000000025">
+<li id="a0000000030">
 <p>
 Alice decrypts this by calculating \(c^d = 59^{29} \operatorname {mod} 91\). 
 </p>
@@ -566,28 +593,28 @@ Alice decrypts this by calculating \(c^d = 59^{29} \operatorname {mod} 91\).
 <header>
 <h2 class="beamer-frame-title" id="quick_powers_recap">Quick Powers: Recap</h2>
 </header>
-<ul class="itemize" id="a0000000026">
-<li id="a0000000027">
+<ul class="itemize" id="a0000000031">
+<li id="a0000000032">
 <p>
 To decrypt Bob’s encrypted message, Alice calculates \(c^d = 59^{29} \operatorname {mod} 91\). 
 </p>
 </li>
-<li id="a0000000028">
+<li id="a0000000033">
 <p>
 The power is \(29 = 16 + 8 + 4 + 1\). We write it as the sum of powers of 2, then \(59^{29} = 59^{16} \times 59^8 \times 59^4 \times 59^1\). 
 </p>
 </li>
-<li id="a0000000029">
+<li id="a0000000034">
 <p>
 <span><script type="math/tex; mode=display">\begin{align*} \end{align*}</script></span> 59^1 = 59 mod 91 <br/>59^2 = 3481 = 23 mod 91 <br/>59^4 = 23^2 = 529 = 74 mod 91 <br/>59^8 = 74^2 = 5476 = 16 mod 91 <br/>59^16 = 16^2 = 256 = 74 mod 91 <span><script type="math/tex; mode=display">\end{align*}</script></span>
 </p>
 </li>
-<li id="a0000000030">
+<li id="a0000000035">
 <p>
 \(59^{29} = 59^{16} \times 59^8 \times 59^4 \times 59^1 = 74 \times 16 \times 74 \times 59 = 89 \operatorname {mod} 91\). 
 </p>
 </li>
-<li id="a0000000031">
+<li id="a0000000036">
 <p>
 In practice we encrypt multiple letters at a time in blocks (255 letters), rather than just single letters. This prevents simple frequency analysis style attacks. 
 </p>
@@ -612,7 +639,7 @@ We can easily check that the highest common factor of \(e = \textcolor{red}{5}\)
 <p>
  The RSA example used the value of \(d=29\), but didn’t explain where this came from. 
 </p>
-<div class="table" id="a0000000032">
+<div class="table" id="a0000000037">
 <table class="tabular">
 <tr><td colspan="" rowspan="" style="text-align:center"> </td>
 <td colspan="" rowspan="" style="text-align:center"><p>
@@ -747,7 +774,7 @@ We need a value of \(d\) such that \(de = 1 \operatorname {mod} \varphi (n)\), s
 <p>
  Alice changes her RSA scheme to use \(p = 11\), \(q = 19\), and \(e = 7\). She calculates \(n = pq = 11 \times 19 = 209\) and \(\varphi (n) = (p-1)(q-1) = 10 \times 18 = 180\). She publishes \((n,e) = (209,7)\) and calculates \(d\) using the extended Euclidean algorithm. 
 </p>
-<div class="table" id="a0000000033">
+<div class="table" id="a0000000038">
 <table class="tabular">
 <tr><td colspan="" rowspan="" style="text-align:center"> </td>
 <td colspan="" rowspan="" style="text-align:center"><p>
@@ -877,23 +904,23 @@ We need a value of \(d\) such that \(de = 1 \operatorname {mod} \varphi (n)\), s
 <header>
 <h2 class="beamer-frame-title" id="rsa_in_practice">RSA in Practice</h2>
 </header>
-<ul class="itemize" id="a0000000034">
-<li id="a0000000035">
+<ul class="itemize" id="a0000000039">
+<li id="a0000000040">
 <p>
 The main idea behind RSA is that your encryption key \((n,e)\) can be made <b class="bfseries">public</b>: anybody can know it without any security issues. But, only you have access to the decryption key \((n,d)\). 
 </p>
 </li>
-<li id="a0000000036">
+<li id="a0000000041">
 <p>
 Theoretically, an attacker could factor the modulus \(n\) and use the primes to calculate the decryption exponent \(d\). The security of RSA depends on this being a very difficult problem. 
 </p>
 </li>
-<li id="a0000000037">
+<li id="a0000000042">
 <p>
 Our examples only include small primes so that we can understand how RSA works. In practice, the modulus will be 2048 or 3072 bits as <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-57Pt3r1.pdf">recommended by NIST</a> in 2015. This means that the modulus will be of the order of 600+ decimal digits. 
 </p>
 </li>
-<li id="a0000000038">
+<li id="a0000000043">
 <p>
 In general, RSA is not recommended for encrypting whole messages as it is computationally impractical. Instead it finds most of its use in key distribution (alongside Diffie-Hellman key exchange) and digital verification/authentication schemes. 
 </p>
@@ -904,21 +931,21 @@ In general, RSA is not recommended for encrypting whole messages as it is comput
 <header>
 <h2 class="beamer-frame-title" id="rsa_public_key_shu_a">RSA Public Key: shu.ac.uk</h2>
 </header>
-<ul class="itemize" id="a0000000039">
-<li id="a0000000040">
+<ul class="itemize" id="a0000000044">
+<li id="a0000000045">
 <p>
 shu.ac.uk uses the <a href="https://datatracker.ietf.org/doc/html/rfc8017">PKCS #1 RSA Encryption</a> specification. 
 </p>
 </li>
-<li id="a0000000041">
+<li id="a0000000046">
 <p>
 It uses public key 
 </p>
 <p>
-<span class="ttfamily"><span style="color:#FF0000">30 82 01 0a 02 82 01 01 00</span> ad ef f1 f6 86 63 6a 58 60 b7 d9 16 ad ed 3b 8a 76 f5 47 30 aa a2 b2 b7 14 4c 57 72 c8 8f 11 9b 7d 62 2f 15 15 45 0e c8 4c 66 97 00 d1 9e f3 9a 59 9a 03 e3 93 93 a6 38 d9 16 5d ce 1e f6 02 f1 07 f3 ba 3e f1 a0 97 b6 d5 95 8c 5a c2 ad 88 04 15 86 15 08 45 a9 18 81 01 dd 75 ba 7e 31 07 78 3a f6 05 93 3e 37 90 fc 99 61 c2 ad 5f 69 a4 f3 59 b5 b5 90 f0 8e 14 97 be 31 6e c4 75 5b bf eb 11 4a 1f 87 c1 8f 97 ae ae 80 2f 8c 77 6a f8 c7 5c a2 d9 0b dd 3e 2f e4 03 d0 b4 d5 be 4f 50 8a d0 f7 c7 ea 7c 8c a5 69 94 7e dd 4b 72 e5 e0 fa 7a f9 be 38 f9 d9 90 af 34 d5 02 92 a2 99 3c 16 fb 23 e9 2d 0a 74 a1 38 f6 71 e2 8b 7a e1 ff 0b b1 b1 85 61 8f dc 21 9f e7 81 92 4c f3 24 01 df e1 c7 d2 66 94 f7 9b 8a 70 25 71 cf db a9 c4 94 a7 b0 e9 69 a6 2f ff a0 a5 bc f6 5f dc 23 6e cf <span style="color:#0000FF">02 03</span> <span style="color:#00FF00">01 00 01</span></span>
+<span class="ttfamily"><span style="color:#FF0000">30 82 01 0a 02 82 01 01 00</span> c6 12 a3 d5 e7 86 86 29 2e 49 28 d8 cb a9 97 f4 2f ad 0a 11 3a 79 9d c6 d2 61 14 27 9b 86 b4 a2 33 31 58 b6 17 98 b9 e6 a8 a3 31 1a 3f ac ad e1 ea 0d 10 27 3c 3e b1 f3 e0 2f dc 8c 5e 36 fd b6 e9 52 1f 8b 29 4d b6 68 26 99 0d c8 37 77 29 16 28 2b 04 4a af 1c 9d 65 37 9b a1 9f 45 5f 21 82 df 56 e7 e5 0b ca 9f 6a 74 7b b3 2c 8e f4 f1 25 75 70 3c e7 a2 ea 0e f8 06 74 36 33 3b 3d 90 a6 a9 e3 0f 36 a3 ed 9e 96 27 bc 15 99 80 29 ff 54 76 cb df 83 55 a9 e6 bf b9 c6 75 39 d0 95 4f d3 a9 3a a1 02 2e 15 6c d6 8d 50 d3 65 cd 8b 9c b1 fb 82 b9 c4 c4 4f 5d dd 2a d7 9e 7c 68 90 94 24 5a 96 58 fe e4 b4 42 df 76 ad 53 25 63 13 0c 93 74 c5 f0 6d 07 cb 4d 4c b6 7c 19 b2 28 35 91 91 9d 58 d5 b2 27 04 96 73 b2 70 5e 50 02 67 88 e1 de 82 da dc 1f ab 31 af cf 5a df aa 25 25 20 a1 <span style="color:#0000FF">02 03</span> <span style="color:#00FF00">01 00 01</span></span>
 </p>
 </li>
-<li id="a0000000042">
+<li id="a0000000047">
 <p>
 The modulus is the part of the key in black. The encryption exponent is the last three bytes (in green). The rest is to do with Distinguished Encoding Rules. 
 </p>
@@ -929,18 +956,18 @@ The modulus is the part of the key in black. The encryption exponent is the last
 <header>
 <h2 class="beamer-frame-title" id="rsa_public_key_shu_1">RSA Public Key: shu.ac.uk</h2>
 </header>
-<ul class="itemize" id="a0000000043">
-<li id="a0000000044">
+<ul class="itemize" id="a0000000048">
+<li id="a0000000049">
 <p>
-The actual modulus in denary is: <span class="ttfamily"> 1439009874334747912175708580696616782489633913392424042420786858<br/>8493385513036561327933889300201125505036733509500125430474349113<br/>8392109631132209102846208024434773766208990866664115880472151837<br/>2314480955340551600970256190940881256277567983112709841760074703<br/>7746991422383533253603181640828388090653889268036267798634609551<br/>9367579321471090171158258338355210007966141574788860342131168459<br/>2859805329240698372132726428980674548023372409653959742420976883<br/>5330296670239424922714039292364401817591460156344469804908668602<br/>9534570294078337741486136447231027678544026989306624260832616420<br/>6560609424012939961934155724915138865916740099</span>. 
+The actual modulus in denary is: <span class="ttfamily"> 2500437610131522493100148237076405630918631449591929336512<br/>2239831454753121949964126846047420776247220203472708577454<br/>9142809423789955833556783085077726104096884868435708358365<br/>8982909292834328906237421764600535191834994448584081246697<br/>6211091677560578034739281193925515725071442095562596056149<br/>0935466494207680063486570073078223792678356290875731196481<br/>3634508336439123725107787554955192955326808016969653788768<br/>8246000841545840648326905294446959029102185819663218454853<br/>1560100057082391902302619695947540537763672293516289641189<br/>7411341797564643847884094551642945773927634771284706789180<br/>9257303725817491140372032614172008609</span>. 
 </p>
 </li>
-<li id="a0000000045">
+<li id="a0000000050">
 <p>
 The encryption exponent in denary is: <span class="ttfamily">65537</span>. 
 </p>
 </li>
-<li id="a0000000046">
+<li id="a0000000051">
 <p>
 Encryption exponents are often primes of the form \(2^n + 1\), as this speeds up computation (repeated squaring). E.g., \(2^1 + 1 = 3\), \(2^4 + 1 = 17\), or \(2^{16} + 1 = 65537\). 
 </p>
@@ -951,18 +978,18 @@ Encryption exponents are often primes of the form \(2^n + 1\), as this speeds up
 <header>
 <h2 class="beamer-frame-title" id="rsa_in_practi_1">RSA in Practice</h2>
 </header>
-<ul class="itemize" id="a0000000047">
-<li id="a0000000048">
+<ul class="itemize" id="a0000000052">
+<li id="a0000000053">
 <p>
 Part of PKCS #1 is how to <b class="bfseries">pad</b> the message. This is a way of adding random noise to the message to avoid sending the same message in the same way multiple times (certain attacks can exploit this). 
 </p>
 </li>
-<li id="a0000000049">
+<li id="a0000000054">
 <p>
 Another common padding scheme is OAEP. 
 </p>
 </li>
-<li id="a0000000050">
+<li id="a0000000055">
 <p>
 Investigating possible attacks on RSA is a very common topic: there are plenty of articles about this in <a href="https://scholar.google.com/scholar?start=0&amp;q=rsa+attack&amp;hl=en&amp;as_sdt=0,5&amp;as_ylo=2024">2024 alone</a>. 
 </p>
@@ -976,20 +1003,20 @@ Investigating possible attacks on RSA is a very common topic: there are plenty o
 <p>
  In the tutorial this week we will: 
 </p>
-<ul class="itemize" id="a0000000051">
-<li id="a0000000052">
+<ul class="itemize" id="a0000000056">
+<li id="a0000000057">
 <p>
 Create a spreadsheet to perform simple RSA encryption and allow us to handle larger modular powers. 
 </p>
 </li>
-<li id="a0000000053">
+<li id="a0000000058">
 <p>
 Use the spreadsheet from last week to calculate decryption exponents for RSA. 
 </p>
 </li>
-<li id="a0000000054">
+<li id="a0000000059">
 <p>
-Practice implementing RSA. 
+Practice small examples implementing RSA by hand. 
 </p>
 </li>
 </ul>
