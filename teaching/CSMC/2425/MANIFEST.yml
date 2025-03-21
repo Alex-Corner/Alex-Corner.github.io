@@ -930,6 +930,52 @@ structure:
     title: Week 08-09 - Public Keys and RSA
     type: part
     url: cryptography/week_08_09_public_ke/index.html
+  - build_pdf: false
+    content:
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: cryptography/week_10_hashing_and_/lecture_hashing_and_/index.html
+      - filetype: pdf
+        format: default
+        url: cryptography/week_10_hashing_and_/lecture_hashing_and_/lecture_hashing_and_.pdf
+      - filetype: html
+        format: slides
+        url: cryptography/week_10_hashing_and_/lecture_hashing_and_/lecture_hashing_and_.slides.html
+      is_hidden: false
+      pdf_url: cryptography/week_10_hashing_and_/lecture_hashing_and_/lecture_hashing_and_.pdf
+      slides_url: cryptography/week_10_hashing_and_/lecture_hashing_and_/lecture_hashing_and_.slides.html
+      slug: lecture_hashing_and_
+      source: week_10-authentication/authentication.tex
+      title: Lecture - Hashing and Authentication
+      type: slides
+      url: cryptography/week_10_hashing_and_/lecture_hashing_and_/index.html
+    - build_pdf: true
+      formats:
+      - filetype: html
+        format: default
+        url: cryptography/week_10_hashing_and_/exercises_hashing_an/index.html
+      - filetype: pdf
+        format: default
+        url: cryptography/week_10_hashing_and_/exercises_hashing_an/exercises_hashing_an.pdf
+      is_hidden: false
+      pdf_url: cryptography/week_10_hashing_and_/exercises_hashing_an/exercises_hashing_an.pdf
+      slug: exercises_hashing_an
+      source: week_10-authentication/authentication-exercises.tex
+      title: Exercises - Hashing and Authentication
+      type: chapter
+      url: cryptography/week_10_hashing_and_/exercises_hashing_an/index.html
+    formats:
+    - filetype: html
+      format: default
+      url: cryptography/week_10_hashing_and_/index.html
+    is_hidden: false
+    slug: week_10_hashing_and_
+    source: .
+    title: Week 10 - Hashing and Authentication
+    type: part
+    url: cryptography/week_10_hashing_and_/index.html
   formats:
   - filetype: html
     format: default
