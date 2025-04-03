@@ -88,17 +88,17 @@ structure:
       formats:
       - filetype: html
         format: default
-        url: mathematics/revision_arithmetic/arithmetic/index.html
+        url: mathematics/revision_arithmetic/notes_arithmetic/index.html
       - filetype: pdf
         format: default
-        url: mathematics/revision_arithmetic/arithmetic/arithmetic.pdf
+        url: mathematics/revision_arithmetic/notes_arithmetic/notes_arithmetic.pdf
       is_hidden: false
-      pdf_url: mathematics/revision_arithmetic/arithmetic/arithmetic.pdf
-      slug: arithmetic
+      pdf_url: mathematics/revision_arithmetic/notes_arithmetic/notes_arithmetic.pdf
+      slug: notes_arithmetic
       source: revision/arithmetic-notes.tex
-      title: Arithmetic
+      title: Notes - Arithmetic
       type: chapter
-      url: mathematics/revision_arithmetic/arithmetic/index.html
+      url: mathematics/revision_arithmetic/notes_arithmetic/index.html
     - build_pdf: true
       formats:
       - filetype: html
@@ -130,17 +130,17 @@ structure:
       formats:
       - filetype: html
         format: default
-        url: mathematics/revision_number_base/binary_and_hex/index.html
+        url: mathematics/revision_number_base/notes_binary_and_hex/index.html
       - filetype: pdf
         format: default
-        url: mathematics/revision_number_base/binary_and_hex/binary_and_hex.pdf
+        url: mathematics/revision_number_base/notes_binary_and_hex/notes_binary_and_hex.pdf
       is_hidden: false
-      pdf_url: mathematics/revision_number_base/binary_and_hex/binary_and_hex.pdf
-      slug: binary_and_hex
+      pdf_url: mathematics/revision_number_base/notes_binary_and_hex/notes_binary_and_hex.pdf
+      slug: notes_binary_and_hex
       source: revision/binary-notes.tex
-      title: Binary and Hex
+      title: Notes - Binary and Hex
       type: chapter
-      url: mathematics/revision_number_base/binary_and_hex/index.html
+      url: mathematics/revision_number_base/notes_binary_and_hex/index.html
     - build_pdf: true
       formats:
       - filetype: html
@@ -187,17 +187,17 @@ structure:
       formats:
       - filetype: html
         format: default
-        url: mathematics/revision_algebra_gra/algebra/index.html
+        url: mathematics/revision_algebra_gra/notes_algebra/index.html
       - filetype: pdf
         format: default
-        url: mathematics/revision_algebra_gra/algebra/algebra.pdf
+        url: mathematics/revision_algebra_gra/notes_algebra/notes_algebra.pdf
       is_hidden: false
-      pdf_url: mathematics/revision_algebra_gra/algebra/algebra.pdf
-      slug: algebra
+      pdf_url: mathematics/revision_algebra_gra/notes_algebra/notes_algebra.pdf
+      slug: notes_algebra
       source: revision/algebra-notes.tex
-      title: Algebra
+      title: Notes - Algebra
       type: chapter
-      url: mathematics/revision_algebra_gra/algebra/index.html
+      url: mathematics/revision_algebra_gra/notes_algebra/index.html
     - build_pdf: true
       formats:
       - filetype: html
@@ -217,32 +217,32 @@ structure:
       formats:
       - filetype: html
         format: default
-        url: mathematics/revision_algebra_gra/straight_lines/index.html
+        url: mathematics/revision_algebra_gra/notes_straight_lines/index.html
       - filetype: pdf
         format: default
-        url: mathematics/revision_algebra_gra/straight_lines/straight_lines.pdf
+        url: mathematics/revision_algebra_gra/notes_straight_lines/notes_straight_lines.pdf
       is_hidden: false
-      pdf_url: mathematics/revision_algebra_gra/straight_lines/straight_lines.pdf
-      slug: straight_lines
+      pdf_url: mathematics/revision_algebra_gra/notes_straight_lines/notes_straight_lines.pdf
+      slug: notes_straight_lines
       source: revision/lines-notes.tex
-      title: Straight Lines
+      title: Notes - Straight Lines
       type: chapter
-      url: mathematics/revision_algebra_gra/straight_lines/index.html
+      url: mathematics/revision_algebra_gra/notes_straight_lines/index.html
     - build_pdf: true
       formats:
       - filetype: html
         format: default
-        url: mathematics/revision_algebra_gra/quadratics/index.html
+        url: mathematics/revision_algebra_gra/notes_quadratics/index.html
       - filetype: pdf
         format: default
-        url: mathematics/revision_algebra_gra/quadratics/quadratics.pdf
+        url: mathematics/revision_algebra_gra/notes_quadratics/notes_quadratics.pdf
       is_hidden: false
-      pdf_url: mathematics/revision_algebra_gra/quadratics/quadratics.pdf
-      slug: quadratics
+      pdf_url: mathematics/revision_algebra_gra/notes_quadratics/notes_quadratics.pdf
+      slug: notes_quadratics
       source: revision/quadratics-notes.tex
-      title: Quadratics
+      title: Notes - Quadratics
       type: chapter
-      url: mathematics/revision_algebra_gra/quadratics/index.html
+      url: mathematics/revision_algebra_gra/notes_quadratics/index.html
     - build_pdf: true
       formats:
       - filetype: html
@@ -274,17 +274,17 @@ structure:
       formats:
       - filetype: html
         format: default
-        url: mathematics/revision_logic/propositional_logic_/index.html
+        url: mathematics/revision_logic/notes_propositional_/index.html
       - filetype: pdf
         format: default
-        url: mathematics/revision_logic/propositional_logic_/propositional_logic_.pdf
+        url: mathematics/revision_logic/notes_propositional_/notes_propositional_.pdf
       is_hidden: false
-      pdf_url: mathematics/revision_logic/propositional_logic_/propositional_logic_.pdf
-      slug: propositional_logic_
+      pdf_url: mathematics/revision_logic/notes_propositional_/notes_propositional_.pdf
+      slug: notes_propositional_
       source: revision/propositional-notes.tex
-      title: Propositional Logic 1
+      title: Notes - Propositional Logic 1
       type: chapter
-      url: mathematics/revision_logic/propositional_logic_/index.html
+      url: mathematics/revision_logic/notes_propositional_/index.html
     - build_pdf: true
       formats:
       - filetype: html
@@ -304,17 +304,17 @@ structure:
       formats:
       - filetype: html
         format: default
-        url: mathematics/revision_logic/propositional_logi_1/index.html
+        url: mathematics/revision_logic/notes_propositiona_1/index.html
       - filetype: pdf
         format: default
-        url: mathematics/revision_logic/propositional_logi_1/propositional_logi_1.pdf
+        url: mathematics/revision_logic/notes_propositiona_1/notes_propositiona_1.pdf
       is_hidden: false
-      pdf_url: mathematics/revision_logic/propositional_logi_1/propositional_logi_1.pdf
-      slug: propositional_logi_1
+      pdf_url: mathematics/revision_logic/notes_propositiona_1/notes_propositiona_1.pdf
+      slug: notes_propositiona_1
       source: revision/propositional_2-notes.tex
-      title: Propositional Logic 2
+      title: Notes - Propositional Logic 2
       type: chapter
-      url: mathematics/revision_logic/propositional_logi_1/index.html
+      url: mathematics/revision_logic/notes_propositiona_1/index.html
     - build_pdf: true
       formats:
       - filetype: html
@@ -361,17 +361,17 @@ structure:
       formats:
       - filetype: html
         format: default
-        url: mathematics/week_01_sets/basic_ideas/index.html
+        url: mathematics/week_01_sets/notes_basic_ideas/index.html
       - filetype: pdf
         format: default
-        url: mathematics/week_01_sets/basic_ideas/basic_ideas.pdf
+        url: mathematics/week_01_sets/notes_basic_ideas/notes_basic_ideas.pdf
       is_hidden: false
-      pdf_url: mathematics/week_01_sets/basic_ideas/basic_ideas.pdf
-      slug: basic_ideas
+      pdf_url: mathematics/week_01_sets/notes_basic_ideas/notes_basic_ideas.pdf
+      slug: notes_basic_ideas
       source: week_01-sets-probability/sets-notes_1.tex
-      title: Basic Ideas
+      title: Notes - Basic Ideas
       type: chapter
-      url: mathematics/week_01_sets/basic_ideas/index.html
+      url: mathematics/week_01_sets/notes_basic_ideas/index.html
     - build_pdf: true
       formats:
       - filetype: html
@@ -391,17 +391,17 @@ structure:
       formats:
       - filetype: html
         format: default
-        url: mathematics/week_01_sets/operations_on_sets/index.html
+        url: mathematics/week_01_sets/notes_operations_on_/index.html
       - filetype: pdf
         format: default
-        url: mathematics/week_01_sets/operations_on_sets/operations_on_sets.pdf
+        url: mathematics/week_01_sets/notes_operations_on_/notes_operations_on_.pdf
       is_hidden: false
-      pdf_url: mathematics/week_01_sets/operations_on_sets/operations_on_sets.pdf
-      slug: operations_on_sets
+      pdf_url: mathematics/week_01_sets/notes_operations_on_/notes_operations_on_.pdf
+      slug: notes_operations_on_
       source: week_01-sets-probability/sets-notes_2.tex
-      title: Operations on Sets
+      title: Notes - Operations on Sets
       type: chapter
-      url: mathematics/week_01_sets/operations_on_sets/index.html
+      url: mathematics/week_01_sets/notes_operations_on_/index.html
     - build_pdf: true
       formats:
       - filetype: html
@@ -452,32 +452,32 @@ structure:
       formats:
       - filetype: html
         format: default
-        url: mathematics/week_02_probability_/background/index.html
+        url: mathematics/week_02_probability_/notes_staistics_back/index.html
       - filetype: pdf
         format: default
-        url: mathematics/week_02_probability_/background/background.pdf
+        url: mathematics/week_02_probability_/notes_staistics_back/notes_staistics_back.pdf
       is_hidden: false
-      pdf_url: mathematics/week_02_probability_/background/background.pdf
-      slug: background
+      pdf_url: mathematics/week_02_probability_/notes_staistics_back/notes_staistics_back.pdf
+      slug: notes_staistics_back
       source: week_01-sets-probability/stats-background.tex
-      title: Background
+      title: Notes - Staistics Background
       type: chapter
-      url: mathematics/week_02_probability_/background/index.html
+      url: mathematics/week_02_probability_/notes_staistics_back/index.html
     - build_pdf: true
       formats:
       - filetype: html
         format: default
-        url: mathematics/week_02_probability_/statistics/index.html
+        url: mathematics/week_02_probability_/notes_statistics/index.html
       - filetype: pdf
         format: default
-        url: mathematics/week_02_probability_/statistics/statistics.pdf
+        url: mathematics/week_02_probability_/notes_statistics/notes_statistics.pdf
       is_hidden: false
-      pdf_url: mathematics/week_02_probability_/statistics/statistics.pdf
-      slug: statistics
+      pdf_url: mathematics/week_02_probability_/notes_statistics/notes_statistics.pdf
+      slug: notes_statistics
       source: week_01-sets-probability/stats-notes.tex
-      title: Statistics
+      title: Notes - Statistics
       type: chapter
-      url: mathematics/week_02_probability_/statistics/index.html
+      url: mathematics/week_02_probability_/notes_statistics/index.html
     - build_pdf: true
       formats:
       - filetype: html
@@ -497,17 +497,17 @@ structure:
       formats:
       - filetype: html
         format: default
-        url: mathematics/week_02_probability_/probability/index.html
+        url: mathematics/week_02_probability_/notes_probability/index.html
       - filetype: pdf
         format: default
-        url: mathematics/week_02_probability_/probability/probability.pdf
+        url: mathematics/week_02_probability_/notes_probability/notes_probability.pdf
       is_hidden: false
-      pdf_url: mathematics/week_02_probability_/probability/probability.pdf
-      slug: probability
+      pdf_url: mathematics/week_02_probability_/notes_probability/notes_probability.pdf
+      slug: notes_probability
       source: week_01-sets-probability/prob-notes.tex
-      title: Probability
+      title: Notes - Probability
       type: chapter
-      url: mathematics/week_02_probability_/probability/index.html
+      url: mathematics/week_02_probability_/notes_probability/index.html
     - build_pdf: true
       formats:
       - filetype: html
@@ -539,17 +539,17 @@ structure:
       formats:
       - filetype: html
         format: default
-        url: mathematics/week_03_modular_arit/modular_arithmetic/index.html
+        url: mathematics/week_03_modular_arit/notes_modular_arithm/index.html
       - filetype: pdf
         format: default
-        url: mathematics/week_03_modular_arit/modular_arithmetic/modular_arithmetic.pdf
+        url: mathematics/week_03_modular_arit/notes_modular_arithm/notes_modular_arithm.pdf
       is_hidden: false
-      pdf_url: mathematics/week_03_modular_arit/modular_arithmetic/modular_arithmetic.pdf
-      slug: modular_arithmetic
+      pdf_url: mathematics/week_03_modular_arit/notes_modular_arithm/notes_modular_arithm.pdf
+      slug: notes_modular_arithm
       source: week_02-modular-codes/modular_1-notes.tex
-      title: Modular Arithmetic
+      title: Notes - Modular Arithmetic
       type: chapter
-      url: mathematics/week_03_modular_arit/modular_arithmetic/index.html
+      url: mathematics/week_03_modular_arit/notes_modular_arithm/index.html
     - build_pdf: true
       formats:
       - filetype: html
@@ -569,17 +569,17 @@ structure:
       formats:
       - filetype: html
         format: default
-        url: mathematics/week_03_modular_arit/isbns/index.html
+        url: mathematics/week_03_modular_arit/notes_isbns/index.html
       - filetype: pdf
         format: default
-        url: mathematics/week_03_modular_arit/isbns/isbns.pdf
+        url: mathematics/week_03_modular_arit/notes_isbns/notes_isbns.pdf
       is_hidden: false
-      pdf_url: mathematics/week_03_modular_arit/isbns/isbns.pdf
-      slug: isbns
+      pdf_url: mathematics/week_03_modular_arit/notes_isbns/notes_isbns.pdf
+      slug: notes_isbns
       source: week_02-modular-codes/modular-examples.tex
-      title: ISBNs
+      title: Notes - ISBNs
       type: chapter
-      url: mathematics/week_03_modular_arit/isbns/index.html
+      url: mathematics/week_03_modular_arit/notes_isbns/index.html
     - build_pdf: true
       formats:
       - filetype: html
@@ -642,17 +642,17 @@ structure:
       formats:
       - filetype: html
         format: default
-        url: cryptography/week_04_05_classical/shift_and_substituti/index.html
+        url: cryptography/week_04_05_classical/notes_shift_and_subs/index.html
       - filetype: pdf
         format: default
-        url: cryptography/week_04_05_classical/shift_and_substituti/shift_and_substituti.pdf
+        url: cryptography/week_04_05_classical/notes_shift_and_subs/notes_shift_and_subs.pdf
       is_hidden: false
-      pdf_url: cryptography/week_04_05_classical/shift_and_substituti/shift_and_substituti.pdf
-      slug: shift_and_substituti
+      pdf_url: cryptography/week_04_05_classical/notes_shift_and_subs/notes_shift_and_subs.pdf
+      slug: notes_shift_and_subs
       source: week_03-classical_ciphers_I/classical_I-notes.tex
-      title: Shift and Substitution
+      title: Notes - Shift and Substitution
       type: chapter
-      url: cryptography/week_04_05_classical/shift_and_substituti/index.html
+      url: cryptography/week_04_05_classical/notes_shift_and_subs/index.html
     - build_pdf: true
       formats:
       - filetype: html
@@ -826,17 +826,17 @@ structure:
       formats:
       - filetype: html
         format: default
-        url: cryptography/week_08_09_public_ke/euclidean_algorithm/index.html
+        url: cryptography/week_08_09_public_ke/notes_euclidean_algo/index.html
       - filetype: pdf
         format: default
-        url: cryptography/week_08_09_public_ke/euclidean_algorithm/euclidean_algorithm.pdf
+        url: cryptography/week_08_09_public_ke/notes_euclidean_algo/notes_euclidean_algo.pdf
       is_hidden: false
-      pdf_url: cryptography/week_08_09_public_ke/euclidean_algorithm/euclidean_algorithm.pdf
-      slug: euclidean_algorithm
+      pdf_url: cryptography/week_08_09_public_ke/notes_euclidean_algo/notes_euclidean_algo.pdf
+      slug: notes_euclidean_algo
       source: week_07-euclidean_algorithm/euclidean-notes.tex
-      title: Euclidean Algorithm
+      title: Notes - Euclidean Algorithm
       type: chapter
-      url: cryptography/week_08_09_public_ke/euclidean_algorithm/index.html
+      url: cryptography/week_08_09_public_ke/notes_euclidean_algo/index.html
     - build_pdf: true
       formats:
       - filetype: html
@@ -894,17 +894,17 @@ structure:
       formats:
       - filetype: html
         format: default
-        url: cryptography/week_08_09_public_ke/rsa_notes/index.html
+        url: cryptography/week_08_09_public_ke/notes_rsa/index.html
       - filetype: pdf
         format: default
-        url: cryptography/week_08_09_public_ke/rsa_notes/rsa_notes.pdf
+        url: cryptography/week_08_09_public_ke/notes_rsa/notes_rsa.pdf
       is_hidden: false
-      pdf_url: cryptography/week_08_09_public_ke/rsa_notes/rsa_notes.pdf
-      slug: rsa_notes
+      pdf_url: cryptography/week_08_09_public_ke/notes_rsa/notes_rsa.pdf
+      slug: notes_rsa
       source: week_08-RSA/RSA-notes.tex
-      title: RSA Notes
+      title: Notes - RSA
       type: chapter
-      url: cryptography/week_08_09_public_ke/rsa_notes/index.html
+      url: cryptography/week_08_09_public_ke/notes_rsa/index.html
     - build_pdf: true
       formats:
       - filetype: html

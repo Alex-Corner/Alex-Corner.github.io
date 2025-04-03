@@ -1,0 +1,1082 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        
+            <meta charset="utf-8">
+            <meta name="robots" content="noindex">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="author" content="Alex Corner" />
+            <meta name="date" content="2025-04-03" />
+        
+
+        <title>Notes - Arithmetic | 55-408808: Introduction to Cyber Security, Maths and Cryptography</title>
+
+        
+    
+    
+            <link rel="stylesheet" href="../../../static/styles.css?build_time=1743686201.661406">
+            
+            
+        
+    <link rel="stylesheet" id="customiseCodeCSS" href="../../../static/pygmentize.css?build_time=1743686201.661406">
+
+    <link rel="stylesheet" href="../../../static/print.css?build_time=1743686201.661406">
+
+
+        
+    
+			<script>
+				var chirun_static_url = new URL('../../../static?build_time=1743686201.661406', location.href);
+			</script>
+
+            
+                <script defer src="../../../static/mathjax_config.js?build_time=1743686201.661406"></script>
+                <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+            
+
+            <script type="module" src="../../../static/localisation.js?build_time=1743686201.661406"></script>
+
+            <script defer src="../../../static/customisation.js?build_time=1743686201.661406"></script>
+
+            
+
+            
+        
+    <script defer src="../../../static/code.js?build_time=1743686201.661406" type="module"></script>
+    <script defer src="../../../static/embed_numbas.js?build_time=1743686201.661406" type="module"></script>
+    <script defer src="../../../static/embed_qrcode.js?build_time=1743686201.661406" type="module"></script>
+
+
+        <template id="runnable-code-template">
+            <link rel="stylesheet" href="../../../static/code.css?build_time=1743686201.661406">
+            <div class="runnable-code-wrapper">
+                <section class="fullscreenable code">
+                    <div id="code"></div>
+                    <button class="fullscreen icon-button" title="Fullscreen code"><svg class="icon" aria-label="Fullscreen code" viewBox="0 0 180 180">
+    <use href="#fullscreen"/>
+</svg></button>
+                </section>
+                <section class="fullscreenable output">
+                    <div id="output" aria-live="polite">
+                        <pre class="stdout"></pre>
+                        <pre class="result"></pre>
+                        <div class="images"></div>
+                    </div>
+                    <button class="fullscreen icon-button" title="Fullscreen output"><svg class="icon" aria-label="Fullscreen output" viewBox="0 0 180 180">
+    <use href="#fullscreen"/>
+</svg></button>
+                </section>
+                <div class="buttons">
+                    <button type="button" class="run-code">Run code</button>
+                </div>
+                <svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="icon-defs"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <g id="cog">
+            <path 
+                style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z"
+            />
+        </g>
+        <g id="pdf">
+            <path
+                style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z"
+            />
+        </g>
+        <g id="slides">
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,21.25 30,137.5"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 90,21.25 60,158.75"
+            />
+            <rect
+                style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="119.79137"
+                height="82.273766"
+                x="30.104315"
+                y="36.476234"
+                ry="4.7737675"
+                rx="4.7737675"
+            />
+            <rect
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="140"
+                height="5.2262344"
+                x="20"
+                y="31.25"
+                ry="1.6724058"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,66.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,76.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,86.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,56.25 h 50"
+            />
+            <path
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z"
+            />
+        </g>
+
+        <g id="notebook">
+            <path
+                style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="58.699139"
+               cy="59.503937"
+               r="3.8077738"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="113.59385"
+               cy="52.885151"
+               r="4.9348516"
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z"
+           
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z"
+              
+            />
+            <ellipse
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="63.813011"
+               cy="125.96338"
+               rx="6.4332962"
+               ry="6.4347191"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="M 34,46.266514 V 62.316215"
+            
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="M 34,77.849849 V 93.89955"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 34,109.43318 v 16.0497"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0"
+            />
+        </g>
+
+        <g id="fullscreen">
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+               d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="M 150.95833,68.801471 V 28.958332 h -39.84314"
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="m 28.958332,111.11519 v 39.84314 h 39.843139"
+            />
+        </g>
+    </defs>
+</svg>
+            </div>
+        </template>
+
+        <template id="embed-numbas-template">
+            <link rel="stylesheet" href="../../../static/embed_numbas.css?build_time=1743686201.661406">
+            <details id="wrapper" data-completion-status="incomplete">
+                <summary>
+                    <h1 id="title">Test Yourself</h1>
+                    <div id="completion-status" data-completion-status="unknown">
+                        <span class="complete">Complete</span>
+                        <span class="incomplete">Incomplete</span>
+                    </div>
+                    <label id="score-feedback">
+                        Score:
+                        <progress min="0"></progress>
+                    </label>
+                </summary>
+                <iframe class="embed" title="Numbas"></iframe>
+            </details>
+        </template>
+
+    </head>
+    <body class="" >
+        
+
+        <a class="skip-to-content-link" href="#main-content">Skip to content</a>
+        
+            <form id="display-options">
+    <div class="buttons">
+        <button type="button" id="reset-display-options">Reset to defaults</button>
+
+        <a href="https://chirun.org.uk/accessibility-statement/material">Accessibility statement</a>
+
+        <button type="button" aria-controls="display-options" aria-expanded="false">
+            Close
+        </button>
+    </div>
+
+    <div class="inputs">
+        <div class="input-group">
+            <label for="display-options-font-scale">
+                Text size
+            </label>
+            <input type="range" min="50" max="600" step="5" value="100" id="display-options-font-scale">
+            <output for="display-options-font-scale">100%</output>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-spacing-factor">
+                Spacing
+            </label>
+            <input type="range" min="0" max="1200" step="5" value="100" id="display-options-spacing-factor">
+            <output for="display-options-spacing-factor">100%</output>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-font-family">
+                Text font
+            </label>
+            <select id="display-options-font-family">
+                <option value="var(--sans-serif-font)" selected>Sans-serif</option>
+                <option value="var(--serif-font)">Serif</option>
+                <option value="Atkinson Hyperlegible">Atkinson Hyperlegible</option>
+                <option value="Comic Sans MS">Comic Sans</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="display-options-colour-scheme">
+                Colour scheme
+            </label>
+            <select id="display-options-colour-scheme">
+                <option value="auto" selected>Automatic (default)</option>
+                <option value="light">Black text on white</option>
+                <option value="dark">White text on black</option>
+                <option value="custom">Custom</option>
+            </select>
+        </div>
+
+        <section id="custom-colour-scheme-options" class="inputs">
+            <div class="input-group">
+                <label for="display-options-text-colour">
+                    Text colour
+                </label>
+                <input type="color" value="#000000" id="display-options-text-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-link-colour">
+                    Link colour
+                </label>
+                <input type="color" value="#0000ee" id="display-options-link-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour">
+                    Background colour
+                </label>
+                <input type="color" value="#ffffff" id="display-options-bg-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-off">
+                    Muted background colour
+                </label>
+                <input type="color" value="#eeeeee" id="display-options-bg-colour-off">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-1">
+                    Accent colour 1
+                </label>
+                <input type="color" value="#4caf50" id="display-options-bg-colour-accent-1">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-2">
+                    Accent colour 2
+                </label>
+                <input type="color" value="#f6f6ff" id="display-options-bg-colour-accent-2">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-3">
+                    Accent colour 3
+                </label>
+                <input type="color" value="#eeffd3" id="display-options-bg-colour-accent-3">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-4">
+                    Accent colour 4
+                </label>
+                <input type="color" value="#ffeeee" id="display-options-bg-colour-accent-4">
+            </div>
+        </section>
+
+        <section id="filter-colour-scheme-options" class="inputs">
+            <div class="input-group">
+                <label for="display-options-filter-sepia">
+                    Sepia filter
+                </label>
+                <input type="range" min="0" max="100" step="1" value="0" id="display-options-filter-sepia">
+                <output for="display-options-filter-sepia">0%</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-filter-hue-rotate">
+                    Rotate hues
+                </label>
+                <input type="range" min="0" max="1" step="0.01" value="0" id="display-options-filter-hue-rotate">
+                <output for="display-options-filter-hue-rotate">0 turns</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-invert-images">
+                    Invert images in dark mode
+                </label>
+                <input type="checkbox" id="display-options-invert-images">
+            </div>
+
+        </section>
+    </div>
+</form>
+        
+
+        <header>
+            
+<button class="icon-button" type="button" aria-controls="display-options" aria-expanded="false" title="Display options">
+    <svg class="icon" aria-label="Display options" viewBox="0 0 180 180">
+    <use href="#cog"/>
+</svg>
+</button>
+            
+    
+    <nav aria-label="breadcrumb">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../../../index.html">55-408808: Introduction to Cyber Security, Maths and Cryptography</a>
+            </li>
+            
+            <li class="breadcrumb-item">
+                <a href="../index.html">Revision - Arithmetic</a>
+            </li>
+            
+            <li class="breadcrumb-item active">
+                Notes - Arithmetic
+            </li>
+        </ul>
+
+        
+        <p class="pager" id="item-pager">
+            
+            <a rel="prev" href="../index.html">Previous: Revision - Arithmetic</a>
+            
+            
+            <a rel="next" href="../exercises_1/index.html">Next: Exercises 1</a>
+            
+        </p>
+        
+    </nav>
+    
+
+            
+            
+        </header>
+
+        <main id="main-content">
+            
+    <nav id="sidebar">
+        
+        <ul class="alternative-formats">
+            
+            <li><a rel="alternate" type="application/pdf" href="notes_arithmetic.pdf"download><svg class="icon" aria-label="PDF" viewBox="0 0 180 180">
+    <use href="#pdf"/>
+</svg> Download as PDF</a></li>
+            
+        </ul>
+        
+
+        <h1>Table of Contents</h1>
+        <a class="jump-to-item-content" href="#item-content">Jump to content</a>
+        
+            <ol class="table-of-contents" role="tree">
+                
+                    
+<li role="none" data-toc-level="1" class="toc-header  has-children">
+    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000002" href="#a0000000002">
+        <span class="toc-marker"></span>
+        Numbers and Operations
+    </a>
+
+    
+        <ol role="group" id="toc-subtree-a0000000002">
+            
+            
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-sec:sets:basic_ideas:motivation" href="#sec:sets:basic_ideas:motivation">
+        
+        Types of Numbers
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header  has-children">
+    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000003" href="#a0000000003">
+        <span class="toc-marker"></span>
+        Rounding and Truncation
+    </a>
+
+    
+        <ol role="group" id="toc-subtree-a0000000003">
+            
+            
+<li role="none" data-toc-level="3" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000004" href="#a0000000004">
+        
+        Rounding
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="3" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000005" href="#a0000000005">
+        
+        Truncating
+    </a>
+
+    
+</li>
+
+            
+        </ol>
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000006" href="#a0000000006">
+        
+        Arithmetic Operations
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header  has-children">
+    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000011" href="#a0000000011">
+        <span class="toc-marker"></span>
+        Fractions, Percentages, Proportions
+    </a>
+
+    
+        <ol role="group" id="toc-subtree-a0000000011">
+            
+            
+<li role="none" data-toc-level="3" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000012" href="#a0000000012">
+        
+        Equivalent Fractions
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="3" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000013" href="#a0000000013">
+        
+        Fractions:Addition and Subtraction
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="3" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000014" href="#a0000000014">
+        
+        Fractions: Multiplication and Division
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="3" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000016" href="#a0000000016">
+        
+        Percentages
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="3" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000025" href="#a0000000025">
+        
+        Proportion and Ratio
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="3" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000026" href="#a0000000026">
+        
+        Powers and Indices
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="3" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000027" href="#a0000000027">
+        
+        Laws of Indices
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="3" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000032" href="#a0000000032">
+        
+        Meaning of \(a^0\)
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="3" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000033" href="#a0000000033">
+        
+        Meaning of \(a^{-n}\)
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="3" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000034" href="#a0000000034">
+        
+        Other Useful Results
+    </a>
+
+    
+</li>
+
+            
+        </ol>
+    
+</li>
+
+            
+        </ol>
+    
+</li>
+
+                
+            </ol>
+        
+
+    </nav>
+
+    <article class="item-content" id="item-content">
+         <!-- Latex Chapter/Part -->
+<h1 id="a0000000002">Numbers and Operations</h1>
+<section class="section">
+<h2 id="sec:sets:basic_ideas:motivation">Types of Numbers</h2>
+<p>
+ It is useful to have a clear understanding of what numbers are, and to distringuish various types. Many computer programming languages require programmers to do so. The first numbers most people meet are the counting numbers \(1, 2, 3, \ldots \). With the number \(0\) these form the <b class="bfseries">natural numbers</b>: \(0, 1, 2, 3, \ldots \). (Not every text includes \(0\) as a natural number, but in these notes we do.) The place value system allows us to use ten symbols to represent a number in a unique way. E.g., 
+</p>
+<span><script type="math/tex; mode=display">\begin{align*}  9 & = (9 \times 1), \\ 12 & = (1 \times 10) + (2 \times 1), \\ 154 & = (1 \times 100) + (5 \times 10) + (4 \times 1). \end{align*}</script></span>
+<p>
+Since ten symbols are used this number system is called the <b class="bfseries">denary</b>, or <b class="bfseries">decimal</b> system. Computers work with numbers in binary (two) or hexadecimal (sixteen) systems, which we will look at later in the semester. The <b class="bfseries">integers</b> are signed natural numbers, i.e., the natural numbers are given positive or negative signs. So the integers are the numbers \(\ldots , -3, -2, -1, 0, 1, 2, 3, \ldots \). 
+</p>
+<p>
+The number system may be extended to include the <b class="bfseries">rational numbers</b>. For example, 
+</p>
+<span class="dmath">\[  \frac{1}{2}, \frac{2}{7}, -\frac{4}{5}, \frac{5}{3}.  \]</span>
+<p>
+ All rational numbers can be written as decimals by dividing the numerator (top) by the denominator (bottom). E.g., 
+</p>
+<span class="dmath">\[  \frac{1}{2} = 0.5, \frac{2}{7} = 0.285714\ldots , -\frac{4}{5} = -0.8.  \]</span>
+<p>
+ Sometimes the number of decimal places is finite and sometimes it is infinite but made of a repeating patter. E.g., 
+</p>
+<span class="dmath">\[  \frac{2}{7} = 0.285714285714285714\ldots .  \]</span>
+<p>
+ Lastly we consider <b class="bfseries">real numbers</b>. For our purposes we will call a real number a quantity which has a sign (\(+\) or \(-\)), followed by a natural nmber, a decimal point, and a string of decimal digits which may or may not terminates. Examples include 
+</p>
+<span><script type="math/tex; mode=display">\begin{align*} & 4.2, \\ & -1.893, \\ & 25.0, \\ & 0.3333\ldots , \\ & 3.723723723\ldots , \\ & 3.1415926535. \\ \end{align*}</script></span>
+<p>
+Numbers with a repeating pattern are sometimes written in a special way. E.g., 
+</p>
+<span><script type="math/tex; mode=display">\begin{align*}  0.333\ldots & = 0.\dot{3}, \\ 3.723723723\ldots & = 0.\dot{7}2\dot{3}. \end{align*}</script></span>
+<p>
+ These patterns arise from the decimal representation of fractions. 
+</p>
+<p>
+For practical purposes, when we write real numbers we must limit ourselves to a small number of decimal places only. In general, there fore, decimal representations of some real numbers are approximations only. (Any decimal representation of the real number \(3.8\) is not an approximation providing at least one decimal place is used, however most meaningful decimal representations of the real number 
+</p>
+<span class="dmath">\[  2.7235628947436475336464747373848484994985856858\ldots  \]</span>
+<p>
+ will result in some degree of approximation.) There are two ways of specifying the accuracy to which we require numbers to be given. 
+</p>
+<p>
+One is to give the number of <b class="bfseries">decimal places</b>. For example, \(137.45\) and \(2.76\) are both given to two decimal places. The other is to give the number of <b class="bfseries">significant figures</b>. The is the number of digits from the first non-zero digit to the end of the string. So \(2575.3\), \(0.19650\), and \(0.0025318\) are all given correct to five significant figures. 
+</p>
+<p>
+An alternative way of writing real numbers, which clarifies and emphases the number of significant figures, is called <b class="bfseries">scientific notation</b> or <b class="bfseries">standard form</b>. In this form we move the decimal point so that it is to the right of the first non-zero digit and then record the number of places we have moved it by multiplying by a power of ten. Moving left gives a positive index (power); moving right gives a negative index. In this form the three numbers given above would be written, respectively, as 
+</p>
+<span><script type="math/tex; mode=display">\begin{align*}  2575.3 & = 2.5753 \times 10^3, \\ 0.19560 & = 1.9560 \times 10^{-1} \\ 0.0025318 & = 2.53178 \times 10^{-3}. \end{align*}</script></span>
+<p>
+This form is similar to, but different from, <b class="bfseries">exponential notation</b> in which the decimal point precedes the first non-zero digit, such as \(25.753 = 0.25753 \times 10^2\). In computer output and on some calculators, the ‘\(\times 10\)’ symbol is often written as \(E\), such as \(25.753 = 0.25753E2\). 
+</p>
+</section><section class="section">
+<h2 id="a0000000003">Rounding and Truncation</h2>
+<p>
+ Many things which we measure in the real world can vary continuously over a range of numbers, and are represented mathematically as real numbers. In such cases it is usually impossible to give nan exact value for the measurement. For example, if I say that it is \(1.8\) miles from Howard Street to the Broomgrove Apartments I am not claiming that this is an exact distance. Even leaving out issues such as where in the two sites the distance is taken from, and whether it is the distance as the crow flies or the distance along the best route for walking or the distance along the best route for driving, one can never measure an exact distance. To express my level of confidence in the measurement, I might say that the distance is \(1.8 \pm 0.2\) miles, meaning that I am claiming it to be between \(1.6\) and \(2\) miles. In that case the error made in assuming that the figure of \(1.8\) is correct is between \(-0.2\) and \(0.2\). An error is usually taken as the largest possible absolute value, so the absolute error here is bounded by \(0.2\). 
+</p>
+<p>
+When we do calculations, with a calculator, or with a computer, errors tend to accumulate. The subject of numerical analysis is concerned with working out upper bounds for the error in the result of a calculation from known error bounds in its inputs. When numbers are added or subtracted, their absolute errors are added; when they are multiplied or divided, their relative errors (absolute error divided by the size of the number) are approximately added. Combinations of the different operations can in some circumstances produce errors so large that the result is meaningless. 
+</p>
+<p>
+An important thign to remember is always to do calculations using greater accuracy than is needed in the result, so that no unnecessaty extra eerrors are introduced. Use at least two extra significant figures when doing paper calculations. When using a calculator try to do as much as you can on the calculator without writing intermediate answers down. Computers store numbers with the greatest accuracy available with the number of bits allocated. 
+</p>
+<p>
+We should also be clear about the method by which ar eaul number is approximated to a number with the appropriate number of decimal places or significant figures. There are two methods in common use: truncation and rounding. Int truncation the digits beyond the required point are simply ignored. In rounding we look at the next digit. If it is a \(5\), or larger, then we increase the previous digit by one, otherwise we simply truncate. In deciding which method to adropt, one should realise that rounding produces smaller errors, but truncation is easier to perform. 
+</p>
+<section class="subsection">
+<h3 id="a0000000004">Rounding</h3>
+<p>
+ If a length, weight, etc., is quoted without an explicit error bound, it is normally taken to have been rounded to the nearest number with the number of decimal places or significant figures given. Thus a distance quoted as \(1.6\) should be between \(1.55\) (inclusive) and \(1.65\) (exclusive). Any number in this range is converted to \(1.6\) when rounded to one decimal place. The absolute error is bounded by \(0.05\). If, on the other hand, a distance is quoted as \(1.60\), then it should lie between \(1.595\) and \(1.605\), so a bound for the absolute error is \(0.005\). 
+</p>
+<p>
+To round a number to two decimal places, we take the number as far as the second decimal place, and add \(1\) in that place if the next digit is \(5\) or more. Thus \(1.364123\), \(1.357942\), and \(1.35507\) all give \(1.36\) when rounded to two decimal places. The same considerations apply to other numbers of decimal places. In the example of two decimal places, rounding can be achieved by adding \(0.005\) and then truncating. 
+</p>
+</section><section class="subsection">
+<h3 id="a0000000005">Truncating</h3>
+<p>
+ Sometimes numbers are truncated rather than rounded. A person whose age is 22.9 years is regard as 22 years old, not 23. The time some process takes in a computer may be measured by the number of ticks of the computer’s clock which occur during that process; if the time taken is (say) 22.8 times the unit of time between ticks, then only 22 ticks may sometimes be recorded. 
+</p>
+<p>
+To truncate a number to two decimal places, we simply take the number as far as the second decimal place, and ignore the rest. Thus \(1.364123\) gives \(1.36\) when truncated to two decimal places, while \(1.357942\) and \(1.35507\) both give \(1.35\). The error in truncating can be greater than in rounding. Any number (between \(1.35\) (inclusive) and \(1.36\) (exclusive)), gives \(1.35\) when truncated to two decimal places. 
+</p>
+</section>
+</section><section class="section">
+<h2 id="a0000000006">Arithmetic Operations</h2>
+<p>
+ There are five basic arithmetical operations: addition (\(+\)), subtraction (\(-\)), multiplication (\(\times \)), division \(/\), and raising a number to a power (sometimes called exponentiation). We are all familiar with at least the first four, but we need to be careful how we do successive operations. 
+</p>
+<p>
+For examples, suppose we are instructed to calculate ‘3 plus 4 times 5’. There is ambiguity here. Is the answer \(3 + 4 \times 5 = 23\) or \((3 + 4) \times 5 = 35\)? The trouble with the statement ‘3 plus 4 times 5’ is that it can have two meanings. One of the attractions of mathematics is that it allows us to steer clear of such ambiguities and use a precise, formal, unambiguous language. Thus we know exactly what \(3 + 4 \times 5\) and \((3 + 4) \times 5\) mean and how to calculate them. 
+</p>
+<p>
+We establish a hierarchy of operations. When faced with a complicated series of operations, first of all look to see what is in brackets. Brackets mean ‘do this first’. So work them out first. Second, look to see if there are any numbers to raise to powers. If there are, do those next. Third, do any multiplication or division, working from left to right. Fourth, do any addition or subtraction, again working from left to right. 
+</p>
+<p>
+Order of precedence of operations: 
+</p>
+<ul class="itemize" id="a0000000007">
+<li id="a0000000008">
+<p>
+Powers; 
+</p>
+</li>
+<li id="a0000000009">
+<p>
+Multiplication/division; 
+</p>
+</li>
+<li id="a0000000010">
+<p>
+Addition/subtraction. 
+</p>
+</li>
+</ul>
+<p>
+For example, 
+</p>
+<span><script type="math/tex; mode=display">\begin{align*}  (3 + 7)^2 + 4 & \times 5/2 \times 7 - 7 \times 54/(5 - 2 \times 2 + 26 / 13)^3 \\ & = 10^2 + 20/2 \times 7 - 378/(5 - 4 + 2)^3 \\ & = 100 + 10 \times 7 - 378/3^3 \\ & = 100 + 70 - 378/27 \\ & = 100 + 70 - 14 \\ & = 156. \end{align*}</script></span>
+</section><section class="section">
+<h2 id="a0000000011">Fractions, Percentages, Proportions</h2>
+<p>
+ As we saw earlier a fraction is a number expressed as the ratio of two integers, e.g., \(\frac{3}{5}\), \(-\frac{2}{7}\), or \(\frac{12}{9}\). 
+</p>
+<section class="subsection">
+<h3 id="a0000000012">Equivalent Fractions</h3>
+<p>
+ The two fractions \(\frac{12}{8}\) and \(\frac{2}{3}\) are equivalent because they represent the same number. We can see this by factorising the larger numbers and cancelling down: 
+</p>
+<span class="dmath">\[  \frac{12}{8} = \frac{2 \times 2 \times 3}{2 \times 3 \times 3} = \frac{2}{3}.  \]</span>
+<p>
+ We say that the fraction \(\frac{2}{3}\) is in its lowest possible form. 
+</p>
+</section><section class="subsection">
+<h3 id="a0000000013">Fractions:Addition and Subtraction</h3>
+<p>
+ Two fractions are added or subtracted by converting each into equivalent fractions with the same denominator, adding or subtracting, and then converting to the lowest possible form, if necessary. For example: 
+</p>
+<span><script type="math/tex; mode=display">\begin{align*}  \frac{1}{2} + \frac{1}{3} & = \frac{3}{6} + \frac{2}{6} = \frac{5}{6}, \\ \frac{2}{3} - \frac{1}{4} & = \frac{8}{12} - \frac{3}{12} = \frac{5}{12}, \\ \frac{1}{5} + \frac{3}{10} & = \frac{2}{10} + \frac{3}{10} = \frac{5}{10} = \frac{1}{2}. \end{align*}</script></span>
+</section><section class="subsection">
+<h3 id="a0000000014">Fractions: Multiplication and Division</h3>
+<p>
+ To multiply two fractions together, simply multiply their numerators to get a new numerator, and their denominators together to get a new denominator. The resulting fraction is written in its lowest possible form. E.g., 
+</p>
+<span class="dmath">\[  \frac{2}{3} \times \frac{3}{8} = \frac{2 \times 3}{3 \times 8} = \frac{6}{64} = \frac{1}{4}.  \]</span>
+<p>
+ To divide one fraction by another fraction we simply multiply the first by the reciprocal ("one over the fraction") of the second. E.g., 
+</p>
+<span class="dmath">\[  \frac{2}{5}/\frac{6}{7} = \frac{2}{5} \times \frac{7}{6} = \frac{14}{30} = \frac{7}{15}.  \]</span>
+<p>
+<embed-numbas id="a0000000015" url="https://numbas.mathcentre.ac.uk/question/152597/fraction-arithmetic/embed"></embed-numbas>
+</p>
+</section><section class="subsection">
+<h3 id="a0000000016">Percentages</h3>
+<p>
+ It is sometimes convenient to express a fraction as a percentage. Essentially a percentage is a fraction with a denominator of 100. A whole unit is 100%, thus half a unit is 50% , a quarter of a unit is 25%, etc. 
+</p>
+<p>
+For example, to express \(\frac{2}{5}\) as a percentage we express it as an equivalent fraction where the denominator is \(100\). So \(\frac{2}{5} = \frac{40}{100}\), meaning that the fraction represents \(40\% \). 
+</p>
+<p>
+Another couple of examples: 
+</p>
+<ul class="itemize" id="a0000000017">
+<li id="a0000000018">
+<p>
+An article costs \(\pounds 50\), but the next year it costs \(\pounds 62\). What is the percentage price rise? 
+</p>
+<ul class="itemize" id="a0000000019">
+<li id="a0000000020">
+<p>
+Percentage price rise \(= \frac{62 - 50}{50} \times 100\%  = 24\% \). 
+</p>
+</li>
+</ul>
+</li>
+<li id="a0000000021">
+<p>
+Due to the decline of the stock market the value of an investment of \(\pounds 6000\) fell by 18% over a certain period. What is the value of the investment at the end of the period? 
+</p>
+<ul class="itemize" id="a0000000022">
+<li id="a0000000023">
+<p>
+Fall in value \(= \frac{18}{100} \times 6000 = 1080\). 
+</p>
+</li>
+<li id="a0000000024">
+<p>
+Value of investment = \(6000 - 1080 = 4920\). 
+</p>
+</li>
+</ul>
+</li>
+</ul>
+</section><section class="subsection">
+<h3 id="a0000000025">Proportion and Ratio</h3>
+<p>
+ Suppose I cut an apple into 4 equal segments and give 3 segments to one person and the fourth to another. I have divided the apple in the ratio 3:1. One person has received the proportion \(\frac{3}{4}\). The other has received the proportion \(\frac{1}{4}\). 
+</p>
+<p>
+Here is an example. A legacy of \(\pounds 542,000\) is to be divided between 3 people in the ratio 3:1:1. How much does each person get? The legacy is divided into five parts, one person getting three of those parts, the others one each. 
+</p>
+<span class="dmath">\[  \frac{54200}{5} = 10840,  \]</span>
+<p>
+ so one person gets \(\pounds 3 \times 10840 = \pounds 32520\), the others get \(\pounds 10840\). 
+</p>
+</section><section class="subsection">
+<h3 id="a0000000026">Powers and Indices</h3>
+<p>
+ If we wish to multiply a number by itself several times, there is a convenient notation for it. For example: 
+</p>
+<span class="dmath">\[  7 \times 7 \times 7 \times 7 \times 7 = 7^5.  \]</span>
+<p>
+ The number \(5\) here signifies the number of times that \(7\) is multiplied by itself and is called the <b class="bfseries">power</b> to which \(7\) is raised. Another name for power is <b class="bfseries">index</b>. 
+</p>
+<p>
+In general, if \(a\) is any number and \(n\) is a positive whole number then \(a^n = a \times a \times a \times \ldots \times a\) where we have multiplied \(n\) copies of \(a\) together. This power \(a^n\) is called the \(n\)th <b class="bfseries">power of</b> \(a\). 
+</p>
+</section><section class="subsection">
+<h3 id="a0000000027">Laws of Indices</h3>
+<ol class="enumerate" id="a0000000028">
+<li id="a0000000029" value="1">
+<p>
+<b class="bfseries">Multiplication</b>: \(a^m \times a^n = a^{m + n}\). 
+</p>
+</li>
+<li id="a0000000030" value="2">
+<p>
+<b class="bfseries">Division</b>: \(a^m/a^n = a^{m-n}\). 
+</p>
+</li>
+<li id="a0000000031" value="3">
+<p>
+<b class="bfseries">Power of a Power</b>: \((a^m)^n = a^{m \times n}\). 
+</p>
+</li>
+</ol>
+</section><section class="subsection">
+<h3 id="a0000000032">Meaning of \(a^0\)</h3>
+<p>
+ Since \(a^0 \times a^n = a^{0 + n} = a^n\), we must have \(a^0 = 1\). 
+</p>
+</section><section class="subsection">
+<h3 id="a0000000033">Meaning of \(a^{-n}\)</h3>
+<p>
+ Since \(a^n \times a^{-n} = a^{n-n} = a^0 = 1\), we must have \(a^n = \frac{1}{a^n}\). 
+</p>
+</section><section class="subsection">
+<h3 id="a0000000034">Other Useful Results</h3>
+<ol class="enumerate" id="a0000000035">
+<li id="a0000000036" value="1">
+<p>
+\((a \times b)^{n} = a^n \times b^n\) 
+</p>
+</li>
+<li id="a0000000037" value="2">
+<p>
+\(\left( \frac{a}{b} \right)^n = \frac{a^n}{b^n}\) 
+</p>
+</li>
+</ol>
+<p>
+The above results are all still true if the powers used are decimals and not whole numbers. 
+</p>
+<p>
+<embed-numbas id="a0000000038" url="https://numbas.mathcentre.ac.uk/exam/5753/powers-and-indices/"></embed-numbas>
+</p>
+</section>
+</section>
+<script id="plastex-labels" type="application/json">{"sec:sets:basic_ideas:motivation": {"ref": "None", "url": "#sec:sets:basic_ideas:motivation"}}</script>
+    </article>
+
+        </main>
+
+		
+		<footer>
+	<hr>
+
+    <nav id="footer-nav">
+        <a href="#">Back to top</a>
+    </nav>
+
+    <div id="footer-text">
+        <p>Generated using <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.2.1, written by the Digital Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
+        <p>This page last generated: 2025-04-03</p>
+        
+        
+        
+    </div>
+</footer>
+		
+
+        
+
+        <svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="icon-defs"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <g id="cog">
+            <path 
+                style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z"
+            />
+        </g>
+        <g id="pdf">
+            <path
+                style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z"
+            />
+        </g>
+        <g id="slides">
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,21.25 30,137.5"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 90,21.25 60,158.75"
+            />
+            <rect
+                style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="119.79137"
+                height="82.273766"
+                x="30.104315"
+                y="36.476234"
+                ry="4.7737675"
+                rx="4.7737675"
+            />
+            <rect
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="140"
+                height="5.2262344"
+                x="20"
+                y="31.25"
+                ry="1.6724058"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,66.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,76.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,86.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,56.25 h 50"
+            />
+            <path
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z"
+            />
+        </g>
+
+        <g id="notebook">
+            <path
+                style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="58.699139"
+               cy="59.503937"
+               r="3.8077738"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="113.59385"
+               cy="52.885151"
+               r="4.9348516"
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z"
+           
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z"
+              
+            />
+            <ellipse
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="63.813011"
+               cy="125.96338"
+               rx="6.4332962"
+               ry="6.4347191"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="M 34,46.266514 V 62.316215"
+            
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="M 34,77.849849 V 93.89955"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 34,109.43318 v 16.0497"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0"
+            />
+        </g>
+
+        <g id="fullscreen">
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+               d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="M 150.95833,68.801471 V 28.958332 h -39.84314"
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="m 28.958332,111.11519 v 39.84314 h 39.843139"
+            />
+        </g>
+    </defs>
+</svg>
+    </body>
+</html>
