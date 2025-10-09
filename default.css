@@ -107,25 +107,32 @@
 
 	ul.style1
 	{
+		display: inline;
+		list-style-type: circle;
 		margin: 0 auto;
 		padding: 0;
 		width: 80%;
 		overflow: hidden;
 		list-style: none;
 		text-align: left;
-		color: #6c6c6c
+		color: #6c6c6c;
 	}
 	
 	ul.style1 li
 	{
+		list-style-type: circle;
 		padding: 1.6em 0em 0em 0em;
 		margin: 0 0 2.5em 0;
 		border-top: 1px solid rgba(0,0,0,.1); 
+		display: inline;
 	}
 	
 	ul.style1 li:first-child
 	{
+		display: inline;
+		list-style-type: circle;
 		border-top: none;
+		display: inline;
 	}
 	
 	ul.style1 p
